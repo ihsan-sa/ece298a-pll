@@ -1,0 +1,122 @@
+{
+ "id": 1,
+ "created": "2026-09-27T01:28:50",
+ "gate": "sim",
+ "phase": "P4",
+ "workspace": "blocks/pll/digital",
+ "fixer": "rtl",
+ "role_prompt": "skills/vde/agents/fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit rtl/ only; re-run the failed gate (lint/sim/mutate/formal/cover/synth as applicable) when done.",
+  "A finding from `mutate` means the TESTBENCH missed something, not the RTL - route mutate failures to the testbench domain instead of editing rtl/ to satisfy a weak test."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/test_failed.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "test_failed"
+  ],
+  "checks": [
+   "cocotb"
+  ],
+  "severity": "error",
+  "count": 4,
+  "violations": [
+   {
+    "check": "sim",
+    "severity": "error",
+    "file": null,
+    "module": "test_lock_assert",
+    "line": null,
+    "kind": "test_failed",
+    "refs": [
+     "REQ-LOCK-ASSERT"
+    ],
+    "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim",
+    "severity": "error",
+    "file": null,
+    "module": "test_lock_deassert",
+    "line": null,
+    "kind": "test_failed",
+    "refs": [
+     "REQ-LOCK-DEASSERT"
+    ],
+    "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim",
+    "severity": "error",
+    "file": null,
+    "module": "test_pfd_up_lead",
+    "line": null,
+    "kind": "test_failed",
+    "refs": [
+     "REQ-PFD-RESET",
+     "REQ-PFD-UP-LEAD"
+    ],
+    "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim",
+    "severity": "error",
+    "file": null,
+    "module": "test_prescaler_div8",
+    "line": null,
+    "kind": "test_failed",
+    "refs": [
+     "REQ-PRE-DIV8"
+    ],
+    "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

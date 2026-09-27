@@ -1,0 +1,100 @@
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:242  in gpi_load_users                  Loaded entry library: '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/lib/x86_64-linux-gnu/libpython3.12.so.1.0'
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
+     -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1790486716
+     0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
+     0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
+     0.00ns INFO     cocotb.regression                  Running tests
+     0.00ns INFO     cocotb.regression                  running test_pll.test_prescaler_div8 (1/14)
+  4321.00ns WARNING  cocotb.regression                  test_pll.test_prescaler_div8 failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 60, in test_prescaler_div8
+                                                            check_period(f"clk_pre tv={tv}", r, 8 * tv)
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 45, in check_period
+                                                            assert abs(p - want) <= tol, (
+                                                        AssertionError: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns
+                                                        assert 0.5 <= 0.01
+                                                         +  where 0.5 = abs((24.5 - 24.0))
+  4321.00ns INFO     cocotb.regression                  running test_pll.test_obs_sel (2/14)
+ 11723.00ns INFO     cocotb.regression                  test_pll.test_obs_sel passed
+ 11723.00ns INFO     cocotb.regression                  running test_pll.test_divider_ratio (3/14)
+ 26628.00ns INFO     cocotb.regression                  test_pll.test_divider_ratio passed
+ 26628.00ns INFO     cocotb.regression                  running test_pll.test_divider_illegal_codes (4/14)
+ 29811.00ns INFO     cocotb.regression                  test_pll.test_divider_illegal_codes passed
+ 29811.00ns INFO     cocotb.regression                  running test_pll.test_reset_release_clean (5/14)
+ 32659.00ns INFO     cocotb.regression                  test_pll.test_reset_release_clean passed
+ 32659.00ns INFO     cocotb.regression                  running test_pll.test_pfd_up_lead (6/14)
+ 33914.00ns WARNING  cocotb.regression                  test_pll.test_pfd_up_lead failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 200, in test_pfd_up_lead
+                                                            await lead_test(dut, "pfd_up", "pfd_dn", ref_leads=True)
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 180, in lead_test
+                                                            assert abs(w - dt) <= 0.01, f"dt={dt}: {lead_sig} width {w}, expected {dt}"
+                                                        AssertionError: dt=5.0: pfd_up width 0.0, expected 5.0
+                                                        assert 5.0 <= 0.01
+                                                         +  where 5.0 = abs((0.0 - 5.0))
+ 33914.00ns INFO     cocotb.regression                  running test_pll.test_pfd_dn_lead (7/14)
+ 37729.01ns INFO     cocotb.regression                  test_pll.test_pfd_dn_lead passed
+ 37729.01ns INFO     cocotb.regression                  running test_pll.test_pfd_frequency (8/14)
+ 41301.01ns INFO     cocotb.regression                  test_pll.test_pfd_frequency passed
+ 41301.01ns INFO     cocotb.regression                  running test_pll.test_lock_assert (9/14)
+ 43975.91ns WARNING  cocotb.regression                  test_pll.test_lock_assert failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 259, in test_lock_assert
+                                                            assert not any(w for _, w in seen), "10 ns UP pulse was judged wide"
+                                                        AssertionError: 10 ns UP pulse was judged wide
+                                                        assert not True
+                                                         +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)
+ 43975.91ns INFO     cocotb.regression                  running test_pll.test_lock_deassert (10/14)
+ 48170.81ns WARNING  cocotb.regression                  test_pll.test_lock_deassert failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/tb/test_pll.py", line 269, in test_lock_deassert
+                                                            assert seen[24][1] == 1, "60 ns UP pulse not visible at clk falling edge"
+                                                        AssertionError: 60 ns UP pulse not visible at clk falling edge
+                                                        assert 0 == 1
+ 48170.81ns INFO     cocotb.regression                  running test_pll.test_ctrl_regs (11/14)
+ 48787.81ns INFO     cocotb.regression                  test_pll.test_ctrl_regs passed
+ 48787.81ns INFO     cocotb.regression                  running test_pll.test_async_reset_outputs (12/14)
+ 50870.81ns INFO     cocotb.regression                  test_pll.test_async_reset_outputs passed
+ 50870.81ns INFO     cocotb.regression                  running test_pll.test_tt_tieoff (13/14)
+ 50951.81ns INFO     cocotb.regression                  test_pll.test_tt_tieoff passed
+ 50951.81ns INFO     cocotb.regression                  running test_pll.test_no_vctrl_bias_ua (14/14)
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
+ 51001.81ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
+ 51001.81ns WARNING  gpi                                Failed to find a handle at index 0 via any registered implementation
+ 51001.81ns INFO     cocotb.regression                  test_pll.test_no_vctrl_bias_ua passed
+ 51001.81ns INFO     cocotb.regression                  *********************************************************************************************
+                                                        ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *********************************************************************************************
+                                                        ** test_pll.test_prescaler_div8          FAIL        4321.00           1.13       3822.69  **
+                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.49      15124.07  **
+                                                        ** test_pll.test_divider_ratio           PASS       14905.00           4.69       3178.36  **
+                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.60       5332.02  **
+                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.31       9243.53  **
+                                                        ** test_pll.test_pfd_up_lead             FAIL        1255.00           0.13       9729.83  **
+                                                        ** test_pll.test_pfd_dn_lead             PASS        3815.00           0.58       6531.96  **
+                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.27      13270.77  **
+                                                        ** test_pll.test_lock_assert             FAIL        2674.90           0.18      15141.11  **
+                                                        ** test_pll.test_lock_deassert           FAIL        4194.90           0.20      21373.44  **
+                                                        ** test_pll.test_ctrl_regs               PASS         617.00           0.00     463684.64  **
+                                                        ** test_pll.test_async_reset_outputs     PASS        2083.00           0.15      13955.04  **
+                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.02       4003.94  **
+                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.04       1344.29  **
+                                                        *********************************************************************************************
+                                                        ** TESTS=14 PASS=10 FAIL=4 SKIP=0                   51001.81           8.95       5697.49  **
+                                                        *********************************************************************************************

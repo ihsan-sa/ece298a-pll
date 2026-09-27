@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T01:11:02",
+ "updated": "2026-09-27T01:28:50",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -64,6 +64,120 @@
      "job": null
     }
    ]
+  },
+  "lint": {
+   "phase": "P4",
+   "status": "pass",
+   "attempts": 4,
+   "last": {
+    "ts": "2026-09-27T01:25:06",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+    },
+    "job": null
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T01:15:47",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:b997d550734465e8e8289b45ee0686cd46822a9b74c377d1f8afee8b44df7125",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-27T01:15:58",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:b997d550734465e8e8289b45ee0686cd46822a9b74c377d1f8afee8b44df7125",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-27T01:16:30",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:40f36ed05529b6fcb2d8351256094469271d52608d9c5d5e938cec4cae057ffc",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-27T01:25:06",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null
+    }
+   ]
+  },
+  "sim": {
+   "phase": "P4",
+   "status": "fail",
+   "attempts": 2,
+   "last": {
+    "ts": "2026-09-27T01:25:54",
+    "status": "fail",
+    "failing_count": 4,
+    "total": 4,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "tb": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
+     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+    },
+    "job": null,
+    "facts": {
+     "tests_passed": 10
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T01:16:52",
+     "status": "fail",
+     "failing_count": 4,
+     "total": 4,
+     "inputs": {
+      "rtl": "dir_text:40f36ed05529b6fcb2d8351256094469271d52608d9c5d5e938cec4cae057ffc",
+      "tb": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 10
+     }
+    },
+    {
+     "ts": "2026-09-27T01:25:54",
+     "status": "fail",
+     "failing_count": 4,
+     "total": 4,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 10
+     }
+    }
+   ]
   }
  },
  "jobs": {},
@@ -80,7 +194,7 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
-   "hashed": "2026-09-27T01:04:42"
+   "hashed": "2026-09-27T01:25:55"
   },
   "holdout": {
    "path": "holdout",
@@ -95,13 +209,45 @@
      "human_hold": 2
     }
    ]
+  },
+  "rtl": {
+   "path": "rtl",
+   "kind": "rtl",
+   "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+   "hashed": "2026-09-27T01:25:54"
+  },
+  "tb": {
+   "path": "tb",
+   "kind": "tb",
+   "sha256": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
+   "hashed": "2026-09-27T01:25:54"
   }
  },
- "open_issues": [],
- "next_issue_id": 1,
+ "open_issues": [
+  {
+   "id": 1,
+   "status": "open",
+   "agent": null,
+   "attempts": 0,
+   "opened": "2026-09-27T01:28:50",
+   "closed": null,
+   "gate": "sim",
+   "phase": "P4",
+   "fixer": "rtl",
+   "kinds": [
+    "test_failed"
+   ],
+   "severity": "error",
+   "count": 4,
+   "work_order": "blocks/pll/digital/log/workorders/wo-1.json"
+  }
+ ],
+ "next_issue_id": 2,
  "next_job_id": 1,
  "budgets": {
-  "fix_loops": {}
+  "fix_loops": {
+   "sim": 2
+  }
  },
  "decisions": [
   {
@@ -321,6 +467,82 @@
    "event": "phase",
    "phase": "P4",
    "prev": "P3"
+  },
+  {
+   "ts": "2026-09-27T01:15:47",
+   "event": "gate",
+   "gate": "lint",
+   "status": "pass",
+   "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:15:58",
+   "event": "gate",
+   "gate": "lint",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:16:30",
+   "event": "gate",
+   "gate": "lint",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:16:52",
+   "event": "gate",
+   "gate": "sim",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 4
+  },
+  {
+   "ts": "2026-09-27T01:25:07",
+   "event": "gate",
+   "gate": "lint",
+   "status": "pass",
+   "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:25:55",
+   "event": "gate",
+   "gate": "sim",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 4
+  },
+  {
+   "ts": "2026-09-27T01:28:43",
+   "event": "budget_defaulted",
+   "path": "fix_loops.sim",
+   "value": 3
+  },
+  {
+   "ts": "2026-09-27T01:28:43",
+   "event": "budget",
+   "path": "fix_loops.sim",
+   "remaining": 2
+  },
+  {
+   "ts": "2026-09-27T01:28:46",
+   "event": "snapshot",
+   "label": "pre-fix-sim-a1",
+   "files": 10
+  },
+  {
+   "ts": "2026-09-27T01:28:50",
+   "event": "issue_open",
+   "id": 1,
+   "gate": "sim",
+   "fixer": "rtl",
+   "kinds": [
+    "test_failed"
+   ]
   }
  ]
 }
