@@ -15,18 +15,15 @@
 * current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer.
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
-.param w_bp=4e-6 l_bp=2e-6
-.param w_b1=2e-6 l_b1=2e-6 w_b2=4e-6 l_b2=1e-6
-.param rb_l=5.4e-4
-.param w_cpn=2e-5 l_cpn=2e-6 w_cpp=5e-5 l_cpp=2e-6
-.param w_swn=2e-6 w_swp=4e-6 l_sw=5e-7
-.param r1_l=1.26e-4 c1_w=1e-4 c2_w=3.2e-5
-.param w_v2i=1e-5 l_v2i=1e-6 rv2i_l=2e-5
-.param w_flr=2e-6 l_flr=2e-6
-.param w_v2ip=1e-5 w_v2in=4e-6 l_v2i2=5e-7
-.param w_sp=1e-5 w_sn=4e-6 l_s=5e-7
-.param w_rp=2e-6 w_rn=1e-6 l_r=2.8e-7
-.param w_gp=4e-6 w_gn=4e-6 w_op=1.2e-5 w_on=6e-6
+.param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
+.param w_b2=4e-06 l_b2=1e-06 rb_l=0.00054 w_cpn=2e-05
+.param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
+.param w_swp=4e-06 l_sw=5e-07 r1_l=0.000126 c1_w=0.0001
+.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=2e-05
+.param w_flr=2e-06 l_flr=2e-06 w_v2ip=1e-05 w_v2in=4e-06
+.param l_v2i2=5e-07 w_sp=1e-05 w_sn=4e-06 l_s=5e-07
+.param w_rp=2e-06 w_rn=1e-06 l_r=2.8e-07 w_gp=4e-06
+.param w_gn=4e-06 w_op=1.2e-05 w_on=6e-06
 
 .subckt pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
@@ -42,8 +39,8 @@ XMN_B2 vbp va bias_ref vss nfet_03v3 w=w_b2 l=l_b2
 XRBIAS_INT bias_ref vss vss ppolyf_u r_width=1e-6 r_length=rb_l
 * startup: weak pull-up on vst, released once bias_ref rises
 XMP_STL vst en_b vdd vdd pfet_03v3 w=5e-7 l=1e-5
-XMN_STD vst bias_ref vss vss nfet_03v3 w=4e-6 l=5e-7
-XMN_ST vbp vst vss vss nfet_03v3 w=1e-6 l=1e-6
+XMN_STD vst bias_ref vss vss nfet_03v3 w=1e-5 l=1e-6
+XMN_ST vbp vst vss vss nfet_03v3 w=5e-7 l=2e-6
 XMN_STE vst en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
 * standby clamps
 XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
