@@ -4,15 +4,50 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T00:35:58",
+ "updated": "2026-09-27T00:40:42",
  "phase": "P1",
  "toolchain": null,
- "gates": {},
+ "gates": {
+  "spec_lint": {
+   "phase": "P1",
+   "status": "pass",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-09-27T00:40:42",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "spec_yaml": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f"
+    },
+    "job": null
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T00:40:42",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f"
+     },
+     "job": null
+    }
+   ]
+  }
+ },
  "jobs": {},
  "holdout": null,
  "optimise": null,
  "human": {},
- "artifacts": {},
+ "artifacts": {
+  "spec_yaml": {
+   "path": "spec/spec.yaml",
+   "kind": "spec_yaml",
+   "sha256": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f",
+   "hashed": "2026-09-27T00:40:42"
+  }
+ },
  "open_issues": [],
  "next_issue_id": 1,
  "next_job_id": 1,
@@ -48,6 +83,14 @@
    "event": "spawn",
    "role": "spec-writer",
    "model": "fable"
+  },
+  {
+   "ts": "2026-09-27T00:40:42",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 1,
+   "failing_count": 0
   }
  ]
 }
