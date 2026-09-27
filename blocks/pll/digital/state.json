@@ -4,8 +4,8 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T00:42:22",
- "phase": "P1",
+ "updated": "2026-09-27T00:47:20",
+ "phase": "P2",
  "toolchain": null,
  "gates": {
   "spec_lint": {
@@ -117,6 +117,13 @@
    "role": "spec-writer",
    "model": "fable",
    "phase": "P1"
+  },
+  {
+   "ts": "2026-09-27T00:47:20",
+   "role": "architect",
+   "model": "fable",
+   "effort": "high",
+   "phase": "P2"
   }
  ],
  "history": [
@@ -161,6 +168,18 @@
    "status": "pass",
    "attempt": 2,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T00:46:46",
+   "event": "phase",
+   "phase": "P2",
+   "prev": "P1"
+  },
+  {
+   "ts": "2026-09-27T00:47:20",
+   "event": "spawn",
+   "role": "architect",
+   "model": "fable"
   }
  ]
 }

@@ -4,8 +4,8 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-27T00:40:02",
- "phase": "P1",
+ "updated": "2026-09-27T00:47:18",
+ "phase": "P2",
  "toolchain": null,
  "gates": {
   "spec_lint": {
@@ -62,6 +62,13 @@
    "role": "spec-writer",
    "model": "fable",
    "phase": "P1"
+  },
+  {
+   "ts": "2026-09-27T00:47:18",
+   "role": "analog-designer",
+   "model": "fable",
+   "effort": "high",
+   "phase": "P2"
   }
  ],
  "history": [
@@ -91,6 +98,18 @@
    "status": "pass",
    "attempt": 1,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T00:46:44",
+   "event": "phase",
+   "phase": "P2",
+   "prev": "P1"
+  },
+  {
+   "ts": "2026-09-27T00:47:18",
+   "event": "spawn",
+   "role": "analog-designer",
+   "model": "fable"
   }
  ]
 }
