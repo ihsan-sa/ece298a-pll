@@ -1,6 +1,7 @@
 # PLL digital side - spec (tt_um_ihsan_sa_pll, TT GF180 analog tile)
 
-Top module `tt_um_ihsan_sa_pll`, library `gf180mcu_fd_sc_mcu7t5v0` at 3.3 V.
+Core module `ihsan_sa_pll` (harden generates the `tt_um_ihsan_sa_pll` wrapper
+from `tt_pins`), library `gf180mcu_fd_sc_mcu7t5v0` at 3.3 V.
 The digital side is the whole tile except the charge pump, loop filter, VCO
 and bias, which are the analog hard macro `pll_analog`. The signals crossing
 to that macro are fixed in `../../interface.yaml` (names, directions, widths,
@@ -66,6 +67,52 @@ the model is synthesised. (REQ-LOOP-*)
 
 The bench must kill: swapped UP/DN, missing PFD reset, divider off by one,
 prescaler /4. (REQ-MUT-KILL)
+
+## Architecture
+
+Core `ihsan_sa_pll` is a flat top with five submodules, one clock domain
+each (the domain is the module's `clk`-shaped port; no module has two).
+Instance names are fixed here because `must_keep` and the timing reports
+refer to them. Every register in every module is cleared asynchronously by
+`rst_n` low (REQ-RST-ASYNC); no other reset exists except the PFD's own
+pulse reset.
+
+| Instance | Module | Domain | Responsibility |
+|---|---|---|---|
+| `u_pre` | `pll_prescaler` | `vco_out` | three ripple toggle flops `pre_q0..pre_q2`; `pre_q2` is `clk_pre` = `vco_out`/8. Stage k+1 is clocked by the rising edge of stage k's Q. Flops carry an asynchronous active-low reset (a `dffrnq`-type cell, the reset requirement overrides the `dffq_1` cell hint in Behaviour 2) and each stage's toggle loop is one flop plus one inverter, nothing else (REQ-TIM-VCO). Also holds the fourth toggle flop `obs_q3` (`clk_pre`/2 = `vco_out`/16, clocked by `clk_pre`). |
+| `u_div` | `pll_divider` | `clk_pre` | mod-N counter `div_cnt[2:0]` on the rising edge of `clk_pre`, N decoded from `n_sel` (0,6,7 -> 1). A single enable flop `fb_en` is clocked on the FALLING edge of `clk_pre` and is 1 for exactly one `clk_pre` cycle out of N (constant 1 when N = 1). `clk_fb` = `clk_pre` AND `fb_en`: glitch-free because `fb_en` only changes while `clk_pre` is low, and N = 1 is a pure pass-through with no clock mux. `n_sel` is quasi-static and is not synchronised. |
+| `u_pfd` | `pll_pfd` | `clk` and `clk_fb` (one flop each) | reference flop `pfd_ref_q` (clocked by `clk`, D = 1) and feedback flop `pfd_fb_q` (clocked by `clk_fb`, D = 1), both with an asynchronous clear driven by `~rst_n OR pfd_rst`. `pfd_rst` = AND(`pfd_ref_q`, `pfd_fb_q`) passed through two hand-instantiated, `(* keep *)` delay cells `pfd_dly0`, `pfd_dly1` (`must_keep`). `pfd_up` = `pfd_ref_q`, `pfd_dn` = `pfd_fb_q`. |
+| `u_lock` | `pll_lock_det` | `clk` | `wide_q` samples (`pfd_up` OR `pfd_dn`) on the FALLING edge of `clk` (the half-period threshold); `lock_cnt[4:0]` counts reference edges with `wide_q` = 0, saturating at 16, cleared to 0 by `wide_q` = 1; `lock` = (`lock_cnt` == 16), registered. `pfd_dn` comes from the `clk_fb` domain and is sampled by one flop only (a lock indicator tolerates a rare metastable sample; no synchroniser). |
+| `u_ctrl` | `pll_ctrl_regs` | `clk` | three D flops: `pll_en` <- `pll_en_in`, `cp_trim0` <- `cp_trim_in[0]`, `cp_trim1` <- `cp_trim_in[1]` on the rising edge of `clk`. |
+
+Top-level glue (no module): `obs_out` = `obs_sel` ? `obs_q3` : `clk_pre`
+(a plain mux on a quasi-static select; `obs_sel` changes are not
+glitch-protected), and the port fan-out of `clk_fb`, `pfd_up`, `pfd_dn`,
+`lock` and the control registers.
+
+Signals crossing between instances:
+
+| Signal | From | To | Domain |
+|---|---|---|---|
+| `clk_pre` | `u_pre` | `u_div`, `u_pre.obs_q3`, top mux | `vco_out`/8 (generated) |
+| `obs_q3` | `u_pre` | top mux | `clk_pre` |
+| `clk_fb` | `u_div` | `u_pfd.pfd_fb_q` clock, port | `clk_pre`/N (generated, gated) |
+| `pfd_up`, `pfd_dn` | `u_pfd` | `u_lock`, ports | `clk` / `clk_fb` |
+
+Clock plan for synthesis and STA (also in `spec.yaml` `timing_notes`):
+`clk` is the harden's CLOCK_PORT at 80 ns; `vco_out` is a second port clock
+at 3.0 ns whose only paths are the three prescaler toggle loops (min period
+and min pulse width, no setup paths); `clk_pre` is a generated clock
+(divide-by-8 of `vco_out`) at 20 ns covering `u_div`, `obs_q3` and the
+`fb_en` half-cycle path; `clk_fb` is a generated clock (divide-by-8N) for
+`pfd_fb_q`. Paths between `clk` and `clk_pre`/`clk_fb` (the PFD reset AND,
+`wide_q` sampling `pfd_dn`) are false paths. The custom SDC carrying these
+goes through the harden override layer in P6, since CLOCK_PORT/CLOCK_PERIOD
+alone constrain only `clk`.
+
+The `ifdef SIM` real-number loop model lives in the bench (`tb/`), never
+inside `ihsan_sa_pll` or its submodules, so the synthesised netlist is
+standard cells only (REQ-LOOP-MODEL-BENCH-ONLY).
 
 ## Interface
 

@@ -4,21 +4,21 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T00:47:20",
- "phase": "P2",
+ "updated": "2026-09-27T00:54:08",
+ "phase": "P3",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-09-27T00:42:22",
+    "ts": "2026-09-27T00:51:42",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a"
+     "spec_yaml": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     },
     "job": null
    },
@@ -42,6 +42,16 @@
       "spec_yaml": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-27T00:51:42",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null
     }
    ]
   }
@@ -54,8 +64,8 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a",
-   "hashed": "2026-09-27T00:42:22"
+   "sha256": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
+   "hashed": "2026-09-27T00:51:42"
   },
   "holdout": {
    "path": "holdout",
@@ -78,7 +88,38 @@
  "budgets": {
   "fix_loops": {}
  },
- "decisions": [],
+ "decisions": [
+  {
+   "what": "prescaler flops use async-reset dffrnq cells, not dffq_1",
+   "why": "REQ-RST-ASYNC: every register resets; obs_out/clk_fb forced 0",
+   "phase": "P2",
+   "ts": "2026-09-27T00:53:16"
+  },
+  {
+   "what": "clk_fb is clk_pre gated by a negedge-registered enable, not a mux",
+   "why": "glitch-free, N=1 is a pass-through",
+   "phase": "P2",
+   "ts": "2026-09-27T00:53:17"
+  },
+  {
+   "what": "pfd_dn sampled by one flop in the lock detector, no synchroniser",
+   "why": "lock is a slow indicator; metastability tolerable",
+   "phase": "P2",
+   "ts": "2026-09-27T00:53:19"
+  },
+  {
+   "what": "n_sel and obs_sel quasi-static, unsynchronised",
+   "why": "set before enable; not changed at run time",
+   "phase": "P2",
+   "ts": "2026-09-27T00:53:20"
+  },
+  {
+   "what": "must_keep = [pfd_dly0, pfd_dly1] instance names",
+   "why": "optimise.py matches flattened names by suffix",
+   "phase": "P2",
+   "ts": "2026-09-27T00:53:23"
+  }
+ ],
  "edits": [
   {
    "ts": "2026-09-27T00:42:20",
@@ -124,6 +165,20 @@
    "model": "fable",
    "effort": "high",
    "phase": "P2"
+  },
+  {
+   "ts": "2026-09-27T00:54:07",
+   "role": "tb-writer",
+   "model": "opus",
+   "effort": "high",
+   "phase": "P3"
+  },
+  {
+   "ts": "2026-09-27T00:54:08",
+   "role": "property-writer",
+   "model": "opus",
+   "effort": "high",
+   "phase": "P3"
   }
  ],
  "history": [
@@ -180,6 +235,57 @@
    "event": "spawn",
    "role": "architect",
    "model": "fable"
+  },
+  {
+   "ts": "2026-09-27T00:51:42",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T00:53:16",
+   "event": "decision",
+   "what": "prescaler flops use async-reset dffrnq cells, not dffq_1"
+  },
+  {
+   "ts": "2026-09-27T00:53:17",
+   "event": "decision",
+   "what": "clk_fb is clk_pre gated by a negedge-registered enable, not a mux"
+  },
+  {
+   "ts": "2026-09-27T00:53:19",
+   "event": "decision",
+   "what": "pfd_dn sampled by one flop in the lock detector, no synchroniser"
+  },
+  {
+   "ts": "2026-09-27T00:53:20",
+   "event": "decision",
+   "what": "n_sel and obs_sel quasi-static, unsynchronised"
+  },
+  {
+   "ts": "2026-09-27T00:53:23",
+   "event": "decision",
+   "what": "must_keep = [pfd_dly0, pfd_dly1] instance names"
+  },
+  {
+   "ts": "2026-09-27T00:54:05",
+   "event": "phase",
+   "phase": "P3",
+   "prev": "P2"
+  },
+  {
+   "ts": "2026-09-27T00:54:07",
+   "event": "spawn",
+   "role": "tb-writer",
+   "model": "opus"
+  },
+  {
+   "ts": "2026-09-27T00:54:08",
+   "event": "spawn",
+   "role": "property-writer",
+   "model": "opus"
   }
  ]
 }

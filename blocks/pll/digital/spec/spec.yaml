@@ -166,7 +166,8 @@ timing_notes:
   clk:     {period_ns: 80,  note: "reference, 5-12.5 MHz, constrained at 12.5 MHz"}
   vco_out: {period_ns: 3.0, note: "prescaler flops only; check Liberty min period 0.93 ns ff / 1.71 ns tt and min pulse width, not setup paths"}
   clk_pre: {period_ns: 20,  note: "generated clock vco_out/8, constrained at 50 MHz; clocks divider, PFD feedback flop, /16 flop"}
-  clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 42 MHz; PFD feedback flop clock"}
+  clk_fb:  {period_ns: 20,  note: "clk_pre/N, <= 42 MHz; PFD feedback flop clock; gated clock clk_pre AND fb_en (fb_en changes only while clk_pre is low)"}
+  sdc:     {note: "harden's CLOCK_PORT/CLOCK_PERIOD cover clk only; vco_out (create_clock 3.0 ns on the port), clk_pre and clk_fb (create_generated_clock -divide_by 8 / 8*N from vco_out) and the clk<->clk_pre/clk_fb false paths (PFD reset AND, lock sampler) go in a custom SDC through the harden override layer (P6)"}
 
 design_choices:
   illegal_n_codes: "codes 0, 6, 7 decode as N = 1 (no hidden state, divider never stalls)"
@@ -174,4 +175,8 @@ design_choices:
   lock_wide_threshold: "pulse still high at the falling edge of clk after the reference rising edge (half a reference period)"
   lock_deassert: "one wide pulse drops lock on the next reference edge"
 
-must_keep: [pfd_reset_delay_chain]
+# Instance names of the two hand-instantiated PFD reset delay cells inside
+# u_pfd (flattened: u_pfd.pfd_dly0, u_pfd.pfd_dly1). Everything else in the
+# design reaches a port and cannot be pruned as unused. See spec.md
+# "## Architecture" for the module and instance naming.
+must_keep: [pfd_dly0, pfd_dly1]
