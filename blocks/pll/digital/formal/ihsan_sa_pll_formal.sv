@@ -54,11 +54,15 @@ module ihsan_sa_pll_formal (
   reg [15:0] hist    = 16'hFFFF; // samples closed by the last 16 clk rises
   reg [15:0] hist_q  = 16'hFFFF;
 
-  wire vco_rise = past_valid && $rose(vco_out);
-  wire pre_rise = past_valid && $rose(clk_pre_obs);
-  wire fb_rise  = past_valid && $rose(clk_fb);
-  wire clk_rise = past_valid && $rose(clk);
-  wire clk_fall = past_valid && $fell(clk);
+  reg vco_q = 1'b0, prep_q = 1'b0, fb_q = 1'b0, clk_q = 1'b0;
+  always @($global_clock) begin
+    vco_q <= vco_out; prep_q <= clk_pre_obs; fb_q <= clk_fb; clk_q <= clk;
+  end
+  wire vco_rise = past_valid && vco_out && !vco_q;
+  wire pre_rise = past_valid && clk_pre_obs && !prep_q;
+  wire fb_rise  = past_valid && clk_fb && !fb_q;
+  wire clk_rise = past_valid && clk && !clk_q;
+  wire clk_fall = past_valid && !clk && clk_q;
 
   always @($global_clock) begin : shadow
     hist_q <= hist;
@@ -116,7 +120,7 @@ module ihsan_sa_pll_formal (
       // REQ-PFD-RESET: an edge that would set the second flop while the
       // other is high fires the reset - both are low after it.
       if (rst_n && $past(rst_n) &&
-          (($past(pfd_up) && $rose(clk_fb)) || ($past(pfd_dn) && $rose(clk))))
+          (($past(pfd_up) && fb_rise) || ($past(pfd_dn) && clk_rise)))
         pfd_reset_on_both: assert (!pfd_up && !pfd_dn);
 
       // REQ-LOCK-NO-WIDE: lock is never high when a wide pulse was sampled
@@ -131,7 +135,7 @@ module ihsan_sa_pll_formal (
     if (past_valid && rst_n) begin
       COVER_PFD_UP:     cover (pfd_up);
       COVER_PFD_DN:     cover (pfd_dn);
-      COVER_PFD_RESET:  cover ($past(pfd_up) && $rose(clk_fb) && !pfd_up && !pfd_dn);
+      COVER_PFD_RESET:  cover ($past(pfd_up) && fb_rise && !pfd_up && !pfd_dn);
       COVER_PRE_PERIOD: cover (pre_rise && pre_seen && pre_ok && vco_cnt == 4'd8);
       COVER_FB_N5:      cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd5);
       COVER_FB_ILLEGAL: cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd0);

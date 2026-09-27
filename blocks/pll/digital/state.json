@@ -4,21 +4,21 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T00:54:08",
+ "updated": "2026-09-27T01:04:42",
  "phase": "P3",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 3,
+   "attempts": 4,
    "last": {
-    "ts": "2026-09-27T00:51:42",
+    "ts": "2026-09-27T01:04:42",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
     },
     "job": null
    },
@@ -52,20 +52,35 @@
       "spec_yaml": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-27T01:04:42",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null
     }
    ]
   }
  },
  "jobs": {},
- "holdout": null,
+ "holdout": {
+  "sha": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
+  "written_by": "tb-writer",
+  "ts": "2026-09-27T01:04:33",
+  "edits_at_pin": 1
+ },
  "optimise": null,
  "human": {},
  "artifacts": {
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
-   "hashed": "2026-09-27T00:51:42"
+   "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
+   "hashed": "2026-09-27T01:04:42"
   },
   "holdout": {
    "path": "holdout",
@@ -286,6 +301,20 @@
    "event": "spawn",
    "role": "property-writer",
    "model": "opus"
+  },
+  {
+   "ts": "2026-09-27T01:04:33",
+   "event": "holdout",
+   "written_by": "tb-writer",
+   "sha": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875"
+  },
+  {
+   "ts": "2026-09-27T01:04:42",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 4,
+   "failing_count": 0
   }
  ]
 }

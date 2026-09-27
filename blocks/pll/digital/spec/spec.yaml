@@ -180,3 +180,10 @@ design_choices:
 # design reaches a port and cannot be pruned as unused. See spec.md
 # "## Architecture" for the module and instance naming.
 must_keep: [pfd_dly0, pfd_dly1]
+
+# Formal depths (P3 property-writer): prove depth covers the 16-cycle lock
+# history window; cover_depth reaches lock (16 ref cycles) and an N=5 clk_fb
+# period (40 vco_out periods) with each clock edge taking >= 2 steps.
+formal:
+  depth: 20
+  cover_depth: 100
