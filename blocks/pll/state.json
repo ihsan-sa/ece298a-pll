@@ -1,0 +1,114 @@
+{
+ "version": 3,
+ "skill": "msde",
+ "block": "pll",
+ "workspace": "blocks/pll",
+ "created": "2026-09-27T00:27:07",
+ "updated": "2026-09-27T00:32:45",
+ "phase": "P1",
+ "toolchain": null,
+ "gates": {
+  "split": {
+   "phase": "P1",
+   "status": "pass",
+   "attempts": 2,
+   "last": {
+    "ts": "2026-09-27T00:32:45",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
+    },
+    "job": null
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T00:31:08",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:ca5f9aad703d4c7ec40883f74134a38fbe6067d84288844584b8ede458639f28"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-27T00:32:45",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
+     },
+     "job": null
+    }
+   ]
+  }
+ },
+ "jobs": {},
+ "holdout": null,
+ "optimise": null,
+ "human": {},
+ "artifacts": {
+  "interface": {
+   "path": "interface.yaml",
+   "kind": "interface",
+   "sha256": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b",
+   "hashed": "2026-09-27T00:32:45"
+  }
+ },
+ "open_issues": [],
+ "next_issue_id": 1,
+ "next_job_id": 1,
+ "budgets": {
+  "fix_loops": {}
+ },
+ "decisions": [],
+ "edits": [],
+ "spawns": [
+  {
+   "ts": "2026-09-27T00:27:24",
+   "role": "splitter",
+   "model": "fable",
+   "phase": "P1"
+  }
+ ],
+ "history": [
+  {
+   "ts": "2026-09-27T00:27:07",
+   "event": "init",
+   "skill": "msde",
+   "block": "pll",
+   "phase": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:27:23",
+   "event": "phase",
+   "phase": "P1",
+   "prev": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:27:24",
+   "event": "spawn",
+   "role": "splitter",
+   "model": "fable"
+  },
+  {
+   "ts": "2026-09-27T00:31:08",
+   "event": "gate",
+   "gate": "split",
+   "status": "pass",
+   "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T00:32:45",
+   "event": "gate",
+   "gate": "split",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  }
+ ]
+}
