@@ -4,8 +4,8 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T01:04:42",
- "phase": "P3",
+ "updated": "2026-09-27T01:11:02",
+ "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
@@ -315,6 +315,12 @@
    "status": "pass",
    "attempt": 4,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:11:02",
+   "event": "phase",
+   "phase": "P4",
+   "prev": "P3"
   }
  ]
 }
