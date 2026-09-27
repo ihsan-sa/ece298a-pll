@@ -25,7 +25,7 @@
     "workspace": "blocks/pll/analog",
     "gate": "spec_lint",
     "status": "pass",
-    "attempts": 4,
+    "attempts": 5,
     "inputs": {
       "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
     }

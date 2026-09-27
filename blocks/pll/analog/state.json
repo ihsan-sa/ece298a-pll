@@ -4,16 +4,16 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-27T01:32:22",
+ "updated": "2026-09-27T01:50:47",
  "phase": "P3",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-27T01:32:21",
+    "ts": "2026-09-27T01:50:47",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -62,6 +62,16 @@
       "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-27T01:50:47",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
+     },
+     "job": null
     }
    ]
   }
@@ -75,7 +85,7 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96",
-   "hashed": "2026-09-27T01:32:22"
+   "hashed": "2026-09-27T01:50:47"
   }
  },
  "open_issues": [],
@@ -169,6 +179,14 @@
    "gate": "spec_lint",
    "status": "pass",
    "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:50:47",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 5,
    "failing_count": 0
   }
  ]
