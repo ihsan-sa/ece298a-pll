@@ -2,7 +2,7 @@
 # Crossing signals, names, widths and standalone TT pins are copied field
 # for field from ../../interface.yaml and ../../digital_spec.yaml; a change
 # to any of them goes back through the msde split step, not this file.
-top: tt_um_ihsan_sa_pll
+top: ihsan_sa_pll
 
 requirements:
   # --- prescaler / divider / observation -----------------------------------

@@ -4,16 +4,16 @@
  "block": "pll",
  "workspace": "blocks/pll",
  "created": "2026-09-27T00:27:07",
- "updated": "2026-09-27T00:35:03",
+ "updated": "2026-09-27T00:42:24",
  "phase": "P2",
  "toolchain": null,
  "gates": {
   "split": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 3,
+   "attempts": 4,
    "last": {
-    "ts": "2026-09-27T00:34:05",
+    "ts": "2026-09-27T00:42:24",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -52,6 +52,16 @@
       "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-27T00:42:24",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "interface": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b"
+     },
+     "job": null
     }
    ]
   }
@@ -65,7 +75,7 @@
    "path": "interface.yaml",
    "kind": "interface",
    "sha256": "json_canonical:59ad81b58467d1a224206c4f45b51eebbf5f1bfccda3739322b7699c38fd2d6b",
-   "hashed": "2026-09-27T00:34:05"
+   "hashed": "2026-09-27T00:42:24"
   }
  },
  "open_issues": [],
@@ -133,6 +143,14 @@
    "event": "phase",
    "phase": "P2",
    "prev": "P1"
+  },
+  {
+   "ts": "2026-09-27T00:42:24",
+   "event": "gate",
+   "gate": "split",
+   "status": "pass",
+   "attempt": 4,
+   "failing_count": 0
   }
  ]
 }

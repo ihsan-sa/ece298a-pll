@@ -4,21 +4,21 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T00:40:42",
+ "updated": "2026-09-27T00:42:22",
  "phase": "P1",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-27T00:40:42",
+    "ts": "2026-09-27T00:42:22",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f"
+     "spec_yaml": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a"
     },
     "job": null
    },
@@ -30,6 +30,16 @@
      "total": 0,
      "inputs": {
       "spec_yaml": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-27T00:42:22",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a"
      },
      "job": null
     }
@@ -44,8 +54,22 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:592d018f17e524be86b2eb94cc2408114b9811c6956b97cf531a1c53cfc0ff2f",
-   "hashed": "2026-09-27T00:40:42"
+   "sha256": "json_canonical:1c510331f5f65caabfe448903caeff42856f5f8c8651c1d89dc755688639877a",
+   "hashed": "2026-09-27T00:42:22"
+  },
+  "holdout": {
+   "path": "holdout",
+   "kind": "holdout",
+   "sha256": "dir_text:34312174686ce443db57c7fda1233d8a4615dd0ac30168116fcf35fee068e0ba",
+   "hashed": "2026-09-27T00:42:20",
+   "stale": [
+    {
+     "ts": "2026-09-27T00:42:20",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
+    }
+   ]
   }
  },
  "open_issues": [],
@@ -55,7 +79,38 @@
   "fix_loops": {}
  },
  "decisions": [],
- "edits": [],
+ "edits": [
+  {
+   "ts": "2026-09-27T00:42:20",
+   "class": "spec_edit",
+   "refs": [],
+   "note": "core renamed ihsan_sa_pll so harden's generated wrapper is tt_um_ihsan_sa_pll (corpus convention)",
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "lint",
+    "sim",
+    "holdout",
+    "mutate",
+    "formal",
+    "cover",
+    "synth",
+    "harden",
+    "timing",
+    "drc",
+    "lvs",
+    "glsim",
+    "precheck",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint"
+   ],
+   "stale_artifacts": [
+    "holdout"
+   ]
+  }
+ ],
  "spawns": [
   {
    "ts": "2026-09-27T00:35:58",
@@ -90,6 +145,21 @@
    "gate": "spec_lint",
    "status": "pass",
    "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T00:42:20",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-27T00:42:22",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 2,
    "failing_count": 0
   }
  ]

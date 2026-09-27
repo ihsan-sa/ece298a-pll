@@ -1,7 +1,7 @@
 # digital_spec.yaml - the digital side's declared copy of the crossing
 # signals in interface.yaml, field for field. The digital side is the tile
 # top itself; the analog block is a hard macro inside it.
-top: tt_um_ihsan_sa_pll
+top: ihsan_sa_pll
 interface:
   - name: vco_out
     direction: a2d
