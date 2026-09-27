@@ -5,22 +5,92 @@
 top: pll_analog
 supply: {vdd: 3.3}
 
-# Loose first pass from the topology the brief names (switched-source
-# charge pump, series R-C1 with shunt C2, current-starved ring with output
-# buffer, bias mirror with an internal default). The analog-designer
-# refines the refdes list at P2; none of these is a standard cell.
+# Refdes list from spec/topology.md (P2): current_mirror template anchor,
+# 75 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
+# pfet_03v3, ppolyf_u, cap_mim_2f0ff.
 devices:
-  - MP_UP        # PMOS UP switch
-  - MN_DN        # NMOS DN switch
-  - MP_CPM       # PMOS pump mirror (trim-selectable ratio)
-  - MN_CPM       # NMOS pump mirror (trim-selectable ratio)
-  - R1           # loop filter series resistor (~22 kOhm)
-  - C1           # loop filter series capacitor (~20 pF)
-  - C2           # loop filter shunt capacitor (~2 pF incl. pad allowance)
-  - XRING        # current-starved inverter ring (odd stage count, P2 sweep)
-  - XVCOBUF      # full-swing CMOS output buffer on vco_out
-  - MBIAS        # bias reference mirror
-  - RBIAS_INT    # internal default bias resistor (ua[1] floating)
+  # enable inverter
+  - MP_ENI
+  - MN_ENI
+  # bias: Vgs/R self-biased reference, startup, standby
+  - MP_B1
+  - MP_B2
+  - MN_B1
+  - MN_B2
+  - RBIAS_INT
+  - MP_STL
+  - MN_STD
+  - MN_ST
+  - MN_STE
+  - MP_ENB
+  - MN_ENA
+  - MN_ENB
+  # charge pump: trimmed reference (4+t0+2t1+t0t1 units), steered UP/DN
+  - MP_T4
+  - MP_T1A
+  - MN_SW0
+  - MP_T2
+  - MN_SW1
+  - MP_T1B
+  - MN_SW0B
+  - MN_SW1B
+  - MN_CPREF
+  - MN_CPREF2
+  - MP_CPREF
+  - MP_UPS
+  - MP_UP
+  - MP_UPD
+  - MP_UPI
+  - MN_UPI
+  - MN_DNS
+  - MN_DN
+  - MN_DND
+  - MP_DNI
+  - MN_DNI
+  - MP_ENP
+  - MN_ENN
+  # loop filter
+  - R1
+  - C1
+  - C2
+  # VCO control: degenerated V2I + floor current
+  - MN_V2I
+  - R_V2I
+  - MN_FLR
+  - MN_ENS
+  - MP_V2I
+  - MP_V2IB
+  - MN_V2IM
+  - MP_ENV
+  - MN_ENV
+  # 5-stage current-starved ring
+  - MP_S1
+  - MP_I1
+  - MN_I1
+  - MN_S1
+  - MP_S2
+  - MP_I2
+  - MN_I2
+  - MN_S2
+  - MP_S3
+  - MP_I3
+  - MN_I3
+  - MN_S3
+  - MP_S4
+  - MP_I4
+  - MN_I4
+  - MN_S4
+  - MP_S5
+  - MP_I5
+  - MN_I5
+  - MN_S5
+  # output buffer: NAND2(r5, pll_en) + inverter
+  - MP_G1
+  - MP_G2
+  - MN_G1
+  - MN_G2
+  - MP_O
+  - MN_O
 
 # The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
 # 125 C": a full grid, replacing the default five. 27 corners; the
