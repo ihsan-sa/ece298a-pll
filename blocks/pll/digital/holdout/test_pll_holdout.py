@@ -18,7 +18,7 @@ import test_pll as v  # noqa: E402  (helpers only; its tests are not re-collecte
 # req: REQ-DIV-RESET-CLEAN REQ-LOCK-ASSERT
 @cocotb.test()
 async def test_midrun_reset_pulse(dut):
-    fb, rises = await v.pfd_setup(dut, [-10.0] * 60)
+    fb, rises, _ = await v.pfd_setup(dut, [-10.0] * 60)
     mfb, mobs = Monitor(dut.clk_fb), Monitor(dut.obs_out)
     await wait_until(rises[25] + 20)
     assert int(dut.lock.value) == 1, "lock not high before the reset pulse"
@@ -45,12 +45,16 @@ async def test_midrun_reset_pulse(dut):
 async def test_live_nsel_changes(dut):
     await v.start_vco(dut, n_sel=5)
     m = Monitor(dut.clk_fb)
+    prev = 5
     for code in (5, 0, 4, 7, 2, 6, 3, 1):
         dut.n_sel.value = code
         n = decode_n(code)
         t0 = now()
-        await Timer(int(6 * 8 * n * v.TV + 400), unit="ns")
-        r = m.rises(t0 + 2 * 8 * 5 * v.TV)
+        # skip two periods of the old or new N (whichever is longer), then check
+        settle = 2 * 8 * max(n, prev) * v.TV
+        await Timer(int(settle + 6 * 8 * n * v.TV + 400), unit="ns")
+        r = m.rises(t0 + settle)
+        prev = n
         assert len(r) >= 2, f"n_sel={code}: clk_fb stalled after live change"
         v.check_period(f"live n_sel={code}", r, 8 * n * v.TV)
 
@@ -80,7 +84,8 @@ async def test_dn_side_wide_drops_lock(dut):
         await Timer(1, unit="ns")
     fb0 = m.rises()[0] + 2 * REF_T
     rises = [fb0 - 10 + k * REF_T for k in range(60)]
-    cocotb.start_soon(ref_clock(dut, rises))
+    # priming clk edge clears the DN pending since clk_fb ran alone (as v.pfd_setup)
+    cocotb.start_soon(ref_clock(dut, [fb0 - REF_T + 1.0] + rises))
     await wait_until(rises[25] + 30)
     assert int(dut.lock.value) == 1, "no lock with 10 ns UP pulses"
     state["stop"] = True
@@ -104,7 +109,7 @@ async def test_dn_side_wide_drops_lock(dut):
 async def test_pfd_extreme_offsets(dut):
     for off, sig, w in ((-1.0, "pfd_up", 1.0), (-70.0, "pfd_up", 70.0), (1.0, "pfd_dn", 1.0)):
         mu, md = Monitor(dut.pfd_up), Monitor(dut.pfd_dn)
-        fb, rises = await v.pfd_setup(dut, [off] * 10)
+        fb, rises, _ = await v.pfd_setup(dut, [off] * 10)
         await wait_until(fb[-1] + 50)
         lead = mu if sig == "pfd_up" else md
         other = md if sig == "pfd_up" else mu

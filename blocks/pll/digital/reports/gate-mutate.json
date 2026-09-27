@@ -1,0 +1,7 @@
+{
+  "script": "gate",
+  "gate": "mutate",
+  "status": "error",
+  "error": "Traceback (most recent call last):\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/gate.py\", line 435, in main\n    report = run_report_for_gate(\n             ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/gate.py\", line 139, in run_report_for_gate\n    payload, _out = mod.run([\"--workspace\", str(workspace)])\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/check_mutate.py\", line 749, in run\n    check_baseline(db_path)\n  File \"/home/ihsan/.claude/skills/chip-flow/engine/scripts/check_mutate.py\", line 240, in check_baseline\n    raise CheckError(\"the unmutated design fails the visible tests\")\nchecklib.CheckError: the unmutated design fails the visible tests\n",
+  "remediation": "CheckError: the unmutated design fails the visible tests"
+}

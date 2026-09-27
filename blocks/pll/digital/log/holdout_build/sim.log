@@ -2,58 +2,34 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1790487560
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1790488664
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
      0.00ns INFO     cocotb.regression                  running test_pll_holdout.test_midrun_reset_pulse (1/7)
-   166.00ns WARNING  cocotb.regression                  test_pll_holdout.test_midrun_reset_pulse failed
-                                                        Traceback (most recent call last):
-                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/holdout/test_pll_holdout.py", line 21, in test_midrun_reset_pulse
-                                                            fb, rises = await v.pfd_setup(dut, [-10.0] * 60)
-                                                            ^^^^^^^^^
-                                                        ValueError: too many values to unpack (expected 2)
-   166.00ns INFO     cocotb.regression                  running test_pll_holdout.test_live_nsel_changes (2/7)
-  3927.00ns WARNING  cocotb.regression                  test_pll_holdout.test_live_nsel_changes failed
-                                                        Traceback (most recent call last):
-                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/holdout/test_pll_holdout.py", line 54, in test_live_nsel_changes
-                                                            assert len(r) >= 2, f"n_sel={code}: clk_fb stalled after live change"
-                                                        AssertionError: n_sel=0: clk_fb stalled after live change
-                                                        assert 1 >= 2
-                                                         +  where 1 = len([3851.001])
-  3927.00ns INFO     cocotb.regression                  running test_pll_holdout.test_wide_on_fifteenth_clean_cycle (3/7)
-  8761.90ns INFO     cocotb.regression                  test_pll_holdout.test_wide_on_fifteenth_clean_cycle passed
-  8761.90ns INFO     cocotb.regression                  running test_pll_holdout.test_dn_side_wide_drops_lock (4/7)
- 11106.90ns WARNING  cocotb.regression                  test_pll_holdout.test_dn_side_wide_drops_lock failed
-                                                        Traceback (most recent call last):
-                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/holdout/test_pll_holdout.py", line 85, in test_dn_side_wide_drops_lock
-                                                            assert int(dut.lock.value) == 1, "no lock with 10 ns UP pulses"
-                                                        AssertionError: no lock with 10 ns UP pulses
-                                                        assert 0 == 1
-                                                         +  where 0 = int(Logic('0'))
-                                                         +    where Logic('0') = LogicObject(ihsan_sa_pll.lock).value
-                                                         +      where LogicObject(ihsan_sa_pll.lock) = HierarchyObject(ihsan_sa_pll with definition ihsan_sa_pll (at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v)).lock
- 11106.90ns INFO     cocotb.regression                  running test_pll_holdout.test_pfd_extreme_offsets (5/7)
- 11272.90ns WARNING  cocotb.regression                  test_pll_holdout.test_pfd_extreme_offsets failed
-                                                        Traceback (most recent call last):
-                                                          File "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/holdout/test_pll_holdout.py", line 107, in test_pfd_extreme_offsets
-                                                            fb, rises = await v.pfd_setup(dut, [off] * 10)
-                                                            ^^^^^^^^^
-                                                        ValueError: too many values to unpack (expected 2)
- 11272.90ns INFO     cocotb.regression                  running test_pll_holdout.test_obs_sel_live_fast_vco (6/7)
- 13636.91ns INFO     cocotb.regression                  test_pll_holdout.test_obs_sel_live_fast_vco passed
- 13636.91ns INFO     cocotb.regression                  running test_pll_holdout.test_ctrl_regs_every_cycle (7/7)
- 14573.91ns INFO     cocotb.regression                  test_pll_holdout.test_ctrl_regs_every_cycle passed
- 14573.91ns INFO     cocotb.regression                  *************************************************************************************************************
+  5035.00ns INFO     cocotb.regression                  test_pll_holdout.test_midrun_reset_pulse passed
+  5035.00ns INFO     cocotb.regression                  running test_pll_holdout.test_live_nsel_changes (2/7)
+ 21436.00ns INFO     cocotb.regression                  test_pll_holdout.test_live_nsel_changes passed
+ 21436.00ns INFO     cocotb.regression                  running test_pll_holdout.test_wide_on_fifteenth_clean_cycle (3/7)
+ 26270.90ns INFO     cocotb.regression                  test_pll_holdout.test_wide_on_fifteenth_clean_cycle passed
+ 26270.90ns INFO     cocotb.regression                  running test_pll_holdout.test_dn_side_wide_drops_lock (4/7)
+ 28865.80ns INFO     cocotb.regression                  test_pll_holdout.test_dn_side_wide_drops_lock passed
+ 28865.80ns INFO     cocotb.regression                  running test_pll_holdout.test_pfd_extreme_offsets (5/7)
+ 32210.80ns INFO     cocotb.regression                  test_pll_holdout.test_pfd_extreme_offsets passed
+ 32210.80ns INFO     cocotb.regression                  running test_pll_holdout.test_obs_sel_live_fast_vco (6/7)
+ 34574.81ns INFO     cocotb.regression                  test_pll_holdout.test_obs_sel_live_fast_vco passed
+ 34574.81ns INFO     cocotb.regression                  running test_pll_holdout.test_ctrl_regs_every_cycle (7/7)
+ 35511.81ns INFO     cocotb.regression                  test_pll_holdout.test_ctrl_regs_every_cycle passed
+ 35511.81ns INFO     cocotb.regression                  *************************************************************************************************************
                                                         ** TEST                                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *************************************************************************************************************
-                                                        ** test_pll_holdout.test_midrun_reset_pulse              FAIL         166.00           0.01      13644.50  **
-                                                        ** test_pll_holdout.test_live_nsel_changes               FAIL        3761.00           0.03     113410.11  **
-                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.20      24127.18  **
-                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         FAIL        2345.00           0.45       5229.11  **
-                                                        ** test_pll_holdout.test_pfd_extreme_offsets             FAIL         166.00           0.04       3743.22  **
-                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.55       4291.66  **
-                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.05      17509.68  **
+                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.29      17520.23  **
+                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.84      19566.29  **
+                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.24      20080.18  **
+                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.05      47321.66  **
+                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.09      35858.18  **
+                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.28       8473.02  **
+                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.03      35711.20  **
                                                         *************************************************************************************************************
-                                                        ** TESTS=7 PASS=3 FAIL=4 SKIP=0                                     14573.91           1.41      10307.88  **
+                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           1.93      18380.43  **
                                                         *************************************************************************************************************

@@ -1,0 +1,23 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `database/mutations.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: database/design.il
+
+2. Executing MUTATE pass.
+Raw database size: 1032
+Covered 32/97 src attributes (32.99%).
+Covered 13/46 wires (28.26%).
+Covered 13/62 wire bits (20.97%).
+Reduced database size: 19
+
+End of script. Logfile hash: da8e198742, time: 0.24s, user: 0.02s, system: 0.01s, MEM: 26.90 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 78% 1x mutate (0 sec), 21% 2x read_rtlil (0 sec), ...

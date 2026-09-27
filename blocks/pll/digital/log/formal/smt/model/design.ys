@@ -1,0 +1,14 @@
+# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
+read -formal -D FORMAL /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
+prep -top ihsan_sa_pll_formal
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

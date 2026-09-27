@@ -1,0 +1,367 @@
+TN:verilator_coverage
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
+DA:7,235
+BRDA:7,0,clk:0->1,235
+BRDA:7,0,clk:1->0,235
+DA:8,27
+BRDA:8,0,rst_n:0->1,27
+BRDA:8,0,rst_n:1->0,27
+DA:9,5
+BRDA:9,0,n_sel[0]:0->1,5
+BRDA:9,0,n_sel[0]:1->0,4
+BRDA:9,0,n_sel[1]:0->1,3
+BRDA:9,0,n_sel[1]:1->0,3
+BRDA:9,0,n_sel[2]:0->1,3
+BRDA:9,0,n_sel[2]:1->0,3
+DA:10,5471
+BRDA:10,0,vco_out:0->1,5471
+BRDA:10,0,vco_out:1->0,5471
+DA:11,3
+BRDA:11,0,pll_en_in:0->1,3
+BRDA:11,0,pll_en_in:1->0,3
+DA:12,1
+BRDA:12,0,obs_sel:0->1,1
+BRDA:12,0,obs_sel:1->0,1
+DA:13,3
+BRDA:13,0,cp_trim_in[0]:0->1,3
+BRDA:13,0,cp_trim_in[0]:1->0,3
+BRDA:13,0,cp_trim_in[1]:0->1,2
+BRDA:13,0,cp_trim_in[1]:1->0,2
+DA:14,633
+BRDA:14,0,obs_out:0->1,633
+BRDA:14,0,obs_out:1->0,633
+DA:15,500
+BRDA:15,0,clk_fb:0->1,500
+BRDA:15,0,clk_fb:1->0,500
+DA:16,4
+BRDA:16,0,lock:0->1,4
+BRDA:16,0,lock:1->0,4
+DA:17,222
+BRDA:17,0,pfd_up:0->1,222
+BRDA:17,0,pfd_up:1->0,222
+DA:18,235
+BRDA:18,0,pfd_dn:0->1,235
+BRDA:18,0,pfd_dn:1->0,235
+DA:19,3
+BRDA:19,0,pll_en:0->1,3
+BRDA:19,0,pll_en:1->0,3
+DA:20,3
+BRDA:20,0,cp_trim0:0->1,3
+BRDA:20,0,cp_trim0:1->0,3
+DA:21,2
+BRDA:21,0,cp_trim1:0->1,2
+BRDA:21,0,cp_trim1:1->0,2
+DA:23,663
+BRDA:23,0,clk_pre:0->1,663
+BRDA:23,0,clk_pre:1->0,663
+DA:24,336
+BRDA:24,0,obs_q3:0->1,336
+BRDA:24,0,obs_q3:1->0,336
+DA:46,22847
+BRDA:46,0,(obs_sel==0) => 0,22847
+BRDA:46,0,(obs_sel==1) => 1,2149
+BRDA:46,0,cond_then,2149
+BRDA:46,0,cond_else,22847
+BRF:44
+BRH:22
+end_of_record
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
+DA:4,235
+BRDA:4,0,clk:0->1,235
+BRDA:4,0,clk:1->0,235
+DA:5,27
+BRDA:5,0,rst_n:0->1,27
+BRDA:5,0,rst_n:1->0,27
+DA:6,3
+BRDA:6,0,pll_en_in:0->1,3
+BRDA:6,0,pll_en_in:1->0,3
+DA:7,3
+BRDA:7,0,cp_trim_in[0]:0->1,3
+BRDA:7,0,cp_trim_in[0]:1->0,3
+BRDA:7,0,cp_trim_in[1]:0->1,2
+BRDA:7,0,cp_trim_in[1]:1->0,2
+DA:8,3
+BRDA:8,0,pll_en:0->1,3
+BRDA:8,0,pll_en:1->0,3
+DA:9,3
+BRDA:9,0,cp_trim0:0->1,3
+BRDA:9,0,cp_trim0:1->0,3
+DA:10,2
+BRDA:10,0,cp_trim1:0->1,2
+BRDA:10,0,cp_trim1:1->0,2
+DA:12,260
+DA:13,233
+BRDA:13,0,if,27
+BRDA:13,0,else,233
+BRDA:13,0,(rst_n==0) => 1,27
+BRDA:13,0,(rst_n==1) => 0,233
+DA:14,27
+DA:15,27
+DA:16,27
+DA:17,233
+DA:18,233
+DA:19,233
+DA:20,233
+BRF:20
+BRH:8
+end_of_record
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
+DA:8,663
+BRDA:8,0,clk_pre:0->1,663
+BRDA:8,0,clk_pre:1->0,663
+DA:9,27
+BRDA:9,0,rst_n:0->1,27
+BRDA:9,0,rst_n:1->0,27
+DA:10,5
+BRDA:10,0,n_sel[0]:0->1,5
+BRDA:10,0,n_sel[0]:1->0,4
+BRDA:10,0,n_sel[1]:0->1,3
+BRDA:10,0,n_sel[1]:1->0,3
+BRDA:10,0,n_sel[2]:0->1,3
+BRDA:10,0,n_sel[2]:1->0,3
+DA:11,500
+BRDA:11,0,clk_fb:0->1,500
+BRDA:11,0,clk_fb:1->0,500
+DA:13,84
+BRDA:13,0,div_cnt[0]:0->1,84
+BRDA:13,0,div_cnt[0]:1->0,84
+BRDA:13,0,div_cnt[1]:0->1,44
+BRDA:13,0,div_cnt[1]:1->0,44
+BRDA:13,0,div_cnt[2]:0->1,16
+BRDA:13,0,div_cnt[2]:1->0,16
+DA:14,75
+BRDA:14,0,fb_en:0->1,75
+BRDA:14,0,fb_en:1->0,75
+DA:17,21708
+BRDA:17,0,n_legal:0->1,2
+BRDA:17,0,n_legal:1->0,1
+BRDA:17,0,((n_sel <= 3'h5)==0) => 0,863
+BRDA:17,0,((n_sel >= 3'h1)==0) => 0,413
+BRDA:17,0,((n_sel >= 3'h1)==1 && (n_sel <= 3'h5)==1) => 1,21708
+DA:18,21708
+BRDA:18,0,n_m1[0]:0->1,3
+BRDA:18,0,n_m1[0]:1->0,3
+BRDA:18,0,n_m1[1]:0->1,2
+BRDA:18,0,n_m1[1]:1->0,2
+BRDA:18,0,n_m1[2]:0->1,2
+BRDA:18,0,n_m1[2]:1->0,2
+BRDA:18,0,(n_legal==0) => 0,1276
+BRDA:18,0,(n_legal==1) => 1,21708
+BRDA:18,0,cond_then,21708
+BRDA:18,0,cond_else,1276
+DA:20,60
+BRDA:20,0,last:0->1,60
+BRDA:20,0,last:1->0,59
+DA:22,690
+DA:23,663
+BRDA:23,0,elsif,27
+BRDA:23,0,(rst_n==0) => 1,27
+BRDA:23,0,(rst_n==1) => 0,663
+DA:24,519
+BRDA:24,0,if,519
+BRDA:24,0,else,144
+DA:25,144
+DA:27,690
+DA:28,659
+BRDA:28,0,if,31
+BRDA:28,0,else,659
+BRDA:28,0,(rst_n==0) => 1,31
+BRDA:28,0,(rst_n==1) => 0,659
+DA:29,659
+DA:31,13261
+BRDA:31,0,(clk_pre==0) => 0,13261
+BRDA:31,0,(clk_pre==1 && fb_en==1) => 1,8672
+BRDA:31,0,(fb_en==0) => 0,6780
+BRF:49
+BRH:35
+end_of_record
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
+DA:11,235
+BRDA:11,0,clk:0->1,235
+BRDA:11,0,clk:1->0,235
+DA:12,27
+BRDA:12,0,rst_n:0->1,27
+BRDA:12,0,rst_n:1->0,27
+DA:13,222
+BRDA:13,0,pfd_up:0->1,222
+BRDA:13,0,pfd_up:1->0,222
+DA:14,235
+BRDA:14,0,pfd_dn:0->1,235
+BRDA:14,0,pfd_dn:1->0,235
+DA:15,4
+BRDA:15,0,lock:0->1,4
+BRDA:15,0,lock:1->0,4
+DA:19,21
+BRDA:19,0,wide_q:0->1,21
+BRDA:19,0,wide_q:1->0,20
+DA:20,80
+BRDA:20,0,lock_cnt[0]:0->1,80
+BRDA:20,0,lock_cnt[0]:1->0,80
+BRDA:20,0,lock_cnt[1]:0->1,42
+BRDA:20,0,lock_cnt[1]:1->0,42
+BRDA:20,0,lock_cnt[2]:0->1,21
+BRDA:20,0,lock_cnt[2]:1->0,21
+BRDA:20,0,lock_cnt[3]:0->1,10
+BRDA:20,0,lock_cnt[3]:1->0,10
+BRDA:20,0,lock_cnt[4]:0->1,4
+BRDA:20,0,lock_cnt[4]:1->0,4
+DA:21,15515
+BRDA:21,0,cnt_nxt[0]:0->1,94
+BRDA:21,0,cnt_nxt[0]:1->0,94
+BRDA:21,0,cnt_nxt[1]:0->1,43
+BRDA:21,0,cnt_nxt[1]:1->0,43
+BRDA:21,0,cnt_nxt[2]:0->1,23
+BRDA:21,0,cnt_nxt[2]:1->0,23
+BRDA:21,0,cnt_nxt[3]:0->1,10
+BRDA:21,0,cnt_nxt[3]:1->0,10
+BRDA:21,0,cnt_nxt[4]:0->1,4
+BRDA:21,0,cnt_nxt[4]:1->0,4
+BRDA:21,0,(wide_q==0) => 0,7961
+BRDA:21,0,(wide_q==1) => 1,15515
+BRDA:21,0,cond_then,15515
+BRDA:21,0,cond_else,7961
+DA:22,6770
+BRDA:22,0,cond_then,1191
+BRDA:22,0,cond_else,6770
+DA:24,259
+DA:25,227
+BRDA:25,0,if,32
+BRDA:25,0,else,227
+BRDA:25,0,(rst_n==0) => 1,32
+BRDA:25,0,(rst_n==1) => 0,227
+DA:26,227
+BRDA:26,0,else,227
+BRDA:26,0,(pfd_dn==1) => 1,8
+BRDA:26,0,(pfd_up==0 && pfd_dn==0) => 0,196
+BRDA:26,0,(pfd_up==1) => 1,23
+DA:28,260
+DA:29,233
+BRDA:29,0,if,27
+BRDA:29,0,else,233
+BRDA:29,0,(rst_n==0) => 1,27
+BRDA:29,0,(rst_n==1) => 0,233
+DA:30,27
+DA:31,27
+DA:32,233
+DA:33,233
+DA:34,233
+BRF:50
+BRH:43
+end_of_record
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
+DA:9,235
+BRDA:9,0,clk:0->1,235
+BRDA:9,0,clk:1->0,235
+DA:10,500
+BRDA:10,0,clk_fb:0->1,500
+BRDA:10,0,clk_fb:1->0,500
+DA:11,27
+BRDA:11,0,rst_n:0->1,27
+BRDA:11,0,rst_n:1->0,27
+DA:12,222
+BRDA:12,0,pfd_up:0->1,222
+BRDA:12,0,pfd_up:1->0,222
+DA:13,235
+BRDA:13,0,pfd_dn:0->1,235
+BRDA:13,0,pfd_dn:1->0,235
+DA:15,235
+BRDA:15,0,pfd_fb_q:0->1,235
+BRDA:15,0,pfd_fb_q:1->0,235
+BRDA:15,0,pfd_ref_q:0->1,222
+BRDA:15,0,pfd_ref_q:1->0,222
+DA:16,22391
+BRDA:16,0,(pfd_fb_q==0) => 0,9859
+BRDA:16,0,(pfd_ref_q==0) => 0,22391
+BRDA:16,0,(pfd_ref_q==1 && pfd_fb_q==1) => 1,220
+BRDA:16,0,pfd_both:0->1,220
+BRDA:16,0,pfd_both:1->0,220
+DA:17,220
+BRDA:17,0,pfd_dly_mid:0->1,220
+BRDA:17,0,pfd_dly_mid:1->0,220
+DA:18,220
+BRDA:18,0,pfd_rst:0->1,220
+BRDA:18,0,pfd_rst:1->0,220
+DA:19,22808
+BRDA:19,0,(pfd_rst==1) => 1,220
+BRDA:19,0,(rst_n==0) => 1,937
+BRDA:19,0,(rst_n==1 && pfd_rst==0) => 0,22808
+BRDA:19,0,pfd_clr:0->1,248
+BRDA:19,0,pfd_clr:1->0,247
+DA:29,481
+DA:30,248
+BRDA:30,0,if,248
+BRDA:30,0,else,233
+DA:31,233
+DA:33,748
+DA:34,500
+BRDA:34,0,if,248
+BRDA:34,0,else,500
+DA:35,500
+BRF:32
+BRH:32
+end_of_record
+SF:/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
+DA:6,5471
+BRDA:6,0,vco_out:0->1,5471
+BRDA:6,0,vco_out:1->0,5471
+DA:7,27
+BRDA:7,0,rst_n:0->1,27
+BRDA:7,0,rst_n:1->0,27
+DA:8,663
+BRDA:8,0,clk_pre:0->1,663
+BRDA:8,0,clk_pre:1->0,663
+DA:9,336
+BRDA:9,0,obs_q3:0->1,336
+BRDA:9,0,obs_q3:1->0,336
+DA:11,2638
+BRDA:11,0,pre_q1:0->1,1322
+BRDA:11,0,pre_q1:1->0,1322
+BRDA:11,0,pre_q2:0->1,663
+BRDA:11,0,pre_q2:1->0,663
+BRDA:11,0,q3:0->1,336
+BRDA:11,0,q3:1->0,336
+BRDA:11,0,pre_q0:0->1,2638
+BRDA:11,0,pre_q0:1->0,2638
+DA:13,5491
+DA:14,5267
+BRDA:14,0,if,224
+BRDA:14,0,else,5267
+BRDA:14,0,(rst_n==0) => 1,224
+BRDA:14,0,(rst_n==1) => 0,5267
+DA:15,5267
+BRDA:15,0,else,5267
+BRDA:15,0,(pre_q0==0) => 1,2638
+BRDA:15,0,(pre_q0==1) => 0,2629
+DA:17,2665
+DA:18,2638
+BRDA:18,0,if,27
+BRDA:18,0,else,2638
+BRDA:18,0,(rst_n==0) => 1,27
+BRDA:18,0,(rst_n==1) => 0,2638
+DA:19,2638
+BRDA:19,0,else,2638
+BRDA:19,0,(pre_q1==0) => 1,1322
+BRDA:19,0,(pre_q1==1) => 0,1316
+DA:21,1349
+DA:22,1322
+BRDA:22,0,if,27
+BRDA:22,0,else,1322
+BRDA:22,0,(rst_n==0) => 1,27
+BRDA:22,0,(rst_n==1) => 0,1322
+DA:23,1322
+BRDA:23,0,else,1322
+BRDA:23,0,(pre_q2==0) => 1,663
+BRDA:23,0,(pre_q2==1) => 0,659
+DA:25,690
+DA:26,663
+BRDA:26,0,if,27
+BRDA:26,0,else,663
+BRDA:26,0,(rst_n==0) => 1,27
+BRDA:26,0,(rst_n==1) => 0,663
+DA:27,663
+BRDA:27,0,else,663
+BRDA:27,0,(q3==0) => 1,336
+BRDA:27,0,(q3==1) => 0,327
+BRF:44
+BRH:44
+end_of_record

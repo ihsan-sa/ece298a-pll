@@ -1,0 +1,40 @@
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Removing directory '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll_formal.sv'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_ctrl_regs.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_divider.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_lock_det.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_pfd.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_prescaler.v'.
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0: smtbmc yices
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: starting process "cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: Warning: found logic loop in module pll_pfd:
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $procdff$323 ($adff) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: ARST[0] --> Q[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_fb_q source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:15.19-15.27
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159 ($and) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --> Y[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_rst source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$161 ($or) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --> Y[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_clr source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: Warning: found logic loop in module pll_pfd:
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159 ($and) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: A[0] --> Y[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_rst source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$161 ($or) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --> Y[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_clr source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $procdff$326 ($adff) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: ARST[0] --> Q[0]
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_ref_q source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:15.8-15.17
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: finished (returncode=0)
+SBY  2:00:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: starting process "cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/model; yosys -ql design_prep.log design_prep.ys"
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: ERROR: CLK clk_pre on $procdff$315 ($sdff) from module pll_divider also used with opposite polarity, run clk2fflogic instead.
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: finished (returncode=1)
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: task failed. ERROR.
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) did not return a status
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: engine_0 did not produce any traces
+SBY  2:00:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] DONE (ERROR, rc=16)

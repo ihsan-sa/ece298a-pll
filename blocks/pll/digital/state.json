@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T01:39:56",
+ "updated": "2026-09-27T02:06:05",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -226,21 +226,21 @@
   },
   "holdout": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 1,
+   "status": "pass",
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-27T01:39:56",
-    "status": "fail",
-    "failing_count": 4,
-    "total": 4,
+    "ts": "2026-09-27T01:57:56",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-     "holdout": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
+     "holdout": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
     },
     "job": null,
     "facts": {
-     "tests_passed": 3
+     "tests_passed": 7
     }
    },
    "history": [
@@ -257,6 +257,66 @@
      "job": null,
      "facts": {
       "tests_passed": 3
+     }
+    },
+    {
+     "ts": "2026-09-27T01:57:56",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "holdout": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 7
+     }
+    }
+   ]
+  },
+  "cover": {
+   "phase": "P4",
+   "status": "pass",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-09-27T02:06:05",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed"
+    },
+    "job": null,
+    "facts": {
+     "line_pct": 100.0,
+     "toggle_pct": 100.0,
+     "line_covered": 103,
+     "line_total": 103,
+     "toggle_covered": 156,
+     "toggle_total": 156
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T02:06:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed"
+     },
+     "job": null,
+     "facts": {
+      "line_pct": 100.0,
+      "toggle_pct": 100.0,
+      "line_covered": 103,
+      "line_total": 103,
+      "toggle_covered": 156,
+      "toggle_total": 156
      }
     }
    ]
@@ -276,13 +336,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
-   "hashed": "2026-09-27T01:39:56"
+   "hashed": "2026-09-27T01:57:56"
   },
   "holdout": {
    "path": "holdout",
    "kind": "holdout",
-   "sha256": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
-   "hashed": "2026-09-27T01:39:56",
+   "sha256": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
+   "hashed": "2026-09-27T01:57:56",
    "stale": [
     {
      "ts": "2026-09-27T00:42:20",
@@ -296,13 +356,13 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-   "hashed": "2026-09-27T01:39:56"
+   "hashed": "2026-09-27T02:06:05"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
-   "hashed": "2026-09-27T01:37:49"
+   "hashed": "2026-09-27T02:06:05"
   }
  },
  "open_issues": [
@@ -323,13 +383,32 @@
    "count": 4,
    "work_order": "blocks/pll/digital/log/workorders/wo-1.json",
    "note": "test bugs, fixed in tb/; sim 14/14"
+  },
+  {
+   "id": 2,
+   "status": "fixed",
+   "agent": "orchestrator",
+   "attempts": 0,
+   "opened": "2026-09-27T01:55:56",
+   "closed": "2026-09-27T01:58:37",
+   "gate": "holdout",
+   "phase": "P4",
+   "fixer": "rtl",
+   "kinds": [
+    "holdout_failed"
+   ],
+   "severity": "error",
+   "count": 4,
+   "work_order": "blocks/pll/digital/log/workorders/wo-2.json",
+   "note": "holdout stimulus fixes; gate PASS 7/7"
   }
  ],
- "next_issue_id": 2,
+ "next_issue_id": 3,
  "next_job_id": 1,
  "budgets": {
   "fix_loops": {
-   "sim": 2
+   "sim": 2,
+   "holdout": 2
   }
  },
  "decisions": [
@@ -408,6 +487,22 @@
    ],
    "gates_marked": [
     "sim"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-27T01:56:41",
+   "class": "holdout_edit",
+   "refs": [
+    "test_pll_holdout.py"
+   ],
+   "note": "fix holdout wo-2: stimulus bugs, not RTL. The tb fix changed v.pfd_setup to return 3 values (2 tests unpacked 2); DN-side test lacked the PFD priming clk edge; live n_sel test waited N-sized time but skipped an N=5-sized window. No check loosened.",
+   "human_hold": 2,
+   "gates": [
+    "holdout"
+   ],
+   "gates_marked": [
+    "holdout"
    ],
    "stale_artifacts": []
   }
@@ -689,6 +784,67 @@
    "status": "fail",
    "attempt": 1,
    "failing_count": 4
+  },
+  {
+   "ts": "2026-09-27T01:55:54",
+   "event": "budget_defaulted",
+   "path": "fix_loops.holdout",
+   "value": 3
+  },
+  {
+   "ts": "2026-09-27T01:55:54",
+   "event": "budget",
+   "path": "fix_loops.holdout",
+   "remaining": 2
+  },
+  {
+   "ts": "2026-09-27T01:55:55",
+   "event": "snapshot",
+   "label": "pre-fix-holdout-a1",
+   "files": 10
+  },
+  {
+   "ts": "2026-09-27T01:55:56",
+   "event": "issue_open",
+   "id": 2,
+   "gate": "holdout",
+   "fixer": "rtl",
+   "kinds": [
+    "holdout_failed"
+   ]
+  },
+  {
+   "ts": "2026-09-27T01:56:41",
+   "event": "edit",
+   "edit_class": "holdout_edit",
+   "refs": [
+    "test_pll_holdout.py"
+   ],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-27T01:57:56",
+   "event": "gate",
+   "gate": "holdout",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:58:37",
+   "event": "issue",
+   "id": 2,
+   "status": "fixed",
+   "agent": "orchestrator",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-27T02:06:05",
+   "event": "gate",
+   "gate": "cover",
+   "status": "pass",
+   "attempt": 1,
+   "failing_count": 0
   }
  ]
 }

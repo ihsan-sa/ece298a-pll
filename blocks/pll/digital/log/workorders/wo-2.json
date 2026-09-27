@@ -1,0 +1,125 @@
+{
+ "id": 2,
+ "created": "2026-09-27T01:55:56",
+ "gate": "holdout",
+ "phase": "P4",
+ "workspace": "blocks/pll/digital",
+ "fixer": "rtl",
+ "role_prompt": "skills/vde/agents/fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit rtl/ only; re-run the failed gate (lint/sim/mutate/formal/cover/synth as applicable) when done.",
+  "A finding from `mutate` means the TESTBENCH missed something, not the RTL - route mutate failures to the testbench domain instead of editing rtl/ to satisfy a weak test."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/holdout_failed.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "holdout_failed"
+  ],
+  "checks": [
+   "cocotb"
+  ],
+  "severity": "error",
+  "count": 4,
+  "violations": [
+   {
+    "check": "holdout",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "holdout_failed",
+    "refs": [
+     "REQ-LOCK-DEASSERT",
+     "REQ-PFD-FREQ"
+    ],
+    "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "holdout",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "holdout_failed",
+    "refs": [
+     "REQ-DIV-ILLEGAL",
+     "REQ-DIV-N"
+    ],
+    "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "holdout",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "holdout_failed",
+    "refs": [
+     "REQ-DIV-RESET-CLEAN",
+     "REQ-LOCK-ASSERT"
+    ],
+    "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "holdout",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "holdout_failed",
+    "refs": [
+     "REQ-PFD-DN-LEAD",
+     "REQ-PFD-UP-LEAD"
+    ],
+    "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+    "source": "cocotb",
+    "items": [
+     {
+      "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

@@ -1,0 +1,56 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module ihsan_sa_pll.
+Found 0 SCCs in module ihsan_sa_pll_formal.
+Found 0 SCCs in module pll_ctrl_regs.
+Found 0 SCCs in module pll_divider.
+Found 0 SCCs in module pll_lock_det.
+Found 0 SCCs in module pll_pfd.
+Found 0 SCCs in module pll_prescaler.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing pll_ctrl_regs.$procdff$346 ($adff): ARST=\rst_n, D=\pll_en_in, Q=\pll_en
+Replacing pll_ctrl_regs.$procdff$351 ($adff): ARST=\rst_n, D=\cp_trim_in [0], Q=\cp_trim0
+Replacing pll_ctrl_regs.$procdff$356 ($adff): ARST=\rst_n, D=\cp_trim_in [1], Q=\cp_trim1
+Replacing pll_divider.$procdff$315 ($adff): ARST=\rst_n, D=\last, Q=\fb_en
+Replacing pll_divider.$procdff$320 ($adff): ARST=\rst_n, D=$0\div_cnt[2:0], Q=\div_cnt
+Replacing pll_lock_det.$procdff$331 ($adff): ARST=\rst_n, D=$0\lock[0:0], Q=\lock
+Replacing pll_lock_det.$procdff$336 ($adff): ARST=\rst_n, D=\cnt_nxt, Q=\lock_cnt
+Replacing pll_lock_det.$procdff$341 ($adff): ARST=\rst_n, D=$0\wide_q[0:0], Q=\wide_q
+Replacing pll_pfd.$procdff$323 ($adff): ARST=\pfd_clr, D=1'1, Q=\pfd_fb_q
+Replacing pll_pfd.$procdff$326 ($adff): ARST=\pfd_clr, D=1'1, Q=\pfd_ref_q
+Replacing pll_prescaler.$procdff$295 ($adff): ARST=\rst_n, D=$0\q3[0:0], Q=\q3
+Replacing pll_prescaler.$procdff$300 ($adff): ARST=\rst_n, D=$0\pre_q2[0:0], Q=\pre_q2
+Replacing pll_prescaler.$procdff$305 ($adff): ARST=\rst_n, D=$0\pre_q1[0:0], Q=\pre_q1
+Replacing pll_prescaler.$procdff$310 ($adff): ARST=\rst_n, D=$0\pre_q0[0:0], Q=\pre_q0
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ihsan_sa_pll..
+Finding unused cells or wires in module \ihsan_sa_pll_formal..
+Finding unused cells or wires in module \pll_ctrl_regs..
+Finding unused cells or wires in module \pll_divider..
+Finding unused cells or wires in module \pll_lock_det..
+Finding unused cells or wires in module \pll_pfd..
+Finding unused cells or wires in module \pll_prescaler..
+Removed 20 unused cells and 20 unused wires.
+<suppressed ~21 debug messages>
+
+7. Executing FORMALFF pass.
+ERROR: CLK clk_pre on $procdff$315 ($sdff) from module pll_divider also used with opposite polarity, run clk2fflogic instead.

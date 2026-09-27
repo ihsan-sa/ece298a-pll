@@ -4,8 +4,8 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-27T01:50:47",
- "phase": "P3",
+ "updated": "2026-09-27T02:00:26",
+ "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
@@ -188,6 +188,12 @@
    "status": "pass",
    "attempt": 5,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T02:00:26",
+   "event": "phase",
+   "phase": "P4",
+   "prev": "P3"
   }
  ]
 }
