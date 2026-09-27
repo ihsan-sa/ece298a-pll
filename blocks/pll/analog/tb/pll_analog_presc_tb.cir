@@ -13,11 +13,9 @@
 *
 * Cell netlist: the PDK's own libs.ref/.../spice/gf180mcu_fd_sc_mcu7t5v0.spice
 * (transistor-level cell netlist, NOT a parasitic-extracted view; spec.md
-* says "extracted" and none exists under the PDK). Its devices are
-* nfet_05v0/pfet_05v0 subckt calls, which sm141064.spice (the model file every
-* bench here uses) does not define; the two .subckt below map them to the
-* nfet_06v0/pfet_06v0 models exactly as the PDK's own sm141064.ngspice
-* wrappers do, minus the mismatch terms (sw_stat_mismatch = 0 anyway).
+* says "extracted" and no extracted cell view exists under the PDK). Its
+* nfet_05v0/pfet_05v0 devices resolve through sm141064.spice's own fets_mm
+* section, which the {{CORNER}} section already pulls in.
 * sim_timeout_s: 600
 
 .include '{{PDK}}/libs.tech/ngspice/design.spice'
@@ -28,12 +26,6 @@
 .include '{{PDK}}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
 {{SIZING}}
 
-.subckt nfet_05v0 d g s b w=1e-6 l=6e-7 nf=1 m=1
-m0 d g s b nfet_06v0 w={w} l={l} nf={nf} m={m}
-.ends nfet_05v0
-.subckt pfet_05v0 d g s b w=1e-5 l=5e-7 nf=1 m=1
-m0 d g s b pfet_06v0 w={w} l={l} nf={nf} m={m}
-.ends pfet_05v0
 
 .temp {{TEMP_C}}
 .param vddp={{VDD}}
@@ -79,9 +71,11 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
     set rat = "$&x"
     set okp = "1"
   else
-    let x = 2*nq/nv
-    set rat = "$&x"
-    set okp = "1"
+    if nv ge 1
+      let x = 2*nq/nv
+      set rat = "$&x"
+      set okp = "1"
+    end
   end
 end
 echo

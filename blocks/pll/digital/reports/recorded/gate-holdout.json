@@ -1,0 +1,211 @@
+{
+ "script": "gate",
+ "gate": "holdout",
+ "phase": "P4",
+ "tool": "holdout",
+ "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "status": "fail",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 4,
+  "by_severity": {
+   "error": 4
+  },
+  "by_source": {
+   "cocotb": 4
+  }
+ },
+ "failing_count": 4,
+ "failing": [
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-LOCK-DEASSERT",
+    "REQ-PFD-FREQ"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-DIV-ILLEGAL",
+    "REQ-DIV-N"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-DIV-RESET-CLEAN",
+    "REQ-LOCK-ASSERT"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-PFD-DN-LEAD",
+    "REQ-PFD-UP-LEAD"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "violations": [
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-LOCK-DEASSERT",
+    "REQ-PFD-FREQ"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-LOCK-DEASSERT, REQ-PFD-FREQ failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-DIV-ILLEGAL",
+    "REQ-DIV-N"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-DIV-ILLEGAL, REQ-DIV-N failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-DIV-RESET-CLEAN",
+    "REQ-LOCK-ASSERT"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-DIV-RESET-CLEAN, REQ-LOCK-ASSERT failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "holdout",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "holdout_failed",
+   "refs": [
+    "REQ-PFD-DN-LEAD",
+    "REQ-PFD-UP-LEAD"
+   ],
+   "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+   "source": "cocotb",
+   "items": [
+    {
+     "msg": "a held-out test for requirement(s) REQ-PFD-DN-LEAD, REQ-PFD-UP-LEAD failed",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "facts": {
+  "top": "ihsan_sa_pll",
+  "tests_run": [
+   "test_ctrl_regs_every_cycle",
+   "test_dn_side_wide_drops_lock",
+   "test_live_nsel_changes",
+   "test_midrun_reset_pulse",
+   "test_obs_sel_live_fast_vco",
+   "test_pfd_extreme_offsets",
+   "test_wide_on_fifteenth_clean_cycle"
+  ],
+  "tests_passed": 3
+ },
+ "recorded_ts": "2026-09-27T01:39:56",
+ "attempts": 1
+}

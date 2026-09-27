@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T01:28:50",
+ "updated": "2026-09-27T01:39:56",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -129,21 +129,21 @@
   },
   "sim": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 2,
+   "status": "pass",
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-27T01:25:54",
-    "status": "fail",
-    "failing_count": 4,
-    "total": 4,
+    "ts": "2026-09-27T01:37:49",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-     "tb": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
+     "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
     },
     "job": null,
     "facts": {
-     "tests_passed": 10
+     "tests_passed": 14
     }
    },
    "history": [
@@ -176,6 +176,88 @@
      "facts": {
       "tests_passed": 10
      }
+    },
+    {
+     "ts": "2026-09-27T01:33:48",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 14
+     }
+    },
+    {
+     "ts": "2026-09-27T01:34:46",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 14
+     }
+    },
+    {
+     "ts": "2026-09-27T01:37:49",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 14
+     }
+    }
+   ]
+  },
+  "holdout": {
+   "phase": "P4",
+   "status": "fail",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-09-27T01:39:56",
+    "status": "fail",
+    "failing_count": 4,
+    "total": 4,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "holdout": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
+     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+    },
+    "job": null,
+    "facts": {
+     "tests_passed": 3
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-09-27T01:39:56",
+     "status": "fail",
+     "failing_count": 4,
+     "total": 4,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "holdout": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 3
+     }
     }
    ]
   }
@@ -194,13 +276,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
-   "hashed": "2026-09-27T01:25:55"
+   "hashed": "2026-09-27T01:39:56"
   },
   "holdout": {
    "path": "holdout",
    "kind": "holdout",
-   "sha256": "dir_text:34312174686ce443db57c7fda1233d8a4615dd0ac30168116fcf35fee068e0ba",
-   "hashed": "2026-09-27T00:42:20",
+   "sha256": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
+   "hashed": "2026-09-27T01:39:56",
    "stale": [
     {
      "ts": "2026-09-27T00:42:20",
@@ -214,23 +296,23 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-   "hashed": "2026-09-27T01:25:54"
+   "hashed": "2026-09-27T01:39:56"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:d4d4f1c054906d0ed7cf92b10d948f4ad5e0e6ab0c5082c4c38501e8205914e3",
-   "hashed": "2026-09-27T01:25:54"
+   "sha256": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
+   "hashed": "2026-09-27T01:37:49"
   }
  },
  "open_issues": [
   {
    "id": 1,
-   "status": "open",
-   "agent": null,
+   "status": "fixed",
+   "agent": "tb-writer",
    "attempts": 0,
    "opened": "2026-09-27T01:28:50",
-   "closed": null,
+   "closed": "2026-09-27T01:38:26",
    "gate": "sim",
    "phase": "P4",
    "fixer": "rtl",
@@ -239,7 +321,8 @@
    ],
    "severity": "error",
    "count": 4,
-   "work_order": "blocks/pll/digital/log/workorders/wo-1.json"
+   "work_order": "blocks/pll/digital/log/workorders/wo-1.json",
+   "note": "test bugs, fixed in tb/; sim 14/14"
   }
  ],
  "next_issue_id": 2,
@@ -311,6 +394,22 @@
    "stale_artifacts": [
     "holdout"
    ]
+  },
+  {
+   "ts": "2026-09-27T01:35:51",
+   "class": "tb_edit",
+   "refs": [],
+   "note": "fix sim: stale vco driver + PFD priming edge (wo-1, re-routed to tb-writer)",
+   "human_hold": 1,
+   "gates": [
+    "sim",
+    "mutate",
+    "cover"
+   ],
+   "gates_marked": [
+    "sim"
+   ],
+   "stale_artifacts": []
   }
  ],
  "spawns": [
@@ -543,6 +642,53 @@
    "kinds": [
     "test_failed"
    ]
+  },
+  {
+   "ts": "2026-09-27T01:33:48",
+   "event": "gate",
+   "gate": "sim",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:34:47",
+   "event": "gate",
+   "gate": "sim",
+   "status": "pass",
+   "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:35:51",
+   "event": "edit",
+   "edit_class": "tb_edit",
+   "refs": [],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-27T01:37:50",
+   "event": "gate",
+   "gate": "sim",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-27T01:38:26",
+   "event": "issue",
+   "id": 1,
+   "status": "fixed",
+   "agent": "tb-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-27T01:39:56",
+   "event": "gate",
+   "gate": "holdout",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 4
   }
  ]
 }

@@ -27,9 +27,21 @@ async def release(dut):
     await Timer(1, unit="ns")
 
 
+_vco_task = None
+
+
+def run_vco(dut, tv):
+    """Start vco_out at period tv, stopping any vco_out driver a previous
+    loop iteration started (two drivers on vco_out corrupt its period)."""
+    global _vco_task
+    if _vco_task is not None and not _vco_task.done():
+        _vco_task.cancel()
+    _vco_task = cocotb.start_soon(vco_clock(dut, tv))
+
+
 async def start_vco(dut, tv=TV, n_sel=1, obs_sel=0):
     await init(dut, n_sel, obs_sel)
-    cocotb.start_soon(vco_clock(dut, tv))
+    run_vco(dut, tv)
     await Timer(3 * tv, unit="ns")  # vco already running at release
     await release(dut)
 
@@ -134,7 +146,7 @@ async def test_reset_release_clean(dut):
     for code in (3, 5):
         n = decode_n(code)
         await init(dut, n_sel=code)
-        cocotb.start_soon(vco_clock(dut, TV))
+        run_vco(dut, TV)
         await Timer(int(7.3 * TV * 1000), unit="ps")  # release mid vco phase
         mons = {s: Monitor(getattr(dut, s)) for s in ("clk_fb", "obs_out")}
         await release(dut)
@@ -152,8 +164,11 @@ async def test_reset_release_clean(dut):
 
 async def pfd_setup(dut, offsets):
     """N=1, vco 10 ns -> clk_fb period 80 ns. clk rising edges are placed
-    at clk_fb_rise + off (off < 0: reference leads). Returns (fb_rises,
-    ref_rises)."""
+    at clk_fb_rise + off (off < 0: reference leads). clk_fb runs before
+    clk starts, so pfd_dn is pending from the first clk_fb edge; one priming
+    clk edge 1 ns after the clk_fb edge before fb[0] clears it, so the PFD
+    starts the measured cycles from its idle state. Returns (fb_rises,
+    ref_rises, prime) - ref_rises excludes the priming edge at `prime`."""
     await start_vco(dut, n_sel=1)
     m = Monitor(dut.clk_fb)
     while not m.rises():
@@ -161,15 +176,16 @@ async def pfd_setup(dut, offsets):
     fb0 = m.rises()[0] + 2 * REF_T
     fb = [fb0 + k * REF_T for k in range(len(offsets))]
     rises = [f + o for f, o in zip(fb, offsets)]
-    cocotb.start_soon(ref_clock(dut, rises))
-    return fb, rises
+    prime = fb0 - REF_T + 1.0
+    cocotb.start_soon(ref_clock(dut, [prime] + rises))
+    return fb, rises, prime
 
 
 async def lead_test(dut, lead_sig, other_sig, ref_leads):
     for dt in (5.0, 15.0, 30.0):
         offs = [(-dt if ref_leads else dt)] * 12
         mu, md = Monitor(dut.pfd_up), Monitor(dut.pfd_dn)
-        fb, rises = await pfd_setup(dut, offs)
+        fb, rises, _ = await pfd_setup(dut, offs)
         await wait_until(fb[-1] + 50)
         mon = {"pfd_up": mu, "pfd_dn": md}
         lead, other = mon[lead_sig], mon[other_sig]
@@ -227,8 +243,11 @@ async def test_pfd_frequency(dut):
 
 async def lock_run(dut, offsets, first_window_slack=True):
     """Cycle-by-cycle check of lock against LockModel. Sample 0.1 ns before
-    each clk falling edge (pfd outputs and lock are stable there)."""
-    fb, rises = await pfd_setup(dut, offsets)
+    each clk falling edge (pfd outputs and lock are stable there). The
+    priming clk edge is a real reference cycle, so it is checked and fed to
+    the model too; seen[] is indexed by ref_rises (priming entry dropped)."""
+    fb, ref_rises, prime = await pfd_setup(dut, offsets)
+    rises = [prime] + ref_rises
     model = LockModel()
     first = first_window_slack
     seen = []
@@ -249,7 +268,7 @@ async def lock_run(dut, offsets, first_window_slack=True):
             assert lock == 0 or model.clean >= 16, f"cycle {i}: lock high in wide cycle"
         seen.append((lock, wide))
         model.sample(wide)
-    return seen
+    return seen[1:]
 
 
 # req: REQ-LOCK-ASSERT
@@ -299,7 +318,7 @@ async def test_ctrl_regs(dut):
 # req: REQ-RST-ASYNC
 @cocotb.test()
 async def test_async_reset_outputs(dut):
-    fb, rises = await pfd_setup(dut, [-60.0] * 3 + [-10.0] * 20)
+    fb, rises, _ = await pfd_setup(dut, [-60.0] * 3 + [-10.0] * 20)
     dut.pll_en_in.value = 1
     dut.cp_trim_in.value = 3
     await wait_until(fb[-1] - 3)

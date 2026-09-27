@@ -4,7 +4,7 @@
  "phase": "P4",
  "tool": "sim",
  "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
- "status": "fail",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,181 +12,13 @@
   "max_count": 0
  },
  "counts": {
-  "total": 4,
-  "by_severity": {
-   "error": 4
-  },
-  "by_source": {
-   "cocotb": 4
-  }
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
  },
- "failing_count": 4,
- "failing": [
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_lock_assert",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-LOCK-ASSERT"
-   ],
-   "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_lock_deassert",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-LOCK-DEASSERT"
-   ],
-   "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_pfd_up_lead",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-PFD-RESET",
-    "REQ-PFD-UP-LEAD"
-   ],
-   "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_prescaler_div8",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-PRE-DIV8"
-   ],
-   "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
- "violations": [
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_lock_assert",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-LOCK-ASSERT"
-   ],
-   "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_lock_assert failed: 10 ns UP pulse was judged wide\nassert not True\n +  where True = any(<generator object test_lock_assert.<locals>.<genexpr> at 0x7f91998d0860>)",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_lock_deassert",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-LOCK-DEASSERT"
-   ],
-   "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_lock_deassert failed: 60 ns UP pulse not visible at clk falling edge\nassert 0 == 1",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_pfd_up_lead",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-PFD-RESET",
-    "REQ-PFD-UP-LEAD"
-   ],
-   "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_pfd_up_lead failed: dt=5.0: pfd_up width 0.0, expected 5.0\nassert 5.0 <= 0.01\n +  where 5.0 = abs((0.0 - 5.0))",
-     "file": null,
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim",
-   "severity": "error",
-   "file": null,
-   "module": "test_prescaler_div8",
-   "line": null,
-   "kind": "test_failed",
-   "refs": [
-    "REQ-PRE-DIV8"
-   ],
-   "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
-   "source": "cocotb",
-   "items": [
-    {
-     "msg": "test_prescaler_div8 failed: clk_pre tv=3.0: period 0 = 24.500 ns, expected 24.000 ns\nassert 0.5 <= 0.01\n +  where 0.5 = abs((24.5 - 24.0))",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
  "facts": {
   "top": "ihsan_sa_pll",
   "tests_run": [
@@ -205,8 +37,8 @@
    "test_reset_release_clean",
    "test_tt_tieoff"
   ],
-  "tests_passed": 10
+  "tests_passed": 14
  },
- "recorded_ts": "2026-09-27T01:25:54",
- "attempts": 2
+ "recorded_ts": "2026-09-27T01:37:49",
+ "attempts": 5
 }
