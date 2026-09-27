@@ -1,0 +1,53 @@
+{
+ "version": 3,
+ "skill": "ade",
+ "block": "pll_analog",
+ "workspace": "blocks/pll/analog",
+ "created": "2026-09-27T00:35:38",
+ "updated": "2026-09-27T00:35:57",
+ "phase": "P1",
+ "toolchain": null,
+ "gates": {},
+ "jobs": {},
+ "holdout": null,
+ "optimise": null,
+ "human": {},
+ "artifacts": {},
+ "open_issues": [],
+ "next_issue_id": 1,
+ "next_job_id": 1,
+ "budgets": {
+  "fix_loops": {}
+ },
+ "decisions": [],
+ "edits": [],
+ "spawns": [
+  {
+   "ts": "2026-09-27T00:35:57",
+   "role": "spec-writer",
+   "model": "fable",
+   "phase": "P1"
+  }
+ ],
+ "history": [
+  {
+   "ts": "2026-09-27T00:35:38",
+   "event": "init",
+   "skill": "ade",
+   "block": "pll_analog",
+   "phase": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:35:56",
+   "event": "phase",
+   "phase": "P1",
+   "prev": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:35:57",
+   "event": "spawn",
+   "role": "spec-writer",
+   "model": "fable"
+  }
+ ]
+}

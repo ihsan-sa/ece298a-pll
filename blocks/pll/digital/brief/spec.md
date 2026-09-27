@@ -62,13 +62,10 @@ macro pins of the same name.
 | `pll_en` | d2a (output) | cmos_3v3 | clk_ref | 1 | `uo_out[5]` | registered `ui_in[6]`; 1 enables pump, bias and VCO, 0 powers them down |
 | `cp_trim0` | d2a (output) | cmos_3v3 | clk_ref | 1 | `uo_out[6]` | registered `uio[0]`, charge pump current trim bit 0 |
 | `cp_trim1` | d2a (output) | cmos_3v3 | clk_ref | 1 | `uo_out[7]` | registered `uio[1]`, charge pump current trim bit 1 |
-| `vctrl` | a2d | analog | clk_free | 1 | `ua[0]` | loop filter node; pure feedthrough wire to the analog pad, no logic touches it |
-| `bias_ref` | d2a | analog | clk_free | 1 | `ua[1]` | analog pad to the pump bias mirror; pure feedthrough wire, no logic touches it |
 
-`vctrl` and `bias_ref` are analog feedthroughs: the digital side declares
-them as ports and wires them to `ua[0]`/`ua[1]` and nothing else. No buffer,
-no pull, no logic on those nets. In the standalone harden they are
-unconnected internally except for that wire.
+The analog pads `ua[0]` (Vctrl) and `ua[1]` (bias reference) belong to the
+analog macro alone (`interface.yaml` `ua_pins`); the digital side has no port,
+wire or logic named `vctrl` or `bias_ref` and never touches `ua[*]`.
 
 `pfd_up`/`pfd_dn` on `uo_out[3]`/`uo_out[4]` doubles as the proposal's debug
 observation, so those pins stay in the final tile as well. `uo_out[5:7]`
@@ -82,7 +79,7 @@ drive them low in the final tile.
 (0 = VCO/8, 1 = VCO/16). `uo_out[0]` VCO/8 or /16; `uo_out[1]` `clk_fb`;
 `uo_out[2]` lock; `uo_out[3]` UP; `uo_out[4]` DN; `uo_out[7:5]` see above.
 `uio[1:0]` trim inputs; `uio[7:2]` spare inputs; all `uio_oe` = 0,
-`uio_out` = 0. `ua[0]` Vctrl, `ua[1]` bias reference. `clk` reference,
+`uio_out` = 0. `ua[0]`/`ua[1]` are the analog macro's pads, not this side's. `clk` reference,
 `rst_n`, `ena` standard.
 
 ## Requirements and measures on this side

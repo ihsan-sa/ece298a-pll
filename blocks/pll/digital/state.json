@@ -1,0 +1,53 @@
+{
+ "version": 3,
+ "skill": "vde",
+ "block": "pll",
+ "workspace": "blocks/pll/digital",
+ "created": "2026-09-27T00:35:39",
+ "updated": "2026-09-27T00:35:58",
+ "phase": "P1",
+ "toolchain": null,
+ "gates": {},
+ "jobs": {},
+ "holdout": null,
+ "optimise": null,
+ "human": {},
+ "artifacts": {},
+ "open_issues": [],
+ "next_issue_id": 1,
+ "next_job_id": 1,
+ "budgets": {
+  "fix_loops": {}
+ },
+ "decisions": [],
+ "edits": [],
+ "spawns": [
+  {
+   "ts": "2026-09-27T00:35:58",
+   "role": "spec-writer",
+   "model": "fable",
+   "phase": "P1"
+  }
+ ],
+ "history": [
+  {
+   "ts": "2026-09-27T00:35:39",
+   "event": "init",
+   "skill": "vde",
+   "block": "pll",
+   "phase": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:35:57",
+   "event": "phase",
+   "phase": "P1",
+   "prev": "P0"
+  },
+  {
+   "ts": "2026-09-27T00:35:58",
+   "event": "spawn",
+   "role": "spec-writer",
+   "model": "fable"
+  }
+ ]
+}

@@ -4,9 +4,10 @@ Cell: `pll_analog`, a hard macro placed inside the Tiny Tapeout GF180
 analog-tile top `tt_um_ihsan_sa_pll`. GF180MCU, 3.3 V supply, digital
 interface levels compatible with `gf180mcu_fd_sc_mcu7t5v0` cells. The source
 is the reviewed proposal at `../../brief/proposal-classic-pll.md`; this brief
-names what the analog side owns and exactly what crosses to the digital side.
-The crossing signals are fixed in `../../interface.yaml` - do not rename,
-widen or add one; a change there goes back through the msde `split` step.
+names what the analog side owns, exactly what crosses to the digital side,
+and which pins go to the tile's analog pads. Both lists are fixed in
+`../../interface.yaml` (`signals` and `ua_pins`) - do not rename, widen or
+add one; a change there goes back through the msde `split` step.
 
 ## What this side does
 
@@ -29,7 +30,7 @@ in this cell; the cell sees only the pins below.
 2. **Loop filter.** Series R and C1 with shunt C2 on `vctrl`: R about
    22 kOhm, C1 about 20 pF, C2 about 2 pF (est.), sized for fn about 400 kHz
    and zeta about 0.55 at P*N = 16 with Kvco about 2*pi*100 MHz/V. `vctrl` is
-   also the tile pad `ua[0]`: up to 5 pF of pad sits in parallel with C2, so
+   routed to the tile pad `ua[0]` (`ua_pins`): up to 5 pF of pad sits in parallel with C2, so
    size C2 with the pad included (phase margin estimate 47 deg -> 32 deg
    with the pad at P*N = 16). The 20 pF C1 is the area risk; if it does not
    fit, say so in OPEN rather than shrinking it silently (capacitance added
@@ -44,7 +45,7 @@ in this cell; the cell sees only the pins below.
    333 MHz (slew <= 0.15 ns target, the Liberty table condition the
    prescaler was checked at).
 4. **Bias.** A reference current for the pump mirror and VCO. `bias_ref` is
-   the tile pad `ua[1]` for an optional external resistor to ground; the cell
+   routed to the tile pad `ua[1]` (`ua_pins`) for an optional external resistor to ground; the cell
    must also work with `ua[1]` floating (an internal default bias), and must
    not be damaged by a probe or ESD-class capacitance on it.
 5. **Power-down.** `pll_en` = 0 turns off the pump, bias and VCO (`vco_out`
@@ -53,8 +54,10 @@ in this cell; the cell sees only the pins below.
 
 ## Pins of `.subckt pll_analog`
 
-Exactly the eight crossing signals below, plus one supply and one ground, no
-other pin. `top_harden` joins the two sides by these names.
+Exactly the six crossing signals, the two analog pad pins (`interface.yaml`
+`ua_pins`), one supply and one ground - ten pins, no other. `top_harden`
+joins the two sides by the signal names and routes each `ua_pins` entry to
+its pad; the digital side never sees `vctrl` or `bias_ref`.
 
 | Pin | Dir | Level | Domain | Width | Meaning |
 |---|---|---|---|---|---|
@@ -64,16 +67,16 @@ other pin. `top_harden` joins the two sides by these names.
 | `pll_en` | d2a (input) | cmos_3v3 | clk_ref | 1 | 1 = run, 0 = pump, bias and VCO off |
 | `cp_trim0` | d2a (input) | cmos_3v3 | clk_ref | 1 | pump current trim bit 0 |
 | `cp_trim1` | d2a (input) | cmos_3v3 | clk_ref | 1 | pump current trim bit 1 |
-| `vctrl` | a2d | analog | clk_free | 1 | loop filter node, also tile pad `ua[0]` (up to 5 pF) |
-| `bias_ref` | d2a | analog | clk_free | 1 | tile pad `ua[1]`, optional external bias resistor node |
+| `vctrl` | analog pad | analog | - | 1 | loop filter node, to tile pad `ua[0]` (`ua_pins: vctrl: 0`, up to 5 pF pad) |
+| `bias_ref` | analog pad | analog | - | 1 | optional external bias resistor node, from tile pad `ua[1]` (`ua_pins: bias_ref: 1`) |
 | `vdd` | supply | 3.3 V | - | 1 | the one supply pin |
 | `vss` | ground | 0 V | - | 1 | the one ground pin |
 
 Digital inputs (`pfd_up`, `pfd_dn`, `pll_en`, `cp_trim*`) are driven by
 standard-cell outputs and must present a CMOS-gate load (no DC current);
 inversion for the PMOS UP switch is done inside this cell. `vco_out` is the
-only analog-to-digital logic output. `vctrl` and `bias_ref` are analog nodes
-passed through the digital wrapper as plain wires to the pads.
+only analog-to-digital logic output. `vctrl` and `bias_ref` go straight from
+the macro to the pads; they are not digital ports.
 
 ## Split devices
 
