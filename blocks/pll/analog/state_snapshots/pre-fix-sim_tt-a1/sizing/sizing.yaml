@@ -1,0 +1,181 @@
+# sizing.yaml - pll_analog (P4). SI units (m, F via geometry). Each entry's
+# min/max comes from spec/topology.md's design-equation bounds (current_mirror
+# template: L 0.28..2 um, W 1..50 um, ratio <= 8:1) or, for a device the
+# template does not cover, from the design equation named in its comment.
+# netlist/pll_analog.cir carries the same values as .param defaults.
+
+# bias/trim unit PMOS W (MP_B1, MP_B2, MP_T*): Vov ~0.3 V at Ib = 5 uA
+w_bp:
+  value: 4e-06
+  min: 1e-06
+  max: 5e-05
+# bias/trim unit PMOS L: long for ro (trim legs sit at Vsd ~2.5 V vs master ~1 V)
+l_bp:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-06
+# MN_B1 W: sets Vgs = V(bias_ref) at Ib
+w_b1:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-05
+# MN_B1 L
+l_b1:
+  value: 2e-06
+  min: 5e-07
+  max: 2e-06
+# MN_B2 W (source follower into RBIAS)
+w_b2:
+  value: 4e-06
+  min: 1e-06
+  max: 2e-05
+# MN_B2 L
+l_b2:
+  value: 1e-06
+  min: 2.8e-07
+  max: 2e-06
+# RBIAS_INT length at 1 um width: Ib = Vgs/R, R = 350 ohm/sq * l/w; 70..280 kOhm
+rb_l:
+  value: 0.00054
+  min: 0.0002
+  max: 0.0008
+# pump NMOS W (MN_CPREF, MN_CPREF2, MN_DNS): Vov ~0.15 V at 20 uA for vctrl down to 0.3 V
+w_cpn:
+  value: 2e-05
+  min: 5e-06
+  max: 5e-05
+# pump NMOS L: >= 1 um for UP/DN matching (topology.md)
+l_cpn:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-06
+# pump PMOS W (MP_CPREF, MP_UPS)
+w_cpp:
+  value: 5e-05
+  min: 1e-05
+  max: 5e-05
+# pump PMOS L: >= 1 um for UP/DN matching
+l_cpp:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-06
+# DN / steering NMOS switch W: min area for charge sharing
+w_swn:
+  value: 2e-06
+  min: 1e-06
+  max: 1e-05
+# UP / steering PMOS switch W
+w_swp:
+  value: 4e-06
+  min: 1e-06
+  max: 1e-05
+# switch L: above minimum for off leakage (vctrl_leak_off_na)
+l_sw:
+  value: 5e-07
+  min: 2.8e-07
+  max: 1e-06
+# R1 length at 2 um width: 22 kOhm nominal (11..44 kOhm), zeta ~0.55
+r1_l:
+  value: 0.000126
+  min: 6e-05
+  max: 0.00025
+# C1 side (square MIM): 2 fF/um2 -> 20 pF at 100 um
+c1_w:
+  value: 0.0001
+  min: 7e-05
+  max: 0.00011
+# C2 side (square MIM): 2 pF at 32 um, C2 <= C1/10
+c2_w:
+  value: 3.2e-05
+  min: 2e-05
+  max: 5e-05
+# MN_V2I W
+w_v2i:
+  value: 1e-05
+  min: 1e-06
+  max: 5e-05
+# MN_V2I L
+l_v2i:
+  value: 1e-06
+  min: 2.8e-07
+  max: 2e-06
+# R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd)
+rv2i_l:
+  value: 2e-05
+  min: 5e-06
+  max: 0.0002
+# MN_FLR W: Ifloor = Ib (W/L)flr/(W/L)b1 sets fmin
+w_flr:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-05
+# MN_FLR L
+l_flr:
+  value: 2e-06
+  min: 5e-07
+  max: 2e-06
+# MP_V2I / MP_V2IB W (PMOS starve master)
+w_v2ip:
+  value: 1e-05
+  min: 1e-06
+  max: 5e-05
+# MN_V2IM W (NMOS starve master)
+w_v2in:
+  value: 4e-06
+  min: 1e-06
+  max: 5e-05
+# starve mirror masters L
+l_v2i2:
+  value: 5e-07
+  min: 2.8e-07
+  max: 2e-06
+# ring PMOS starve W (MP_S1..5), ratio 1..10 to MP_V2I
+w_sp:
+  value: 1e-05
+  min: 1e-06
+  max: 5e-05
+# ring NMOS starve W (MN_S1..5), ratio 1..10 to MN_V2IM
+w_sn:
+  value: 4e-06
+  min: 1e-06
+  max: 5e-05
+# ring starve L
+l_s:
+  value: 5e-07
+  min: 2.8e-07
+  max: 2e-06
+# ring inverter PMOS W
+w_rp:
+  value: 2e-06
+  min: 1e-06
+  max: 1e-05
+# ring inverter NMOS W
+w_rn:
+  value: 1e-06
+  min: 1e-06
+  max: 1e-05
+# ring inverter L
+l_r:
+  value: 2.8e-07
+  min: 2.8e-07
+  max: 1e-06
+# NAND2 PMOS W
+w_gp:
+  value: 4e-06
+  min: 1e-06
+  max: 2e-05
+# NAND2 NMOS W (series pair)
+w_gn:
+  value: 4e-06
+  min: 1e-06
+  max: 2e-05
+# output inverter PMOS W: tr <= 0.15 ns into 15 fF
+w_op:
+  value: 1.2e-05
+  min: 4e-06
+  max: 5e-05
+# output inverter NMOS W: tf <= 0.15 ns into 15 fF
+w_on:
+  value: 6e-06
+  min: 2e-06
+  max: 5e-05

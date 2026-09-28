@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T14:23:21",
+ "updated": "2026-09-28T14:41:38",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -121,6 +121,49 @@
      "human_hold": 2
     }
    ]
+  },
+  "sim_tt": {
+   "phase": "P4",
+   "status": "fail",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-09-28T14:40:57",
+    "status": "fail",
+    "failing_count": 11,
+    "total": 11,
+    "inputs": {
+     "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+     "tb": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
+     "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
+     "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
+    },
+    "job": null,
+    "facts": {
+     "corners": [
+      "tt"
+     ]
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-09-28T14:40:57",
+     "status": "fail",
+     "failing_count": 11,
+     "total": 11,
+     "inputs": {
+      "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+      "tb": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
+      "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
+      "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    }
+   ]
   }
  },
  "jobs": {},
@@ -132,13 +175,25 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
-   "hashed": "2026-09-28T13:59:50"
+   "hashed": "2026-09-28T14:40:57"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-   "hashed": "2026-09-28T13:58:31"
+   "hashed": "2026-09-28T14:40:57"
+  },
+  "tb": {
+   "path": "tb",
+   "kind": "tb",
+   "sha256": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
+   "hashed": "2026-09-28T14:40:57"
+  },
+  "sizing": {
+   "path": "sizing/sizing.yaml",
+   "kind": "sizing",
+   "sha256": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955",
+   "hashed": "2026-09-28T14:40:57"
   }
  },
  "open_issues": [
@@ -181,13 +236,71 @@
    "count": 5,
    "work_order": "blocks/pll/analog/log/workorders/wo-2.json",
    "note": "fixer: all 3 causes bench-side (ol_tb 1GH feed inductor in tran; vco_tb ~700 s/point x13 vs 900 s; presc_tb runs no analysis at tt). No netlist edit. No route to bench-writer: reported as chip-flow gap 7 (req-20260928T182249Z-2524223). Also: VCO no swing at vctrl 0.3 V, ~1.23 GHz at 3.0 V (sizing, via sim_tt)."
+  },
+  {
+   "id": 3,
+   "status": "escalated",
+   "agent": null,
+   "attempts": 0,
+   "opened": "2026-09-28T14:41:25",
+   "closed": null,
+   "gate": "sim_tt",
+   "phase": "P4",
+   "fixer": "netlist",
+   "kinds": [
+    "sim_engine_error_convergence_trouble",
+    "sim_engine_error_empty_netlist",
+    "sim_engine_error_ngspice_error",
+    "sim_engine_error_sim_timeout",
+    "sim_engine_error_timestep_too_small"
+   ],
+   "severity": "error",
+   "count": 5,
+   "work_order": "blocks/pll/analog/log/workorders/wo-3.json",
+   "note": "same bench-side engine errors as issue 2 (ol_tb inductor, presc_tb no analysis at tt, vco_tb run length); waiting on chip-flow gap 7"
+  },
+  {
+   "id": 4,
+   "status": "open",
+   "agent": null,
+   "attempts": 0,
+   "opened": "2026-09-28T14:41:25",
+   "closed": null,
+   "gate": "sim_tt",
+   "phase": "P4",
+   "fixer": "testbench",
+   "kinds": [
+    "sim_measure_missing"
+   ],
+   "severity": "error",
+   "count": 4,
+   "work_order": "blocks/pll/analog/log/workorders/wo-4.json"
+  },
+  {
+   "id": 5,
+   "status": "fixing",
+   "agent": "fixer",
+   "attempts": 0,
+   "opened": "2026-09-28T14:41:25",
+   "closed": null,
+   "gate": "sim_tt",
+   "phase": "P4",
+   "fixer": "sizing",
+   "kinds": [
+    "sim_bound_fail",
+    "sim_not_settled"
+   ],
+   "severity": "error",
+   "count": 2,
+   "work_order": "blocks/pll/analog/log/workorders/wo-5.json"
   }
  ],
- "next_issue_id": 3,
+ "next_issue_id": 6,
  "next_job_id": 1,
  "budgets": {
   "fix_loops": {
-   "netlist_lint": 2
+   "netlist_lint": 2,
+   "sim_tt": 2
   }
  },
  "decisions": [],
@@ -404,6 +517,83 @@
    "status": "escalated",
    "agent": "fixer",
    "attempts": 1
+  },
+  {
+   "ts": "2026-09-28T14:40:57",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 11
+  },
+  {
+   "ts": "2026-09-28T14:41:24",
+   "event": "budget_defaulted",
+   "path": "fix_loops.sim_tt",
+   "value": 3
+  },
+  {
+   "ts": "2026-09-28T14:41:24",
+   "event": "budget",
+   "path": "fix_loops.sim_tt",
+   "remaining": 2
+  },
+  {
+   "ts": "2026-09-28T14:41:24",
+   "event": "snapshot",
+   "label": "pre-fix-sim_tt-a1",
+   "files": 17
+  },
+  {
+   "ts": "2026-09-28T14:41:25",
+   "event": "issue_open",
+   "id": 3,
+   "gate": "sim_tt",
+   "fixer": "netlist",
+   "kinds": [
+    "sim_engine_error_convergence_trouble",
+    "sim_engine_error_empty_netlist",
+    "sim_engine_error_ngspice_error",
+    "sim_engine_error_sim_timeout",
+    "sim_engine_error_timestep_too_small"
+   ]
+  },
+  {
+   "ts": "2026-09-28T14:41:25",
+   "event": "issue_open",
+   "id": 4,
+   "gate": "sim_tt",
+   "fixer": "testbench",
+   "kinds": [
+    "sim_measure_missing"
+   ]
+  },
+  {
+   "ts": "2026-09-28T14:41:25",
+   "event": "issue_open",
+   "id": 5,
+   "gate": "sim_tt",
+   "fixer": "sizing",
+   "kinds": [
+    "sim_bound_fail",
+    "sim_not_settled"
+   ]
+  },
+  {
+   "ts": "2026-09-28T14:41:38",
+   "event": "issue",
+   "id": 3,
+   "status": "escalated",
+   "agent": null,
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T14:41:38",
+   "event": "issue",
+   "id": 5,
+   "status": "fixing",
+   "agent": "fixer",
+   "attempts": 0
   }
  ]
 }

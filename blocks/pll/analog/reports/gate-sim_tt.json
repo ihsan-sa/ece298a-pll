@@ -1,0 +1,847 @@
+{
+  "script": "gate",
+  "gate": "sim_tt",
+  "phase": "P4",
+  "tool": "sim_tt",
+  "input_digest": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+  "status": "fail",
+  "criteria": {
+    "fail_severities": [
+      "error"
+    ],
+    "max_count": 0
+  },
+  "counts": {
+    "total": 11,
+    "by_severity": {
+      "error": 11
+    },
+    "by_source": {
+      "ngspice": 11
+    }
+  },
+  "failing_count": 11,
+  "failing": [
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_convergence_trouble",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_timestep_too_small",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_overlap_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_bound_fail",
+      "refs": [
+        "cp_overlap_net_charge_fc",
+        "tt"
+      ],
+      "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+          "file": "pll_analog_overlap_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_empty_netlist",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_ngspice_error",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_startup_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_not_settled",
+      "refs": [
+        "startup_time_us",
+        "tt"
+      ],
+      "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+          "file": "pll_analog_startup_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_sim_timeout",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_kvco_mhz_per_v"
+      ],
+      "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_df_dv_min_mhz_per_v"
+      ],
+      "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_out_swing_pct_vdd"
+      ],
+      "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_out_duty_pct"
+      ],
+      "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "violations": [
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_convergence_trouble",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_timestep_too_small",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_overlap_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_bound_fail",
+      "refs": [
+        "cp_overlap_net_charge_fc",
+        "tt"
+      ],
+      "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+          "file": "pll_analog_overlap_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_empty_netlist",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_ngspice_error",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_startup_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_not_settled",
+      "refs": [
+        "startup_time_us",
+        "tt"
+      ],
+      "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+          "file": "pll_analog_startup_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_sim_timeout",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_kvco_mhz_per_v"
+      ],
+      "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_df_dv_min_mhz_per_v"
+      ],
+      "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_out_swing_pct_vdd"
+      ],
+      "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "sim_tt",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_measure_missing",
+      "refs": [
+        "tt",
+        "vco_out_duty_pct"
+      ],
+      "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "facts": {
+    "top": "pll_analog",
+    "corners": [
+      "tt"
+    ],
+    "results": [
+      {
+        "bench": "pll_analog_cp_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 0,
+        "measures": {
+          "icp_up_code00_ua": 19.274,
+          "icp_dn_code00_ua": 18.9173,
+          "icp_up_code00_tt_ua": 19.274,
+          "icp_up_code01_ua": 23.9982,
+          "icp_up_code10_ua": 28.7093,
+          "icp_up_code11_ua": 38.1014,
+          "icp_code11_over_code00_ratio": 1.97683,
+          "cp_updn_mismatch_pct": 4.95461,
+          "vctrl_leak_off_na": 0.00276435
+        },
+        "engine_errors": [],
+        "violations": [],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_ol_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 0,
+        "measures": {},
+        "engine_errors": [
+          "convergence_trouble",
+          "timestep_too_small"
+        ],
+        "violations": [
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_ol_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_engine_error_convergence_trouble",
+            "refs": [
+              "tt"
+            ],
+            "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+                "file": "pll_analog_ol_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_ol_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_engine_error_timestep_too_small",
+            "refs": [
+              "tt"
+            ],
+            "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+                "file": "pll_analog_ol_tb.cir",
+                "line": null
+              }
+            ]
+          }
+        ],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_overlap_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 0,
+        "measures": {
+          "cp_overlap_net_charge_fc": 25.1394
+        },
+        "engine_errors": [],
+        "violations": [
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_overlap_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_bound_fail",
+            "refs": [
+              "cp_overlap_net_charge_fc",
+              "tt"
+            ],
+            "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
+                "file": "pll_analog_overlap_tb.cir",
+                "line": null
+              }
+            ]
+          }
+        ],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_presc_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 1,
+        "measures": {},
+        "engine_errors": [
+          "empty_netlist",
+          "ngspice_error"
+        ],
+        "violations": [
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_presc_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_engine_error_empty_netlist",
+            "refs": [
+              "tt"
+            ],
+            "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+                "file": "pll_analog_presc_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_presc_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_engine_error_ngspice_error",
+            "refs": [
+              "tt"
+            ],
+            "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+                "file": "pll_analog_presc_tb.cir",
+                "line": null
+              }
+            ]
+          }
+        ],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_presc_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_pwr_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 0,
+        "measures": {
+          "standby_current_ua": 0.000105795,
+          "vco_out_off_toggles": 0.0
+        },
+        "engine_errors": [],
+        "violations": [],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_pwr_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_startup_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": 0,
+        "measures": {},
+        "engine_errors": [],
+        "violations": [
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_startup_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_not_settled",
+            "refs": [
+              "startup_time_us",
+              "tt"
+            ],
+            "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
+                "file": "pll_analog_startup_tb.cir",
+                "line": null
+              }
+            ]
+          }
+        ],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt.cir"
+      },
+      {
+        "bench": "pll_analog_vco_tb.cir",
+        "corner": "tt",
+        "process": "typical",
+        "passive": "typical",
+        "temp_c": 27,
+        "vdd": "3.3",
+        "returncode": -1,
+        "measures": {},
+        "engine_errors": [
+          "sim_timeout"
+        ],
+        "violations": [
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_vco_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_engine_error_sim_timeout",
+            "refs": [
+              "tt"
+            ],
+            "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+                "file": "pll_analog_vco_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_vco_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_measure_missing",
+            "refs": [
+              "tt",
+              "vco_kvco_mhz_per_v"
+            ],
+            "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+                "file": "pll_analog_vco_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_vco_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_measure_missing",
+            "refs": [
+              "tt",
+              "vco_df_dv_min_mhz_per_v"
+            ],
+            "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+                "file": "pll_analog_vco_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_vco_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_measure_missing",
+            "refs": [
+              "tt",
+              "vco_out_swing_pct_vdd"
+            ],
+            "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+                "file": "pll_analog_vco_tb.cir",
+                "line": null
+              }
+            ]
+          },
+          {
+            "check": "sim_tt",
+            "severity": "error",
+            "file": "pll_analog_vco_tb.cir",
+            "module": null,
+            "line": null,
+            "kind": "sim_measure_missing",
+            "refs": [
+              "tt",
+              "vco_out_duty_pct"
+            ],
+            "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+            "source": "ngspice",
+            "items": [
+              {
+                "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+                "file": "pll_analog_vco_tb.cir",
+                "line": null
+              }
+            ]
+          }
+        ],
+        "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt.cir"
+      }
+    ]
+  },
+  "record_result": {
+    "ok": true,
+    "recorded": true,
+    "workspace": "blocks/pll/analog",
+    "gate": "sim_tt",
+    "status": "fail",
+    "attempts": 1,
+    "inputs": {
+      "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+      "tb": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
+      "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
+      "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
+    }
+  }
+}

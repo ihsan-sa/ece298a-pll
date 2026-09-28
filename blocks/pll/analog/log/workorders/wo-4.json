@@ -1,0 +1,124 @@
+{
+ "id": 4,
+ "created": "2026-09-28T14:41:25",
+ "gate": "sim_tt",
+ "phase": "P4",
+ "workspace": "blocks/pll/analog",
+ "fixer": "testbench",
+ "role_prompt": "skills/ade/agents/bench-writer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit tb/ (and the reference model it scores against) only; a mutate survivor names the mutant class the test must now kill."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/sim_measure_missing.md"
+ ],
+ "cluster": {
+  "file": "pll_analog_vco_tb.cir",
+  "module": null,
+  "kinds": [
+   "sim_measure_missing"
+  ],
+  "checks": [
+   "ngspice"
+  ],
+  "severity": "error",
+  "count": 4,
+  "violations": [
+   {
+    "check": "sim_tt",
+    "severity": "error",
+    "file": "pll_analog_vco_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_measure_missing",
+    "refs": [
+     "tt",
+     "vco_kvco_mhz_per_v"
+    ],
+    "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "vco_kvco_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "file": "pll_analog_vco_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim_tt",
+    "severity": "error",
+    "file": "pll_analog_vco_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_measure_missing",
+    "refs": [
+     "tt",
+     "vco_df_dv_min_mhz_per_v"
+    ],
+    "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "vco_df_dv_min_mhz_per_v @ tt: not present in ngspice's output - never printed",
+      "file": "pll_analog_vco_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim_tt",
+    "severity": "error",
+    "file": "pll_analog_vco_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_measure_missing",
+    "refs": [
+     "tt",
+     "vco_out_swing_pct_vdd"
+    ],
+    "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "vco_out_swing_pct_vdd @ tt: not present in ngspice's output - never printed",
+      "file": "pll_analog_vco_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "sim_tt",
+    "severity": "error",
+    "file": "pll_analog_vco_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_measure_missing",
+    "refs": [
+     "tt",
+     "vco_out_duty_pct"
+    ],
+    "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "vco_out_duty_pct @ tt: not present in ngspice's output - never printed",
+      "file": "pll_analog_vco_tb.cir",
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/analog",
+  "spec": "blocks/pll/analog/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}
