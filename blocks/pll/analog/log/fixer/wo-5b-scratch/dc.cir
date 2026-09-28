@@ -1,0 +1,31 @@
+* dc pump mismatch
+.include 'hdr.inc'
+.include 'p0.inc'
+.temp 27
+vdd_src  vdd      0 3.3
+vss_src  vss      0 0
+ven      pll_en   0 3.3
+vup      pfd_up   0 3.3
+vdn      pfd_dn   0 3.3
+vt0      cp_trim0 0 0
+vt1      cp_trim1 0 0
+vvc      vctrl    0 1.65
+cload    vco_out  0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+foreach vc 0.3 0.6 1.0 1.65 2.3 2.7 3.0
+  alter vvc dc = $vc
+  op
+  echo "VC $vc inet=$&i(vvc) upS=$&v(xdut.up_s) dnS=$&v(xdut.dn_s) vcpn=$&v(xdut.vcp_n) vcpp=$&v(xdut.vcp_p) br=$&v(bias_ref)"
+  destroy $curplot
+end
+alter vup dc=0
+alter vdn dc=3.3
+op
+echo "DNonly vc=1.65 i=$&i(vvc)"
+alter vup dc=3.3
+alter vdn dc=0
+op
+echo "UPonly vc=1.65 i=$&i(vvc)"
+.endc
+.end

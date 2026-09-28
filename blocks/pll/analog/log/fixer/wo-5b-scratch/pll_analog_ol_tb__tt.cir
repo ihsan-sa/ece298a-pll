@@ -10,9 +10,7 @@
 * with every factor taken from the DUT itself, cp_trim = 00, pll_en = 1:
 *  - Icp   = mean of the UP and DN pump currents at vctrl = vdd/2 (DC op)
 *  - Kvco  = (f(vdd-0.3) - f(0.3)) / (vdd-0.6) in Hz/V (mean slope, the same
-*            definition and frequency ladder as vco_kvco_mhz_per_v), from
-*            transients with lfeed altered to 1 nH (restored to 1 GH for ac);
-*            a stalled point reads f = 0, and a Kvco <= 0 prints nothing
+*            definition as vco_kvco_mhz_per_v), from two transients
 *  - Z(s)  = v(vctrl) for a 1 A AC current into vctrl with both pump inputs
 *            low: the cell's own R1/C1/C2, V2I gate and pump off-impedance
 *            (plus 5 pF for the pad case). vctrl's DC point (vdd/2) is set
@@ -22,18 +20,18 @@
 * not name another code for P*N = 40).
 * sim_timeout_s: 600
 
-.include '{{PDK}}/libs.tech/ngspice/design.spice'
-.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
-.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
-.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' mimcap_{{CORNER}}
-.include '{{NETLIST}}'
-{{SIZING}}
+.include '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/netlist/pll_analog.cir'
+.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.00054 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.000126 c1_w=0.0001 c2_w=3.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l='2e-05' w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='2e-06' w_rn='1e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06'
 
-.temp {{TEMP_C}}
-.param vddp={{VDD}}
-.param tempp={{TEMP_C}}
+.temp 27
+.param vddp=3.3
+.param tempp=27
 .param p_typical=1 p_ss=2 p_ff=3
-.csparam procn={p_{{CORNER}}}
+.csparam procn={p_typical}
 .csparam tempc={tempp}
 .csparam vddp={vddp}
 .csparam vmid={vddp/2}
@@ -72,65 +70,34 @@ if $istt eq 1
   let x = (-i(vvc) + $iup)/2
   set icp = "$&x"
   alter vdn dc = 0
-  * --- Kvco (mean slope over the tuning range), same frequency ladder as
-  * pll_analog_vco_tb.cir. lfeed is dropped to 1 nH for the transients (a
-  * 1 GH series inductor makes every tran step ill-conditioned: wo-2 saw a
-  * run stall at 15 time points) and restored to 1 GH before the ac runs.
-  alter lfeed = 1e-9
+  * --- Kvco (mean slope over the tuning range)
+  set fok = "1"
   set fl = "0"
-  set fh = "0"
-  set first = "1"
   foreach vc 0.3 $&vhi
     alter vvc dc = $vc
-    set gotf = "0"
-    set fks = "0"
-    foreach st 0 1
-      if $gotf eq 0
-        if $st eq 0
-          set tsx = "20p"
-          set tex = "25n"
-          set tdx = "4n"
-        end
-        if $st eq 1
-          set tsx = "250p"
-          set tex = "400n"
-          set tdx = "20n"
-        end
-        tran $tsx $tex 0 $tsx
-        let nx = length(time)
-        let nx1 = nx - 1
-        let nx2 = nx - 2
-        let hv = (v(vco_out) gt vmid)
-        let late = time[1,$&nx1] gt $tdx
-        let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
-        if (nrise ge 6) or ($st eq 1)
-          set gotf = "1"
-          let np = nrise - 1
-          if np gt 5
-            let np = 5
-          end
-          if np ge 1
-            let nr = np + 1
-            meas tran ta when v(vco_out)=$&vmid rise=1 td=$tdx
-            meas tran tb when v(vco_out)=$&vmid rise=$&nr td=$tdx
-            let x = np/(tb - ta)
-            set fks = "$&x"
-          end
-        end
-        destroy $curplot
+    tran 20p 1.2u 0 20p
+    let nx = length(time)
+    let nx1 = nx - 1
+    let nx2 = nx - 2
+    let isrise = (v(vco_out) gt vmid)
+    let late = time[1,$&nx1] gt 200n
+    let nrise = mean((isrise[1,$&nx1] - isrise[0,$&nx2]) gt 0.5 and late)*length(late)
+    if nrise ge 7
+      meas tran ta when v(vco_out)=$&vmid rise=1 td=200n
+      meas tran tb when v(vco_out)=$&vmid rise=6 td=200n
+      let x = 5/(tb - ta)
+      set fh = "$&x"
+      if $fl eq 0
+        set fl = "$&x"
       end
-    end
-    if $first eq 1
-      set fl = "$fks"
-      set first = "0"
     else
-      set fh = "$fks"
+      set fok = "0"
     end
+    destroy $curplot
   end
-  alter lfeed = 1e9
-  let x = ($fh - $fl)/(vhi - 0.3)
-  set kv = "$&x"
-  if x gt 0
+  if $fok eq 1
+    let x = ($fh - $fl)/(vhi - 0.3)
+    set kv = "$&x"
     alter vvc dc = $&vmid
     * --- Z(s) at vctrl, no pad
     ac dec 50 1k 100meg
