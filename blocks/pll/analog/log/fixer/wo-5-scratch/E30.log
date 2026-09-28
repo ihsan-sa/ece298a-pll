@@ -1,0 +1,89 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * osc
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+vss                                          0
+pll_en                                     3.3
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                        3
+vco_out                                0.42914
+xdut.en_b                          5.43322e-09
+xdut.vbp                               2.12809
+xdut.va                                1.98783
+bias_ref                              0.919984
+xdut.xrbias_int.11                    0.919693
+xdut.xrbias_int.21                 0.000291068
+xdut.vst                            0.00978325
+xdut.vcp_n                             0.80669
+xdut.t1a                                   3.3
+xdut.t2                                    3.3
+xdut.t1b                                   3.3
+xdut.t1c                             0.0644391
+xdut.vcp_p                             2.30996
+xdut.up_s                              2.84607
+xdut.up_b                                  3.3
+xdut.vdump                             2.80103
+xdut.dn_s                              1.88816
+xdut.dn_b                                  3.3
+xdut.xr1.11                                  3
+xdut.xr1.21                                  3
+xdut.vfilt                                   3
+xdut.vi                                2.01769
+xdut.vs                                1.56547
+xdut.xr_v2i.11                         1.56103
+xdut.xr_v2i.21                      0.00443515
+xdut.vbp_vco                           2.06807
+xdut.vbn_vco                            1.0646
+xdut.p1                                2.68515
+xdut.r1                                1.39826
+xdut.r5                                1.39826
+xdut.n1                               0.388291
+xdut.p2                                2.68515
+xdut.r2                                1.39826
+xdut.n2                               0.388291
+xdut.p3                                2.68515
+xdut.r3                                1.39826
+xdut.n3                               0.388291
+xdut.p4                                2.68515
+xdut.r4                                1.39826
+xdut.n4                               0.388291
+xdut.p5                                2.68515
+xdut.n5                               0.388291
+xdut.nb                                1.65664
+xdut.ng                               0.124723
+vvc#branch                        -2.76294e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00155332
+vdd_src#branch                     -0.00155332
+
+ Reference value :  1.74560e-09 Reference value :  3.58560e-09 Reference value :  4.52560e-09 Reference value :  5.14560e-09 Reference value :  6.58560e-09 Reference value :  8.30560e-09 Reference value :  9.28560e-09 Reference value :  1.08656e-08 Reference value :  1.23856e-08 Reference value :  1.49056e-08 Reference value :  1.66656e-08 Reference value :  1.83456e-08 Reference value :  2.02056e-08 Reference value :  2.17456e-08 Reference value :  2.27456e-08 Reference value :  2.45056e-08 Reference value :  2.52856e-08 Reference value :  2.66856e-08 Reference value :  2.75656e-08 Reference value :  2.93856e-08 Reference value :  3.02656e-08 Reference value :  3.09056e-08 Reference value :  3.19456e-08 Reference value :  3.28256e-08 Reference value :  3.43456e-08 Reference value :  3.55447e-08 Reference value :  3.65647e-08 Reference value :  3.86247e-08 Reference value :  4.03639e-08 Reference value :  4.19039e-08 Reference value :  4.32239e-08 Reference value :  4.51039e-08 Reference value :  4.71039e-08 Reference value :  4.81239e-08 Reference value :  4.92839e-08 Reference value :  5.03439e-08 Reference value :  5.25005e-08 Reference value :  5.44205e-08 Reference value :  5.69405e-08 Reference value :  5.83205e-08 Reference value :  5.92805e-08
+No. of Data Rows : 3008
+r5x                 =  3.35660e+00 at=  5.45005e-08
+r5n                 =  -4.27030e-02 at=  3.59247e-08
+ox                  =  3.31508e+00 at=  5.56005e-08
+on                  =  -1.01187e-02 at=  4.73639e-08
+ta                  =  3.04173e-08
+tb                  =  3.66570e-08
+fmhz = 3.205287e+02
+ivdd                =  -5.20171e-04 from=  3.00000e-08 to=  6.00000e-08
+Note: Simulation executed from .control section 

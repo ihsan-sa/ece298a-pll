@@ -1,0 +1,29 @@
+* startup mini
+.include 'hdr.inc'
+.include 'pD.inc'
+.temp 27
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 pwl(0 0 20n 0 21n 3.3)
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+tran 50p 200n 0 50p
+meas tran r5x max v(xdut.r5) from=133n to=200n
+meas tran r5n min v(xdut.r5) from=133n to=200n
+meas tran ox max v(vco_out) from=133n to=200n
+meas tran on min v(vco_out) from=133n to=200n
+meas tran tfirst when v(vco_out)=2.97 rise=1 td=20n
+meas tran ta when v(vco_out)=1.65 rise=1 td=133n
+meas tran tb when v(vco_out)=1.65 rise=3 td=133n
+let fmhz = 2/(tb-ta)/1e6
+print fmhz
+meas tran br max v(bias_ref) from=133n to=200n
+.endc
+.end

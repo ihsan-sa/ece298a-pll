@@ -1,0 +1,31 @@
+* overlap per-vc
+.include 'hdr.inc'
+.include 'pP7.inc'
+.temp 27
+vdd_src  vdd      0 3.3
+vss_src  vss      0 0
+ven      pll_en   0 3.3
+vup      pfd_up   0 pulse(0 3.3 20n 100p 100p 1n 40n)
+vdn      pfd_dn   0 pulse(0 3.3 20n 100p 100p 1n 40n)
+vt0      cp_trim0 0 0
+vt1      cp_trim1 0 0
+vvc      vctrl    0 1.65
+cload    vco_out  0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+foreach vc 0.3 1.65 3.0
+  alter vvc dc = $vc
+  tran 10p 140n 0 10p
+  meas tran qev integ i(vvc) from=99n to=139n
+  meas tran qup integ i(vvc) from=99n to=110n
+  meas tran vdm find v(xdut.vdump) at=99n
+  meas tran vus find v(xdut.up_s) at=99n
+  meas tran vds find v(xdut.dn_s) at=99n
+  let qfc = qev*1e15
+  let qufc = qup*1e15
+  echo "VC $vc"
+  print qfc qufc
+  destroy $curplot
+end
+.endc
+.end

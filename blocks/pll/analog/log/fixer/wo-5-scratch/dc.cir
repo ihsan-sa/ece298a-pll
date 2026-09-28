@@ -1,0 +1,23 @@
+* dc
+.include 'hdr.inc'
+.include 'p.inc'
+.temp 27
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+foreach vc 0.3 1.0 1.65 2.3 3.0
+alter vvc dc = $vc
+op
+print v(bias_ref) v(xdut.vbp_vco) v(xdut.vbn_vco) v(xdut.vi) v(xdut.vs) @m.xdut.xmn_flr.m0[id] v(xdut.r5) v(xdut.r1)
+print @m.xdut.xmp_v2i.m0[id] @m.xdut.xmn_v2im.m0[id] @m.xdut.xmn_cpref.m0[id]
+end
+.endc
+.end

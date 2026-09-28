@@ -1,0 +1,17 @@
+* ord
+.include 'hdr.inc'
+.include 'pA.inc'
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 3.0
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+op
+print @m.xdut.xmp_v2i.m0[id] v(xdut.vs)
+.endc
+.end

@@ -1,0 +1,97 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * osc
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+vss                                          0
+pll_en                                     3.3
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     1.65
+vco_out                            3.43611e-05
+xdut.en_b                          5.43322e-09
+xdut.vbp                               2.12809
+xdut.va                                1.98783
+bias_ref                              0.919984
+xdut.xrbias_int.11                    0.919693
+xdut.xrbias_int.21                 0.000291068
+xdut.vst                            0.00978325
+xdut.vcp_n                             0.80669
+xdut.t1a                                   3.3
+xdut.t2                                    3.3
+xdut.t1b                                   3.3
+xdut.t1c                             0.0644391
+xdut.vcp_p                             2.30996
+xdut.up_s                              2.84607
+xdut.up_b                                  3.3
+xdut.vdump                             2.80103
+xdut.dn_s                              1.88816
+xdut.dn_b                                  3.3
+xdut.xr1.11                               1.65
+xdut.xr1.21                               1.65
+xdut.vfilt                                1.65
+xdut.vi                                2.19387
+xdut.vs                               0.598323
+xdut.xr_v2i.11                        0.596628
+xdut.xr_v2i.21                      0.00169512
+xdut.vbp_vco                           2.23887
+xdut.vbn_vco                           0.91986
+xdut.p1                                2.42661
+xdut.r1                                1.23499
+xdut.r5                                1.23499
+xdut.n1                               0.356256
+xdut.p2                                2.42661
+xdut.r2                                1.23499
+xdut.n2                               0.356256
+xdut.p3                                2.42661
+xdut.r3                                1.23499
+xdut.n3                               0.356256
+xdut.p4                                2.42661
+xdut.r4                                1.23499
+xdut.n4                               0.356256
+xdut.p5                                2.42661
+xdut.n5                               0.356256
+xdut.nb                                2.76151
+xdut.ng                              0.0990759
+vvc#branch                          -3.461e-14
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000532337
+vdd_src#branch                    -0.000532337
+
+ Reference value :  2.56000e-11 Reference value :  1.18560e-09 Reference value :  2.54560e-09 Reference value :  3.96560e-09 Reference value :  4.78560e-09 Reference value :  6.02560e-09 Reference value :  7.68560e-09 Reference value :  9.72560e-09 Reference value :  1.14656e-08 Reference value :  1.32256e-08 Reference value :  1.48656e-08 Reference value :  1.55856e-08 Reference value :  1.74856e-08 Reference value :  1.89856e-08 Reference value :  2.08456e-08 Reference value :  2.27856e-08 Reference value :  2.45856e-08 Reference value :  2.59256e-08 Reference value :  2.73456e-08 Reference value :  2.96056e-08 Reference value :  3.13456e-08 Reference value :  3.25656e-08 Reference value :  3.44256e-08 Reference value :  3.57056e-08 Reference value :  3.77856e-08 Reference value :  3.95256e-08 Reference value :  4.03456e-08 Reference value :  4.22456e-08 Reference value :  4.48256e-08 Reference value :  4.61456e-08 Reference value :  4.79256e-08 Reference value :  4.98456e-08 Reference value :  5.18856e-08 Reference value :  5.34456e-08 Reference value :  5.48456e-08 Reference value :  5.63656e-08 Reference value :  5.86256e-08 Reference value :  5.95856e-08 Reference value :  6.14456e-08 Reference value :  6.36256e-08 Reference value :  6.72256e-08 Reference value :  6.99456e-08 Reference value :  7.21856e-08 Reference value :  7.37456e-08 Reference value :  7.46056e-08 Reference value :  7.55456e-08 Reference value :  7.68256e-08 Reference value :  7.80856e-08 Reference value :  7.96856e-08
+No. of Data Rows : 4008
+r5x                 =  1.23505e+00 at=  7.34656e-08
+r5n                 =  1.23483e+00 at=  7.78656e-08
+ox                  =  3.46772e-05 at=  7.54056e-08
+on                  =  3.36431e-05 at=  7.98056e-08
+
+Error: measure  ta  when(WHEN) : out of interval
+ meas tran ta when v(xdut.r5)=1.4 rise=2 td=26n failed!
+
+
+Error: measure  tb  when(WHEN) : out of interval
+ meas tran tb when v(xdut.r5)=1.4 rise=4 td=26n failed!
+
+Warning from checkvalid: vector tb is not available or has zero length.
+Error: RHS "2/(tb-ta)/1e6" invalid
+Warning from checkvalid: vector fmhz is not available or has zero length.
+ivdd                =  -5.32333e-04 from=  4.00000e-08 to=  8.00000e-08
+Note: Simulation executed from .control section 

@@ -1,0 +1,60 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * pll_analog_cp_tb.cir - charge-pump dc bench (spec.yaml: icp_up_code00_ua,
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  0.00000e+00
+No. of Data Rows : 1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  2.94375e+00
+No. of Data Rows : 49
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  1.14375e+00
+No. of Data Rows : 49
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+ Reference value :  3.00000e-01 Reference value :  2.55000e+00
+No. of Data Rows : 49
+
+  Measurements for DC Analysis (pll_analog_cp_tb, computed in .control)
+icp_up_code00_ua = 19.0683
+icp_dn_code00_ua = 18.829
+icp_up_code00_tt_ua = 19.0683
+icp_up_code01_ua = 23.7567
+icp_up_code10_ua = 28.4333
+icp_up_code11_ua = 37.7587
+icp_code11_over_code00_ratio = 1.98018
+cp_updn_mismatch_pct = 4.15121
+vctrl_leak_off_na = 0.00276435
+
+Note: Simulation executed from .control section 
