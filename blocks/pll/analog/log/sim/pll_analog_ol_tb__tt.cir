@@ -10,7 +10,9 @@
 * with every factor taken from the DUT itself, cp_trim = 00, pll_en = 1:
 *  - Icp   = mean of the UP and DN pump currents at vctrl = vdd/2 (DC op)
 *  - Kvco  = (f(vdd-0.3) - f(0.3)) / (vdd-0.6) in Hz/V (mean slope, the same
-*            definition as vco_kvco_mhz_per_v), from two transients
+*            definition and frequency ladder as vco_kvco_mhz_per_v), from
+*            transients with lfeed altered to 1 nH (restored to 1 GH for ac);
+*            a stalled point reads f = 0, and a Kvco <= 0 prints nothing
 *  - Z(s)  = v(vctrl) for a 1 A AC current into vctrl with both pump inputs
 *            low: the cell's own R1/C1/C2, V2I gate and pump off-impedance
 *            (plus 5 pF for the pad case). vctrl's DC point (vdd/2) is set
@@ -70,34 +72,65 @@ if $istt eq 1
   let x = (-i(vvc) + $iup)/2
   set icp = "$&x"
   alter vdn dc = 0
-  * --- Kvco (mean slope over the tuning range)
-  set fok = "1"
+  * --- Kvco (mean slope over the tuning range), same frequency ladder as
+  * pll_analog_vco_tb.cir. lfeed is dropped to 1 nH for the transients (a
+  * 1 GH series inductor makes every tran step ill-conditioned: wo-2 saw a
+  * run stall at 15 time points) and restored to 1 GH before the ac runs.
+  alter lfeed = 1e-9
   set fl = "0"
+  set fh = "0"
+  set first = "1"
   foreach vc 0.3 $&vhi
     alter vvc dc = $vc
-    tran 20p 1.2u 0 20p
-    let nx = length(time)
-    let nx1 = nx - 1
-    let nx2 = nx - 2
-    let isrise = (v(vco_out) gt vmid)
-    let late = time[1,$&nx1] gt 200n
-    let nrise = mean((isrise[1,$&nx1] - isrise[0,$&nx2]) gt 0.5 and late)*length(late)
-    if nrise ge 7
-      meas tran ta when v(vco_out)=$&vmid rise=1 td=200n
-      meas tran tb when v(vco_out)=$&vmid rise=6 td=200n
-      let x = 5/(tb - ta)
-      set fh = "$&x"
-      if $fl eq 0
-        set fl = "$&x"
+    set gotf = "0"
+    set fks = "0"
+    foreach st 0 1
+      if $gotf eq 0
+        if $st eq 0
+          set tsx = "20p"
+          set tex = "25n"
+          set tdx = "4n"
+        end
+        if $st eq 1
+          set tsx = "250p"
+          set tex = "400n"
+          set tdx = "20n"
+        end
+        tran $tsx $tex 0 $tsx
+        let nx = length(time)
+        let nx1 = nx - 1
+        let nx2 = nx - 2
+        let hv = (v(vco_out) gt vmid)
+        let late = time[1,$&nx1] gt $tdx
+        let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
+        if (nrise ge 6) or ($st eq 1)
+          set gotf = "1"
+          let np = nrise - 1
+          if np gt 5
+            let np = 5
+          end
+          if np ge 1
+            let nr = np + 1
+            meas tran ta when v(vco_out)=$&vmid rise=1 td=$tdx
+            meas tran tb when v(vco_out)=$&vmid rise=$&nr td=$tdx
+            let x = np/(tb - ta)
+            set fks = "$&x"
+          end
+        end
+        destroy $curplot
       end
-    else
-      set fok = "0"
     end
-    destroy $curplot
+    if $first eq 1
+      set fl = "$fks"
+      set first = "0"
+    else
+      set fh = "$fks"
+    end
   end
-  if $fok eq 1
-    let x = ($fh - $fl)/(vhi - 0.3)
-    set kv = "$&x"
+  alter lfeed = 1e9
+  let x = ($fh - $fl)/(vhi - 0.3)
+  set kv = "$&x"
+  if x gt 0
     alter vvc dc = $&vmid
     * --- Z(s) at vctrl, no pad
     ac dec 50 1k 100meg

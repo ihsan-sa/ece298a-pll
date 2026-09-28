@@ -14,7 +14,8 @@
 * short for 20 VCO periods: 40 ns at a 5 ps max step (fast VCO, >~ 730 MHz),
 * then 130 ns at a 10 ps max step (down to ~190 MHz, under the 200 MHz
 * fmax_ff floor). A single 300 ns run at 5 ps (60000 steps) timed out at
-* 600 s (wo-4). Fewer edges than that: the count ratio 2*nq/nv (as before).
+* 600 s (wo-4). Fewer Q edges than 11 (a stage that cannot follow), or
+* fewer VCO edges after both runs: the count ratio 2*nq/nv (as before).
 * At every corner other than ff_m40c_vp10 the bench runs a DC op only and
 * prints nothing: presc_div2_ratio is not scored there, and a deck with no
 * analysis at all reads to the gate as "no simulations run".
@@ -89,7 +90,7 @@ if (procn eq 3) and (tempc eq -40) and (vddp gt 3.4)
         set rat = "$&x"
         set okp = "1"
       else
-        if ($st eq 1) and (nv ge 1)
+        if (($st eq 1) or (nv ge 22)) and (nv ge 1)
           let x = 2*nq/nv
           set rat = "$&x"
           set okp = "1"
