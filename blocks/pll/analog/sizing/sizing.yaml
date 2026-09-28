@@ -99,9 +99,9 @@ l_v2i:
   value: 1e-06
   min: 2.8e-07
   max: 2e-06
-# R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd)
+# R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd); 35u -> tt f(3.0 V) ~260 MHz (MN_CL caps ff)
 rv2i_l:
-  value: 5e-05
+  value: 3.5e-05
   min: 5e-06
   max: 0.0002
 # MN_FLR W: Ifloor = Ib (W/L)flr/(W/L)b1 sets fmin
@@ -216,6 +216,17 @@ w_buflp:
   max: 5e-05
 # buffer mirror-load L (both mirrors): >= 1 um for offset
 l_bufl:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-06
+# MN_CL W: V2I current ceiling Imax = Ib (W/L)cl/(W/L)b1 (~20 x Ib); caps fmax at ff/-40 C/3.63 V
+# (40u: ff 270 MHz; 32u: 211 MHz; 44u: 299 MHz). W 1..50 um template range
+w_cl:
+  value: 4e-05
+  min: 1e-05
+  max: 5e-05
+# MN_CL L: = l_b1 so the ceiling tracks Ib as a mirror copy
+l_cl:
   value: 2e-06
   min: 1e-06
   max: 2e-06

@@ -11,8 +11,7 @@
 *
 * Blocks: (1) enable inverter, (2) Vgs/R self-biased reference with startup
 * and standby clamps, (3) trimmed, current-steered charge pump, (4) R1-C1 ||
-* C2 loop filter, (3b) vdump = vctrl rail-to-rail buffer, (5) degenerated V-to-I with floor current and
-* current ceiling, (6) 5-stage
+* C2 loop filter, (3b) vdump = vctrl rail-to-rail buffer, (5) degenerated V-to-I with floor current, (6) 5-stage
 * current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer.
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
@@ -20,14 +19,14 @@
 .param w_b2=4e-06 l_b2=1e-06 rb_l=0.00054 w_cpn=2e-05
 .param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
 .param w_swp=4e-06 l_sw=5e-07 r1_l=0.000126 c1_w=0.0001
-.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=3.5e-05
+.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=5e-05
 .param w_flr=2e-06 l_flr=2e-06 w_v2ip=1e-05 w_v2in=4e-06
 .param l_v2i2=5e-07 w_sp=1e-05 w_sn=4e-06 l_s=5e-07
 .param w_rp=6e-06 w_rn=3e-06 l_r=2.8e-07 w_gp=4e-06
 .param w_gn=4e-06 w_op=1.2e-05 w_on=6e-06
 .param m_buft=4 w_bufp=2e-05 l_bufp=1e-06 w_bufn=1e-05 l_bufn=1e-06
 .param w_bufln=4e-06 w_buflp=8e-06 l_bufl=2e-06
-.param w_cl=4e-05 l_cl=2e-06
+.param w_cl=3.2e-05 l_cl=2e-06
 
 .subckt pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
@@ -99,9 +98,6 @@ XC1 vfilt vss cap_mim_2f0_m2m3_noshield c_width=c1_w c_length=c1_w
 XC2 vctrl vss cap_mim_2f0_m2m3_noshield c_width=c2_w c_length=c2_w
 
 * (5) VCO control: degenerated V2I + floor current -> vbp_vco / vbn_vco
-* MN_CL (gate bias_ref, a (W/L)cl/(W/L)b1 copy of Ib) sits under R_V2I: in
-* triode it adds ~1-2 kOhm to the degeneration; once the V2I current reaches
-* its copy of Ib it saturates and caps I_ctl - the fmax ceiling at ff/-40 C/3.63 V.
 XMN_V2I vi vctrl vs vss nfet_03v3 w=w_v2i l=l_v2i
 XR_V2I vs vcl vss ppolyf_u r_width=1e-6 r_length=rv2i_l
 XMN_CL vcl bias_ref vss vss nfet_03v3 w=w_cl l=l_cl

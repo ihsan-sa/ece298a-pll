@@ -23,7 +23,7 @@ Internal nodes: `en_b`, `vbp` (PMOS bias gate), `va` (bias loop gain node),
 `up_s`, `dn_s` (switch source nodes), `vdump`, `vbt` / `vnt` (buffer PMOS /
 NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 `vfilt` (R1-C1 junction),
-`vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `r1..r5` (ring),
+`vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `vcl` (ceiling drain), `r1..r5` (ring),
 `nb` (NAND output).
 
 ## Blocks and refdes
@@ -120,7 +120,11 @@ so vctrl_leak_off_na and the loop-filter poles are untouched.
 
 ### 5. VCO control: V-to-I with floor current
 - `MN_V2I`: gate `vctrl`, source `vs`, drain `vi`. `R_V2I`: ppolyf_u,
-  `vs` -> vss (source degeneration; linearises Kvco, caps fmax at ff).
+  `vs` -> `vcl` (source degeneration; linearises Kvco).
+- `MN_CL`: gate `bias_ref`, source vss, drain `vcl` (bottom of R_V2I).
+  Current ceiling: a (W/L)cl/(W/L)MN_B1 copy of Ib. In triode at low I_ctl
+  (adds ~1-2 kOhm), saturates at Imax and caps fmax at ff/-40 C/3.63 V
+  (R_V2I alone did not: the ring ran at ~390-400 MHz there).
 - `MN_FLR`: gate `bias_ref`, source vss, drain `vi`. Adds Ifloor (a copy of
   Ib) so the ring never stalls at vctrl = 0.3 V.
 - `MN_ENS`: enable cascode, gate `pll_en`, `vi` -> `vbp_vco` (cuts the V2I
@@ -144,7 +148,7 @@ starve, gate `vbn_vco`, source vss). 20 devices: `MP_S1..MP_S5`,
 - `MP_O` / `MN_O`: inverter `nb` -> `vco_out`, sized for 15 fF, tr/tf <=
   0.15 ns. With pll_en = 0 vco_out is held at 0 (vco_out_off_toggles).
 
-Device count: 2 + 12 + 23 + 10 + 3 + 9 + 20 + 6 = 85.
+Device count: 2 + 12 + 23 + 10 + 3 + 10 + 20 + 6 = 86.
 
 ## Design equations (sized against at P4 / optimise)
 
@@ -228,7 +232,8 @@ VCO:
   N = 5. Kvco = df/dvctrl ~ f_mid / (vctrl_mid - Vth) ~ 100-150 MHz/V at
   mid range; fmin (vctrl = 0.3 V) set by Ifloor <= 50 MHz; fmax at tt
   (vctrl = 3.0 V) >= 200 MHz; fmax at ff/-40 C/3.63 V <= 333 MHz is what
-  R_V2I's degeneration must hold (I rises ~1.35x, vdd 1.1x).
+  MN_CL's ceiling holds it: I_ctl <= Ifloor + Ib (W/L)MN_CL/(W/L)MN_B1,
+  which tracks Ib (~1.15x at ff/-40 C) rather than vctrl/R_V2I (~1.6x).
 - Buffer: tr/tf = 0.15 ns into 15 fF + NAND self-load; Wp/Wn ~ 2-3 for
   duty 40..60 %.
 

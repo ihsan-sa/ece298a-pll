@@ -4,21 +4,21 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T17:32:33",
+ "updated": "2026-09-28T18:08:05",
  "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 9,
+   "attempts": 10,
    "last": {
-    "ts": "2026-09-28T17:32:33",
+    "ts": "2026-09-28T17:49:41",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
+     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
     },
     "job": null
    },
@@ -112,21 +112,31 @@
       "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-28T17:49:41",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
+     },
+     "job": null
     }
    ]
   },
   "netlist_lint": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 2,
+   "status": "pass",
+   "attempts": 3,
    "last": {
-    "ts": "2026-09-28T17:26:05",
-    "status": "fail",
-    "failing_count": 1,
-    "total": 1,
+    "ts": "2026-09-28T18:08:05",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
     "inputs": {
-     "netlist": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
-     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
+     "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
     },
     "job": null
    },
@@ -150,6 +160,17 @@
      "inputs": {
       "netlist": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
       "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-28T18:08:05",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+      "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
      },
      "job": null
     }
@@ -227,6 +248,31 @@
      "edit_class": "sizing_edit",
      "refs": [],
      "human_hold": 1
+    },
+    {
+     "ts": "2026-09-28T17:49:40",
+     "edit_class": "spec_edit",
+     "refs": [
+      "spec/spec.yaml",
+      "spec/topology.md"
+     ],
+     "human_hold": 2
+    },
+    {
+     "ts": "2026-09-28T17:49:47",
+     "edit_class": "netlist_edit",
+     "refs": [
+      "netlist/pll_analog.cir"
+     ],
+     "human_hold": 1
+    },
+    {
+     "ts": "2026-09-28T17:49:48",
+     "edit_class": "sizing_edit",
+     "refs": [
+      "sizing/sizing.yaml"
+     ],
+     "human_hold": 1
     }
    ]
   }
@@ -239,14 +285,14 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
-   "hashed": "2026-09-28T17:32:33"
+   "sha256": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
+   "hashed": "2026-09-28T18:08:05"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
-   "hashed": "2026-09-28T17:26:05"
+   "sha256": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+   "hashed": "2026-09-28T18:08:05"
   },
   "tb": {
    "path": "tb",
@@ -474,6 +520,81 @@
    "class": "sizing_edit",
    "refs": [],
    "note": null,
+   "human_hold": 1,
+   "gates": [
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T17:49:40",
+   "class": "spec_edit",
+   "refs": [
+    "spec/spec.yaml",
+    "spec/topology.md"
+   ],
+   "note": "add xMN_CL V2I current ceiling to devices",
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T17:49:47",
+   "class": "netlist_edit",
+   "refs": [
+    "netlist/pll_analog.cir"
+   ],
+   "note": "MN_CL current ceiling under R_V2I (fmax_ff), rv2i_l default 35u",
+   "human_hold": 1,
+   "gates": [
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T17:49:48",
+   "class": "sizing_edit",
+   "refs": [
+    "sizing/sizing.yaml"
+   ],
+   "note": "rv2i_l 50u->35u; new w_cl 40u, l_cl 2u; w_flr kept 2u",
    "human_hold": 1,
    "gates": [
     "sim_tt",
@@ -863,6 +984,50 @@
    "gate": "spec_lint",
    "status": "pass",
    "attempt": 9,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T17:49:40",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [
+    "spec/spec.yaml",
+    "spec/topology.md"
+   ],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-28T17:49:41",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 10,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T17:49:47",
+   "event": "edit",
+   "edit_class": "netlist_edit",
+   "refs": [
+    "netlist/pll_analog.cir"
+   ],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T17:49:48",
+   "event": "edit",
+   "edit_class": "sizing_edit",
+   "refs": [
+    "sizing/sizing.yaml"
+   ],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T18:08:05",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 3,
    "failing_count": 0
   }
  ]

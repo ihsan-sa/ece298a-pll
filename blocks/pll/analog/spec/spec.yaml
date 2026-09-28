@@ -6,7 +6,7 @@ top: pll_analog
 supply: {vdd: 3.3}
 
 # Refdes list from spec/topology.md (P2): current_mirror template anchor,
-# 85 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
+# 86 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
 # pfet_03v3, ppolyf_u, cap_mim_2f0ff.
 devices:
   # enable inverter
@@ -67,6 +67,7 @@ devices:
   # VCO control: degenerated V2I + floor current
   - xMN_V2I
   - xR_V2I
+  - xMN_CL
   - xMN_FLR
   - xMN_ENS
   - xMP_V2I
