@@ -3,7 +3,7 @@
  "gate": "sim_tt",
  "phase": "P4",
  "tool": "sim_tt",
- "input_digest": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+ "input_digest": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
  "status": "fail",
  "criteria": {
   "fail_severities": [
@@ -12,116 +12,33 @@
   "max_count": 0
  },
  "counts": {
-  "total": 5,
+  "total": 1,
   "by_severity": {
-   "error": 5
+   "error": 1
   },
   "by_source": {
-   "ngspice": 5
+   "ngspice": 1
   }
  },
- "failing_count": 5,
+ "failing_count": 1,
  "failing": [
   {
    "check": "sim_tt",
    "severity": "error",
-   "file": "pll_analog_overlap_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "cp_overlap_net_charge_fc",
-    "tt"
-   ],
-   "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-     "file": "pll_analog_overlap_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
    "file": "pll_analog_startup_tb.cir",
    "module": null,
    "line": null,
-   "kind": "sim_engine_error_sim_timeout",
-   "refs": [
-    "tt"
-   ],
-   "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-     "file": "pll_analog_startup_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_startup_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_measure_missing",
+   "kind": "sim_not_settled",
    "refs": [
     "startup_time_us",
     "tt"
    ],
-   "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+   "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
    "source": "ngspice",
    "items": [
     {
-     "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+     "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
      "file": "pll_analog_startup_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_vco_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "tt",
-    "vco_kvco_mhz_per_v"
-   ],
-   "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-     "file": "pll_analog_vco_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_vco_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "tt",
-    "vco_out_swing_pct_vdd"
-   ],
-   "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-     "file": "pll_analog_vco_tb.cir",
      "line": null
     }
    ]
@@ -131,103 +48,20 @@
   {
    "check": "sim_tt",
    "severity": "error",
-   "file": "pll_analog_overlap_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "cp_overlap_net_charge_fc",
-    "tt"
-   ],
-   "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-     "file": "pll_analog_overlap_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
    "file": "pll_analog_startup_tb.cir",
    "module": null,
    "line": null,
-   "kind": "sim_engine_error_sim_timeout",
-   "refs": [
-    "tt"
-   ],
-   "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-     "file": "pll_analog_startup_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_startup_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_measure_missing",
+   "kind": "sim_not_settled",
    "refs": [
     "startup_time_us",
     "tt"
    ],
-   "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+   "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
    "source": "ngspice",
    "items": [
     {
-     "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+     "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
      "file": "pll_analog_startup_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_vco_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "tt",
-    "vco_kvco_mhz_per_v"
-   ],
-   "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-     "file": "pll_analog_vco_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_tt",
-   "severity": "error",
-   "file": "pll_analog_vco_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "tt",
-    "vco_out_swing_pct_vdd"
-   ],
-   "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-     "file": "pll_analog_vco_tb.cir",
      "line": null
     }
    ]
@@ -271,11 +105,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_deg": 53.8892,
-     "ol_pm_pn16_pad5p_deg": 32.3862,
-     "ol_fc_pn16_nopad_khz": 1657.84,
-     "ol_pm_pn8_nopad_deg": 45.4024,
-     "ol_pm_pn40_nopad_deg": 53.6833
+     "ol_pm_pn16_nopad_deg": 45.0666,
+     "ol_pm_pn16_pad5p_deg": 31.4668,
+     "ol_fc_pn16_nopad_khz": 451.288,
+     "ol_pm_pn8_nopad_deg": 53.5671,
+     "ol_pm_pn40_nopad_deg": 31.3745
     },
     "engine_errors": [],
     "violations": [],
@@ -290,32 +124,10 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "cp_overlap_net_charge_fc": 25.1394
+     "cp_overlap_net_charge_fc": 2.40744
     },
     "engine_errors": [],
-    "violations": [
-     {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_overlap_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_bound_fail",
-      "refs": [
-       "cp_overlap_net_charge_fc",
-       "tt"
-      ],
-      "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "cp_overlap_net_charge_fc @ tt = 25.1394 outside bound [-inf, 10.0] (|net charge| into vctrl per 1 ns UP+DN overlap, worst of vctrl = 0.3, vdd/2, vdd-0.3 V)",
-        "file": "pll_analog_overlap_tb.cir",
-        "line": null
-       }
-      ]
-     }
-    ],
+    "violations": [],
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt.cir"
    },
    {
@@ -340,7 +152,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "standby_current_ua": 0.000105795,
+     "standby_current_ua": 0.00012758,
      "vco_out_off_toggles": 0.0
     },
     "engine_errors": [],
@@ -354,11 +166,9 @@
     "passive": "typical",
     "temp_c": 27,
     "vdd": "3.3",
-    "returncode": -1,
+    "returncode": 0,
     "measures": {},
-    "engine_errors": [
-     "sim_timeout"
-    ],
+    "engine_errors": [],
     "violations": [
      {
       "check": "sim_tt",
@@ -366,36 +176,16 @@
       "file": "pll_analog_startup_tb.cir",
       "module": null,
       "line": null,
-      "kind": "sim_engine_error_sim_timeout",
-      "refs": [
-       "tt"
-      ],
-      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 1800s",
-        "file": "pll_analog_startup_tb.cir",
-        "line": null
-       }
-      ]
-     },
-     {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_startup_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_measure_missing",
+      "kind": "sim_not_settled",
       "refs": [
        "startup_time_us",
        "tt"
       ],
-      "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+      "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
       "source": "ngspice",
       "items": [
        {
-        "msg": "startup_time_us @ tt: not present in ngspice's output - never printed",
+        "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
         "file": "pll_analog_startup_tb.cir",
         "line": null
        }
@@ -413,65 +203,22 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "vco_kvco_mhz_per_v": 455.819,
-     "vco_df_dv_min_mhz_per_v": 0.0,
-     "vco_fmin_tt_mhz": 0.0,
-     "vco_fmax_tt_mhz": 1230.71,
-     "vco_out_swing_pct_vdd": 0.118872,
-     "vco_out_duty_pct": 55.5144,
-     "vco_fmax_ff_mhz": 1270.22,
-     "vco_out_tr_ns": 0.037349,
-     "vco_out_tf_ns": 0.037889
+     "vco_kvco_mhz_per_v": 92.0944,
+     "vco_df_dv_min_mhz_per_v": 14.15,
+     "vco_fmin_tt_mhz": 9.68602,
+     "vco_fmax_tt_mhz": 258.341,
+     "vco_out_swing_pct_vdd": 102.068,
+     "vco_out_duty_pct": 53.6557,
+     "vco_fmax_ff_mhz": 260.523,
+     "vco_out_tr_ns": 0.051429,
+     "vco_out_tf_ns": 0.048123
     },
     "engine_errors": [],
-    "violations": [
-     {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_vco_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_bound_fail",
-      "refs": [
-       "tt",
-       "vco_kvco_mhz_per_v"
-      ],
-      "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "vco_kvco_mhz_per_v @ tt = 455.819 outside bound [40.0, 250.0] (mean df/dv over vctrl 0.3 .. vdd-0.3 V)",
-        "file": "pll_analog_vco_tb.cir",
-        "line": null
-       }
-      ]
-     },
-     {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_vco_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_bound_fail",
-      "refs": [
-       "tt",
-       "vco_out_swing_pct_vdd"
-      ],
-      "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "vco_out_swing_pct_vdd @ tt = 0.118872 outside bound [90.0, +inf] (min over the sweep of (Vhigh-Vlow)/vdd on vco_out into 15 fF)",
-        "file": "pll_analog_vco_tb.cir",
-        "line": null
-       }
-      ]
-     }
-    ],
+    "violations": [],
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt.cir"
    }
   ]
  },
- "recorded_ts": "2026-09-28T16:28:00",
- "attempts": 2
+ "recorded_ts": "2026-09-28T18:42:33",
+ "attempts": 3
 }

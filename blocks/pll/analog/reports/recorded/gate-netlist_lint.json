@@ -3,7 +3,7 @@
  "gate": "netlist_lint",
  "phase": "P4",
  "tool": "netlist_lint",
- "input_digest": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+ "input_digest": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -23,6 +23,6 @@
   "top": "pll_analog",
   "netlist": "netlist/pll_analog.cir"
  },
- "recorded_ts": "2026-09-28T18:08:05",
- "attempts": 3
+ "recorded_ts": "2026-09-28T19:19:11",
+ "attempts": 4
 }

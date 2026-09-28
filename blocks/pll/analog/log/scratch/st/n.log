@@ -1,0 +1,184 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: * pll_analog_startup_tb.cir - enable-to-running bench (spec.yaml:
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+vss                                          0
+pll_en                                       0
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vfeed                                      0.3
+vctrl                                 0.300003
+bias_ref                           2.33459e-11
+vco_out                            1.06974e-09
+xdut.en_b                                  3.3
+xdut.vbp                                   3.3
+xdut.va                            5.59482e-09
+xdut.vref                          3.31879e-11
+xdut.xrbias_top.11                 3.31774e-11
+xdut.xrbias_top.21                 2.33564e-11
+xdut.xrbias_int.11                 2.33354e-11
+xdut.xrbias_int.21                 1.04935e-14
+xdut.vst                           5.26452e-09
+xdut.vcp_n                         2.37219e-08
+xdut.t1a                               1.49459
+xdut.t2                                 2.0386
+xdut.t1b                               1.59159
+xdut.t1c                             0.0287235
+xdut.vcp_p                                 3.3
+xdut.up_s                              1.04338
+xdut.up_b                                  3.3
+xdut.vdump                            0.421614
+xdut.dn_s                             0.421614
+xdut.dn_b                                  3.3
+xdut.vbt                               1.32473
+xdut.vbl                              0.251051
+xdut.vnt                              0.209683
+xdut.vbh                               2.97589
+xdut.xr1.11                           0.300003
+xdut.xr1.21                           0.300003
+xdut.vfilt                            0.300003
+xdut.vi                              0.0750568
+xdut.vs                              0.0741772
+xdut.xr_v2i.11                       0.0741772
+xdut.xr_v2i.21                       0.0741772
+xdut.vcl                             0.0741772
+xdut.vbp_vco                               3.3
+xdut.vbn_vco                        6.1641e-09
+xdut.p1                                2.10909
+xdut.r1                                 1.5806
+xdut.r5                                 1.5806
+xdut.n1                                 1.2476
+xdut.p2                                2.10909
+xdut.r2                                 1.5806
+xdut.n2                                 1.2476
+xdut.p3                                2.10909
+xdut.r3                                 1.5806
+xdut.n3                                 1.2476
+xdut.p4                                2.10909
+xdut.r4                                 1.5806
+xdut.n4                                 1.2476
+xdut.p5                                2.10909
+xdut.n5                                 1.2476
+xdut.nb                                    3.3
+xdut.ng                                1.31161
+vvc#branch                         2.76434e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     1.24816e-10
+vdd_src#branch                     -1.2758e-10
+
+ Reference value :  2.38560e-08
+ Reference value :  8.30560e-08
+ Reference value :  1.38056e-07
+ Reference value :  2.07920e-07
+ Reference value :  2.55234e-07
+ Reference value :  3.01473e-07
+ Reference value :  3.54012e-07
+ Reference value :  3.92058e-07
+ Reference value :  4.38043e-07
+ Reference value :  4.76716e-07
+ Reference value :  5.10144e-07
+ Reference value :  5.23598e-07
+ Reference value :  5.62979e-07
+ Reference value :  6.12125e-07
+ Reference value :  6.26913e-07
+ Reference value :  6.34113e-07
+ Reference value :  6.44313e-07
+ Reference value :  6.54313e-07
+ Reference value :  6.66313e-07
+ Reference value :  6.75303e-07
+ Reference value :  6.92503e-07
+ Reference value :  7.46895e-07
+ Reference value :  7.82773e-07
+ Reference value :  8.51972e-07
+ Reference value :  8.63572e-07
+ Reference value :  8.70253e-07
+ Reference value :  9.24244e-07
+ Reference value :  9.64044e-07
+ Reference value :  1.00482e-06
+ Reference value :  1.04520e-06
+ Reference value :  1.05060e-06
+ Reference value :  1.05680e-06
+ Reference value :  1.10593e-06
+ Reference value :  1.11413e-06
+ Reference value :  1.12413e-06
+ Reference value :  1.13152e-06
+ Reference value :  1.13972e-06
+ Reference value :  1.14712e-06
+ Reference value :  1.15752e-06
+ Reference value :  1.16872e-06
+ Reference value :  1.19717e-06
+ Reference value :  1.25775e-06
+ Reference value :  1.30274e-06
+ Reference value :  1.34613e-06
+ Reference value :  1.38473e-06
+ Reference value :  1.39173e-06
+ Reference value :  1.41537e-06
+ Reference value :  1.44937e-06
+ Reference value :  1.51220e-06
+ Reference value :  1.55960e-06
+ Reference value :  1.61749e-06
+ Reference value :  1.66534e-06
+ Reference value :  1.71894e-06
+ Reference value :  1.75987e-06
+ Reference value :  1.80423e-06
+ Reference value :  1.83944e-06
+ Reference value :  1.89222e-06
+ Reference value :  1.95389e-06
+ Reference value :  1.97429e-06
+ Reference value :  1.98489e-06
+ Reference value :  1.99487e-06
+ Reference value :  2.00667e-06
+ Reference value :  2.01467e-06
+ Reference value :  2.02087e-06
+ Reference value :  2.02687e-06
+ Reference value :  2.06458e-06
+ Reference value :  2.12658e-06
+ Reference value :  2.20856e-06
+ Reference value :  2.26187e-06
+ Reference value :  2.29567e-06
+ Reference value :  2.30307e-06
+ Reference value :  2.30867e-06
+ Reference value :  2.31803e-06
+ Reference value :  2.32883e-06
+ Reference value :  2.33863e-06
+ Reference value :  2.34943e-06
+ Reference value :  2.37224e-06
+ Reference value :  2.44182e-06
+ Reference value :  2.50200e-06
+ Reference value :  2.55760e-06
+ Reference value :  2.61042e-06
+ Reference value :  2.65498e-06
+ Reference value :  2.69338e-06
+ Reference value :  2.74798e-06
+ Reference value :  2.77878e-06
+ Reference value :  2.83140e-06
+ Reference value :  2.88239e-06
+ Reference value :  2.92621e-06
+ Reference value :  2.94601e-06
+ Reference value :  2.95639e-06
+ Reference value :  2.99639e-06
+ Reference value :  3.03899e-06
+ Reference value :  3.05099e-06
+ Reference value :  3.10198e-06
+ Reference value :  3.15392e-06
+No. of Data Rows : 16087
+Note: Simulation executed from .control section 
+Warning: can't find the initialization file spinit.

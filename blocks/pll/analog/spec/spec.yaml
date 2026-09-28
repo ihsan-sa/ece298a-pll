@@ -17,6 +17,7 @@ devices:
   - xMP_B2
   - xMN_B1
   - xMN_B2
+  - xRBIAS_TOP
   - xRBIAS_INT
   - xMP_STL
   - xMN_STD

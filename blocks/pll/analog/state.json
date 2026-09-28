@@ -4,21 +4,21 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T18:08:05",
+ "updated": "2026-09-28T19:19:11",
  "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 10,
+   "attempts": 11,
    "last": {
-    "ts": "2026-09-28T17:49:41",
+    "ts": "2026-09-28T19:08:51",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
+     "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
     },
     "job": null
    },
@@ -122,21 +122,31 @@
       "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-28T19:08:51",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
+     },
+     "job": null
     }
    ]
   },
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 3,
+   "attempts": 4,
    "last": {
-    "ts": "2026-09-28T18:08:05",
+    "ts": "2026-09-28T19:19:11",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
-     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
+     "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+     "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
     },
     "job": null
    },
@@ -173,23 +183,34 @@
       "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-28T19:19:11",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
+     },
+     "job": null
     }
    ]
   },
   "sim_tt": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-09-28T16:28:00",
+    "ts": "2026-09-28T18:42:33",
     "status": "fail",
-    "failing_count": 5,
-    "total": 5,
+    "failing_count": 1,
+    "total": 1,
     "inputs": {
-     "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-     "tb": "dir_text:ae97a33b54ff967d47c7621f97c78ecb75ea6389c92a00d561da59c7ad97ca97",
-     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
-     "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
+     "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+     "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
+     "sizing": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61"
     },
     "job": null,
     "facts": {
@@ -234,23 +255,29 @@
        "tt"
       ]
      }
+    },
+    {
+     "ts": "2026-09-28T18:42:33",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+      "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+      "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
+      "sizing": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
     }
    ],
    "stale": [
     {
-     "ts": "2026-09-28T16:45:09",
-     "edit_class": "netlist_edit",
-     "refs": [],
-     "human_hold": 1
-    },
-    {
-     "ts": "2026-09-28T16:45:10",
-     "edit_class": "sizing_edit",
-     "refs": [],
-     "human_hold": 1
-    },
-    {
-     "ts": "2026-09-28T17:49:40",
+     "ts": "2026-09-28T19:08:45",
      "edit_class": "spec_edit",
      "refs": [
       "spec/spec.yaml",
@@ -259,7 +286,7 @@
      "human_hold": 2
     },
     {
-     "ts": "2026-09-28T17:49:47",
+     "ts": "2026-09-28T19:08:45",
      "edit_class": "netlist_edit",
      "refs": [
       "netlist/pll_analog.cir"
@@ -267,7 +294,7 @@
      "human_hold": 1
     },
     {
-     "ts": "2026-09-28T17:49:48",
+     "ts": "2026-09-28T19:08:46",
      "edit_class": "sizing_edit",
      "refs": [
       "sizing/sizing.yaml"
@@ -285,26 +312,26 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
-   "hashed": "2026-09-28T18:08:05"
+   "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+   "hashed": "2026-09-28T19:19:11"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
-   "hashed": "2026-09-28T18:08:05"
+   "sha256": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+   "hashed": "2026-09-28T19:19:11"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:ae97a33b54ff967d47c7621f97c78ecb75ea6389c92a00d561da59c7ad97ca97",
-   "hashed": "2026-09-28T16:28:00"
+   "sha256": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+   "hashed": "2026-09-28T18:42:33"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
-   "sha256": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955",
-   "hashed": "2026-09-28T16:28:00"
+   "sha256": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61",
+   "hashed": "2026-09-28T18:42:33"
   }
  },
  "open_issues": [
@@ -595,6 +622,81 @@
     "sizing/sizing.yaml"
    ],
    "note": "rv2i_l 50u->35u; new w_cl 40u, l_cl 2u; w_flr kept 2u",
+   "human_hold": 1,
+   "gates": [
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T19:08:45",
+   "class": "spec_edit",
+   "refs": [
+    "spec/spec.yaml",
+    "spec/topology.md"
+   ],
+   "note": "split bias resistor: add xRBIAS_TOP (vref->bias_ref) isolating bias loop from 5 pF pad; internal gates move to vref",
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T19:08:45",
+   "class": "netlist_edit",
+   "refs": [
+    "netlist/pll_analog.cir"
+   ],
+   "note": "RBIAS_TOP 110u between new loop node vref and pad bias_ref; MN_B1/B2/STD/ENB/BUFT/CL/FLR on vref; fixes bias relaxation with 5 pF pad (startup_tb)",
+   "human_hold": 1,
+   "gates": [
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T19:08:46",
+   "class": "sizing_edit",
+   "refs": [
+    "sizing/sizing.yaml"
+   ],
+   "note": "rb_l 540u->430u, new rbt_l 110u (total R unchanged)",
    "human_hold": 1,
    "gates": [
     "sim_tt",
@@ -1028,6 +1130,58 @@
    "gate": "netlist_lint",
    "status": "pass",
    "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T18:42:33",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "fail",
+   "attempt": 3,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-09-28T19:08:45",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [
+    "spec/spec.yaml",
+    "spec/topology.md"
+   ],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-28T19:08:45",
+   "event": "edit",
+   "edit_class": "netlist_edit",
+   "refs": [
+    "netlist/pll_analog.cir"
+   ],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T19:08:46",
+   "event": "edit",
+   "edit_class": "sizing_edit",
+   "refs": [
+    "sizing/sizing.yaml"
+   ],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T19:08:51",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 11,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T19:19:11",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 4,
    "failing_count": 0
   }
  ]

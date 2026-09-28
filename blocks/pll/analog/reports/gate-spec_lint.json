@@ -3,7 +3,7 @@
   "gate": "spec_lint",
   "phase": "P1",
   "tool": "spec_lint_ade",
-  "input_digest": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
+  "input_digest": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
   "status": "pass",
   "criteria": {
     "fail_severities": [
@@ -22,12 +22,12 @@
   "record_result": {
     "ok": true,
     "recorded": true,
-    "workspace": "blocks/pll/analog",
+    "workspace": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog",
     "gate": "spec_lint",
     "status": "pass",
-    "attempts": 6,
+    "attempts": 11,
     "inputs": {
-      "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b"
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
     }
   }
 }

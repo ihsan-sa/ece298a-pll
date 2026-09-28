@@ -18,7 +18,7 @@ Ten pins in this order (the six interface.yaml signals, ua_pins `vctrl`
 (ua[0]) and `bias_ref` (ua[1]), vdd, vss). LVS and the pex bench bind
 positionally.
 
-Internal nodes: `en_b`, `vbp` (PMOS bias gate), `va` (bias loop gain node),
+Internal nodes: `en_b`, `vbp` (PMOS bias gate), `va` (bias loop gain node), `vref` (bias loop node, Vgs of MN_B1),
 `vst` (startup), `vcp_n`, `vcp_p` (pump reference gates), `up_b`, `dn_b`,
 `up_s`, `dn_s` (switch source nodes), `vdump`, `vbt` / `vnt` (buffer PMOS /
 NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
@@ -33,21 +33,27 @@ NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 
 ### 2. Bias: Vgs/R (Vt-referenced) self-biased reference, Ib = 5 uA nominal
 Gray-Meyer Vt-referenced core: the reference current flows through
-RBIAS_INT and the resulting drop is the Vgs of MN_B1.
+RBIAS_TOP + RBIAS_INT and the resulting drop is the Vgs of MN_B1. The
+loop node is the internal `vref`; the pad `bias_ref` is a tap between the
+two resistors.
 - `MP_B2`: PMOS diode, gate = drain = `vbp`; source vdd. Mirror master.
 - `MP_B1`: PMOS, gate `vbp`, drain `va`. 1:1 copy into MN_B1.
-- `MN_B1`: NMOS, gate `bias_ref`, source vss, drain `va`. Senses V(bias_ref).
-- `MN_B2`: NMOS, gate `va`, source `bias_ref`, drain `vbp`. Delivers Ib into the resistor.
+- `MN_B1`: NMOS, gate `vref`, source vss, drain `va`. Senses V(vref).
+- `MN_B2`: NMOS, gate `va`, source `vref`, drain `vbp`. Delivers Ib into the resistor.
+- `RBIAS_TOP`: ppolyf_u, `vref` to `bias_ref` (~38 kOhm). Isolates the
+  loop node from the pad capacitance (see Bias equations).
 - `RBIAS_INT`: ppolyf_u, `bias_ref` to vss. Internal default; an external
-  resistor on pad ua[1] sits in parallel and raises Ib.
+  resistor on pad ua[1] sits in parallel with it and raises Ib, at most to
+  Vgs / RBIAS_TOP (~3x) with the pad shorted.
 - Startup: `MP_STL` (weak long PMOS, gate `en_b`, vdd -> `vst`), `MN_STD`
-  (gate `bias_ref`, `vst` -> vss), `MN_ST` (gate `vst`, `vbp` -> vss),
+  (gate `vref`, `vst` -> vss), `MN_ST` (gate `vst`, `vbp` -> vss),
   `MN_STE` (gate `en_b`, `vst` -> vss, holds startup off in standby).
 - Standby: `MP_ENB` (gate `pll_en`, `vbp` -> vdd), `MN_ENA` (gate `en_b`,
-  `va` -> vss), `MN_ENB` (gate `en_b`, `bias_ref` -> vss).
+  `va` -> vss), `MN_ENB` (gate `en_b`, `vref` -> vss; the pad follows
+  through RBIAS_INT).
 
 `vbp` is the only bias distributed to the other blocks (PMOS gate);
-`bias_ref` (= Vgs of MN_B1) is used once, as the VCO floor-current gate.
+`vref` (= Vgs of MN_B1) is the NMOS mirror gate (MN_BUFT, MN_CL, MN_FLR).
 
 ### 3. Charge pump, Icp = (4 + t0 + 2 t1 + t0 t1) x 5 uA = 20/25/30/40 uA
 Trim acts on the pump reference, so UP and DN share one trimmed current.
@@ -93,10 +99,10 @@ PMOS half (tail off `vbp`, NMOS mirror load):
   `vbt`, drain `vdump` (the output).
 - `MN_BUFL1`: mirror-load master, NMOS diode on `vbl`, source vss.
 - `MN_BUFL2`: mirror-load slave, gate `vbl`, drain `vdump`, source vss.
-NMOS half (tail off `bias_ref`, PMOS mirror load):
-- `MN_BUFT`: tail, source vss, gate `bias_ref`, drain `vnt`. Itail =
+NMOS half (tail off `vref`, PMOS mirror load):
+- `MN_BUFT`: tail, source vss, gate `vref`, drain `vnt`. Itail =
   ratio x Ib off MN_B1 (like MN_FLR), ratio 4 nominal. Off in standby:
-  MN_ENB already pulls `bias_ref` to vss.
+  MN_ENB already pulls `vref` to vss.
 - `MN_BUF1`: input pair, gate `vctrl` (non-inverting), source `vnt`,
   drain `vbh`.
 - `MN_BUF2`: input pair, gate `vdump` (inverting, the feedback), source
@@ -121,11 +127,11 @@ so vctrl_leak_off_na and the loop-filter poles are untouched.
 ### 5. VCO control: V-to-I with floor current
 - `MN_V2I`: gate `vctrl`, source `vs`, drain `vi`. `R_V2I`: ppolyf_u,
   `vs` -> `vcl` (source degeneration; linearises Kvco).
-- `MN_CL`: gate `bias_ref`, source vss, drain `vcl` (bottom of R_V2I).
+- `MN_CL`: gate `vref`, source vss, drain `vcl` (bottom of R_V2I).
   Current ceiling: a (W/L)cl/(W/L)MN_B1 copy of Ib. In triode at low I_ctl
   (adds ~1-2 kOhm), saturates at Imax and caps fmax at ff/-40 C/3.63 V
   (R_V2I alone did not: the ring ran at ~390-400 MHz there).
-- `MN_FLR`: gate `bias_ref`, source vss, drain `vi`. Adds Ifloor (a copy of
+- `MN_FLR`: gate `vref`, source vss, drain `vi`. Adds Ifloor (a copy of
   Ib) so the ring never stalls at vctrl = 0.3 V.
 - `MN_ENS`: enable cascode, gate `pll_en`, `vi` -> `vbp_vco` (cuts the V2I
   path in standby while vctrl is still held by the filter).
@@ -161,17 +167,29 @@ Mirror (template header, square law, starting point only):
   UP/DN matching over vctrl 0.3..vdd-0.3 V (cp_updn_mismatch_pct <= 10).
 
 Bias:
-- Ib = Vgs(MN_B1) / R_BIAS, R_BIAS = RBIAS_INT || R_ext. Target Ib = 5 uA,
-  so RBIAS_INT ~ 0.9 V / 5 uA = 180 kOhm (ppolyf_u 350 ohm/sq: ~510 sq).
+- Ib = Vgs(MN_B1) / R_BIAS, R_BIAS = RBIAS_TOP + (RBIAS_INT || R_ext).
+  Target Ib = 5 uA, so RBIAS_TOP + RBIAS_INT ~ 0.9 V / 5 uA = 180 kOhm
+  (ppolyf_u 350 ohm/sq: ~510 sq); split 110 um / 430 um (38 / 151 kOhm).
 - Bias MN_B1 at its zero-temperature-coefficient current density (Vth's
   -2 mV/K against Vov's mobility rise) so Ib's tempco is R's alone
   (ppolyf_u tc1 = -0.9e-4/K).
-- Loop: V(bias_ref) up -> I(MN_B1) up -> va down -> I(MN_B2) down ->
-  V(bias_ref) down: negative feedback; `va` is the high-impedance node, so
-  its pole must dominate the bias_ref pole (R_BIAS || 1/gm2 with up to
-  5 pF of pad) - check in P4 with 5 pF on bias_ref (startup_time_us).
+- Loop: V(vref) up -> I(MN_B1) up -> va down -> I(MN_B2) down ->
+  V(vref) down: negative feedback. But MN_B2's current also returns to va
+  through the MP_B2/MP_B1 mirror with gain 1 (positive loop). The
+  admittance into va is Y = gm2 (gm1 Zs - 1) / (1 + gm2 Zs), Zs the
+  impedance at MN_B2's source. With the pad cap Cp directly on the loop
+  node, |Zs| < 1/gm1 above gm1 / (2 pi Cp) ~ 1.6 MHz, va sees a negative
+  conductance and the loop relaxes. P4 saw exactly this with 5 pF on the
+  pad: vco period 17 -> 200 ns sawtooth every ~1.3 us, bias 0.68..1.33 V,
+  startup re-firing. The fix is RBIAS_TOP: Zs = RTOP + RINT || 1/(s Cp),
+  so Re(Zs) >= RTOP at every frequency and Re(Y) > 0 when gm1 gm2 RTOP^2 > 1
+  (gm1 RTOP ~ 2 here), for any pad capacitance. Compensation caps were
+  tried instead (va-vss, va-vref Miller, vbp-vdd, 2..40 pF); they either
+  did not stop the relaxation or left a >1 us settling tail. Pad settling:
+  (RTOP || RINT) x Cp ~ 0.15 us, with Ib briefly high (up to Vgs/RTOP) while
+  the pad charges.
 - Startup: MP_STL current ~100-300 nA; MN_STD must sink it at
-  Vgs = V(bias_ref) ~ 0.9 V.
+  Vgs = V(vref) ~ 0.9 V.
 
 Charge pump:
 - Icp(code) = (4 + t0 + 2 t1 + t0 t1) Ib, code 00 = 4 Ib = 20 uA;
@@ -237,7 +255,7 @@ VCO:
 - Buffer: tr/tf = 0.15 ns into 15 fF + NAND self-load; Wp/Wn ~ 2-3 for
   duty 40..60 %.
 
-Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, bias_ref, vcp_n,
+Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, vref, bias_ref, vcp_n,
 vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
 vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).

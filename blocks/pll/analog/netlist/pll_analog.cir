@@ -17,7 +17,7 @@
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
 .param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
-.param w_b2=4e-06 l_b2=1e-06 rb_l=0.00054 w_cpn=2e-05
+.param w_b2=4e-06 l_b2=1e-06 rb_l=0.00043 rbt_l=0.00011 w_cpn=2e-05
 .param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
 .param w_swp=4e-06 l_sw=5e-07 r1_l=0.000126 c1_w=0.0001
 .param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=3.5e-05
@@ -35,21 +35,34 @@
 XMP_ENI en_b pll_en vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
 XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=2.8e-7
 
-* (2) bias: Ib = Vgs(MN_B1) / RBIAS_INT
+* (2) bias: Ib = Vgs(MN_B1) / (RBIAS_TOP + RBIAS_INT || R_ext)
+* The loop node is vref (= Vgs of MN_B1); the pad bias_ref is a tap on the
+* bias resistor, isolated from vref by RBIAS_TOP (38.5 kOhm). Why: MN_B2's
+* current returns to va through the MP_B2/MP_B1 mirror (a positive loop,
+* gain 1), while the negative loop goes through MN_B1's gate. The admittance
+* into va is gm2 (gm1 Zs - 1) / (1 + gm2 Zs), Zs = impedance at MN_B2's
+* source. With the 5 pF pad straight on vref, |Zs| < 1/gm1 above ~1.6 MHz,
+* va sees a negative conductance and the loop relaxes (period 1.3 us,
+* vref 0.68..1.33 V, startup re-firing each cycle). With the split,
+* Re(Zs) >= RBIAS_TOP at every frequency and gm1 * RBIAS_TOP ~ 2 > 1, so va
+* stays passive for any pad capacitance. Total R (and Ib) is unchanged; an
+* external resistor still only raises Ib, now capped at Vgs / RBIAS_TOP
+* (~3x) even with the pad shorted. Pad settles with (RTOP || RINT) x Cpad.
 XMP_B2 vbp vbp vdd vdd pfet_03v3 w=w_bp l=l_bp
 XMP_B1 va vbp vdd vdd pfet_03v3 w=w_bp l=l_bp
-XMN_B1 va bias_ref vss vss nfet_03v3 w=w_b1 l=l_b1
-XMN_B2 vbp va bias_ref vss nfet_03v3 w=w_b2 l=l_b2
+XMN_B1 va vref vss vss nfet_03v3 w=w_b1 l=l_b1
+XMN_B2 vbp va vref vss nfet_03v3 w=w_b2 l=l_b2
+XRBIAS_TOP vref bias_ref vss ppolyf_u r_width=1e-6 r_length=rbt_l
 XRBIAS_INT bias_ref vss vss ppolyf_u r_width=1e-6 r_length=rb_l
-* startup: weak pull-up on vst, released once bias_ref rises
+* startup: weak pull-up on vst, released once vref rises
 XMP_STL vst en_b vdd vdd pfet_03v3 w=5e-7 l=1e-5
-XMN_STD vst bias_ref vss vss nfet_03v3 w=1e-5 l=1e-6
+XMN_STD vst vref vss vss nfet_03v3 w=1e-5 l=1e-6
 XMN_ST vbp vst vss vss nfet_03v3 w=5e-7 l=2e-6
 XMN_STE vst en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
 * standby clamps
 XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMN_ENA va en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
-XMN_ENB bias_ref en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
+XMN_ENB vref en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
 
 * (3) charge pump: Icp = (4 + t0 + 2 t1 + t0 t1) x Ib
 XMP_T4 vcp_n vbp vdd vdd pfet_03v3 w=w_bp l=l_bp m=4
@@ -86,8 +99,8 @@ XMP_BUF1 vbl vctrl vbt vdd pfet_03v3 w=w_bufp l=l_bufp
 XMP_BUF2 vdump vdump vbt vdd pfet_03v3 w=w_bufp l=l_bufp
 XMN_BUFL1 vbl vbl vss vss nfet_03v3 w=w_bufln l=l_bufl
 XMN_BUFL2 vdump vbl vss vss nfet_03v3 w=w_bufln l=l_bufl
-* NMOS half: tail off bias_ref (m_buft x Ib), PMOS mirror load
-XMN_BUFT vnt bias_ref vss vss nfet_03v3 w=w_b1 l=l_b1 m=m_buft
+* NMOS half: tail off vref (m_buft x Ib), PMOS mirror load
+XMN_BUFT vnt vref vss vss nfet_03v3 w=w_b1 l=l_b1 m=m_buft
 XMN_BUF1 vbh vctrl vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMN_BUF2 vdump vdump vnt vss nfet_03v3 w=w_bufn l=l_bufn
 XMP_BUFL1 vbh vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
@@ -99,13 +112,13 @@ XC1 vfilt vss cap_mim_2f0_m2m3_noshield c_width=c1_w c_length=c1_w
 XC2 vctrl vss cap_mim_2f0_m2m3_noshield c_width=c2_w c_length=c2_w
 
 * (5) VCO control: degenerated V2I + floor current -> vbp_vco / vbn_vco
-* MN_CL (gate bias_ref, a (W/L)cl/(W/L)b1 copy of Ib) sits under R_V2I: in
+* MN_CL (gate vref, a (W/L)cl/(W/L)b1 copy of Ib) sits under R_V2I: in
 * triode it adds ~1-2 kOhm to the degeneration; once the V2I current reaches
 * its copy of Ib it saturates and caps I_ctl - the fmax ceiling at ff/-40 C/3.63 V.
 XMN_V2I vi vctrl vs vss nfet_03v3 w=w_v2i l=l_v2i
 XR_V2I vs vcl vss ppolyf_u r_width=1e-6 r_length=rv2i_l
-XMN_CL vcl bias_ref vss vss nfet_03v3 w=w_cl l=l_cl
-XMN_FLR vi bias_ref vss vss nfet_03v3 w=w_flr l=l_flr
+XMN_CL vcl vref vss vss nfet_03v3 w=w_cl l=l_cl
+XMN_FLR vi vref vss vss nfet_03v3 w=w_flr l=l_flr
 XMN_ENS vbp_vco pll_en vi vss nfet_03v3 w=1e-5 l=2.8e-7
 XMP_V2I vbp_vco vbp_vco vdd vdd pfet_03v3 w=w_v2ip l=l_v2i2
 XMP_V2IB vbn_vco vbp_vco vdd vdd pfet_03v3 w=w_v2ip l=l_v2i2
