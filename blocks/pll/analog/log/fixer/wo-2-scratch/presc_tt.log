@@ -1,0 +1,13 @@
+Warning: can't find the initialization file spinit.
+Error: incomplete or empty netlist
+       or no ".plot", ".print", or ".fourier" lines in batch mode;
+no simulations run!
+
+Note: No compatibility mode selected!
+
+
+Circuit: * pll_analog_presc_tb.cir - prescaler-drive bench (spec.yaml:
+
+
+  Measurements for Transient Analysis (pll_analog_presc_tb, computed in .control)
+

@@ -1,0 +1,97 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * osc check
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+vss                                          0
+pll_en                                     3.3
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                      0.3
+vco_out                            4.89101e-08
+xdut.en_b                          5.43322e-09
+xdut.vbp                               2.12809
+xdut.va                                1.98783
+bias_ref                              0.919984
+xdut.xrbias_int.11                    0.919693
+xdut.xrbias_int.21                 0.000291068
+xdut.vst                            0.00978325
+xdut.vcp_n                             0.80669
+xdut.t1a                                   3.3
+xdut.t2                                    3.3
+xdut.t1b                                   3.3
+xdut.t1c                             0.0644391
+xdut.vcp_p                             2.30996
+xdut.up_s                              2.84608
+xdut.up_b                                  3.3
+xdut.vdump                             2.80103
+xdut.dn_s                              1.88816
+xdut.dn_b                                  3.3
+xdut.xr1.11                                0.3
+xdut.xr1.21                                0.3
+xdut.vfilt                                 0.3
+xdut.vi                                2.37526
+xdut.vs                            1.56694e-06
+xdut.xr_v2i.11                     1.55377e-06
+xdut.xr_v2i.21                     1.31687e-08
+xdut.vbp_vco                           2.43639
+xdut.vbn_vco                          0.746729
+xdut.p1                                 2.1979
+xdut.r1                                1.06311
+xdut.r5                                1.06311
+xdut.n1                               0.272872
+xdut.p2                                 2.1979
+xdut.r2                                1.06311
+xdut.n2                               0.272872
+xdut.p3                                 2.1979
+xdut.r3                                1.06311
+xdut.n3                               0.272872
+xdut.p4                                 2.1979
+xdut.r4                                1.06311
+xdut.n4                               0.272872
+xdut.p5                                 2.1979
+xdut.n5                               0.272872
+xdut.nb                                 3.0125
+xdut.ng                               0.066087
+vvc#branch                         2.76435e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000267389
+vdd_src#branch                    -0.000267389
+
+ Reference value :  1.32560e-09 Reference value :  3.10560e-09 Reference value :  4.16560e-09 Reference value :  5.40560e-09 Reference value :  7.52560e-09 Reference value :  1.01456e-08 Reference value :  1.07856e-08 Reference value :  1.17056e-08 Reference value :  1.29256e-08 Reference value :  1.40056e-08 Reference value :  1.52256e-08 Reference value :  1.75256e-08 Reference value :  2.04256e-08 Reference value :  2.39456e-08 Reference value :  2.66856e-08 Reference value :  2.87256e-08 Reference value :  2.94656e-08 Reference value :  2.99456e-08 Reference value :  3.18656e-08 Reference value :  3.37456e-08 Reference value :  3.55456e-08 Reference value :  3.67256e-08 Reference value :  3.72656e-08 Reference value :  3.88256e-08 Reference value :  4.02456e-08 Reference value :  4.12656e-08 Reference value :  4.46456e-08 Reference value :  4.97656e-08 Reference value :  5.36056e-08 Reference value :  5.65656e-08 Reference value :  5.81456e-08 Reference value :  5.99456e-08 Reference value :  6.16456e-08 Reference value :  6.27656e-08 Reference value :  6.36056e-08 Reference value :  6.45056e-08 Reference value :  6.53256e-08 Reference value :  6.68256e-08 Reference value :  6.84056e-08 Reference value :  6.96256e-08 Reference value :  7.12056e-08 Reference value :  7.29256e-08 Reference value :  7.47056e-08 Reference value :  7.61456e-08 Reference value :  7.79456e-08 Reference value :  7.94256e-08 Reference value :  8.06056e-08 Reference value :  8.30056e-08 Reference value :  8.46456e-08 Reference value :  8.56256e-08 Reference value :  8.80656e-08 Reference value :  8.99256e-08 Reference value :  9.23456e-08 Reference value :  9.43456e-08 Reference value :  9.65856e-08 Reference value :  9.76256e-08 Reference value :  9.83256e-08 Reference value :  9.96256e-08 Reference value :  1.00566e-07 Reference value :  1.01346e-07 Reference value :  1.03106e-07 Reference value :  1.04666e-07 Reference value :  1.05626e-07 Reference value :  1.07566e-07 Reference value :  1.08846e-07 Reference value :  1.10546e-07 Reference value :  1.12426e-07 Reference value :  1.13326e-07 Reference value :  1.14826e-07 Reference value :  1.16566e-07 Reference value :  1.18166e-07 Reference value :  1.19766e-07 Reference value :  1.21266e-07 Reference value :  1.22626e-07 Reference value :  1.24186e-07 Reference value :  1.25306e-07 Reference value :  1.26606e-07 Reference value :  1.28086e-07 Reference value :  1.30286e-07 Reference value :  1.32306e-07 Reference value :  1.35066e-07 Reference value :  1.37826e-07 Reference value :  1.39766e-07 Reference value :  1.41406e-07 Reference value :  1.43526e-07 Reference value :  1.46166e-07 Reference value :  1.48946e-07 Reference value :  1.51546e-07 Reference value :  1.53566e-07 Reference value :  1.54766e-07 Reference value :  1.55746e-07 Reference value :  1.57126e-07 Reference value :  1.59066e-07 Reference value :  1.60386e-07 Reference value :  1.62906e-07 Reference value :  1.64626e-07 Reference value :  1.65886e-07 Reference value :  1.67006e-07 Reference value :  1.68866e-07 Reference value :  1.70886e-07 Reference value :  1.72466e-07 Reference value :  1.74646e-07 Reference value :  1.76486e-07 Reference value :  1.79126e-07 Reference value :  1.81786e-07 Reference value :  1.84326e-07 Reference value :  1.85726e-07 Reference value :  1.87406e-07 Reference value :  1.89146e-07 Reference value :  1.91966e-07 Reference value :  1.94686e-07 Reference value :  1.95246e-07 Reference value :  1.96606e-07 Reference value :  1.98386e-07
+No. of Data Rows : 10008
+r1x                 =  1.25899e+00 at=  2.95656e-08
+r1n                 =  8.80521e-01 at=  3.20456e-08
+r2x                 =  1.25507e+00 at=  1.72566e-07
+r2n                 =  9.21779e-01 at=  1.85166e-07
+ox                  =  1.79797e-03 at=  1.74286e-07
+on                  =  -1.59842e-03 at=  1.69526e-07
+
+Error: measure  ta  when(WHEN) : out of interval
+ meas tran ta when v(xdut.r5)=1.65 rise=2 td=100n failed!
+
+
+Error: measure  tb  when(WHEN) : out of interval
+ meas tran tb when v(xdut.r5)=1.65 rise=4 td=100n failed!
+
+ivdd                =  -2.75031e-04 from=  1.50000e-07 to=  2.00000e-07
+Note: Simulation executed from .control section 
+0.3 106.42 s

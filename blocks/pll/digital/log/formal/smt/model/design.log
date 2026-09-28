@@ -943,6 +943,6 @@ Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> 
 Output filename: ../model/design.il
 
 Warnings: 2 unique messages, 4 total
-End of script. Logfile hash: d4422930d7, time: 0.13s, user: 0.06s, system: 0.03s, MEM: 30.16 MB peak
+End of script. Logfile hash: d4422930d7, time: 0.12s, user: 0.07s, system: 0.02s, MEM: 31.14 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 24% 5x opt_clean (0 sec), 14% 1x prep (0 sec), ...
+Time spent: 23% 5x opt_clean (0 sec), 14% 1x prep (0 sec), ...

@@ -1,0 +1,9 @@
+
+.include '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/netlist/pll_analog.cir'
+.param w_bp='4e-06' l_bp='2e-06' w_b1='2e-06' l_b1='2e-06' w_b2='4e-06' l_b2='1e-06' rb_l=0.00054 w_cpn='2e-05' l_cpn='2e-06' w_cpp='5e-05' l_cpp='2e-06' w_swn='2e-06' w_swp='4e-06' l_sw='5e-07' r1_l=0.000126 c1_w=0.0001 c2_w=3.2e-05 w_v2i='1e-05' l_v2i='1e-06' rv2i_l='2e-05' w_flr='2e-06' l_flr='2e-06' w_v2ip='1e-05' w_v2in='4e-06' l_v2i2='5e-07' w_sp='1e-05' w_sn='4e-06' l_s='5e-07' w_rp='2e-06' w_rn='1e-06' l_r=2.8e-07 w_gp='4e-06' w_gn='4e-06' w_op=1.2e-05 w_on='6e-06'
+
+.temp 27

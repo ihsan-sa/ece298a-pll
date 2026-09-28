@@ -1,0 +1,25 @@
+* osc check
+.include 'hdr.inc'
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+tran 20p 200n 0 20p
+meas tran r1x max v(xdut.r5) from=20n to=100n
+meas tran r1n min v(xdut.r5) from=20n to=100n
+meas tran r2x max v(xdut.r5) from=150n to=200n
+meas tran r2n min v(xdut.r5) from=150n to=200n
+meas tran ox max v(vco_out) from=150n to=200n
+meas tran on min v(vco_out) from=150n to=200n
+meas tran ta when v(xdut.r5)=1.65 rise=2 td=100n
+meas tran tb when v(xdut.r5)=1.65 rise=4 td=100n
+meas tran ivdd avg i(vdd_src) from=150n to=200n
+.endc
+.end

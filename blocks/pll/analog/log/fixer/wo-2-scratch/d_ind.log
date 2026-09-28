@@ -1,0 +1,102 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * direct ind
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        3.3
+vss                                          0
+pll_en                                     3.3
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vfeed                                      0.3
+vctrl                                      0.3
+vco_out                            4.89101e-08
+xdut.en_b                          5.43322e-09
+xdut.vbp                               2.12809
+xdut.va                                1.98783
+bias_ref                              0.919984
+xdut.xrbias_int.11                    0.919693
+xdut.xrbias_int.21                 0.000291068
+xdut.vst                            0.00978325
+xdut.vcp_n                             0.80669
+xdut.t1a                                   3.3
+xdut.t2                                    3.3
+xdut.t1b                                   3.3
+xdut.t1c                             0.0644391
+xdut.vcp_p                             2.30996
+xdut.up_s                              2.84608
+xdut.up_b                                  3.3
+xdut.vdump                             2.80103
+xdut.dn_s                              1.88816
+xdut.dn_b                                  3.3
+xdut.xr1.11                                0.3
+xdut.xr1.21                                0.3
+xdut.vfilt                                 0.3
+xdut.vi                                2.37526
+xdut.vs                            1.56694e-06
+xdut.xr_v2i.11                     1.55377e-06
+xdut.xr_v2i.21                     1.31687e-08
+xdut.vbp_vco                           2.43639
+xdut.vbn_vco                          0.746729
+xdut.p1                                 2.1979
+xdut.r1                                1.06311
+xdut.r5                                1.06311
+xdut.n1                               0.272872
+xdut.p2                                 2.1979
+xdut.r2                                1.06311
+xdut.n2                               0.272872
+xdut.p3                                 2.1979
+xdut.r3                                1.06311
+xdut.n3                               0.272872
+xdut.p4                                 2.1979
+xdut.r4                                1.06311
+xdut.n4                               0.272872
+xdut.p5                                 2.1979
+xdut.n5                               0.272872
+xdut.nb                                 3.0125
+xdut.ng                               0.066087
+lfeed#branch                      -2.76435e-12
+vvc#branch                         2.76435e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000267389
+vdd_src#branch                    -0.000267389
+
+ Reference value :  4.00098e-13 Reference value :  4.00722e-13 Reference value :  4.00729e-13 Reference value :  4.00729e-13doAnalyses: TRAN:  Timestep too small; time = 4.00729e-13, timestep = 2.5e-23: trouble with node "vt1#branch"
+
+
+tran simulation(s) aborted
+
+Error: measure  ta  when(WHEN) : out of interval
+ meas tran ta when v(vco_out)=1.65 rise=1 td=20n failed!
+
+
+Error: measure  tb  when(WHEN) : out of interval
+ meas tran tb when v(vco_out)=1.65 rise=6 td=20n failed!
+
+Error: incomplete or empty netlist
+       or no ".plot", ".print", or ".fourier" lines in batch mode;
+no simulations run!
+
+No. of Data Rows : 15
+length(time) = 1.500000e+01
+v(xdut.vbn_vco)[10] = 7.467331e-01
+v(xdut.vbp_vco)[10] = 2.436419e+00
+Command exited with non-zero status 1
+ind 7.03 s

@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T14:00:19",
+ "updated": "2026-09-28T14:23:21",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -162,9 +162,9 @@
   },
   {
    "id": 2,
-   "status": "fixing",
+   "status": "escalated",
    "agent": "fixer",
-   "attempts": 0,
+   "attempts": 1,
    "opened": "2026-09-28T13:59:15",
    "closed": null,
    "gate": "netlist_lint",
@@ -179,7 +179,8 @@
    ],
    "severity": "error",
    "count": 5,
-   "work_order": "blocks/pll/analog/log/workorders/wo-2.json"
+   "work_order": "blocks/pll/analog/log/workorders/wo-2.json",
+   "note": "fixer: all 3 causes bench-side (ol_tb 1GH feed inductor in tran; vco_tb ~700 s/point x13 vs 900 s; presc_tb runs no analysis at tt). No netlist edit. No route to bench-writer: reported as chip-flow gap 7 (req-20260928T182249Z-2524223). Also: VCO no swing at vctrl 0.3 V, ~1.23 GHz at 3.0 V (sizing, via sim_tt)."
   }
  ],
  "next_issue_id": 3,
@@ -395,6 +396,14 @@
    "status": "fixing",
    "agent": "fixer",
    "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T14:23:21",
+   "event": "issue",
+   "id": 2,
+   "status": "escalated",
+   "agent": "fixer",
+   "attempts": 1
   }
  ]
 }

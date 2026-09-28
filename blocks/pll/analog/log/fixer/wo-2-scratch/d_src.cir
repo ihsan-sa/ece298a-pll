@@ -1,0 +1,20 @@
+* direct src
+.include 'hdr.inc'
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+tran 20p 100n 0 20p
+print length(time)
+meas tran ta when v(vco_out)=1.65 rise=1 td=20n
+meas tran tb when v(vco_out)=1.65 rise=6 td=20n
+print v(xdut.vbn_vco)[10] v(xdut.vbp_vco)[10]
+.endc
+.end
