@@ -28,6 +28,7 @@
       "test_divider_ratio",
       "test_lock_assert",
       "test_lock_deassert",
+      "test_lock_deassert_dn",
       "test_no_vctrl_bias_ua",
       "test_obs_sel",
       "test_pfd_dn_lead",
@@ -37,7 +38,7 @@
       "test_reset_release_clean",
       "test_tt_tieoff"
     ],
-    "tests_passed": 14
+    "tests_passed": 15
   },
   "record_result": {
     "ok": true,
@@ -45,11 +46,11 @@
     "workspace": "blocks/pll/digital",
     "gate": "sim",
     "status": "pass",
-    "attempts": 5,
+    "attempts": 6,
     "inputs": {
       "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
-      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     }
   }
 }

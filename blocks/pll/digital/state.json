@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-27T02:06:05",
+ "updated": "2026-09-28T13:35:29",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -130,20 +130,20 @@
   "sim": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-09-27T01:37:49",
+    "ts": "2026-09-28T13:30:44",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-     "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
-     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+     "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     },
     "job": null,
     "facts": {
-     "tests_passed": 14
+     "tests_passed": 15
     }
    },
    "history": [
@@ -221,22 +221,45 @@
      "facts": {
       "tests_passed": 14
      }
+    },
+    {
+     "ts": "2026-09-28T13:30:44",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 15
+     }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-09-28T13:33:46",
+     "edit_class": "tb_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   },
   "holdout": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-09-27T01:57:56",
+    "ts": "2026-09-28T13:35:29",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
      "holdout": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
-     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     },
     "job": null,
     "facts": {
@@ -273,21 +296,37 @@
      "facts": {
       "tests_passed": 7
      }
+    },
+    {
+     "ts": "2026-09-28T13:35:29",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "holdout": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 7
+     }
     }
    ]
   },
   "cover": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-27T02:06:05",
+    "ts": "2026-09-28T13:34:50",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-     "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed"
+     "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
     },
     "job": null,
     "facts": {
@@ -318,6 +357,107 @@
       "toggle_covered": 156,
       "toggle_total": 156
      }
+    },
+    {
+     "ts": "2026-09-28T13:34:50",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "line_pct": 100.0,
+      "toggle_pct": 100.0,
+      "line_covered": 103,
+      "line_total": 103,
+      "toggle_covered": 156,
+      "toggle_total": 156
+     }
+    }
+   ]
+  },
+  "mutate": {
+   "phase": "P4",
+   "status": "fail",
+   "attempts": 2,
+   "last": {
+    "ts": "2026-09-28T13:33:14",
+    "status": "fail",
+    "failing_count": 1,
+    "total": 3,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+     "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
+     "mutant_rulings": null
+    },
+    "job": null,
+    "facts": {
+     "total_mutants": 19,
+     "equivalent": 0,
+     "scored_mutants": 19,
+     "killed": 17,
+     "survived": 2,
+     "kill_rate": 0.8947,
+     "wall_s": 131.58
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-09-28T13:23:26",
+     "status": "fail",
+     "failing_count": 2,
+     "total": 4,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
+      "mutant_rulings": null
+     },
+     "job": null,
+     "facts": {
+      "total_mutants": 19,
+      "equivalent": 0,
+      "scored_mutants": 19,
+      "killed": 16,
+      "survived": 3,
+      "kill_rate": 0.8421,
+      "wall_s": 120.15
+     }
+    },
+    {
+     "ts": "2026-09-28T13:33:14",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 3,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
+      "mutant_rulings": null
+     },
+     "job": null,
+     "facts": {
+      "total_mutants": 19,
+      "equivalent": 0,
+      "scored_mutants": 19,
+      "killed": 17,
+      "survived": 2,
+      "kill_rate": 0.8947,
+      "wall_s": 131.58
+     }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-09-28T13:33:46",
+     "edit_class": "tb_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   }
@@ -336,13 +476,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
-   "hashed": "2026-09-27T01:57:56"
+   "hashed": "2026-09-28T13:34:50"
   },
   "holdout": {
    "path": "holdout",
    "kind": "holdout",
    "sha256": "dir_text:e180d6ee35f64921871848b7e7839e06d7f784a5128865b80cd657984d773b16",
-   "hashed": "2026-09-27T01:57:56",
+   "hashed": "2026-09-28T13:35:29",
    "stale": [
     {
      "ts": "2026-09-27T00:42:20",
@@ -356,13 +496,25 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-   "hashed": "2026-09-27T02:06:05"
+   "hashed": "2026-09-28T13:35:29"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:c9d9186283350b503be98b7cce4952216f40663a7a155553158c589badc26eed",
-   "hashed": "2026-09-27T02:06:05"
+   "sha256": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+   "hashed": "2026-09-28T13:34:50"
+  },
+  "spec_yaml_sans_formal": {
+   "path": "spec/spec.yaml",
+   "kind": "spec_yaml_sans_formal",
+   "sha256": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
+   "hashed": "2026-09-28T13:35:29"
+  },
+  "mutant_rulings": {
+   "path": "spec/mutant_rulings.yaml",
+   "kind": "mutant_rulings",
+   "sha256": null,
+   "hashed": "2026-09-28T13:33:14"
   }
  },
  "open_issues": [
@@ -401,14 +553,35 @@
    "count": 4,
    "work_order": "blocks/pll/digital/log/workorders/wo-2.json",
    "note": "holdout stimulus fixes; gate PASS 7/7"
+  },
+  {
+   "id": 3,
+   "status": "escalated",
+   "agent": "tb-writer",
+   "attempts": 0,
+   "opened": "2026-09-28T13:27:17",
+   "closed": null,
+   "gate": "mutate",
+   "phase": "P4",
+   "fixer": "testbench",
+   "kinds": [
+    "kill_rate_below_threshold",
+    "survivor_output_stuck",
+    "survivor_stuck_other"
+   ],
+   "severity": "error",
+   "count": 4,
+   "work_order": "blocks/pll/digital/log/workorders/wo-3.json",
+   "note": "17/19; mutants 5,10 set an already-0 bit of K=16 to 0 (equivalent); prover refuses multiclock; needs owner ruling in spec/mutant_rulings.yaml"
   }
  ],
- "next_issue_id": 3,
+ "next_issue_id": 4,
  "next_job_id": 1,
  "budgets": {
   "fix_loops": {
    "sim": 2,
-   "holdout": 2
+   "holdout": 2,
+   "mutate": 2
   }
  },
  "decisions": [
@@ -503,6 +676,24 @@
    ],
    "gates_marked": [
     "holdout"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T13:33:46",
+   "class": "tb_edit",
+   "refs": [],
+   "note": "fix mutate wo-3: test_lock_deassert_dn kills mutant 11",
+   "human_hold": 1,
+   "gates": [
+    "sim",
+    "mutate",
+    "cover"
+   ],
+   "gates_marked": [
+    "sim",
+    "mutate",
+    "cover"
    ],
    "stale_artifacts": []
   }
@@ -844,6 +1035,99 @@
    "gate": "cover",
    "status": "pass",
    "attempt": 1,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T13:23:27",
+   "event": "gate",
+   "gate": "mutate",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 2
+  },
+  {
+   "ts": "2026-09-28T13:27:16",
+   "event": "budget_defaulted",
+   "path": "fix_loops.mutate",
+   "value": 3
+  },
+  {
+   "ts": "2026-09-28T13:27:16",
+   "event": "budget",
+   "path": "fix_loops.mutate",
+   "remaining": 2
+  },
+  {
+   "ts": "2026-09-28T13:27:17",
+   "event": "snapshot",
+   "label": "pre-fix-mutate-a1",
+   "files": 11
+  },
+  {
+   "ts": "2026-09-28T13:27:17",
+   "event": "issue_open",
+   "id": 3,
+   "gate": "mutate",
+   "fixer": "testbench",
+   "kinds": [
+    "kill_rate_below_threshold",
+    "survivor_output_stuck",
+    "survivor_stuck_other"
+   ]
+  },
+  {
+   "ts": "2026-09-28T13:27:37",
+   "event": "issue",
+   "id": 3,
+   "status": "fixing",
+   "agent": "tb-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T13:30:44",
+   "event": "gate",
+   "gate": "sim",
+   "status": "pass",
+   "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T13:33:14",
+   "event": "gate",
+   "gate": "mutate",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 1
+  },
+  {
+   "ts": "2026-09-28T13:33:46",
+   "event": "edit",
+   "edit_class": "tb_edit",
+   "refs": [],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T13:34:07",
+   "event": "issue",
+   "id": 3,
+   "status": "escalated",
+   "agent": "tb-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T13:34:50",
+   "event": "gate",
+   "gate": "cover",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T13:35:29",
+   "event": "gate",
+   "gate": "holdout",
+   "status": "pass",
+   "attempt": 3,
    "failing_count": 0
   }
  ]

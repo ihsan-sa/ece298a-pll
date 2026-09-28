@@ -245,7 +245,15 @@ async def lock_run(dut, offsets, first_window_slack=True):
     """Cycle-by-cycle check of lock against LockModel. Sample 0.1 ns before
     each clk falling edge (pfd outputs and lock are stable there). The
     priming clk edge is a real reference cycle, so it is checked and fed to
-    the model too; seen[] is indexed by ref_rises (priming entry dropped)."""
+    the model too; seen[] is indexed by ref_rises (priming entry dropped).
+    Returns (lock, wide) per cycle; lock_run_updn() gives up/dn separately."""
+    trace = await lock_run_updn(dut, offsets, first_window_slack)
+    return [(l, u | d) for l, u, d in trace]
+
+
+async def lock_run_updn(dut, offsets, first_window_slack=True):
+    """Same checks as lock_run(), but returns (lock, pfd_up, pfd_dn) per
+    reference cycle, so a test can tell a wide UP from a wide DN sample."""
     fb, ref_rises, prime = await pfd_setup(dut, offsets)
     rises = [prime] + ref_rises
     model = LockModel()
@@ -266,7 +274,7 @@ async def lock_run(dut, offsets, first_window_slack=True):
         if wide:
             first = False
             assert lock == 0 or model.clean >= 16, f"cycle {i}: lock high in wide cycle"
-        seen.append((lock, wide))
+        seen.append((lock, int(dut.pfd_up.value), int(dut.pfd_dn.value)))
         model.sample(wide)
     return seen[1:]
 
@@ -290,6 +298,30 @@ async def test_lock_deassert(dut):
     assert seen[25][0] == 0, "lock did not drop on the reference edge after the wide pulse"
     assert seen[25 + 15][0] == 0, "lock reasserted before 16 clean cycles"
     assert seen[25 + 16][0] == 1, "lock did not reassert after 16 clean cycles"
+
+
+# req: REQ-LOCK-DEASSERT REQ-LOCK-ASSERT
+@cocotb.test()
+async def test_lock_deassert_dn(dut):
+    """Spec: pfd_up OR pfd_dn still high at the clk falling edge is a wide
+    cycle. Two cycles with the reference lagging clk_fb by 50 ns put the
+    clk_fb edge between a clk rise and its fall (reference period 80 ns,
+    high time 40 ns), so pfd_dn alone is high at that one falling edge."""
+    offs = [-10.0] * 24 + [50.0, 50.0] + [-10.0] * 24
+    seen = await lock_run_updn(dut, offs)
+    lk, up, dn = seen[24]
+    assert dn == 1 and up == 0, (
+        f"cycle 24: expected a DN-only wide sample, got pfd_up={up} pfd_dn={dn}")
+    wides = [i for i, (_, u, d) in enumerate(seen) if u or d]
+    assert wides == [24], f"wide samples at cycles {wides}, expected only [24]"
+    assert seen[23][0] == 1, "lock not asserted before the wide DN cycle"
+    assert seen[25][0] == 0, (
+        "lock did not drop on the reference edge after a wide pfd_dn pulse")
+    for k in range(25, 25 + 16):
+        assert seen[k][0] == 0, (
+            f"cycle {k}: lock high only {k - 25} clean cycles after the wide DN pulse")
+    assert seen[25 + 16][0] == 1, "lock did not reassert after 16 clean cycles"
+    assert seen[-1][0] == 1, "lock not held at the end of the clean run"
 
 
 # req: REQ-CTRL-REG

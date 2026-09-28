@@ -1,0 +1,210 @@
+# spec.yaml - pll_analog (GF180MCU, TT analog tile), machine-readable half
+# of spec/spec.md. Written from brief/spec.md only. Pins of the .subckt are
+# fixed by ../../interface.yaml: the six crossing signals, ua_pins vctrl and
+# bias_ref, one vdd, one vss - ten pins, nothing else.
+top: pll_analog
+supply: {vdd: 3.3}
+
+# Refdes list from spec/topology.md (P2): current_mirror template anchor,
+# 75 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
+# pfet_03v3, ppolyf_u, cap_mim_2f0ff.
+devices:
+  # enable inverter
+  - MP_ENI
+  - MN_ENI
+  # bias: Vgs/R self-biased reference, startup, standby
+  - MP_B1
+  - MP_B2
+  - MN_B1
+  - MN_B2
+  - RBIAS_INT
+  - MP_STL
+  - MN_STD
+  - MN_ST
+  - MN_STE
+  - MP_ENB
+  - MN_ENA
+  - MN_ENB
+  # charge pump: trimmed reference (4+t0+2t1+t0t1 units), steered UP/DN
+  - MP_T4
+  - MP_T1A
+  - MN_SW0
+  - MP_T2
+  - MN_SW1
+  - MP_T1B
+  - MN_SW0B
+  - MN_SW1B
+  - MN_CPREF
+  - MN_CPREF2
+  - MP_CPREF
+  - MP_UPS
+  - MP_UP
+  - MP_UPD
+  - MP_UPI
+  - MN_UPI
+  - MN_DNS
+  - MN_DN
+  - MN_DND
+  - MP_DNI
+  - MN_DNI
+  - MP_ENP
+  - MN_ENN
+  # loop filter
+  - R1
+  - C1
+  - C2
+  # VCO control: degenerated V2I + floor current
+  - MN_V2I
+  - R_V2I
+  - MN_FLR
+  - MN_ENS
+  - MP_V2I
+  - MP_V2IB
+  - MN_V2IM
+  - MP_ENV
+  - MN_ENV
+  # 5-stage current-starved ring
+  - MP_S1
+  - MP_I1
+  - MN_I1
+  - MN_S1
+  - MP_S2
+  - MP_I2
+  - MN_I2
+  - MN_S2
+  - MP_S3
+  - MP_I3
+  - MN_I3
+  - MN_S3
+  - MP_S4
+  - MP_I4
+  - MN_I4
+  - MN_S4
+  - MP_S5
+  - MP_I5
+  - MN_I5
+  - MN_S5
+  # output buffer: NAND2(r5, pll_en) + inverter
+  - MP_G1
+  - MP_G2
+  - MN_G1
+  - MN_G2
+  - MP_O
+  - MN_O
+
+# The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
+# 125 C": a full grid, replacing the default five. 27 corners; the
+# brief's ff_n40C_3v60 is ff_m40c_vp10 here.
+corners:
+  grid:
+    process: [typical, ss, ff]
+    temp_c: [-40, 27, 125]
+    supply_pct: [-10, 0, 10]
+
+# Measure names are load-bearing for the bench-writer's .bounds.json.
+# Units are in the name. "all" = the whole grid above.
+measures:
+  # --- charge pump ---------------------------------------------------
+  - name: icp_up_code00_ua
+    bounds: {min: 15.0, max: 25.0}
+    corners: all
+  - name: icp_dn_code00_ua
+    bounds: {min: 15.0, max: 25.0}
+    corners: all
+  - name: icp_up_code00_tt_ua
+    bounds: {min: 18.0, max: 22.0}
+    corners: [tt_27c]
+  - name: icp_up_code01_ua
+    bounds: {min: 18.75, max: 31.25}
+    corners: all
+  - name: icp_up_code10_ua
+    bounds: {min: 22.5, max: 37.5}
+    corners: all
+  - name: icp_up_code11_ua
+    bounds: {min: 30.0, max: 50.0}
+    corners: all
+  - name: icp_code11_over_code00_ratio
+    bounds: {min: 1.8, max: 2.2}
+    corners: all
+  - name: cp_updn_mismatch_pct
+    bounds: {max: 10.0}
+    corners: all
+  - name: cp_overlap_net_charge_fc
+    bounds: {max: 10.0}
+    corners: all
+  - name: vctrl_leak_off_na
+    bounds: {max: 1.0}
+    corners: all
+  # --- loop filter / open loop (ideal 1/(P*N) divider) ------------------
+  - name: ol_pm_pn16_nopad_deg
+    bounds: {min: 45.0}
+    corners: [tt_27c]
+  - name: ol_pm_pn16_pad5p_deg
+    bounds: {min: 25.0}
+    corners: [tt_27c]
+    severity: warning
+  - name: ol_fc_pn16_nopad_khz
+    bounds: {min: 200.0, max: 1000.0}
+    corners: [tt_27c]
+    severity: warning
+  - name: ol_pm_pn8_nopad_deg
+    bounds: {min: 30.0}
+    corners: [tt_27c]
+    severity: warning
+  - name: ol_pm_pn40_nopad_deg
+    bounds: {min: 30.0}
+    corners: [tt_27c]
+    severity: warning
+  # --- VCO ------------------------------------------------------------
+  - name: vco_kvco_mhz_per_v
+    bounds: {min: 40.0, max: 250.0}
+    corners: all
+  - name: vco_df_dv_min_mhz_per_v
+    bounds: {min: 0.0}
+    corners: all
+  - name: vco_fmin_tt_mhz
+    bounds: {max: 50.0}
+    corners: [tt_27c]
+  - name: vco_fmax_tt_mhz
+    bounds: {min: 200.0}
+    corners: [tt_27c]
+  - name: vco_fmax_ff_mhz
+    bounds: {min: 200.0, max: 333.0}
+    corners: [ff_m40c_vp10]
+  - name: vco_out_swing_pct_vdd
+    bounds: {min: 90.0}
+    corners: all
+  - name: vco_out_tr_ns
+    bounds: {max: 0.15}
+    corners: [ff_m40c_vp10, tt_27c]
+  - name: vco_out_tf_ns
+    bounds: {max: 0.15}
+    corners: [ff_m40c_vp10, tt_27c]
+  - name: vco_out_duty_pct
+    bounds: {min: 40.0, max: 60.0}
+    corners: all
+  - name: vco_period_jitter_ps_rms
+    bounds: {max: 10.0}
+    corners: [tt_27c]
+    severity: warning
+  # --- prescaler drive (extracted dffq_1 + inv_1 toggle stage) ----------
+  - name: presc_div2_ratio
+    bounds: {min: 0.99, max: 1.01}
+    corners: [ff_m40c_vp10]
+  # --- power-down -------------------------------------------------------
+  - name: standby_current_ua
+    bounds: {max: 1.0}
+    corners: all
+  - name: vco_out_off_toggles
+    bounds: {max: 0}
+    corners: all
+  - name: startup_time_us
+    bounds: {max: 5.0}
+    corners: all
+
+# Post-layout re-simulation of Kvco and Icp (brief: layout section). Same
+# bounds as pre-layout at the corners those measures run.
+post_layout_bounds:
+  icp_up_code00_ua: {min: 15.0, max: 25.0}
+  icp_dn_code00_ua: {min: 15.0, max: 25.0}
+  vco_kvco_mhz_per_v: {min: 40.0, max: 250.0}

@@ -12,12 +12,12 @@
 Input filename: database/design.il
 
 2. Executing MUTATE pass.
-Raw database size: 1032
-Covered 32/97 src attributes (32.99%).
-Covered 13/46 wires (28.26%).
-Covered 13/62 wire bits (20.97%).
+Raw database size: 1020
+Covered 29/93 src attributes (31.18%).
+Covered 11/44 wires (25.00%).
+Covered 11/60 wire bits (18.33%).
 Reduced database size: 19
 
-End of script. Logfile hash: da8e198742, time: 0.24s, user: 0.02s, system: 0.01s, MEM: 26.90 MB peak
+End of script. Logfile hash: 75ad39620a, time: 0.17s, user: 0.02s, system: 0.01s, MEM: 27.26 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 78% 1x mutate (0 sec), 21% 2x read_rtlil (0 sec), ...
+Time spent: 80% 1x mutate (0 sec), 19% 2x read_rtlil (0 sec), ...

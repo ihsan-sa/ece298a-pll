@@ -28,6 +28,7 @@
    "test_divider_ratio",
    "test_lock_assert",
    "test_lock_deassert",
+   "test_lock_deassert_dn",
    "test_no_vctrl_bias_ua",
    "test_obs_sel",
    "test_pfd_dn_lead",
@@ -37,8 +38,8 @@
    "test_reset_release_clean",
    "test_tt_tieoff"
   ],
-  "tests_passed": 14
+  "tests_passed": 15
  },
- "recorded_ts": "2026-09-27T01:37:49",
- "attempts": 5
+ "recorded_ts": "2026-09-28T13:30:44",
+ "attempts": 6
 }

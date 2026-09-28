@@ -2,8 +2,7 @@
 read_rtlil design.il
 scc -select; simplemap; select -clear
 memory_nordff
-async2sync
-chformal -assume -early
+clk2fflogic
 opt_clean
 formalff -setundef -clk2ff -ff2anyinit -hierarchy
 chformal -live -fair -cover -remove

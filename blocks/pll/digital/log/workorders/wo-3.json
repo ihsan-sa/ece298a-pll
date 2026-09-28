@@ -1,0 +1,116 @@
+{
+ "id": 3,
+ "created": "2026-09-28T13:27:17",
+ "gate": "mutate",
+ "phase": "P4",
+ "workspace": "blocks/pll/digital",
+ "fixer": "testbench",
+ "role_prompt": "skills/vde/agents/tb-writer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit tb/ (and the reference model it scores against) only; a mutate survivor names the mutant class the test must now kill."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/kill_rate_below_threshold.md",
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/survivor_output_stuck.md",
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/survivor_stuck_other.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "kill_rate_below_threshold",
+   "survivor_output_stuck",
+   "survivor_stuck_other"
+  ],
+  "checks": [
+   "mcy"
+  ],
+  "severity": "error",
+  "count": 4,
+  "violations": [
+   {
+    "check": "mutate",
+    "severity": "error",
+    "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:14.17-14.23",
+    "module": null,
+    "line": null,
+    "kind": "survivor_output_stuck",
+    "refs": [],
+    "msg": "mutant 11 (output_stuck) survived: mutate -mode const0 -module pll_lock_det -cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26$22 -port B -portbit 0 -wire pfd_dn -wirebit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:14.17-14.23 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26.27-26.42",
+    "source": "mcy",
+    "items": [
+     {
+      "msg": "mutant 11 (output_stuck) survived: mutate -mode const0 -module pll_lock_det -cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26$22 -port B -portbit 0 -wire pfd_dn -wirebit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:14.17-14.23 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26.27-26.42",
+      "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:14.17-14.23",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "mutate",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "kill_rate_below_threshold",
+    "refs": [],
+    "msg": "kill rate 0.84 (16/19) is below 0.90",
+    "source": "mcy",
+    "items": [
+     {
+      "msg": "kill rate 0.84 (16/19) is below 0.90",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "mutate",
+    "severity": "info",
+    "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+    "module": null,
+    "line": null,
+    "kind": "survivor_stuck_other",
+    "refs": [],
+    "msg": "mutant 5 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+    "source": "mcy",
+    "items": [
+     {
+      "msg": "mutant 5 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+      "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "mutate",
+    "severity": "info",
+    "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+    "module": null,
+    "line": null,
+    "kind": "survivor_stuck_other",
+    "refs": [],
+    "msg": "mutant 10 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+    "source": "mcy",
+    "items": [
+     {
+      "msg": "mutant 10 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+      "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

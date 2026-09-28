@@ -1,0 +1,3245 @@
+{
+  "script": "gate",
+  "gate": "netlist_lint",
+  "phase": "P4",
+  "tool": "netlist_lint",
+  "input_digest": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+  "status": "fail",
+  "criteria": {
+    "fail_severities": [
+      "error"
+    ],
+    "max_count": 0
+  },
+  "counts": {
+    "total": 80,
+    "by_severity": {
+      "error": 80
+    },
+    "by_source": {
+      "netlistlib": 75,
+      "ngspice": 5
+    }
+  },
+  "failing_count": 80,
+  "failing": [
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENI"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENI"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_B1"
+      ],
+      "msg": "spec.yaml declares device 'MP_B1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_B1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_B2"
+      ],
+      "msg": "spec.yaml declares device 'MP_B2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_B2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_B1"
+      ],
+      "msg": "spec.yaml declares device 'MN_B1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_B1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_B2"
+      ],
+      "msg": "spec.yaml declares device 'MN_B2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_B2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "RBIAS_INT"
+      ],
+      "msg": "spec.yaml declares device 'RBIAS_INT' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'RBIAS_INT' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_STL"
+      ],
+      "msg": "spec.yaml declares device 'MP_STL' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_STL' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_STD"
+      ],
+      "msg": "spec.yaml declares device 'MN_STD' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_STD' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ST"
+      ],
+      "msg": "spec.yaml declares device 'MN_ST' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ST' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_STE"
+      ],
+      "msg": "spec.yaml declares device 'MN_STE' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_STE' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENB"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENA"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENA' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENA' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENB"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T4"
+      ],
+      "msg": "spec.yaml declares device 'MP_T4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T1A"
+      ],
+      "msg": "spec.yaml declares device 'MP_T1A' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T1A' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW0"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW0' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW0' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T2"
+      ],
+      "msg": "spec.yaml declares device 'MP_T2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW1"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T1B"
+      ],
+      "msg": "spec.yaml declares device 'MP_T1B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T1B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW0B"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW0B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW0B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW1B"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW1B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW1B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_CPREF"
+      ],
+      "msg": "spec.yaml declares device 'MN_CPREF' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_CPREF' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_CPREF2"
+      ],
+      "msg": "spec.yaml declares device 'MN_CPREF2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_CPREF2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_CPREF"
+      ],
+      "msg": "spec.yaml declares device 'MP_CPREF' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_CPREF' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPS"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UP"
+      ],
+      "msg": "spec.yaml declares device 'MP_UP' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UP' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPD"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPD' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPD' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPI"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_UPI"
+      ],
+      "msg": "spec.yaml declares device 'MN_UPI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_UPI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DNS"
+      ],
+      "msg": "spec.yaml declares device 'MN_DNS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DNS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DN"
+      ],
+      "msg": "spec.yaml declares device 'MN_DN' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DN' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DND"
+      ],
+      "msg": "spec.yaml declares device 'MN_DND' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DND' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_DNI"
+      ],
+      "msg": "spec.yaml declares device 'MP_DNI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_DNI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DNI"
+      ],
+      "msg": "spec.yaml declares device 'MN_DNI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DNI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENP"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENP' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENP' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENN"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENN' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENN' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "R1"
+      ],
+      "msg": "spec.yaml declares device 'R1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'R1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "C1"
+      ],
+      "msg": "spec.yaml declares device 'C1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'C1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "C2"
+      ],
+      "msg": "spec.yaml declares device 'C2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'C2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_V2I"
+      ],
+      "msg": "spec.yaml declares device 'MN_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "R_V2I"
+      ],
+      "msg": "spec.yaml declares device 'R_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'R_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_FLR"
+      ],
+      "msg": "spec.yaml declares device 'MN_FLR' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_FLR' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENS"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_V2I"
+      ],
+      "msg": "spec.yaml declares device 'MP_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_V2IB"
+      ],
+      "msg": "spec.yaml declares device 'MP_V2IB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_V2IB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_V2IM"
+      ],
+      "msg": "spec.yaml declares device 'MN_V2IM' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_V2IM' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENV"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENV' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENV' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENV"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENV' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENV' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S1"
+      ],
+      "msg": "spec.yaml declares device 'MP_S1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I1"
+      ],
+      "msg": "spec.yaml declares device 'MP_I1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I1"
+      ],
+      "msg": "spec.yaml declares device 'MN_I1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S1"
+      ],
+      "msg": "spec.yaml declares device 'MN_S1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S2"
+      ],
+      "msg": "spec.yaml declares device 'MP_S2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I2"
+      ],
+      "msg": "spec.yaml declares device 'MP_I2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I2"
+      ],
+      "msg": "spec.yaml declares device 'MN_I2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S2"
+      ],
+      "msg": "spec.yaml declares device 'MN_S2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S3"
+      ],
+      "msg": "spec.yaml declares device 'MP_S3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I3"
+      ],
+      "msg": "spec.yaml declares device 'MP_I3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I3"
+      ],
+      "msg": "spec.yaml declares device 'MN_I3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S3"
+      ],
+      "msg": "spec.yaml declares device 'MN_S3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S4"
+      ],
+      "msg": "spec.yaml declares device 'MP_S4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I4"
+      ],
+      "msg": "spec.yaml declares device 'MP_I4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I4"
+      ],
+      "msg": "spec.yaml declares device 'MN_I4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S4"
+      ],
+      "msg": "spec.yaml declares device 'MN_S4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S5"
+      ],
+      "msg": "spec.yaml declares device 'MP_S5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I5"
+      ],
+      "msg": "spec.yaml declares device 'MP_I5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I5"
+      ],
+      "msg": "spec.yaml declares device 'MN_I5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S5"
+      ],
+      "msg": "spec.yaml declares device 'MN_S5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_G1"
+      ],
+      "msg": "spec.yaml declares device 'MP_G1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_G1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_G2"
+      ],
+      "msg": "spec.yaml declares device 'MP_G2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_G2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_G1"
+      ],
+      "msg": "spec.yaml declares device 'MN_G1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_G1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_G2"
+      ],
+      "msg": "spec.yaml declares device 'MN_G2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_G2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_O"
+      ],
+      "msg": "spec.yaml declares device 'MP_O' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_O' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_O"
+      ],
+      "msg": "spec.yaml declares device 'MN_O' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_O' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_convergence_trouble",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_timestep_too_small",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_empty_netlist",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_ngspice_error",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_sim_timeout",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "violations": [
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENI"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENI"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_B1"
+      ],
+      "msg": "spec.yaml declares device 'MP_B1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_B1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_B2"
+      ],
+      "msg": "spec.yaml declares device 'MP_B2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_B2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_B1"
+      ],
+      "msg": "spec.yaml declares device 'MN_B1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_B1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_B2"
+      ],
+      "msg": "spec.yaml declares device 'MN_B2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_B2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "RBIAS_INT"
+      ],
+      "msg": "spec.yaml declares device 'RBIAS_INT' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'RBIAS_INT' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_STL"
+      ],
+      "msg": "spec.yaml declares device 'MP_STL' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_STL' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_STD"
+      ],
+      "msg": "spec.yaml declares device 'MN_STD' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_STD' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ST"
+      ],
+      "msg": "spec.yaml declares device 'MN_ST' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ST' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_STE"
+      ],
+      "msg": "spec.yaml declares device 'MN_STE' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_STE' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENB"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENA"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENA' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENA' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENB"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T4"
+      ],
+      "msg": "spec.yaml declares device 'MP_T4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T1A"
+      ],
+      "msg": "spec.yaml declares device 'MP_T1A' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T1A' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW0"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW0' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW0' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T2"
+      ],
+      "msg": "spec.yaml declares device 'MP_T2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW1"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_T1B"
+      ],
+      "msg": "spec.yaml declares device 'MP_T1B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_T1B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW0B"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW0B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW0B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_SW1B"
+      ],
+      "msg": "spec.yaml declares device 'MN_SW1B' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_SW1B' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_CPREF"
+      ],
+      "msg": "spec.yaml declares device 'MN_CPREF' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_CPREF' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_CPREF2"
+      ],
+      "msg": "spec.yaml declares device 'MN_CPREF2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_CPREF2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_CPREF"
+      ],
+      "msg": "spec.yaml declares device 'MP_CPREF' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_CPREF' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPS"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UP"
+      ],
+      "msg": "spec.yaml declares device 'MP_UP' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UP' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPD"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPD' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPD' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_UPI"
+      ],
+      "msg": "spec.yaml declares device 'MP_UPI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_UPI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_UPI"
+      ],
+      "msg": "spec.yaml declares device 'MN_UPI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_UPI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DNS"
+      ],
+      "msg": "spec.yaml declares device 'MN_DNS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DNS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DN"
+      ],
+      "msg": "spec.yaml declares device 'MN_DN' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DN' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DND"
+      ],
+      "msg": "spec.yaml declares device 'MN_DND' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DND' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_DNI"
+      ],
+      "msg": "spec.yaml declares device 'MP_DNI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_DNI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_DNI"
+      ],
+      "msg": "spec.yaml declares device 'MN_DNI' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_DNI' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENP"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENP' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENP' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENN"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENN' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENN' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "R1"
+      ],
+      "msg": "spec.yaml declares device 'R1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'R1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "C1"
+      ],
+      "msg": "spec.yaml declares device 'C1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'C1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "C2"
+      ],
+      "msg": "spec.yaml declares device 'C2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'C2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_V2I"
+      ],
+      "msg": "spec.yaml declares device 'MN_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "R_V2I"
+      ],
+      "msg": "spec.yaml declares device 'R_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'R_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_FLR"
+      ],
+      "msg": "spec.yaml declares device 'MN_FLR' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_FLR' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENS"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENS' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENS' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_V2I"
+      ],
+      "msg": "spec.yaml declares device 'MP_V2I' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_V2I' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_V2IB"
+      ],
+      "msg": "spec.yaml declares device 'MP_V2IB' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_V2IB' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_V2IM"
+      ],
+      "msg": "spec.yaml declares device 'MN_V2IM' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_V2IM' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_ENV"
+      ],
+      "msg": "spec.yaml declares device 'MP_ENV' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_ENV' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_ENV"
+      ],
+      "msg": "spec.yaml declares device 'MN_ENV' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_ENV' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S1"
+      ],
+      "msg": "spec.yaml declares device 'MP_S1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I1"
+      ],
+      "msg": "spec.yaml declares device 'MP_I1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I1"
+      ],
+      "msg": "spec.yaml declares device 'MN_I1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S1"
+      ],
+      "msg": "spec.yaml declares device 'MN_S1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S2"
+      ],
+      "msg": "spec.yaml declares device 'MP_S2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I2"
+      ],
+      "msg": "spec.yaml declares device 'MP_I2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I2"
+      ],
+      "msg": "spec.yaml declares device 'MN_I2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S2"
+      ],
+      "msg": "spec.yaml declares device 'MN_S2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S3"
+      ],
+      "msg": "spec.yaml declares device 'MP_S3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I3"
+      ],
+      "msg": "spec.yaml declares device 'MP_I3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I3"
+      ],
+      "msg": "spec.yaml declares device 'MN_I3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S3"
+      ],
+      "msg": "spec.yaml declares device 'MN_S3' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S3' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S4"
+      ],
+      "msg": "spec.yaml declares device 'MP_S4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I4"
+      ],
+      "msg": "spec.yaml declares device 'MP_I4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I4"
+      ],
+      "msg": "spec.yaml declares device 'MN_I4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S4"
+      ],
+      "msg": "spec.yaml declares device 'MN_S4' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S4' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_S5"
+      ],
+      "msg": "spec.yaml declares device 'MP_S5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_S5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_I5"
+      ],
+      "msg": "spec.yaml declares device 'MP_I5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_I5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_I5"
+      ],
+      "msg": "spec.yaml declares device 'MN_I5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_I5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_S5"
+      ],
+      "msg": "spec.yaml declares device 'MN_S5' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_S5' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_G1"
+      ],
+      "msg": "spec.yaml declares device 'MP_G1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_G1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_G2"
+      ],
+      "msg": "spec.yaml declares device 'MP_G2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_G2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_G1"
+      ],
+      "msg": "spec.yaml declares device 'MN_G1' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_G1' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_G2"
+      ],
+      "msg": "spec.yaml declares device 'MN_G2' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_G2' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MP_O"
+      ],
+      "msg": "spec.yaml declares device 'MP_O' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MP_O' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "netlist/pll_analog.cir",
+      "module": null,
+      "line": null,
+      "kind": "declared_device_missing",
+      "refs": [
+        "MN_O"
+      ],
+      "msg": "spec.yaml declares device 'MN_O' but no such instance exists in the netlist",
+      "source": "netlistlib",
+      "items": [
+        {
+          "msg": "spec.yaml declares device 'MN_O' but no such instance exists in the netlist",
+          "file": "netlist/pll_analog.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_convergence_trouble",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_ol_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_timestep_too_small",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+          "file": "pll_analog_ol_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_empty_netlist",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_presc_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_ngspice_error",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+          "file": "pll_analog_presc_tb.cir",
+          "line": null
+        }
+      ]
+    },
+    {
+      "check": "netlist_lint",
+      "severity": "error",
+      "file": "pll_analog_vco_tb.cir",
+      "module": null,
+      "line": null,
+      "kind": "sim_engine_error_sim_timeout",
+      "refs": [
+        "tt"
+      ],
+      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+      "source": "ngspice",
+      "items": [
+        {
+          "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+          "file": "pll_analog_vco_tb.cir",
+          "line": null
+        }
+      ]
+    }
+  ],
+  "facts": {
+    "top": "pll_analog",
+    "netlist": "netlist/pll_analog.cir"
+  },
+  "record_result": {
+    "ok": true,
+    "recorded": true,
+    "workspace": "blocks/pll/analog",
+    "gate": "netlist_lint",
+    "status": "fail",
+    "attempts": 1,
+    "inputs": {
+      "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+      "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
+    }
+  }
+}

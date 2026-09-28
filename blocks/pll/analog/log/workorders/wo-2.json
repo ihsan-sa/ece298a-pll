@@ -1,0 +1,144 @@
+{
+ "id": 2,
+ "created": "2026-09-28T13:59:15",
+ "gate": "netlist_lint",
+ "phase": "P4",
+ "workspace": "blocks/pll/analog",
+ "fixer": "netlist",
+ "role_prompt": "skills/ade/agents/fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit netlist/*.cir only (a model, a connection, a missing device); declare netlist_edit, which re-runs every analog gate. Never touch tb/ to make a convergence error go away."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/sim_engine_error.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "sim_engine_error_convergence_trouble",
+   "sim_engine_error_empty_netlist",
+   "sim_engine_error_ngspice_error",
+   "sim_engine_error_sim_timeout",
+   "sim_engine_error_timestep_too_small"
+  ],
+  "checks": [
+   "ngspice"
+  ],
+  "severity": "error",
+  "count": 5,
+  "violations": [
+   {
+    "check": "netlist_lint",
+    "severity": "error",
+    "file": "pll_analog_ol_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_engine_error_convergence_trouble",
+    "refs": [
+     "tt"
+    ],
+    "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "ngspice reported convergence trouble at corner 'tt': tran simulation(s) aborted",
+      "file": "pll_analog_ol_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "netlist_lint",
+    "severity": "error",
+    "file": "pll_analog_ol_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_engine_error_timestep_too_small",
+    "refs": [
+     "tt"
+    ],
+    "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "ngspice reported timestep too small at corner 'tt': tran simulation(s) aborted",
+      "file": "pll_analog_ol_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "netlist_lint",
+    "severity": "error",
+    "file": "pll_analog_presc_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_engine_error_empty_netlist",
+    "refs": [
+     "tt"
+    ],
+    "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "ngspice reported empty netlist at corner 'tt': no simulations run!",
+      "file": "pll_analog_presc_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "netlist_lint",
+    "severity": "error",
+    "file": "pll_analog_presc_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_engine_error_ngspice_error",
+    "refs": [
+     "tt"
+    ],
+    "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "ngspice reported ngspice error at corner 'tt': no simulations run!",
+      "file": "pll_analog_presc_tb.cir",
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "netlist_lint",
+    "severity": "error",
+    "file": "pll_analog_vco_tb.cir",
+    "module": null,
+    "line": null,
+    "kind": "sim_engine_error_sim_timeout",
+    "refs": [
+     "tt"
+    ],
+    "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+    "source": "ngspice",
+    "items": [
+     {
+      "msg": "ngspice reported sim timeout at corner 'tt': [sim_run] timed out after 900s",
+      "file": "pll_analog_vco_tb.cir",
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": "blocks/pll/analog",
+  "spec": "blocks/pll/analog/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

@@ -1,0 +1,28 @@
+read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/mutate/database/design.il
+hierarchy -auto-top
+flatten
+rename -top ref
+hierarchy -top ref
+memory_map
+write_json ref.json
+write_rtlil ref.il
+async2sync
+design -stash ref
+read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/mutate/database/design.il
+hierarchy -auto-top
+mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32
+flatten
+rename -top uut
+hierarchy -top uut
+memory_map
+write_json uut.json
+write_rtlil uut.il
+async2sync
+design -copy-from ref -as ref ref
+equiv_make -make_assert ref uut eqa
+equiv_make ref uut equiv
+select -assert-min 1 eqa/t:$assert
+select -assert-min 1 equiv/t:$equiv
+sat -seq 8 -prove-asserts -set-init-zero -timeout 60 -verify eqa
+equiv_induct -seq 8 equiv
+equiv_status -assert equiv

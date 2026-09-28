@@ -31,7 +31,6 @@ Successfully finished Verilog frontend.
 5. Executing Verilog-2005 frontend: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
 Parsing SystemVerilog input from `/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v' to AST representation.
 Generating RTLIL representation for module `\pll_pfd'.
-Generating RTLIL representation for module `\gf180mcu_fd_sc_mcu7t5v0__dlya_1'.
 Successfully finished Verilog frontend.
 
 6. Executing Verilog-2005 frontend: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v
@@ -192,6 +191,6 @@ Optimizing module ihsan_sa_pll.
 9. Executing RTLIL backend.
 Output filename: database/design.il
 
-End of script. Logfile hash: 09eb511a5e, time: 0.45s, user: 0.02s, system: 0.01s, MEM: 28.73 MB peak
+End of script. Logfile hash: 7dfc3c7c1d, time: 0.05s, user: 0.02s, system: 0.01s, MEM: 28.68 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 62% 12x read_verilog (0 sec), 10% 2x write_rtlil (0 sec), ...
+Time spent: 66% 12x read_verilog (0 sec), 7% 2x write_rtlil (0 sec), ...

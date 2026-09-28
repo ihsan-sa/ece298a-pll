@@ -651,20 +651,6 @@ module \pll_pfd
     connect \B \pfd_rst
     connect \Y $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$28_Y
   end
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:22.46-22.89"
-  attribute \module_not_derived 1
-  attribute \keep 1
-  cell \gf180mcu_fd_sc_mcu7t5v0__dlya_1 \pfd_dly0
-    connect \I \pfd_both
-    connect \Z \pfd_dly_mid
-  end
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:23.46-23.85"
-  attribute \module_not_derived 1
-  attribute \keep 1
-  cell \gf180mcu_fd_sc_mcu7t5v0__dlya_1 \pfd_dly1
-    connect \I \pfd_dly_mid
-    connect \Z \pfd_rst
-  end
   attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
   cell $adff $procdff$71
     parameter \WIDTH 1
@@ -689,20 +675,14 @@ module \pll_pfd
   end
   connect \pfd_both $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$26_Y
   connect \pfd_clr $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$28_Y
+  connect \pfd_dly_mid \pfd_both
+  connect \pfd_rst \pfd_dly_mid
   connect \pfd_up \pfd_ref_q
   connect \pfd_dn \pfd_fb_q
   connect $0\pfd_fb_q[0:0] 1'1
   connect $0\pfd_ref_q[0:0] 1'1
   connect $auto$rtlil.cc:3255:ReduceOr$70 $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$28_Y
   connect $auto$rtlil.cc:3255:ReduceOr$67 $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$28_Y
-end
-attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:47.1-51.10"
-attribute \blackbox 1
-module \gf180mcu_fd_sc_mcu7t5v0__dlya_1
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:48.17-48.18"
-  wire input 1 \I
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:49.17-49.18"
-  wire output 2 \Z
 end
 attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:5.1-31.10"
 module \pll_prescaler

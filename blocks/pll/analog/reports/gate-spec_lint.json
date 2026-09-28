@@ -3,7 +3,7 @@
   "gate": "spec_lint",
   "phase": "P1",
   "tool": "spec_lint_ade",
-  "input_digest": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96",
+  "input_digest": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
   "status": "pass",
   "criteria": {
     "fail_severities": [
@@ -25,9 +25,9 @@
     "workspace": "blocks/pll/analog",
     "gate": "spec_lint",
     "status": "pass",
-    "attempts": 5,
+    "attempts": 6,
     "inputs": {
-      "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
+      "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b"
     }
   }
 }
