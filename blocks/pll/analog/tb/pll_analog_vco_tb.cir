@@ -8,6 +8,13 @@
 * vco_out into 15 fF. Operating-point-first .tran (no uic) per point: the
 * ring starts from its own DC point, so a ring whose DC point is stable
 * (a dead VCO) stays stalled, as it would on silicon.
+* START-UP KICK: a noiseless op leaves the ring exactly on its symmetric
+* balance point (every ring node equal), which is unstable in a live ring but
+* which ngspice never leaves without a perturbation (it11: stall at vctrl =
+* 0.3 V). ikick injects 1 uA for 1 ns (1 fC, zero at the op) into ring node
+* r1 at t = 1 ns of every tran - the stand-in for the device noise that
+* starts a real ring. It does not move the bias op point, and a ring whose
+* DC point is stable (a dead VCO) still decays back and stays stalled.
 *
 * Sweep: vctrl = 0.3 V .. vdd-0.3 V in 6 equal steps (7 points; point 3 is
 * exactly vdd/2). Per point the frequency comes from an adaptive run ladder
@@ -72,6 +79,7 @@ vt1      cp_trim1 0 0
 vvc      vctrl    0 0.3
 cload    vco_out  0 15f
 xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+ikick    0        xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)
 
 .control
 set noaskquit

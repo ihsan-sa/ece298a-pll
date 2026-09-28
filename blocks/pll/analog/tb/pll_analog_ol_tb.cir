@@ -20,6 +20,10 @@
 * fc = |H| = 1 crossing; PM = 180 + arg H(fc) = 90 + arg Z(fc) (deg).
 * cp_trim stays 00 at every P*N (spec.md's default condition; spec.yaml does
 * not name another code for P*N = 40).
+* START-UP KICK (as pll_analog_vco_tb.cir): ikick injects 1 uA for 1 ns
+* (1 fC, zero at the op) into ring node r1 at t = 1 ns of every Kvco tran, so
+* the ring leaves its symmetric balance point, which a noiseless op never
+* does in ngspice (it11: stall at vctrl = 0.3 V). ikick is 0 in op/ac.
 * sim_timeout_s: 600
 
 .include '{{PDK}}/libs.tech/ngspice/design.spice'
@@ -52,6 +56,7 @@ cpad     vctrl    0 1e-18
 iac      0        vctrl dc 0 ac 1
 cload    vco_out  0 15f
 xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+ikick    0        xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)
 
 .control
 set noaskquit

@@ -19,6 +19,12 @@
 * 20 % of the window, or fewer than 12 full-swing rises occur, the bench
 * prints `startup_time_us = not_settled` (sim_not_settled finding), never a
 * number clamped to the window.
+* START-UP KICK: a noiseless transient can leave the ring on its symmetric
+* balance point (every ring node equal), unstable in a live ring but never
+* left by ngspice without a perturbation (it11: stall at vctrl = 0.3 V).
+* ikick injects 1 uA for 1 ns (1 fC) into ring node r1 at t_en + 1 ns, the
+* stand-in for the device noise that starts a real ring; it is zero at the
+* op, and a ring whose DC point is stable still decays back and stalls.
 * sim_timeout_s: 1800
 
 .include '{{PDK}}/libs.tech/ngspice/design.spice'
@@ -51,6 +57,7 @@ cpadv    vctrl    0 5p
 cpadb    bias_ref 0 5p
 cload    vco_out  0 15f
 xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+ikick    0        xdut.r1 pulse(0 1u {t_en+1n} 50p 50p 1n 1)
 
 .control
 set noaskquit
