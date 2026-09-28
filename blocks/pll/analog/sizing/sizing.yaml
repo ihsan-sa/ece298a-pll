@@ -101,7 +101,7 @@ l_v2i:
   max: 2e-06
 # R_V2I length at 1 um width: Kvco ~ 1/(R N C vdd)
 rv2i_l:
-  value: 2e-05
+  value: 5e-05
   min: 5e-06
   max: 0.0002
 # MN_FLR W: Ifloor = Ib (W/L)flr/(W/L)b1 sets fmin
@@ -146,12 +146,12 @@ l_s:
   max: 2e-06
 # ring inverter PMOS W
 w_rp:
-  value: 2e-06
+  value: 6e-06
   min: 1e-06
   max: 1e-05
 # ring inverter NMOS W
 w_rn:
-  value: 1e-06
+  value: 3e-06
   min: 1e-06
   max: 1e-05
 # ring inverter L
@@ -179,3 +179,43 @@ w_on:
   value: 6e-06
   min: 2e-06
   max: 5e-05
+# dump-node buffer tail ratio (MP_BUFT to MP_B1 units, MN_BUFT to MN_B1): Itail = m x Ib, 2..8 (topology.md 3b)
+m_buft:
+  value: 4
+  min: 2
+  max: 8
+# buffer PMOS input pair W (MP_BUF1/2): large W/L for small |Vov_p|, template W 2..40 um
+w_bufp:
+  value: 2e-05
+  min: 2e-06
+  max: 4e-05
+# buffer PMOS input pair L: top of the 0.28..1 um pair range for offset
+l_bufp:
+  value: 1e-06
+  min: 2.8e-07
+  max: 1e-06
+# buffer NMOS input pair W (MN_BUF1/2)
+w_bufn:
+  value: 1e-05
+  min: 2e-06
+  max: 4e-05
+# buffer NMOS input pair L
+l_bufn:
+  value: 1e-06
+  min: 2.8e-07
+  max: 1e-06
+# buffer NMOS mirror load W (MN_BUFL1/2), matched internally
+w_bufln:
+  value: 4e-06
+  min: 1e-06
+  max: 5e-05
+# buffer PMOS mirror load W (MP_BUFL1/2), matched internally
+w_buflp:
+  value: 8e-06
+  min: 1e-06
+  max: 5e-05
+# buffer mirror-load L (both mirrors): >= 1 um for offset
+l_bufl:
+  value: 2e-06
+  min: 1e-06
+  max: 2e-06

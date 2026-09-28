@@ -4,21 +4,21 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T14:41:38",
+ "updated": "2026-09-28T16:45:10",
  "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 8,
    "last": {
-    "ts": "2026-09-28T13:59:50",
+    "ts": "2026-09-28T15:54:50",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b"
+     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
     },
     "job": null
    },
@@ -82,6 +82,34 @@
       "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b"
      },
      "job": null
+    },
+    {
+     "ts": "2026-09-28T15:52:45",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:1e8b9ec3d24bdea001f52f08efe46ecc475f89b391a3e00e9036ed5c35e70f99"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-09-28T15:54:50",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
+     },
+     "job": null
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-09-28T15:56:05",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
     }
    ]
   },
@@ -119,22 +147,40 @@
      "edit_class": "spec_edit",
      "refs": [],
      "human_hold": 2
+    },
+    {
+     "ts": "2026-09-28T15:53:24",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
+    },
+    {
+     "ts": "2026-09-28T15:56:05",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
+    },
+    {
+     "ts": "2026-09-28T16:45:09",
+     "edit_class": "netlist_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   },
   "sim_tt": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-28T14:40:57",
+    "ts": "2026-09-28T16:28:00",
     "status": "fail",
-    "failing_count": 11,
-    "total": 11,
+    "failing_count": 5,
+    "total": 5,
     "inputs": {
      "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-     "tb": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
-     "spec_yaml": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
+     "tb": "dir_text:ae97a33b54ff967d47c7621f97c78ecb75ea6389c92a00d561da59c7ad97ca97",
+     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
      "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
     },
     "job": null,
@@ -162,6 +208,38 @@
        "tt"
       ]
      }
+    },
+    {
+     "ts": "2026-09-28T16:28:00",
+     "status": "fail",
+     "failing_count": 5,
+     "total": 5,
+     "inputs": {
+      "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
+      "tb": "dir_text:ae97a33b54ff967d47c7621f97c78ecb75ea6389c92a00d561da59c7ad97ca97",
+      "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
+      "sizing": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-09-28T16:45:09",
+     "edit_class": "netlist_edit",
+     "refs": [],
+     "human_hold": 1
+    },
+    {
+     "ts": "2026-09-28T16:45:10",
+     "edit_class": "sizing_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   }
@@ -174,26 +252,26 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:fba48a44ad3020eccecf72dd6799992089245ac14774fb32d1fa73e6178d351b",
-   "hashed": "2026-09-28T14:40:57"
+   "sha256": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
+   "hashed": "2026-09-28T16:28:00"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-   "hashed": "2026-09-28T14:40:57"
+   "hashed": "2026-09-28T16:28:00"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:cf0bb00691a1018db2a9ef204d4b1813f3e1a980741b7e84488f496296b214d1",
-   "hashed": "2026-09-28T14:40:57"
+   "sha256": "dir_text:ae97a33b54ff967d47c7621f97c78ecb75ea6389c92a00d561da59c7ad97ca97",
+   "hashed": "2026-09-28T16:28:00"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:595d19d5cf0f8c0999a9420b202236bd6123453be9e7afd9f0cb5260e7f56955",
-   "hashed": "2026-09-28T14:40:57"
+   "hashed": "2026-09-28T16:28:00"
   }
  },
  "open_issues": [
@@ -261,11 +339,11 @@
   },
   {
    "id": 4,
-   "status": "open",
-   "agent": null,
+   "status": "fixed",
+   "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-09-28T14:41:25",
-   "closed": null,
+   "closed": "2026-09-28T15:49:48",
    "gate": "sim_tt",
    "phase": "P4",
    "fixer": "testbench",
@@ -274,13 +352,14 @@
    ],
    "severity": "error",
    "count": 4,
-   "work_order": "blocks/pll/analog/log/workorders/wo-4.json"
+   "work_order": "blocks/pll/analog/log/workorders/wo-4.json",
+   "note": "vco_tb ladder + measures always print, ol_tb lfeed alter, presc_tb op at non-ff (iter 9)"
   },
   {
    "id": 5,
-   "status": "fixing",
+   "status": "escalated",
    "agent": "fixer",
-   "attempts": 0,
+   "attempts": 1,
    "opened": "2026-09-28T14:41:25",
    "closed": null,
    "gate": "sim_tt",
@@ -292,7 +371,8 @@
    ],
    "severity": "error",
    "count": 2,
-   "work_order": "blocks/pll/analog/log/workorders/wo-5.json"
+   "work_order": "blocks/pll/analog/log/workorders/wo-5.json",
+   "note": "overlap: charge sharing, vdump floats; needs the spec.md item-1 vdump unity-gain buffer (P2 topology). VCO resize rv2i_l 5e-5, w_rp 6u, w_rn 3u follows."
   }
  ],
  "next_issue_id": 6,
@@ -328,6 +408,99 @@
     "netlist_lint"
    ],
    "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T15:53:24",
+   "class": "spec_edit",
+   "refs": [],
+   "note": null,
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T15:56:05",
+   "class": "spec_edit",
+   "refs": [],
+   "note": null,
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T16:45:09",
+   "class": "netlist_edit",
+   "refs": [],
+   "note": null,
+   "human_hold": 1,
+   "gates": [
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "netlist_lint",
+    "sim_tt"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-09-28T16:45:10",
+   "class": "sizing_edit",
+   "refs": [],
+   "note": null,
+   "human_hold": 1,
+   "gates": [
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "sim_tt"
+   ],
+   "stale_artifacts": []
   }
  ],
  "spawns": [
@@ -343,6 +516,20 @@
    "model": "fable",
    "effort": "high",
    "phase": "P2"
+  },
+  {
+   "ts": "2026-09-28T15:50:04",
+   "role": "analog-designer",
+   "model": "fable",
+   "effort": "high",
+   "phase": "P2"
+  },
+  {
+   "ts": "2026-09-28T15:56:18",
+   "role": "analog-designer",
+   "model": "opus",
+   "effort": "high",
+   "phase": "P4"
   }
  ],
  "history": [
@@ -594,6 +781,86 @@
    "status": "fixing",
    "agent": "fixer",
    "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T15:49:48",
+   "event": "issue",
+   "id": 4,
+   "status": "fixed",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-09-28T15:49:49",
+   "event": "issue",
+   "id": 5,
+   "status": "escalated",
+   "agent": "fixer",
+   "attempts": 1
+  },
+  {
+   "ts": "2026-09-28T15:50:04",
+   "event": "spawn",
+   "role": "analog-designer",
+   "model": "fable"
+  },
+  {
+   "ts": "2026-09-28T15:52:45",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T15:53:24",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-28T15:54:50",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 8,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T15:56:05",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-09-28T15:56:18",
+   "event": "spawn",
+   "role": "analog-designer",
+   "model": "opus"
+  },
+  {
+   "ts": "2026-09-28T16:28:00",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 5
+  },
+  {
+   "ts": "2026-09-28T16:45:09",
+   "event": "edit",
+   "edit_class": "netlist_edit",
+   "refs": [],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T16:45:10",
+   "event": "edit",
+   "edit_class": "sizing_edit",
+   "refs": [],
+   "human_hold": 1
   }
  ]
 }

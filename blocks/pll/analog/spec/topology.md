@@ -20,7 +20,9 @@ positionally.
 
 Internal nodes: `en_b`, `vbp` (PMOS bias gate), `va` (bias loop gain node),
 `vst` (startup), `vcp_n`, `vcp_p` (pump reference gates), `up_b`, `dn_b`,
-`up_s`, `dn_s` (switch source nodes), `vdump`, `vfilt` (R1-C1 junction),
+`up_s`, `dn_s` (switch source nodes), `vdump`, `vbt` / `vnt` (buffer PMOS /
+NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
+`vfilt` (R1-C1 junction),
 `vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `r1..r5` (ring),
 `nb` (NAND output).
 
@@ -67,9 +69,48 @@ Trim acts on the pump reference, so UP and DN share one trimmed current.
   `vcp_n` -> vss).
 
 Current steering keeps MP_UPS/MN_DNS conducting at all times; the idle
-current goes to `vdump`. `vdump` is the node a unity-gain buffer (vctrl ->
-vdump) would drive if P4 shows the overlap-charge or mismatch bound missed
-without it (spec.md item 1); without the buffer it is left self-settling.
+current goes to `vdump`, which the unity-gain buffer of section 3b holds at
+`vctrl` (added at the P2 re-entry from P4: self-settling `vdump` floated at
+1.4-2.9 V and the charge share on up_s/dn_s gave 25.1 fC against the
+10 fC bound with UP/DN current mismatch under 1 fC).
+
+### 3b. Dump-node buffer: vdump = vctrl (rail-to-rail unity-gain OTA)
+Two `diff_pair.sp` input stages of opposite polarity, each with its
+resistive loads replaced by a `current_mirror.sp` mirror, both mirror
+outputs summed on `vdump`, which is tied back to both inverting inputs
+(complementary-input single-stage OTA). The PMOS pair covers the bottom of
+the vctrl range, the NMOS pair the top (the overlap bench scores the worst
+|Q| at vctrl = 0.3 V, vdd/2 and vdd - 0.3 V, so one pair is not enough).
+PMOS half (tail off `vbp`, NMOS mirror load):
+- `MP_BUFT`: tail, source vdd, gate `vbp`, drain `vbt`. Itail = ratio x Ib,
+  ratio 4 nominal (20 uA, = MP_T4's unit count) so the buffer can source or
+  sink the whole code-00 Icp when only one of UP/DN is active and the
+  other's idle current lands on `vdump` alone. Off in standby: MP_ENB
+  already pulls `vbp` to vdd.
+- `MP_BUF1`: input pair, gate `vctrl` (non-inverting), source `vbt`,
+  drain `vbl`.
+- `MP_BUF2`: input pair, gate `vdump` (inverting, the feedback), source
+  `vbt`, drain `vdump` (the output).
+- `MN_BUFL1`: mirror-load master, NMOS diode on `vbl`, source vss.
+- `MN_BUFL2`: mirror-load slave, gate `vbl`, drain `vdump`, source vss.
+NMOS half (tail off `bias_ref`, PMOS mirror load):
+- `MN_BUFT`: tail, source vss, gate `bias_ref`, drain `vnt`. Itail =
+  ratio x Ib off MN_B1 (like MN_FLR), ratio 4 nominal. Off in standby:
+  MN_ENB already pulls `bias_ref` to vss.
+- `MN_BUF1`: input pair, gate `vctrl` (non-inverting), source `vnt`,
+  drain `vbh`.
+- `MN_BUF2`: input pair, gate `vdump` (inverting, the feedback), source
+  `vnt`, drain `vdump` (the output).
+- `MP_BUFL1`: mirror-load master, PMOS diode on `vbh`, source vdd.
+- `MP_BUFL2`: mirror-load slave, gate `vbh`, drain `vdump`, source vdd.
+Net current into vdump = (Ip2 - Ip1) + (In1 - In2) (Ip = PMOS pair sides
+1/2, In = NMOS pair sides 1/2): vctrl up raises Ip2 and In1 and lowers
+Ip1 and In2, so vdump follows vctrl; vdump up does the reverse
+(negative feedback). Balance is at vdump = vctrl.
+Nodes: `vbt`, `vnt`, `vbl`, `vbh` new; `vdump` is now driven. The only rewire is that
+`vdump` gets a driver; MP_UPD / MN_DND and everything else keep their
+connections. Gate load added to `vctrl` is one PMOS gate (fF), no DC path,
+so vctrl_leak_off_na and the loop-filter poles are untouched.
 
 ### 4. Loop filter
 - `R1`: ppolyf_u, `vctrl` -> `vfilt`, ~22 kOhm.
@@ -103,7 +144,7 @@ starve, gate `vbn_vco`, source vss). 20 devices: `MP_S1..MP_S5`,
 - `MP_O` / `MN_O`: inverter `nb` -> `vco_out`, sized for 15 fF, tr/tf <=
   0.15 ns. With pll_en = 0 vco_out is held at 0 (vco_out_off_toggles).
 
-Device count: 2 + 12 + 23 + 3 + 9 + 20 + 6 = 75.
+Device count: 2 + 12 + 23 + 10 + 3 + 9 + 20 + 6 = 85.
 
 ## Design equations (sized against at P4 / optimise)
 
@@ -136,6 +177,42 @@ Charge pump:
 - Off leak (<= 1 nA at 125 C): MP_UP and MN_DN at minimum W, L above
   minimum; MIM leak is ~1e-14 S for 20 pF (negligible).
 
+Dump-node buffer (diff_pair.sp header, square law, starting point only):
+- gm = sqrt(2 u_p Cox (W/L) Itail/2) per input device; loop gain in
+  unity-gain feedback Av = gm (ro_p || ro_n) (mirror load in place of R),
+  so the static error of vdump against vctrl is (vctrl - vdump)/Av plus the
+  systematic offset from the mirror's Vds imbalance (diode side sits at
+  Vgs_n, output side at vdump): long L (>= 1 um) on MN_BUFL1/2 and on the
+  pair, matched W, for offset in the few-mV class. Residual charge share is
+  C(up_s, dn_s) x offset: fF x mV = aC, far under the 10 fC bound.
+- Input common-mode range, at the worst case vdd - 10 % = 2.97 V and the
+  range 0.3..vdd - 0.3 = 0.3..2.67 V (template header: lower limit
+  Vov_tail + Vth + Vov_pair, upper limit vdd - the same):
+  PMOS pair: below vss up to vdd - Vov_tail - |Vth_p| - |Vov_p| ~
+  2.97 - 0.1 - 0.75 - 0.1 ~ 2.0 V (large W/L on the pair for a small
+  |Vov_p|). NMOS pair: Vov_tail + Vth_n + Vov_n ~ 0.9 V up to above vdd.
+  Union: rail to rail; overlap ~0.9..2.0 V where both pairs conduct and
+  the loop gm doubles. All three bench points (0.3 V, vdd/2, vdd - 0.3 V)
+  sit inside at every supply corner; at 3.3 V the limits are ~2.3 V and
+  ~0.9 V. The gm step across the overlap edges changes the loop gain by
+  2x, not the balance point, so the offset stays in the few-mV class.
+- Output range: Vov_n (MN_BUFL2 saturated) up to vdd - |Vov_p|
+  (MP_BUFL2 saturated), wider than 0.3..vdd - 0.3.
+- Drive: source and sink limited to the active pair's Itail (class A),
+  2 x Itail in the overlap region; Itail = ratio x Ib per pair, ratio 2..8
+  (bound from current_mirror.sp's ratio <= 10, and the idle UP/DN
+  imbalance of <= 10 % Icp it must absorb at every code plus a lone pulse
+  at code 00). Nominal ratio 4 = 20 uA per tail, 40 uA total added in run.
+- Settling: single stage into the switch-node parasitics (tens of fF),
+  dominant pole at the output, unity-gain stable with no compensation;
+  tau ~ C_vdump/gm ~ 50 fF / 100 uS = 0.5 ns. Speed is not the point -
+  it only has to hold a DC level between PFD events.
+- Template bounds (pfet_03v3/nfet_03v3): L 0.28..1 um pairs (use the top
+  of the range), W 2..40 um pairs, Itail 5..200 uA per pair; loads
+  L 0.28..2 um, W 1..50 um. The two mirror loads carry each other's
+  pair current only through vdump, so match each mirror internally
+  (same L, same W) rather than PMOS-to-NMOS.
+
 Loop filter / open loop (ideal 1/(P N) divider):
 - H(s) = (Icp/2pi) Kvco Z(s) / (s P N), Z(s) = (1 + s R1 C1) / (s (C1 + C2)
   (1 + s R1 C1 C2/(C1 + C2))).
@@ -156,5 +233,6 @@ VCO:
   duty 40..60 %.
 
 Standby (pll_en = 0): vbp, vcp_p, vbp_vco at vdd; va, bias_ref, vcp_n,
-vbn_vco, vst at vss; MN_ENS open; NAND forces vco_out = 0. Only device
+vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
+vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).

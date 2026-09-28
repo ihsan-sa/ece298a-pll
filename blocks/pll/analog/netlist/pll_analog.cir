@@ -11,7 +11,7 @@
 *
 * Blocks: (1) enable inverter, (2) Vgs/R self-biased reference with startup
 * and standby clamps, (3) trimmed, current-steered charge pump, (4) R1-C1 ||
-* C2 loop filter, (5) degenerated V-to-I with floor current, (6) 5-stage
+* C2 loop filter, (3b) vdump = vctrl rail-to-rail buffer, (5) degenerated V-to-I with floor current, (6) 5-stage
 * current-starved ring, (7) NAND2(r5, pll_en) + inverter output buffer.
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
@@ -19,11 +19,13 @@
 .param w_b2=4e-06 l_b2=1e-06 rb_l=0.00054 w_cpn=2e-05
 .param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
 .param w_swp=4e-06 l_sw=5e-07 r1_l=0.000126 c1_w=0.0001
-.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=2e-05
+.param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=5e-05
 .param w_flr=2e-06 l_flr=2e-06 w_v2ip=1e-05 w_v2in=4e-06
 .param l_v2i2=5e-07 w_sp=1e-05 w_sn=4e-06 l_s=5e-07
-.param w_rp=2e-06 w_rn=1e-06 l_r=2.8e-07 w_gp=4e-06
+.param w_rp=6e-06 w_rn=3e-06 l_r=2.8e-07 w_gp=4e-06
 .param w_gn=4e-06 w_op=1.2e-05 w_on=6e-06
+.param m_buft=4 w_bufp=2e-05 l_bufp=1e-06 w_bufn=1e-05 l_bufn=1e-06
+.param w_bufln=4e-06 w_buflp=8e-06 l_bufl=2e-06
 
 .subckt pll_analog vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
@@ -74,6 +76,20 @@ XMN_DNI dn_b pfd_dn vss vss nfet_03v3 w=1e-6 l=2.8e-7
 * standby clamps
 XMP_ENP vcp_p pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7
 XMN_ENN vcp_n en_b vss vss nfet_03v3 w=1e-6 l=2.8e-7
+
+* (3b) dump-node buffer: rail-to-rail unity-gain OTA, vdump = vctrl
+* PMOS half: tail off vbp (m_buft x Ib), NMOS mirror load
+XMP_BUFT vbt vbp vdd vdd pfet_03v3 w=w_bp l=l_bp m=m_buft
+XMP_BUF1 vbl vctrl vbt vdd pfet_03v3 w=w_bufp l=l_bufp
+XMP_BUF2 vdump vdump vbt vdd pfet_03v3 w=w_bufp l=l_bufp
+XMN_BUFL1 vbl vbl vss vss nfet_03v3 w=w_bufln l=l_bufl
+XMN_BUFL2 vdump vbl vss vss nfet_03v3 w=w_bufln l=l_bufl
+* NMOS half: tail off bias_ref (m_buft x Ib), PMOS mirror load
+XMN_BUFT vnt bias_ref vss vss nfet_03v3 w=w_b1 l=l_b1 m=m_buft
+XMN_BUF1 vbh vctrl vnt vss nfet_03v3 w=w_bufn l=l_bufn
+XMN_BUF2 vdump vdump vnt vss nfet_03v3 w=w_bufn l=l_bufn
+XMP_BUFL1 vbh vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
+XMP_BUFL2 vdump vbh vdd vdd pfet_03v3 w=w_buflp l=l_bufl
 
 * (4) loop filter: R1-C1 series, C2 shunt
 XR1 vctrl vfilt vss ppolyf_u r_width=2e-6 r_length=r1_l

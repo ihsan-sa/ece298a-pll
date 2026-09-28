@@ -6,7 +6,7 @@ top: pll_analog
 supply: {vdd: 3.3}
 
 # Refdes list from spec/topology.md (P2): current_mirror template anchor,
-# 75 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
+# 85 flat devices (no sub-blocks), no standard cells. Models nfet_03v3,
 # pfet_03v3, ppolyf_u, cap_mim_2f0ff.
 devices:
   # enable inverter
@@ -49,6 +49,17 @@ devices:
   - xMN_DNI
   - xMP_ENP
   - xMN_ENN
+  # dump-node buffer: rail-to-rail unity-gain OTA, vdump = vctrl (P2 re-entry)
+  - xMP_BUFT
+  - xMP_BUF1
+  - xMP_BUF2
+  - xMN_BUFL1
+  - xMN_BUFL2
+  - xMN_BUFT
+  - xMN_BUF1
+  - xMN_BUF2
+  - xMP_BUFL1
+  - xMP_BUFL2
   # loop filter
   - xR1
   - xC1
