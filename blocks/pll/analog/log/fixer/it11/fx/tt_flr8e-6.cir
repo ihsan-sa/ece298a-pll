@@ -1,0 +1,28 @@
+* tt_ic
+.include '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/tmp/it11/fx/nl.cir'
+.param w_flr=8e-6
+.temp 27
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+
+.control
+save vco_out xdut.r1 xdut.r2 xdut.r5
+tran 200p 1.5u 0 200p
+meas tran a1 pp v(xdut.r2) from=20n to=200n
+meas tran a2 pp v(xdut.r2) from=600n to=800n
+meas tran a3 pp v(xdut.r2) from=1.3u to=1.5u
+echo RES tt_flr8e-6
+.endc
+.end

@@ -1,0 +1,38 @@
+* quick ff: w_flr=8e-6
+.include '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' ff
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_ff
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_ff
+.include '/tmp/it11/fx/nl.cir'
+.param w_flr=8e-6
+.temp -40
+vdd_src vdd 0 3.63
+vss_src vss 0 0
+ven pll_en 0 3.63
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.control
+save vco_out
+foreach vc 3.63 3.33 1.815
+alter vvc dc = $vc
+tran 20p 25n 0 20p
+meas tran ta when v(vco_out)=1.815 rise=1 td=4n
+meas tran tb when v(vco_out)=1.815 rise=4 td=4n
+let f = 3/(tb-ta)/1e6
+echo "QRES q_ff_8e-6 vc=$vc f=$&f"
+destroy $curplot
+end
+alter vvc dc = 0.3
+tran 250p 400n 0 250p
+meas tran vx pp v(vco_out) from=20n to=400n
+meas tran ta when v(vco_out)=1.815 rise=1 td=20n
+meas tran tb when v(vco_out)=1.815 rise=3 td=20n
+let f = 2/(tb-ta)/1e6
+echo "QRES q_ff_8e-6 vc=0.3 f=$&f pp=$&vx"
+.endc
+.end

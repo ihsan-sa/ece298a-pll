@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T16:45:10",
+ "updated": "2026-09-28T17:26:05",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -116,15 +116,15 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-28T13:58:31",
+    "ts": "2026-09-28T17:26:05",
     "status": "fail",
-    "failing_count": 80,
-    "total": 80,
+    "failing_count": 1,
+    "total": 1,
     "inputs": {
-     "netlist": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-     "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
+     "netlist": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
+     "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
     },
     "job": null
    },
@@ -139,32 +139,17 @@
       "spec_yaml": "json_canonical:b49963598a0df6a2855734613582913dbc2f09414e56477a7ec39dfb4cd8ad96"
      },
      "job": null
-    }
-   ],
-   "stale": [
-    {
-     "ts": "2026-09-28T13:59:49",
-     "edit_class": "spec_edit",
-     "refs": [],
-     "human_hold": 2
     },
     {
-     "ts": "2026-09-28T15:53:24",
-     "edit_class": "spec_edit",
-     "refs": [],
-     "human_hold": 2
-    },
-    {
-     "ts": "2026-09-28T15:56:05",
-     "edit_class": "spec_edit",
-     "refs": [],
-     "human_hold": 2
-    },
-    {
-     "ts": "2026-09-28T16:45:09",
-     "edit_class": "netlist_edit",
-     "refs": [],
-     "human_hold": 1
+     "ts": "2026-09-28T17:26:05",
+     "status": "fail",
+     "failing_count": 1,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
+      "spec_yaml": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc"
+     },
+     "job": null
     }
    ]
   },
@@ -253,13 +238,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:6542d80868ac448954c9f3db2619f6e7c726eae76a40875227ac6c449eada1bc",
-   "hashed": "2026-09-28T16:28:00"
+   "hashed": "2026-09-28T17:26:05"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:cb961da09e61c2cc7439f129e00dd41eea2ec41c827aa0de913b355a94633cbe",
-   "hashed": "2026-09-28T16:28:00"
+   "sha256": "dir_text:b6fbf0c21888f6828ce07b47145ea8dee16f0ce76607de47bf1d494cc699527d",
+   "hashed": "2026-09-28T17:26:05"
   },
   "tb": {
    "path": "tb",
@@ -861,6 +846,14 @@
    "edit_class": "sizing_edit",
    "refs": [],
    "human_hold": 1
+  },
+  {
+   "ts": "2026-09-28T17:26:05",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 1
   }
  ]
 }

@@ -1,0 +1,32 @@
+* tt_ic
+.include '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/design.spice'
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' res_typical
+.lib '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/foss/pdks/gf180mcuD/libs.tech/ngspice/sm141064.spice' mimcap_typical
+.include '/tmp/it11/fx/nl.cir'
+.temp 27
+vdd_src vdd 0 3.3
+vss_src vss 0 0
+ven pll_en 0 3.3
+vup pfd_up 0 0
+vdn pfd_dn 0 0
+vt0 cp_trim0 0 0
+vt1 cp_trim1 0 0
+vvc vctrl 0 0.3
+cload vco_out 0 15f
+xdut vco_out pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss pll_analog
+.ic v(xdut.r1)=0
+.control
+save vco_out xdut.r1 xdut.r5
+tran 200p 2u 0 200p
+meas tran rx max v(xdut.r1) from=0 to=300n
+meas tran rn min v(xdut.r1) from=0 to=300n
+meas tran vx max v(vco_out) from=0 to=300n
+meas tran ta when v(xdut.r1)=1.65 rise=2 td=0
+meas tran tb when v(xdut.r1)=1.65 rise=6 td=0
+let f = 4/(tb-ta)/1e6
+meas tran t1 when v(xdut.r1)=1.6 rise=1
+meas tran t2 when v(xdut.r1)=1.6 rise=2
+echo "RES tt_ic f=$&f r1=$&rn .. $&rx vco_out_max=$&vx"
+.endc
+.end
