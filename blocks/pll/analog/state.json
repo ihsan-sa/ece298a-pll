@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-28T19:19:11",
+ "updated": "2026-09-28T19:31:19",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -199,18 +199,18 @@
   },
   "sim_tt": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 3,
+   "status": "pass",
+   "attempts": 4,
    "last": {
-    "ts": "2026-09-28T18:42:33",
-    "status": "fail",
-    "failing_count": 1,
-    "total": 1,
+    "ts": "2026-09-28T19:31:19",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
     "inputs": {
-     "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+     "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
      "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
-     "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
-     "sizing": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61"
+     "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+     "sizing": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4"
     },
     "job": null,
     "facts": {
@@ -273,33 +273,24 @@
        "tt"
       ]
      }
-    }
-   ],
-   "stale": [
-    {
-     "ts": "2026-09-28T19:08:45",
-     "edit_class": "spec_edit",
-     "refs": [
-      "spec/spec.yaml",
-      "spec/topology.md"
-     ],
-     "human_hold": 2
     },
     {
-     "ts": "2026-09-28T19:08:45",
-     "edit_class": "netlist_edit",
-     "refs": [
-      "netlist/pll_analog.cir"
-     ],
-     "human_hold": 1
-    },
-    {
-     "ts": "2026-09-28T19:08:46",
-     "edit_class": "sizing_edit",
-     "refs": [
-      "sizing/sizing.yaml"
-     ],
-     "human_hold": 1
+     "ts": "2026-09-28T19:31:19",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+      "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
     }
    ]
   }
@@ -313,25 +304,25 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-09-28T19:19:11"
+   "hashed": "2026-09-28T19:31:19"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
-   "hashed": "2026-09-28T19:19:11"
+   "hashed": "2026-09-28T19:31:19"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
-   "hashed": "2026-09-28T18:42:33"
+   "hashed": "2026-09-28T19:31:19"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
-   "sha256": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61",
-   "hashed": "2026-09-28T18:42:33"
+   "sha256": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4",
+   "hashed": "2026-09-28T19:31:19"
   }
  },
  "open_issues": [
@@ -1180,6 +1171,14 @@
    "ts": "2026-09-28T19:19:11",
    "event": "gate",
    "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-28T19:31:19",
+   "event": "gate",
+   "gate": "sim_tt",
    "status": "pass",
    "attempt": 4,
    "failing_count": 0

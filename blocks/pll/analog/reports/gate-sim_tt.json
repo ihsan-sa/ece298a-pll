@@ -3,8 +3,8 @@
   "gate": "sim_tt",
   "phase": "P4",
   "tool": "sim_tt",
-  "input_digest": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
-  "status": "fail",
+  "input_digest": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+  "status": "pass",
   "criteria": {
     "fail_severities": [
       "error"
@@ -12,61 +12,13 @@
     "max_count": 0
   },
   "counts": {
-    "total": 1,
-    "by_severity": {
-      "error": 1
-    },
-    "by_source": {
-      "ngspice": 1
-    }
+    "total": 0,
+    "by_severity": {},
+    "by_source": {}
   },
-  "failing_count": 1,
-  "failing": [
-    {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_startup_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_not_settled",
-      "refs": [
-        "startup_time_us",
-        "tt"
-      ],
-      "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-      "source": "ngspice",
-      "items": [
-        {
-          "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-          "file": "pll_analog_startup_tb.cir",
-          "line": null
-        }
-      ]
-    }
-  ],
-  "violations": [
-    {
-      "check": "sim_tt",
-      "severity": "error",
-      "file": "pll_analog_startup_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_not_settled",
-      "refs": [
-        "startup_time_us",
-        "tt"
-      ],
-      "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-      "source": "ngspice",
-      "items": [
-        {
-          "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-          "file": "pll_analog_startup_tb.cir",
-          "line": null
-        }
-      ]
-    }
-  ],
+  "failing_count": 0,
+  "failing": [],
+  "violations": [],
   "facts": {
     "top": "pll_analog",
     "corners": [
@@ -82,14 +34,14 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "icp_up_code00_ua": 19.274,
-          "icp_dn_code00_ua": 18.9173,
-          "icp_up_code00_tt_ua": 19.274,
-          "icp_up_code01_ua": 23.9982,
-          "icp_up_code10_ua": 28.7093,
-          "icp_up_code11_ua": 38.1014,
+          "icp_up_code00_ua": 19.2598,
+          "icp_dn_code00_ua": 18.9033,
+          "icp_up_code00_tt_ua": 19.2598,
+          "icp_up_code01_ua": 23.9806,
+          "icp_up_code10_ua": 28.6881,
+          "icp_up_code11_ua": 38.0734,
           "icp_code11_over_code00_ratio": 1.97683,
-          "cp_updn_mismatch_pct": 4.95461,
+          "cp_updn_mismatch_pct": 4.95574,
           "vctrl_leak_off_na": 0.00276435
         },
         "engine_errors": [],
@@ -105,11 +57,11 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "ol_pm_pn16_nopad_deg": 45.0666,
-          "ol_pm_pn16_pad5p_deg": 31.4668,
-          "ol_fc_pn16_nopad_khz": 451.288,
-          "ol_pm_pn8_nopad_deg": 53.5671,
-          "ol_pm_pn40_nopad_deg": 31.3745
+          "ol_pm_pn16_nopad_deg": 45.0631,
+          "ol_pm_pn16_pad5p_deg": 31.4647,
+          "ol_fc_pn16_nopad_khz": 451.214,
+          "ol_pm_pn8_nopad_deg": 53.5652,
+          "ol_pm_pn40_nopad_deg": 31.3714
         },
         "engine_errors": [],
         "violations": [],
@@ -124,7 +76,7 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "cp_overlap_net_charge_fc": 2.40744
+          "cp_overlap_net_charge_fc": 2.40602
         },
         "engine_errors": [],
         "violations": [],
@@ -167,31 +119,11 @@
         "temp_c": 27,
         "vdd": "3.3",
         "returncode": 0,
-        "measures": {},
+        "measures": {
+          "startup_time_us": 0.413468
+        },
         "engine_errors": [],
-        "violations": [
-          {
-            "check": "sim_tt",
-            "severity": "error",
-            "file": "pll_analog_startup_tb.cir",
-            "module": null,
-            "line": null,
-            "kind": "sim_not_settled",
-            "refs": [
-              "startup_time_us",
-              "tt"
-            ],
-            "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-            "source": "ngspice",
-            "items": [
-              {
-                "msg": "startup_time_us @ tt: did not settle within the bench's window - no settling time to report",
-                "file": "pll_analog_startup_tb.cir",
-                "line": null
-              }
-            ]
-          }
-        ],
+        "violations": [],
         "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_startup_tb__tt.cir"
       },
       {
@@ -203,15 +135,15 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "vco_kvco_mhz_per_v": 92.0944,
-          "vco_df_dv_min_mhz_per_v": 14.15,
-          "vco_fmin_tt_mhz": 9.68602,
-          "vco_fmax_tt_mhz": 258.341,
-          "vco_out_swing_pct_vdd": 102.068,
-          "vco_out_duty_pct": 53.6557,
-          "vco_fmax_ff_mhz": 260.523,
-          "vco_out_tr_ns": 0.051429,
-          "vco_out_tf_ns": 0.048123
+          "vco_kvco_mhz_per_v": 92.1383,
+          "vco_df_dv_min_mhz_per_v": 14.1446,
+          "vco_fmin_tt_mhz": 9.67861,
+          "vco_fmax_tt_mhz": 258.452,
+          "vco_out_swing_pct_vdd": 102.371,
+          "vco_out_duty_pct": 53.8323,
+          "vco_fmax_ff_mhz": 264.04,
+          "vco_out_tr_ns": 0.05151,
+          "vco_out_tf_ns": 0.048117
         },
         "engine_errors": [],
         "violations": [],
@@ -224,13 +156,13 @@
     "recorded": true,
     "workspace": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog",
     "gate": "sim_tt",
-    "status": "fail",
-    "attempts": 3,
+    "status": "pass",
+    "attempts": 4,
     "inputs": {
-      "netlist": "dir_text:3b27bcdf8e6ca853be88102545a89fe822b91b7079046587dd79db6d10309b18",
+      "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
       "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
-      "spec_yaml": "json_canonical:e2aedcb8faffaf1ac8aa213cd255c5a756d9bf6388e37c950bf0a2aae7a2aa5e",
-      "sizing": "json_canonical:67cd09cf2e18f3e1bf8972845ef05fe3305bfcb7c1c1c14d8abbf5467f1efb61"
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4"
     }
   }
 }
