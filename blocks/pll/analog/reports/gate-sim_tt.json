@@ -157,7 +157,7 @@
     "workspace": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog",
     "gate": "sim_tt",
     "status": "pass",
-    "attempts": 5,
+    "attempts": 6,
     "inputs": {
       "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
       "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",

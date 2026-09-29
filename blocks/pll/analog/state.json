@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-29T03:56:55",
+ "updated": "2026-09-29T04:00:04",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -200,9 +200,9 @@
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-09-29T03:56:55",
+    "ts": "2026-09-29T04:00:04",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -294,6 +294,24 @@
     },
     {
      "ts": "2026-09-29T03:56:55",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+      "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-09-29T04:00:04",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
@@ -421,25 +439,25 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-09-29T03:56:55"
+   "hashed": "2026-09-29T04:00:04"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
-   "hashed": "2026-09-29T03:56:55"
+   "hashed": "2026-09-29T04:00:04"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
-   "hashed": "2026-09-29T03:56:55"
+   "hashed": "2026-09-29T04:00:04"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09",
-   "hashed": "2026-09-29T03:56:55"
+   "hashed": "2026-09-29T04:00:04"
   }
  },
  "open_issues": [
@@ -1314,6 +1332,14 @@
    "gate": "sim_tt",
    "status": "pass",
    "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-29T04:00:04",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 6,
    "failing_count": 0
   }
  ]
