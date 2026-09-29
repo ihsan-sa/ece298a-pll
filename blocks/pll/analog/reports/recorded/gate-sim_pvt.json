@@ -3,7 +3,7 @@
  "gate": "sim_pvt",
  "phase": "P4",
  "tool": "sim_pvt",
- "input_digest": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+ "input_digest": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
  "status": "fail",
  "criteria": {
   "fail_severities": [
@@ -12,16 +12,16 @@
   "max_count": 0
  },
  "counts": {
-  "total": 54,
+  "total": 53,
   "by_severity": {
-   "error": 53,
+   "error": 52,
    "warning": 1
   },
   "by_source": {
-   "ngspice": 54
+   "ngspice": 53
   }
  },
- "failing_count": 53,
+ "failing_count": 52,
  "failing": [
   {
    "check": "sim_pvt",
@@ -178,27 +178,6 @@
    "items": [
     {
      "msg": "ngspice reported ngspice error at corner 'tt_27c_vm10': no simulations run!",
-     "file": "pll_analog_ol_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_pvt",
-   "severity": "error",
-   "file": "pll_analog_ol_tb.cir",
-   "module": null,
-   "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "ol_pm_pn16_nopad_deg",
-    "tt_27c"
-   ],
-   "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
      "file": "pll_analog_ol_tb.cir",
      "line": null
     }
@@ -1252,27 +1231,6 @@
    "file": "pll_analog_ol_tb.cir",
    "module": null,
    "line": null,
-   "kind": "sim_bound_fail",
-   "refs": [
-    "ol_pm_pn16_nopad_deg",
-    "tt_27c"
-   ],
-   "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
-   "source": "ngspice",
-   "items": [
-    {
-     "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
-     "file": "pll_analog_ol_tb.cir",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "sim_pvt",
-   "severity": "error",
-   "file": "pll_analog_ol_tb.cir",
-   "module": null,
-   "line": null,
    "kind": "sim_engine_error_empty_netlist",
    "refs": [
     "tt_27c_vp10"
@@ -2220,7 +2178,7 @@
      "icp_up_code11_ua": 38.2932,
      "icp_code11_over_code00_ratio": 1.9792,
      "cp_updn_mismatch_pct": 4.45084,
-     "vctrl_leak_off_na": 0.00242606
+     "vctrl_leak_off_na": 0.00242607
     },
     "engine_errors": [],
     "violations": [],
@@ -2289,7 +2247,7 @@
      "icp_up_code11_ua": 37.244,
      "icp_code11_over_code00_ratio": 1.98014,
      "cp_updn_mismatch_pct": 4.11716,
-     "vctrl_leak_off_na": 0.00242602
+     "vctrl_leak_off_na": 0.00242599
     },
     "engine_errors": [],
     "violations": [],
@@ -2381,7 +2339,7 @@
      "icp_up_code11_ua": 35.342,
      "icp_code11_over_code00_ratio": 1.97752,
      "cp_updn_mismatch_pct": 4.77006,
-     "vctrl_leak_off_na": 0.00276386
+     "vctrl_leak_off_na": 0.00276387
     },
     "engine_errors": [],
     "violations": [],
@@ -2404,7 +2362,7 @@
      "icp_up_code11_ua": 35.6923,
      "icp_code11_over_code00_ratio": 1.97048,
      "cp_updn_mismatch_pct": 5.89303,
-     "vctrl_leak_off_na": 0.00329035
+     "vctrl_leak_off_na": 0.00329036
     },
     "engine_errors": [],
     "violations": [],
@@ -2427,7 +2385,7 @@
      "icp_up_code11_ua": 35.2218,
      "icp_code11_over_code00_ratio": 1.98138,
      "cp_updn_mismatch_pct": 3.97824,
-     "vctrl_leak_off_na": 0.00242606
+     "vctrl_leak_off_na": 0.00242607
     },
     "engine_errors": [],
     "violations": [],
@@ -2450,7 +2408,7 @@
      "icp_up_code11_ua": 35.5928,
      "icp_code11_over_code00_ratio": 1.97802,
      "cp_updn_mismatch_pct": 4.92279,
-     "vctrl_leak_off_na": 0.002763
+     "vctrl_leak_off_na": 0.00276301
     },
     "engine_errors": [],
     "violations": [],
@@ -2496,7 +2454,7 @@
      "icp_up_code11_ua": 34.4317,
      "icp_code11_over_code00_ratio": 1.98183,
      "cp_updn_mismatch_pct": 3.69084,
-     "vctrl_leak_off_na": 0.00242598
+     "vctrl_leak_off_na": 0.002426
     },
     "engine_errors": [],
     "violations": [],
@@ -2519,7 +2477,7 @@
      "icp_up_code11_ua": 34.7584,
      "icp_code11_over_code00_ratio": 1.97907,
      "cp_updn_mismatch_pct": 4.51235,
-     "vctrl_leak_off_na": 0.0027629
+     "vctrl_leak_off_na": 0.00276293
     },
     "engine_errors": [],
     "violations": [],
@@ -2565,7 +2523,7 @@
      "icp_up_code11_ua": 32.7103,
      "icp_code11_over_code00_ratio": 1.98203,
      "cp_updn_mismatch_pct": 3.63209,
-     "vctrl_leak_off_na": 0.00242586
+     "vctrl_leak_off_na": 0.00242588
     },
     "engine_errors": [],
     "violations": [],
@@ -2588,7 +2546,7 @@
      "icp_up_code11_ua": 32.9887,
      "icp_code11_over_code00_ratio": 1.97966,
      "cp_updn_mismatch_pct": 4.33674,
-     "vctrl_leak_off_na": 0.0027628
+     "vctrl_leak_off_na": 0.00276283
     },
     "engine_errors": [],
     "violations": [],
@@ -2634,7 +2592,7 @@
      "icp_up_code11_ua": 42.9753,
      "icp_code11_over_code00_ratio": 1.97708,
      "cp_updn_mismatch_pct": 4.88601,
-     "vctrl_leak_off_na": 0.00242603
+     "vctrl_leak_off_na": 0.00242606
     },
     "engine_errors": [],
     "violations": [],
@@ -2657,7 +2615,7 @@
      "icp_up_code11_ua": 43.4136,
      "icp_code11_over_code00_ratio": 1.97261,
      "cp_updn_mismatch_pct": 5.91307,
-     "vctrl_leak_off_na": 0.00282633
+     "vctrl_leak_off_na": 0.00282632
     },
     "engine_errors": [],
     "violations": [],
@@ -2680,7 +2638,7 @@
      "icp_up_code11_ua": 43.9727,
      "icp_code11_over_code00_ratio": 1.96472,
      "cp_updn_mismatch_pct": 7.37713,
-     "vctrl_leak_off_na": 0.00349626
+     "vctrl_leak_off_na": 0.00349625
     },
     "engine_errors": [],
     "violations": [],
@@ -2703,7 +2661,7 @@
      "icp_up_code11_ua": 41.5914,
      "icp_code11_over_code00_ratio": 1.97833,
      "cp_updn_mismatch_pct": 4.5249,
-     "vctrl_leak_off_na": 0.00242599
+     "vctrl_leak_off_na": 0.002426
     },
     "engine_errors": [],
     "violations": [],
@@ -3107,36 +3065,14 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_deg": 44.7234,
-     "ol_pm_pn16_pad5p_deg": 31.2658,
-     "ol_fc_pn16_nopad_khz": 443.948,
-     "ol_pm_pn8_nopad_deg": 53.3767,
-     "ol_pm_pn40_nopad_deg": 31.0599
+     "ol_pm_pn16_nopad_deg": 49.5144,
+     "ol_pm_pn16_pad5p_deg": 33.8996,
+     "ol_fc_pn16_nopad_khz": 479.973,
+     "ol_pm_pn8_nopad_deg": 55.296,
+     "ol_pm_pn40_nopad_deg": 35.937
     },
     "engine_errors": [],
-    "violations": [
-     {
-      "check": "sim_pvt",
-      "severity": "error",
-      "file": "pll_analog_ol_tb.cir",
-      "module": null,
-      "line": null,
-      "kind": "sim_bound_fail",
-      "refs": [
-       "ol_pm_pn16_nopad_deg",
-       "tt_27c"
-      ],
-      "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
-      "source": "ngspice",
-      "items": [
-       {
-        "msg": "ol_pm_pn16_nopad_deg @ tt_27c = 44.7234 outside bound [45.0, +inf] (open-loop PM, P*N = 16, no pad)",
-        "file": "pll_analog_ol_tb.cir",
-        "line": null
-       }
-      ]
-     }
-    ],
+    "violations": [],
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt_27c.cir"
    },
    {
@@ -4402,11 +4338,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_deg": 44.9784,
-     "ol_pm_pn16_pad5p_deg": 32.3249,
-     "ol_fc_pn16_nopad_khz": 340.319,
-     "ol_pm_pn8_nopad_deg": 53.5404,
-     "ol_pm_pn40_nopad_deg": 31.2865
+     "ol_pm_pn16_nopad_deg": 49.86,
+     "ol_pm_pn16_pad5p_deg": 35.0905,
+     "ol_fc_pn16_nopad_khz": 371.053,
+     "ol_pm_pn8_nopad_deg": 55.3991,
+     "ol_pm_pn40_nopad_deg": 36.3278
     },
     "engine_errors": [],
     "violations": [],
@@ -4421,11 +4357,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_deg": 44.2538,
-     "ol_pm_pn16_pad5p_deg": 29.9603,
-     "ol_fc_pn16_nopad_khz": 603.032,
-     "ol_pm_pn8_nopad_deg": 53.078,
-     "ol_pm_pn40_nopad_deg": 30.6405
+     "ol_pm_pn16_nopad_deg": 49.201,
+     "ol_pm_pn16_pad5p_deg": 32.5847,
+     "ol_fc_pn16_nopad_khz": 655.293,
+     "ol_pm_pn8_nopad_deg": 55.187,
+     "ol_pm_pn40_nopad_deg": 35.5901
     },
     "engine_errors": [],
     "violations": [],
@@ -5718,7 +5654,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.717686
+     "startup_time_us": 0.717691
     },
     "engine_errors": [],
     "violations": [],
@@ -5733,7 +5669,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.686018
+     "startup_time_us": 0.686017
     },
     "engine_errors": [],
     "violations": [],
@@ -5748,7 +5684,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.711579
+     "startup_time_us": 0.711566
     },
     "engine_errors": [],
     "violations": [],
@@ -5763,7 +5699,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.639077
+     "startup_time_us": 0.639067
     },
     "engine_errors": [],
     "violations": [],
@@ -5778,7 +5714,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.670524
+     "startup_time_us": 0.670512
     },
     "engine_errors": [],
     "violations": [],
@@ -5808,7 +5744,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.587362
+     "startup_time_us": 0.58735
     },
     "engine_errors": [],
     "violations": [],
@@ -5823,7 +5759,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.58153
+     "startup_time_us": 0.581528
     },
     "engine_errors": [],
     "violations": [],
@@ -5838,7 +5774,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.562535
+     "startup_time_us": 0.562531
     },
     "engine_errors": [],
     "violations": [],
@@ -5868,7 +5804,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.88049
+     "startup_time_us": 0.880494
     },
     "engine_errors": [],
     "violations": [],
@@ -5883,7 +5819,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.829003
+     "startup_time_us": 0.828985
     },
     "engine_errors": [],
     "violations": [],
@@ -5928,7 +5864,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.798212
+     "startup_time_us": 0.798217
     },
     "engine_errors": [],
     "violations": [],
@@ -5943,7 +5879,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.83601
+     "startup_time_us": 0.836009
     },
     "engine_errors": [],
     "violations": [],
@@ -5958,7 +5894,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.810163
+     "startup_time_us": 0.810162
     },
     "engine_errors": [],
     "violations": [],
@@ -6003,7 +5939,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.579703
+     "startup_time_us": 0.579701
     },
     "engine_errors": [],
     "violations": [],
@@ -6018,7 +5954,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.579955
+     "startup_time_us": 0.579937
     },
     "engine_errors": [],
     "violations": [],
@@ -6048,7 +5984,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.466253
+     "startup_time_us": 0.46626
     },
     "engine_errors": [],
     "violations": [],
@@ -6063,7 +5999,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.552482
+     "startup_time_us": 0.55248
     },
     "engine_errors": [],
     "violations": [],
@@ -6078,7 +6014,7 @@
     "vdd": "2.97",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.470207
+     "startup_time_us": 0.470192
     },
     "engine_errors": [],
     "violations": [],
@@ -6093,7 +6029,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.458199
+     "startup_time_us": 0.458182
     },
     "engine_errors": [],
     "violations": [],
@@ -6108,7 +6044,7 @@
     "vdd": "3.63",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.424465
+     "startup_time_us": 0.42445
     },
     "engine_errors": [],
     "violations": [],
@@ -6138,7 +6074,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.504877
+     "startup_time_us": 0.504864
     },
     "engine_errors": [],
     "violations": [],
@@ -6836,6 +6772,6 @@
   ],
   "scoped_out": []
  },
- "recorded_ts": "2026-09-29T04:56:02",
- "attempts": 2
+ "recorded_ts": "2026-09-29T05:39:58",
+ "attempts": 3
 }
