@@ -35,17 +35,20 @@ l_b2:
   min: 2.8e-07
   max: 2e-06
 # RBIAS_INT (pad bias_ref -> vss) length at 1 um width: Ib = Vgs/(RTOP + RINT),
-# R = 350 ohm/sq * l/w; RTOP + RINT = 540 um total (189 kOhm) as before the split
+# R = 350 ohm/sq * l/w; RTOP + RINT = 546 um total (191 kOhm). Raised from 540 um
+# on 09-29 so Icp at tt_pff (res_ff) sits under 25 uA: pss 15.6 / pff 25.0 were
+# lopsided around 20 uA
 rb_l:
-  value: 0.00043
+  value: 0.000366
   min: 0.0002
   max: 0.0008
 # RBIAS_TOP (vref -> pad) length at 1 um width: isolates the bias loop from the
 # pad capacitance; needs gm1 * RTOP > 1 (MN_B1 gm ~50 uS -> RTOP > 20 kOhm, i.e.
-# > 57 um) for va to stay passive with any pad C; upper end set by the pad
+# > 57 um) for va to stay passive with any pad C; 110 um was not enough at ff_125c
+# (gm1 falls: vref relaxed at 341 ns with 5 pF on the pad, 09-29), so 180 um; upper end set by the pad
 # settling (RTOP || RINT) x 5 pF and by keeping the external-resistor trim range
 rbt_l:
-  value: 0.00011
+  value: 0.00018
   min: 8e-05
   max: 0.0002
 # pump NMOS W (MN_CPREF, MN_CPREF2, MN_DNS): Vov ~0.15 V at 20 uA for vctrl down to 0.3 V

@@ -1,0 +1,1683 @@
+Warning: can't find the initialization file spinit.
+
+Note: No compatibility mode selected!
+
+
+Circuit: * pll_analog_vco_tb.cir - vco tuning and output bench (spec.yaml:
+
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                      0.3
+vco_out                             2.1503e-09
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.62226
+xdut.up_b                                 3.63
+xdut.vdump                            0.314761
+xdut.dn_s                             0.295912
+xdut.dn_b                                 3.63
+xdut.vbt                               1.76487
+xdut.vbl                              0.851417
+xdut.vnt                           6.90994e-07
+xdut.vbh                               3.15878
+xdut.xr1.11                                0.3
+xdut.xr1.21                                0.3
+xdut.vfilt                                 0.3
+xdut.vi                                2.73774
+xdut.vs                            6.89077e-07
+xdut.xr_v2i.11                     6.84891e-07
+xdut.xr_v2i.21                     5.73923e-08
+xdut.vcl                            5.3207e-08
+xdut.vbp_vco                            2.8163
+xdut.vbn_vco                          0.706418
+xdut.p1                                2.04041
+xdut.r1                               0.979553
+xdut.r5                               0.979553
+xdut.n1                               0.300918
+xdut.p2                                2.04041
+xdut.r2                               0.979553
+xdut.n2                               0.300918
+xdut.p3                                2.04041
+xdut.r3                               0.979553
+xdut.n3                               0.300918
+xdut.p4                                2.04041
+xdut.r4                               0.979553
+xdut.n4                               0.300918
+xdut.p5                                2.04041
+xdut.n5                               0.300918
+xdut.nb                                3.39836
+xdut.ng                              0.0649273
+vvc#branch                         3.49626e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000362543
+vdd_src#branch                    -0.000362543
+
+ Reference value :  4.59000e-09 Reference value :  1.23900e-08 Reference value :  1.97500e-08
+No. of Data Rows : 1271
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                      0.3
+vco_out                             2.1503e-09
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.62226
+xdut.up_b                                 3.63
+xdut.vdump                            0.314761
+xdut.dn_s                             0.295912
+xdut.dn_b                                 3.63
+xdut.vbt                               1.76487
+xdut.vbl                              0.851417
+xdut.vnt                           6.90994e-07
+xdut.vbh                               3.15878
+xdut.xr1.11                                0.3
+xdut.xr1.21                                0.3
+xdut.vfilt                                 0.3
+xdut.vi                                2.73774
+xdut.vs                            6.89077e-07
+xdut.xr_v2i.11                     6.84891e-07
+xdut.xr_v2i.21                     5.73923e-08
+xdut.vcl                            5.3207e-08
+xdut.vbp_vco                            2.8163
+xdut.vbn_vco                          0.706418
+xdut.p1                                2.04041
+xdut.r1                               0.979553
+xdut.r5                               0.979553
+xdut.n1                               0.300918
+xdut.p2                                2.04041
+xdut.r2                               0.979553
+xdut.n2                               0.300918
+xdut.p3                                2.04041
+xdut.r3                               0.979553
+xdut.n3                               0.300918
+xdut.p4                                2.04041
+xdut.r4                               0.979553
+xdut.n4                               0.300918
+xdut.p5                                2.04041
+xdut.n5                               0.300918
+xdut.nb                                3.39836
+xdut.ng                              0.0649273
+vvc#branch                         3.49626e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000362543
+vdd_src#branch                    -0.000362543
+
+ Reference value :  1.82000e-09 Reference value :  1.05300e-08 Reference value :  2.18300e-08 Reference value :  3.08100e-08 Reference value :  4.16500e-08 Reference value :  5.36900e-08 Reference value :  6.41300e-08 Reference value :  7.58300e-08
+No. of Data Rows : 4021
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                      0.3
+vco_out                             2.1503e-09
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.62226
+xdut.up_b                                 3.63
+xdut.vdump                            0.314761
+xdut.dn_s                             0.295912
+xdut.dn_b                                 3.63
+xdut.vbt                               1.76487
+xdut.vbl                              0.851417
+xdut.vnt                           6.90994e-07
+xdut.vbh                               3.15878
+xdut.xr1.11                                0.3
+xdut.xr1.21                                0.3
+xdut.vfilt                                 0.3
+xdut.vi                                2.73774
+xdut.vs                            6.89077e-07
+xdut.xr_v2i.11                     6.84891e-07
+xdut.xr_v2i.21                     5.73923e-08
+xdut.vcl                            5.3207e-08
+xdut.vbp_vco                            2.8163
+xdut.vbn_vco                          0.706418
+xdut.p1                                2.04041
+xdut.r1                               0.979553
+xdut.r5                               0.979553
+xdut.n1                               0.300918
+xdut.p2                                2.04041
+xdut.r2                               0.979553
+xdut.n2                               0.300918
+xdut.p3                                2.04041
+xdut.r3                               0.979553
+xdut.n3                               0.300918
+xdut.p4                                2.04041
+xdut.r4                               0.979553
+xdut.n4                               0.300918
+xdut.p5                                2.04041
+xdut.n5                               0.300918
+xdut.nb                                3.39836
+xdut.ng                              0.0649273
+vvc#branch                         3.49626e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000362543
+vdd_src#branch                    -0.000362543
+
+ Reference value :  5.10445e-08 Reference value :  1.73181e-07 Reference value :  2.93236e-07
+No. of Data Rows : 1632
+vx                  =  3.65468e+00 at=  2.81486e-07
+vn                  =  -3.19604e-02 at=  2.33152e-07
+ta                  =  9.18615e-08
+tb                  =  3.82420e-07
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    0.805
+vco_out                             1.3605e-08
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                               1.6264
+xdut.up_b                                 3.63
+xdut.vdump                            0.812924
+xdut.dn_s                             0.791134
+xdut.dn_b                                 3.63
+xdut.vbt                               2.16506
+xdut.vbl                              0.846925
+xdut.vnt                             0.0912209
+xdut.vbh                               2.62547
+xdut.xr1.11                              0.805
+xdut.xr1.21                              0.805
+xdut.vfilt                               0.805
+xdut.vi                                2.69095
+xdut.vs                              0.0872755
+xdut.xr_v2i.11                       0.0867462
+xdut.xr_v2i.21                      0.00738251
+xdut.vcl                            0.00685316
+xdut.vbp_vco                            2.7545
+xdut.vbn_vco                          0.762364
+xdut.p1                                2.16255
+xdut.r1                                 1.0625
+xdut.r5                                 1.0625
+xdut.n1                               0.328321
+xdut.p2                                2.16255
+xdut.r2                                 1.0625
+xdut.n2                               0.328321
+xdut.p3                                2.16255
+xdut.r3                                 1.0625
+xdut.n3                               0.328321
+xdut.p4                                2.16255
+xdut.r4                                 1.0625
+xdut.n4                               0.328321
+xdut.p5                                2.16255
+xdut.n5                               0.328321
+xdut.nb                                3.32817
+xdut.ng                              0.0809735
+vvc#branch                         2.06285e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000482109
+vdd_src#branch                    -0.000482109
+
+ Reference value :  0.00000e+00 Reference value :  8.85000e-09 Reference value :  1.88900e-08
+No. of Data Rows : 1271
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    0.805
+vco_out                             1.3605e-08
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                               1.6264
+xdut.up_b                                 3.63
+xdut.vdump                            0.812924
+xdut.dn_s                             0.791134
+xdut.dn_b                                 3.63
+xdut.vbt                               2.16506
+xdut.vbl                              0.846925
+xdut.vnt                             0.0912209
+xdut.vbh                               2.62547
+xdut.xr1.11                              0.805
+xdut.xr1.21                              0.805
+xdut.vfilt                               0.805
+xdut.vi                                2.69095
+xdut.vs                              0.0872755
+xdut.xr_v2i.11                       0.0867462
+xdut.xr_v2i.21                      0.00738251
+xdut.vcl                            0.00685316
+xdut.vbp_vco                            2.7545
+xdut.vbn_vco                          0.762364
+xdut.p1                                2.16255
+xdut.r1                                 1.0625
+xdut.r5                                 1.0625
+xdut.n1                               0.328321
+xdut.p2                                2.16255
+xdut.r2                                 1.0625
+xdut.n2                               0.328321
+xdut.p3                                2.16255
+xdut.r3                                 1.0625
+xdut.n3                               0.328321
+xdut.p4                                2.16255
+xdut.r4                                 1.0625
+xdut.n4                               0.328321
+xdut.p5                                2.16255
+xdut.n5                               0.328321
+xdut.nb                                3.32817
+xdut.ng                              0.0809735
+vvc#branch                         2.06285e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000482109
+vdd_src#branch                    -0.000482109
+
+ Reference value :  4.89000e-09 Reference value :  1.60100e-08 Reference value :  2.88300e-08 Reference value :  3.97300e-08 Reference value :  5.15500e-08 Reference value :  6.39500e-08 Reference value :  7.54900e-08
+No. of Data Rows : 4021
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    0.805
+vco_out                             1.3605e-08
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                               1.6264
+xdut.up_b                                 3.63
+xdut.vdump                            0.812924
+xdut.dn_s                             0.791134
+xdut.dn_b                                 3.63
+xdut.vbt                               2.16506
+xdut.vbl                              0.846925
+xdut.vnt                             0.0912209
+xdut.vbh                               2.62547
+xdut.xr1.11                              0.805
+xdut.xr1.21                              0.805
+xdut.vfilt                               0.805
+xdut.vi                                2.69095
+xdut.vs                              0.0872755
+xdut.xr_v2i.11                       0.0867462
+xdut.xr_v2i.21                      0.00738251
+xdut.vcl                            0.00685316
+xdut.vbp_vco                            2.7545
+xdut.vbn_vco                          0.762364
+xdut.p1                                2.16255
+xdut.r1                                 1.0625
+xdut.r5                                 1.0625
+xdut.n1                               0.328321
+xdut.p2                                2.16255
+xdut.r2                                 1.0625
+xdut.n2                               0.328321
+xdut.p3                                2.16255
+xdut.r3                                 1.0625
+xdut.n3                               0.328321
+xdut.p4                                2.16255
+xdut.r4                                 1.0625
+xdut.n4                               0.328321
+xdut.p5                                2.16255
+xdut.n5                               0.328321
+xdut.nb                                3.32817
+xdut.ng                              0.0809735
+vvc#branch                         2.06285e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000482109
+vdd_src#branch                    -0.000482109
+
+ Reference value :  5.36056e-08 Reference value :  1.38567e-07 Reference value :  2.34879e-07 Reference value :  3.36871e-07
+No. of Data Rows : 1654
+vx                  =  3.68206e+00 at=  2.50350e-07
+vn                  =  -6.52997e-02 at=  3.56536e-07
+ta                  =  4.46851e-08
+tb                  =  2.49750e-07
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     1.31
+vco_out                            1.89452e-06
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.63983
+xdut.up_b                                 3.63
+xdut.vdump                             1.31501
+xdut.dn_s                              1.28779
+xdut.dn_b                                 3.63
+xdut.vbt                               2.55885
+xdut.vbl                              0.844958
+xdut.vnt                              0.456762
+xdut.vbh                               2.56244
+xdut.xr1.11                               1.31
+xdut.xr1.21                               1.31
+xdut.vfilt                                1.31
+xdut.vi                                2.58776
+xdut.vs                               0.387212
+xdut.xr_v2i.11                        0.384877
+xdut.xr_v2i.21                       0.0347855
+xdut.vcl                             0.0324505
+xdut.vbp_vco                           2.63419
+xdut.vbn_vco                          0.863138
+xdut.p1                                2.37577
+xdut.r1                                1.19887
+xdut.r5                                1.19887
+xdut.n1                               0.368557
+xdut.p2                                2.37577
+xdut.r2                                1.19887
+xdut.n2                               0.368557
+xdut.p3                                2.37577
+xdut.r3                                1.19887
+xdut.n3                               0.368557
+xdut.p4                                2.37577
+xdut.r4                                1.19887
+xdut.n4                               0.368557
+xdut.p5                                2.37577
+xdut.n5                               0.368557
+xdut.nb                                3.18428
+xdut.ng                               0.108477
+vvc#branch                         9.85477e-13
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000756965
+vdd_src#branch                    -0.000756965
+
+ Reference value :  3.73000e-09 Reference value :  1.63100e-08
+No. of Data Rows : 1271
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     1.31
+vco_out                            1.89452e-06
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.63983
+xdut.up_b                                 3.63
+xdut.vdump                             1.31501
+xdut.dn_s                              1.28779
+xdut.dn_b                                 3.63
+xdut.vbt                               2.55885
+xdut.vbl                              0.844958
+xdut.vnt                              0.456762
+xdut.vbh                               2.56244
+xdut.xr1.11                               1.31
+xdut.xr1.21                               1.31
+xdut.vfilt                                1.31
+xdut.vi                                2.58776
+xdut.vs                               0.387212
+xdut.xr_v2i.11                        0.384877
+xdut.xr_v2i.21                       0.0347855
+xdut.vcl                             0.0324505
+xdut.vbp_vco                           2.63419
+xdut.vbn_vco                          0.863138
+xdut.p1                                2.37577
+xdut.r1                                1.19887
+xdut.r5                                1.19887
+xdut.n1                               0.368557
+xdut.p2                                2.37577
+xdut.r2                                1.19887
+xdut.n2                               0.368557
+xdut.p3                                2.37577
+xdut.r3                                1.19887
+xdut.n3                               0.368557
+xdut.p4                                2.37577
+xdut.r4                                1.19887
+xdut.n4                               0.368557
+xdut.p5                                2.37577
+xdut.n5                               0.368557
+xdut.nb                                3.18428
+xdut.ng                               0.108477
+vvc#branch                         9.85477e-13
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000756965
+vdd_src#branch                    -0.000756965
+
+ Reference value :  2.19000e-09 Reference value :  1.19900e-08 Reference value :  2.20300e-08 Reference value :  3.02900e-08 Reference value :  4.12300e-08 Reference value :  4.97500e-08 Reference value :  5.88500e-08 Reference value :  7.09100e-08
+No. of Data Rows : 4021
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     1.31
+vco_out                            1.89452e-06
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.63983
+xdut.up_b                                 3.63
+xdut.vdump                             1.31501
+xdut.dn_s                              1.28779
+xdut.dn_b                                 3.63
+xdut.vbt                               2.55885
+xdut.vbl                              0.844958
+xdut.vnt                              0.456762
+xdut.vbh                               2.56244
+xdut.xr1.11                               1.31
+xdut.xr1.21                               1.31
+xdut.vfilt                                1.31
+xdut.vi                                2.58776
+xdut.vs                               0.387212
+xdut.xr_v2i.11                        0.384877
+xdut.xr_v2i.21                       0.0347855
+xdut.vcl                             0.0324505
+xdut.vbp_vco                           2.63419
+xdut.vbn_vco                          0.863138
+xdut.p1                                2.37577
+xdut.r1                                1.19887
+xdut.r5                                1.19887
+xdut.n1                               0.368557
+xdut.p2                                2.37577
+xdut.r2                                1.19887
+xdut.n2                               0.368557
+xdut.p3                                2.37577
+xdut.r3                                1.19887
+xdut.n3                               0.368557
+xdut.p4                                2.37577
+xdut.r4                                1.19887
+xdut.n4                               0.368557
+xdut.p5                                2.37577
+xdut.n5                               0.368557
+xdut.nb                                3.18428
+xdut.ng                               0.108477
+vvc#branch                         9.85477e-13
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                     0.000756965
+vdd_src#branch                    -0.000756965
+
+ Reference value :  1.02945e-08 Reference value :  7.26105e-08 Reference value :  1.37269e-07 Reference value :  1.91517e-07 Reference value :  2.39326e-07 Reference value :  3.09620e-07 Reference value :  3.75813e-07
+No. of Data Rows : 1722
+vx                  =  3.77765e+00 at=  2.70988e-07
+vn                  =  -1.15662e-01 at=  2.51289e-07
+ta                  =  2.98900e-08
+Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+tb                  =  9.67652e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    1.815
+vco_out                            0.000126439
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191933
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.91767
+xdut.up_b                                 3.63
+xdut.vdump                             1.81764
+xdut.dn_s                              1.77622
+xdut.dn_b                                 3.63
+xdut.vbt                               2.94305
+xdut.vbl                              0.843117
+xdut.vnt                              0.851285
+xdut.vbh                               2.55924
+xdut.xr1.11                              1.815
+xdut.xr1.21                              1.815
+xdut.vfilt                               1.815
+xdut.vi                                2.49619
+xdut.vs                               0.728091
+xdut.xr_v2i.11                         0.72374
+xdut.xr_v2i.21                       0.0714222
+xdut.vcl                             0.0670713
+xdut.vbp_vco                           2.54115
+xdut.vbn_vco                          0.938861
+xdut.p1                                2.52849
+xdut.r1                                1.29217
+xdut.r5                                1.29217
+xdut.n1                               0.391493
+xdut.p2                                2.52849
+xdut.r2                                1.29217
+xdut.n2                               0.391493
+xdut.p3                                2.52849
+xdut.r3                                1.29217
+xdut.n3                               0.391493
+xdut.p4                                2.52849
+xdut.r4                                1.29217
+xdut.n4                               0.391493
+xdut.p5                                2.52849
+xdut.n5                               0.391493
+xdut.nb                                3.05235
+xdut.ng                               0.127764
+vvc#branch                        -3.80636e-14
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00101803
+vdd_src#branch                     -0.00101803
+
+ Reference value :  3.91000e-09 Reference value :  1.54639e-08Note: Starting dynamic gmin stepping
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1272
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    1.815
+vco_out                            0.000126439
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191933
+xdut.vcp_p                              2.7118
+xdut.up_s                              1.91767
+xdut.up_b                                 3.63
+xdut.vdump                             1.81764
+xdut.dn_s                              1.77622
+xdut.dn_b                                 3.63
+xdut.vbt                               2.94305
+xdut.vbl                              0.843117
+xdut.vnt                              0.851285
+xdut.vbh                               2.55924
+xdut.xr1.11                              1.815
+xdut.xr1.21                              1.815
+xdut.vfilt                               1.815
+xdut.vi                                2.49619
+xdut.vs                               0.728091
+xdut.xr_v2i.11                         0.72374
+xdut.xr_v2i.21                       0.0714222
+xdut.vcl                             0.0670713
+xdut.vbp_vco                           2.54115
+xdut.vbn_vco                          0.938861
+xdut.p1                                2.52849
+xdut.r1                                1.29217
+xdut.r5                                1.29217
+xdut.n1                               0.391493
+xdut.p2                                2.52849
+xdut.r2                                1.29217
+xdut.n2                               0.391493
+xdut.p3                                2.52849
+xdut.r3                                1.29217
+xdut.n3                               0.391493
+xdut.p4                                2.52849
+xdut.r4                                1.29217
+xdut.n4                               0.391493
+xdut.p5                                2.52849
+xdut.n5                               0.391493
+xdut.nb                                3.05235
+xdut.ng                               0.127764
+vvc#branch                        -3.80636e-14
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00101803
+vdd_src#branch                     -0.00101803
+
+ Reference value :  0.00000e+00 Reference value :  1.02700e-08 Reference value :  1.97239e-08 Reference value :  2.93825e-08 Reference value :  3.89106e-08 Reference value :  4.76446e-08 Reference value :  5.71590e-08 Reference value :  6.60017e-08 Reference value :  7.52967e-08
+No. of Data Rows : 4025
+vx                  =  3.63565e+00 at=  7.16417e-08
+vn                  =  -4.63549e-03 at=  4.59246e-08
+ta                  =  2.44187e-08
+tb                  =  6.07129e-08
+dr1                 =  2.44187e-08
+df1                 =  2.83179e-08
+dr2                 =  3.16773e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     2.32
+vco_out                             0.00339692
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              2.37596
+xdut.up_b                                 3.63
+xdut.vdump                              2.3203
+xdut.dn_s                              2.19358
+xdut.dn_b                                 3.63
+xdut.vbt                               3.31398
+xdut.vbl                              0.839339
+xdut.vnt                               1.25591
+xdut.vbh                               2.55615
+xdut.xr1.11                               2.32
+xdut.xr1.21                               2.32
+xdut.vfilt                                2.32
+xdut.vi                                2.41637
+xdut.vs                                1.08875
+xdut.xr_v2i.11                         1.08235
+xdut.xr_v2i.21                        0.123048
+xdut.vcl                              0.116649
+xdut.vbp_vco                           2.46365
+xdut.vbn_vco                           1.00243
+xdut.p1                                2.65163
+xdut.r1                                 1.3664
+xdut.r5                                 1.3664
+xdut.n1                               0.407168
+xdut.p2                                2.65163
+xdut.r2                                 1.3664
+xdut.n2                               0.407168
+xdut.p3                                2.65163
+xdut.r3                                 1.3664
+xdut.n3                               0.407168
+xdut.p4                                2.65163
+xdut.r4                                 1.3664
+xdut.n4                               0.407168
+xdut.p5                                2.65163
+xdut.n5                               0.407168
+xdut.nb                                2.90932
+xdut.ng                               0.143095
+vvc#branch                        -1.05869e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00128171
+vdd_src#branch                     -0.00128171
+
+ Reference value :  3.77000e-09 Reference value :  1.29480e-08 Reference value :  2.23598e-08
+No. of Data Rows : 1274
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     2.32
+vco_out                             0.00339692
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              2.37596
+xdut.up_b                                 3.63
+xdut.vdump                              2.3203
+xdut.dn_s                              2.19358
+xdut.dn_b                                 3.63
+xdut.vbt                               3.31398
+xdut.vbl                              0.839339
+xdut.vnt                               1.25591
+xdut.vbh                               2.55615
+xdut.xr1.11                               2.32
+xdut.xr1.21                               2.32
+xdut.vfilt                                2.32
+xdut.vi                                2.41637
+xdut.vs                                1.08875
+xdut.xr_v2i.11                         1.08235
+xdut.xr_v2i.21                        0.123048
+xdut.vcl                              0.116649
+xdut.vbp_vco                           2.46365
+xdut.vbn_vco                           1.00243
+xdut.p1                                2.65163
+xdut.r1                                 1.3664
+xdut.r5                                 1.3664
+xdut.n1                               0.407168
+xdut.p2                                2.65163
+xdut.r2                                 1.3664
+xdut.n2                               0.407168
+xdut.p3                                2.65163
+xdut.r3                                 1.3664
+xdut.n3                               0.407168
+xdut.p4                                2.65163
+xdut.r4                                 1.3664
+xdut.n4                               0.407168
+xdut.p5                                2.65163
+xdut.n5                               0.407168
+xdut.nb                                2.90932
+xdut.ng                               0.143095
+vvc#branch                        -1.05869e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00128171
+vdd_src#branch                     -0.00128171
+
+ Reference value :  3.83000e-09 Reference value :  1.14680e-08 Reference value :  1.76733e-08 Reference value :  2.26798e-08 Reference value :  3.07163e-08 Reference value :  3.83264e-08 Reference value :  4.51669e-08 Reference value :  5.45063e-08 Reference value :  6.42172e-08 Reference value :  7.23248e-08 Reference value :  7.93290e-08
+No. of Data Rows : 4031
+vx                  =  3.63820e+00 at=  7.25248e-08
+vn                  =  -6.63464e-03 at=  6.98848e-08
+ta                  =  2.16030e-08
+tb                  =  4.58479e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    2.825
+vco_out                              0.0161396
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              2.86467
+xdut.up_b                                 3.63
+xdut.vdump                             2.82477
+xdut.dn_s                              2.25432
+xdut.dn_b                                 3.63
+xdut.vbt                               3.60152
+xdut.vbl                              0.698892
+xdut.vnt                               1.66916
+xdut.vbh                               2.55575
+xdut.xr1.11                              2.825
+xdut.xr1.21                              2.825
+xdut.vfilt                               2.825
+xdut.vi                                2.36186
+xdut.vs                                1.47123
+xdut.xr_v2i.11                         1.46328
+xdut.xr_v2i.21                        0.271642
+xdut.vcl                              0.263694
+xdut.vbp_vco                           2.41161
+xdut.vbn_vco                           1.04567
+xdut.p1                                2.73245
+xdut.r1                                1.41486
+xdut.r5                                1.41486
+xdut.n1                               0.416078
+xdut.p2                                2.73245
+xdut.r2                                1.41486
+xdut.n2                               0.416078
+xdut.p3                                2.73245
+xdut.r3                                1.41486
+xdut.n3                               0.416078
+xdut.p4                                2.73245
+xdut.r4                                1.41486
+xdut.n4                               0.416078
+xdut.p5                                2.73245
+xdut.n5                               0.416078
+xdut.nb                                2.77814
+xdut.ng                               0.152854
+vvc#branch                        -2.07931e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00150474
+vdd_src#branch                     -0.00150474
+
+ Reference value :  4.09000e-09 Reference value :  1.07237e-08 Reference value :  1.77823e-08
+No. of Data Rows : 1276
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                    2.825
+vco_out                              0.0161396
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              2.86467
+xdut.up_b                                 3.63
+xdut.vdump                             2.82477
+xdut.dn_s                              2.25432
+xdut.dn_b                                 3.63
+xdut.vbt                               3.60152
+xdut.vbl                              0.698892
+xdut.vnt                               1.66916
+xdut.vbh                               2.55575
+xdut.xr1.11                              2.825
+xdut.xr1.21                              2.825
+xdut.vfilt                               2.825
+xdut.vi                                2.36186
+xdut.vs                                1.47123
+xdut.xr_v2i.11                         1.46328
+xdut.xr_v2i.21                        0.271642
+xdut.vcl                              0.263694
+xdut.vbp_vco                           2.41161
+xdut.vbn_vco                           1.04567
+xdut.p1                                2.73245
+xdut.r1                                1.41486
+xdut.r5                                1.41486
+xdut.n1                               0.416078
+xdut.p2                                2.73245
+xdut.r2                                1.41486
+xdut.n2                               0.416078
+xdut.p3                                2.73245
+xdut.r3                                1.41486
+xdut.n3                               0.416078
+xdut.p4                                2.73245
+xdut.r4                                1.41486
+xdut.n4                               0.416078
+xdut.p5                                2.73245
+xdut.n5                               0.416078
+xdut.nb                                2.77814
+xdut.ng                               0.152854
+vvc#branch                        -2.07931e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00150474
+vdd_src#branch                     -0.00150474
+
+ Reference value :  2.00000e-13 Reference value :  8.14375e-09 Reference value :  1.74423e-08 Reference value :  2.57753e-08 Reference value :  3.17782e-08 Reference value :  3.77465e-08 Reference value :  4.35721e-08 Reference value :  5.30917e-08 Reference value :  6.29917e-08 Reference value :  7.22917e-08
+No. of Data Rows : 4030
+vx                  =  3.64014e+00 at=  7.66917e-08
+vn                  =  -8.11119e-03 at=  5.54117e-08
+ta                  =  2.10526e-08
+tb                  =  4.02415e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     3.33
+vco_out                              0.0177325
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              3.35806
+xdut.up_b                                 3.63
+xdut.vdump                             3.32646
+xdut.dn_s                              2.25836
+xdut.dn_b                                 3.63
+xdut.vbt                                  3.63
+xdut.vbl                              0.265268
+xdut.vnt                               2.08762
+xdut.vbh                               2.55092
+xdut.xr1.11                               3.33
+xdut.xr1.21                               3.33
+xdut.vfilt                                3.33
+xdut.vi                                2.35789
+xdut.vs                                1.88623
+xdut.xr_v2i.11                         1.87816
+xdut.xr_v2i.21                        0.668892
+xdut.vcl                              0.660826
+xdut.vbp_vco                           2.40783
+xdut.vbn_vco                           1.04883
+xdut.p1                                2.73824
+xdut.r1                                1.41833
+xdut.r5                                1.41833
+xdut.n1                                0.41667
+xdut.p2                                2.73824
+xdut.r2                                1.41833
+xdut.n2                                0.41667
+xdut.p3                                2.73824
+xdut.r3                                1.41833
+xdut.n3                                0.41667
+xdut.p4                                2.73824
+xdut.r4                                1.41833
+xdut.n4                                0.41667
+xdut.p5                                2.73824
+xdut.n5                                0.41667
+xdut.nb                                2.76672
+xdut.ng                               0.153534
+vvc#branch                        -3.10099e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00152142
+vdd_src#branch                     -0.00152142
+
+ Reference value :  1.14000e-09 Reference value :  8.84527e-09 Reference value :  1.33827e-08 Reference value :  2.11199e-08
+No. of Data Rows : 1276
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     3.33
+vco_out                              0.0177325
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              3.35806
+xdut.up_b                                 3.63
+xdut.vdump                             3.32646
+xdut.dn_s                              2.25836
+xdut.dn_b                                 3.63
+xdut.vbt                                  3.63
+xdut.vbl                              0.265268
+xdut.vnt                               2.08762
+xdut.vbh                               2.55092
+xdut.xr1.11                               3.33
+xdut.xr1.21                               3.33
+xdut.vfilt                                3.33
+xdut.vi                                2.35789
+xdut.vs                                1.88623
+xdut.xr_v2i.11                         1.87816
+xdut.xr_v2i.21                        0.668892
+xdut.vcl                              0.660826
+xdut.vbp_vco                           2.40783
+xdut.vbn_vco                           1.04883
+xdut.p1                                2.73824
+xdut.r1                                1.41833
+xdut.r5                                1.41833
+xdut.n1                                0.41667
+xdut.p2                                2.73824
+xdut.r2                                1.41833
+xdut.n2                                0.41667
+xdut.p3                                2.73824
+xdut.r3                                1.41833
+xdut.n3                                0.41667
+xdut.p4                                2.73824
+xdut.r4                                1.41833
+xdut.n4                                0.41667
+xdut.p5                                2.73824
+xdut.n5                                0.41667
+xdut.nb                                2.76672
+xdut.ng                               0.153534
+vvc#branch                        -3.10099e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00152142
+vdd_src#branch                     -0.00152142
+
+ Reference value :  4.76617e-09 Reference value :  1.32827e-08 Reference value :  1.69803e-08 Reference value :  2.24999e-08 Reference value :  3.11442e-08 Reference value :  3.95313e-08 Reference value :  4.72047e-08 Reference value :  5.49984e-08 Reference value :  6.19122e-08 Reference value :  7.01859e-08 Reference value :  7.93197e-08
+No. of Data Rows : 4043
+vx                  =  3.64025e+00 at=  2.25999e-08
+vn                  =  -8.20790e-03 at=  2.05399e-08
+ta                  =  2.07206e-08
+tb                  =  3.96043e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     3.63
+vco_out                              0.0182218
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              3.54277
+xdut.up_b                                 3.63
+xdut.vdump                              3.5213
+xdut.dn_s                              2.25957
+xdut.dn_b                                 3.63
+xdut.vbt                                  3.63
+xdut.vbl                              0.270632
+xdut.vnt                               2.30581
+xdut.vbh                               2.43428
+xdut.xr1.11                               3.63
+xdut.xr1.21                               3.63
+xdut.vfilt                                3.63
+xdut.vi                                2.35672
+xdut.vs                                2.11709
+xdut.xr_v2i.11                         2.10899
+xdut.xr_v2i.21                        0.894544
+xdut.vcl                              0.886443
+xdut.vbp_vco                           2.40673
+xdut.vbn_vco                           1.04975
+xdut.p1                                2.73993
+xdut.r1                                1.41934
+xdut.r5                                1.41934
+xdut.n1                               0.416841
+xdut.p2                                2.73993
+xdut.r2                                1.41934
+xdut.n2                               0.416841
+xdut.p3                                2.73993
+xdut.r3                                1.41934
+xdut.n3                               0.416841
+xdut.p4                                2.73993
+xdut.r4                                1.41934
+xdut.n4                               0.416841
+xdut.p5                                2.73993
+xdut.n5                               0.416841
+xdut.nb                                2.76331
+xdut.ng                               0.153732
+vvc#branch                        -3.72381e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00152765
+vdd_src#branch                     -0.00152765
+
+ Reference value :  8.56367e-09 Reference value :  1.68650e-08
+No. of Data Rows : 1276
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     3.63
+vco_out                              0.0182218
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              3.54277
+xdut.up_b                                 3.63
+xdut.vdump                              3.5213
+xdut.dn_s                              2.25957
+xdut.dn_b                                 3.63
+xdut.vbt                                  3.63
+xdut.vbl                              0.270632
+xdut.vnt                               2.30581
+xdut.vbh                               2.43428
+xdut.xr1.11                               3.63
+xdut.xr1.21                               3.63
+xdut.vfilt                                3.63
+xdut.vi                                2.35672
+xdut.vs                                2.11709
+xdut.xr_v2i.11                         2.10899
+xdut.xr_v2i.21                        0.894544
+xdut.vcl                              0.886443
+xdut.vbp_vco                           2.40673
+xdut.vbn_vco                           1.04975
+xdut.p1                                2.73993
+xdut.r1                                1.41934
+xdut.r5                                1.41934
+xdut.n1                               0.416841
+xdut.p2                                2.73993
+xdut.r2                                1.41934
+xdut.n2                               0.416841
+xdut.p3                                2.73993
+xdut.r3                                1.41934
+xdut.n3                               0.416841
+xdut.p4                                2.73993
+xdut.r4                                1.41934
+xdut.n4                               0.416841
+xdut.p5                                2.73993
+xdut.n5                               0.416841
+xdut.nb                                2.76331
+xdut.ng                               0.153732
+vvc#branch                        -3.72381e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00152765
+vdd_src#branch                     -0.00152765
+
+ Reference value :  0.00000e+00 Reference value :  7.96367e-09 Reference value :  8.82367e-09 Reference value :  9.70367e-09 Reference value :  1.40281e-08 Reference value :  2.01469e-08 Reference value :  2.62816e-08 Reference value :  3.23853e-08 Reference value :  4.13721e-08 Reference value :  4.95650e-08 Reference value :  5.77502e-08 Reference value :  6.61344e-08 Reference value :  7.45293e-08
+No. of Data Rows : 4035
+vx                  =  3.64035e+00 at=  6.76144e-08
+vn                  =  -8.24595e-03 at=  2.04469e-08
+ta                  =  2.06242e-08
+tb                  =  3.94228e-08
+Doing analysis at TEMP = -40.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                       3.63
+vss                                          0
+pll_en                                    3.63
+pfd_up                                       0
+pfd_dn                                       0
+cp_trim0                                     0
+cp_trim1                                     0
+vctrl                                     3.63
+vco_out                              0.0182218
+xdut.en_b                          4.95679e-09
+xdut.vbp                               2.55428
+xdut.va                                1.83051
+xdut.vref                             0.848763
+xdut.xrbias_top.11                    0.848401
+xdut.xrbias_top.21                    0.569067
+bias_ref                              0.568704
+xdut.xrbias_int.11                    0.568342
+xdut.xrbias_int.21                 0.000362277
+xdut.vst                             0.0128838
+xdut.vcp_n                            0.748455
+xdut.t1a                                  3.63
+xdut.t2                                   3.63
+xdut.t1b                                  3.63
+xdut.t1c                             0.0191935
+xdut.vcp_p                              2.7118
+xdut.up_s                              3.54277
+xdut.up_b                                 3.63
+xdut.vdump                              3.5213
+xdut.dn_s                              2.25957
+xdut.dn_b                                 3.63
+xdut.vbt                                  3.63
+xdut.vbl                              0.270632
+xdut.vnt                               2.30581
+xdut.vbh                               2.43428
+xdut.xr1.11                               3.63
+xdut.xr1.21                               3.63
+xdut.vfilt                                3.63
+xdut.vi                                2.35672
+xdut.vs                                2.11709
+xdut.xr_v2i.11                         2.10899
+xdut.xr_v2i.21                        0.894544
+xdut.vcl                              0.886443
+xdut.vbp_vco                           2.40673
+xdut.vbn_vco                           1.04975
+xdut.p1                                2.73993
+xdut.r1                                1.41934
+xdut.r5                                1.41934
+xdut.n1                               0.416841
+xdut.p2                                2.73993
+xdut.r2                                1.41934
+xdut.n2                               0.416841
+xdut.p3                                2.73993
+xdut.r3                                1.41934
+xdut.n3                               0.416841
+xdut.p4                                2.73993
+xdut.r4                                1.41934
+xdut.n4                               0.416841
+xdut.p5                                2.73993
+xdut.n5                               0.416841
+xdut.nb                                2.76331
+xdut.ng                               0.153732
+vvc#branch                        -3.72381e-12
+vt1#branch                                   0
+vt0#branch                                   0
+vdn#branch                                   0
+vup#branch                                   0
+ven#branch                                   0
+vss_src#branch                      0.00152765
+vdd_src#branch                     -0.00152765
+
+ Reference value :  6.21400e-10 Reference value :  3.13750e-09 Reference value :  5.92250e-09 Reference value :  8.84750e-09 Reference value :  1.20925e-08 Reference value :  1.43825e-08 Reference value :  1.60225e-08 Reference value :  1.69675e-08
+No. of Data Rows : 3452
+t20r                =  9.32625e-09
+t80r                =  9.36824e-09
+t80f                =  7.58811e-09
+t20f                =  7.62623e-09
+
+  Measurements for Transient Analysis (pll_analog_vco_tb, computed in .control)
+vco_kvco_mhz_per_v = 83.9779
+vco_df_dv_min_mhz_per_v = 8.33861
+vco_fmin_tt_mhz = 10.325
+vco_fmax_tt_mhz = 264.778
+vco_out_swing_pct_vdd = 100.283
+vco_out_duty_pct = 53.718
+vco_fmax_ff_mhz = 265.977
+vco_out_tr_ns = 0.041983
+vco_out_tf_ns = 0.038125
+
+Note: Simulation executed from .control section 

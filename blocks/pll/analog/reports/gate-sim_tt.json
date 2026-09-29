@@ -3,7 +3,7 @@
   "gate": "sim_tt",
   "phase": "P4",
   "tool": "sim_tt",
-  "input_digest": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+  "input_digest": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
   "status": "pass",
   "criteria": {
     "fail_severities": [
@@ -34,14 +34,14 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "icp_up_code00_ua": 19.2598,
-          "icp_dn_code00_ua": 18.9033,
-          "icp_up_code00_tt_ua": 19.2598,
-          "icp_up_code01_ua": 23.9806,
-          "icp_up_code10_ua": 28.6881,
-          "icp_up_code11_ua": 38.0734,
-          "icp_code11_over_code00_ratio": 1.97683,
-          "cp_updn_mismatch_pct": 4.95574,
+          "icp_up_code00_ua": 19.0145,
+          "icp_dn_code00_ua": 18.6602,
+          "icp_up_code00_tt_ua": 19.0145,
+          "icp_up_code01_ua": 23.6748,
+          "icp_up_code10_ua": 28.3222,
+          "icp_up_code11_ua": 37.5873,
+          "icp_code11_over_code00_ratio": 1.97677,
+          "cp_updn_mismatch_pct": 4.97552,
           "vctrl_leak_off_na": 0.00276435
         },
         "engine_errors": [],
@@ -57,11 +57,11 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "ol_pm_pn16_nopad_deg": 45.0631,
-          "ol_pm_pn16_pad5p_deg": 31.4647,
-          "ol_fc_pn16_nopad_khz": 451.214,
-          "ol_pm_pn8_nopad_deg": 53.5652,
-          "ol_pm_pn40_nopad_deg": 31.3714
+          "ol_pm_pn16_nopad_deg": 44.7234,
+          "ol_pm_pn16_pad5p_deg": 31.2658,
+          "ol_fc_pn16_nopad_khz": 443.948,
+          "ol_pm_pn8_nopad_deg": 53.3767,
+          "ol_pm_pn40_nopad_deg": 31.0599
         },
         "engine_errors": [],
         "violations": [],
@@ -76,7 +76,7 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "cp_overlap_net_charge_fc": 2.40602
+          "cp_overlap_net_charge_fc": 2.38237
         },
         "engine_errors": [],
         "violations": [],
@@ -120,7 +120,7 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "startup_time_us": 0.413468
+          "startup_time_us": 0.670524
         },
         "engine_errors": [],
         "violations": [],
@@ -135,15 +135,15 @@
         "vdd": "3.3",
         "returncode": 0,
         "measures": {
-          "vco_kvco_mhz_per_v": 92.1383,
-          "vco_df_dv_min_mhz_per_v": 14.1446,
-          "vco_fmin_tt_mhz": 9.67861,
-          "vco_fmax_tt_mhz": 258.452,
-          "vco_out_swing_pct_vdd": 102.371,
-          "vco_out_duty_pct": 53.8323,
-          "vco_fmax_ff_mhz": 264.04,
-          "vco_out_tr_ns": 0.05151,
-          "vco_out_tf_ns": 0.048117
+          "vco_kvco_mhz_per_v": 91.9244,
+          "vco_df_dv_min_mhz_per_v": 14.1399,
+          "vco_fmin_tt_mhz": 9.55305,
+          "vco_fmax_tt_mhz": 257.749,
+          "vco_out_swing_pct_vdd": 100.452,
+          "vco_out_duty_pct": 53.9346,
+          "vco_fmax_ff_mhz": 260.525,
+          "vco_out_tr_ns": 0.05168,
+          "vco_out_tf_ns": 0.04836
         },
         "engine_errors": [],
         "violations": [],
@@ -157,12 +157,12 @@
     "workspace": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog",
     "gate": "sim_tt",
     "status": "pass",
-    "attempts": 4,
+    "attempts": 5,
     "inputs": {
-      "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
-      "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+      "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+      "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
       "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-      "sizing": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4"
+      "sizing": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09"
     }
   }
 }

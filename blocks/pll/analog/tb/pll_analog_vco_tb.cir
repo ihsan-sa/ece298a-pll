@@ -21,10 +21,14 @@
 * so a fast ring is not simulated for microseconds (wo-4: 13 points x 1.2 us
 * at a 20 ps step timed out at 900 s):
 *   stage 0: tran max step 20 ps to 25 ns,   crossings after 4 ns
-*   stage 1: tran max step 250 ps to 400 ns, crossings after 20 ns
+*   stage 1: tran max step 20 ps to 80 ns,   crossings after 20 ns
+*   stage 2: tran max step 250 ps to 400 ns, crossings after 20 ns
 * The first stage with >= 6 rising vdd/2 crossings after its settle time
 * gives f = 5 / (t(rise 6) - t(rise 1)), the mean of 5 periods (stage 0
-* resolves f >~ 290 MHz, stage 1 f >~ 16 MHz). If stage 1 still has fewer,
+* resolves f >~ 290 MHz, stage 1 f >~ 100 MHz, stage 2 f >~ 16 MHz). Stage 1
+* exists because a 250 ps step misreads a fast ring: at tt_m40c_vm10,
+* vctrl = 2.275 V it read 152 MHz for a ring that runs at 223 MHz (09-29
+* sim_pvt, a false negative df/dv). If stage 2 still has fewer,
 * f = (n-1) / (t(rise n) - t(rise 1)) over the n >= 2 rises it has, and
 * f = 0 when n < 2 (the ring is stalled: below ~3 MHz). A
 * stalled point is a real measured value, never skipped: every sweep measure
@@ -57,7 +61,7 @@
 .include '{{PDK}}/libs.tech/ngspice/design.spice'
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
-.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' mimcap_{{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
 .include '{{NETLIST}}'
 {{SIZING}}
 
@@ -113,7 +117,7 @@ while k le kend
   set fks = "0"
   set sws = "0"
   set dtys = "0"
-  foreach st 0 1
+  foreach st 0 1 2
     if $gotf eq 0
       if $st eq 0
         set tsx = "20p"
@@ -121,6 +125,11 @@ while k le kend
         set tdx = "4n"
       end
       if $st eq 1
+        set tsx = "20p"
+        set tex = "80n"
+        set tdx = "20n"
+      end
+      if $st eq 2
         set tsx = "250p"
         set tex = "400n"
         set tdx = "20n"
@@ -133,7 +142,7 @@ while k le kend
       let hv = (v(vco_out) gt vmid)
       let late = time[1,$&nx1] gt $tdx
       let nrise = mean(((hv[1,$&nx1] - hv[0,$&nx2]) gt 0.5) and late)*length(late)
-      if (nrise ge 6) or ($st eq 1)
+      if (nrise ge 6) or ($st eq 2)
         set gotf = "1"
         meas tran vx max v(vco_out) from=$tdx to=$tex
         meas tran vn min v(vco_out) from=$tdx to=$tex

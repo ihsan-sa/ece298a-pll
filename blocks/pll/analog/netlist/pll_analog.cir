@@ -17,7 +17,7 @@
 
 * ---- default sizing (overridden by sizing/sizing.yaml via {{SIZING}}) ----
 .param w_bp=4e-06 l_bp=2e-06 w_b1=2e-06 l_b1=2e-06
-.param w_b2=4e-06 l_b2=1e-06 rb_l=0.00043 rbt_l=0.00011 w_cpn=2e-05
+.param w_b2=4e-06 l_b2=1e-06 rb_l=0.000366 rbt_l=0.00018 w_cpn=2e-05
 .param l_cpn=2e-06 w_cpp=5e-05 l_cpp=2e-06 w_swn=2e-06
 .param w_swp=4e-06 l_sw=5e-07 r1_l=0.000126 c1_w=0.0001
 .param c2_w=3.2e-05 w_v2i=1e-05 l_v2i=1e-06 rv2i_l=3.5e-05
@@ -37,17 +37,18 @@ XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=2.8e-7
 
 * (2) bias: Ib = Vgs(MN_B1) / (RBIAS_TOP + RBIAS_INT || R_ext)
 * The loop node is vref (= Vgs of MN_B1); the pad bias_ref is a tap on the
-* bias resistor, isolated from vref by RBIAS_TOP (38.5 kOhm). Why: MN_B2's
+* bias resistor, isolated from vref by RBIAS_TOP (63 kOhm). Why: MN_B2's
 * current returns to va through the MP_B2/MP_B1 mirror (a positive loop,
 * gain 1), while the negative loop goes through MN_B1's gate. The admittance
 * into va is gm2 (gm1 Zs - 1) / (1 + gm2 Zs), Zs = impedance at MN_B2's
 * source. With the 5 pF pad straight on vref, |Zs| < 1/gm1 above ~1.6 MHz,
 * va sees a negative conductance and the loop relaxes (period 1.3 us,
 * vref 0.68..1.33 V, startup re-firing each cycle). With the split,
-* Re(Zs) >= RBIAS_TOP at every frequency and gm1 * RBIAS_TOP ~ 2 > 1, so va
+* Re(Zs) >= RBIAS_TOP at every frequency and gm1 * RBIAS_TOP > 1, so va
 * stays passive for any pad capacitance. Total R (and Ib) is unchanged; an
 * external resistor still only raises Ib, now capped at Vgs / RBIAS_TOP
-* (~3x) even with the pad shorted. Pad settles with (RTOP || RINT) x Cpad.
+* (~2x) even with the pad shorted. RBIAS_TOP was 38.5 kOhm until
+* 09-29, when gm1 * RTOP fell below 1 at ff_125c and vref relaxed at 341 ns. Pad settles with (RTOP || RINT) x Cpad.
 XMP_B2 vbp vbp vdd vdd pfet_03v3 w=w_bp l=l_bp
 XMP_B1 va vbp vdd vdd pfet_03v3 w=w_bp l=l_bp
 XMN_B1 va vref vss vss nfet_03v3 w=w_b1 l=l_b1

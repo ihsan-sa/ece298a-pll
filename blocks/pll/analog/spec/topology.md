@@ -40,11 +40,11 @@ two resistors.
 - `MP_B1`: PMOS, gate `vbp`, drain `va`. 1:1 copy into MN_B1.
 - `MN_B1`: NMOS, gate `vref`, source vss, drain `va`. Senses V(vref).
 - `MN_B2`: NMOS, gate `va`, source `vref`, drain `vbp`. Delivers Ib into the resistor.
-- `RBIAS_TOP`: ppolyf_u, `vref` to `bias_ref` (~38 kOhm). Isolates the
+- `RBIAS_TOP`: ppolyf_u, `vref` to `bias_ref` (~63 kOhm). Isolates the
   loop node from the pad capacitance (see Bias equations).
 - `RBIAS_INT`: ppolyf_u, `bias_ref` to vss. Internal default; an external
   resistor on pad ua[1] sits in parallel with it and raises Ib, at most to
-  Vgs / RBIAS_TOP (~3x) with the pad shorted.
+  Vgs / RBIAS_TOP (~2x) with the pad shorted.
 - Startup: `MP_STL` (weak long PMOS, gate `en_b`, vdd -> `vst`), `MN_STD`
   (gate `vref`, `vst` -> vss), `MN_ST` (gate `vst`, `vbp` -> vss),
   `MN_STE` (gate `en_b`, `vst` -> vss, holds startup off in standby).

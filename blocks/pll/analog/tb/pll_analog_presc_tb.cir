@@ -30,7 +30,7 @@
 .include '{{PDK}}/libs.tech/ngspice/design.spice'
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{CORNER}}
 .lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{RES_CORNER}}
-.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' mimcap_{{CORNER}}
+.lib '{{PDK}}/libs.tech/ngspice/sm141064.spice' {{MIM_CORNER}}
 .include '{{NETLIST}}'
 .include '{{PDK}}/libs.ref/gf180mcu_fd_sc_mcu7t5v0/spice/gf180mcu_fd_sc_mcu7t5v0.spice'
 {{SIZING}}
