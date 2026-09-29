@@ -3,7 +3,7 @@
  "gate": "sim_tt",
  "phase": "P4",
  "tool": "sim_tt",
- "input_digest": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+ "input_digest": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -57,11 +57,11 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "ol_pm_pn16_nopad_deg": 44.7234,
-     "ol_pm_pn16_pad5p_deg": 31.2658,
-     "ol_fc_pn16_nopad_khz": 443.948,
-     "ol_pm_pn8_nopad_deg": 53.3767,
-     "ol_pm_pn40_nopad_deg": 31.0599
+     "ol_pm_pn16_nopad_deg": 49.5144,
+     "ol_pm_pn16_pad5p_deg": 33.8996,
+     "ol_fc_pn16_nopad_khz": 479.973,
+     "ol_pm_pn8_nopad_deg": 55.296,
+     "ol_pm_pn40_nopad_deg": 35.937
     },
     "engine_errors": [],
     "violations": [],
@@ -120,7 +120,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
-     "startup_time_us": 0.670524
+     "startup_time_us": 0.670512
     },
     "engine_errors": [],
     "violations": [],
@@ -151,6 +151,6 @@
    }
   ]
  },
- "recorded_ts": "2026-09-29T04:00:04",
- "attempts": 6
+ "recorded_ts": "2026-09-29T04:59:28",
+ "attempts": 7
 }

@@ -119,7 +119,7 @@ connections. Gate load added to `vctrl` is one PMOS gate (fF), no DC path,
 so vctrl_leak_off_na and the loop-filter poles are untouched.
 
 ### 4. Loop filter
-- `R1`: ppolyf_u, `vctrl` -> `vfilt`, ~22 kOhm.
+- `R1`: ppolyf_u, `vctrl` -> `vfilt`, ~26 kOhm (150 um; was 22 kOhm, raised 09-29 for PM >= 45 deg).
 - `C1`: cap_mim_2f0ff, `vfilt` -> vss, ~20 pF (100 x 100 um: the area risk).
 - `C2`: cap_mim_2f0ff, `vctrl` -> vss, ~2 pF, sized with the ua[0] pad
   (up to 5 pF) in parallel.
@@ -240,7 +240,7 @@ Loop filter / open loop (ideal 1/(P N) divider):
   (1 + s R1 C1 C2/(C1 + C2))).
 - wn = sqrt(Icp Kvco / (P N C1)),  zeta = (R1/2) sqrt(Icp Kvco C1 / (P N)).
   Icp 20 uA, Kvco 2 pi 100 MHz/V, P N = 16, C1 20 pF -> fn ~ 400 kHz,
-  R1 ~ 22 kOhm -> zeta ~ 0.55. C2 (+ pad) <= C1/10 for PM >= 45 deg
+  R1 ~ 26 kOhm -> zeta ~ 0.65. C2 (+ pad) <= C1/10 for PM >= 45 deg
   without pad; with 5 pF pad PM ~ 32 deg (warning-level measure).
 
 VCO:

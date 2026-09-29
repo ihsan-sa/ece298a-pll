@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-09-29T04:00:04",
+ "updated": "2026-09-29T04:59:28",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -200,17 +200,17 @@
   "sim_tt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-09-29T04:00:04",
+    "ts": "2026-09-29T04:59:28",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+     "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
      "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-     "sizing": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09"
+     "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
     },
     "job": null,
     "facts": {
@@ -327,23 +327,41 @@
        "tt"
       ]
      }
+    },
+    {
+     "ts": "2026-09-29T04:59:28",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
     }
    ]
   },
   "sim_pvt": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-09-29T03:17:21",
+    "ts": "2026-09-29T04:56:02",
     "status": "fail",
-    "failing_count": 65,
-    "total": 66,
+    "failing_count": 53,
+    "total": 54,
     "inputs": {
-     "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
-     "tb": "dir_text:7b4787e5a09fa89f5dfed0517edc13a12a953fd8d59d02bceebc64732a56f342",
+     "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+     "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-     "sizing": "json_canonical:4e1daabc9be3f90dfa5f8f8f561cdbb657c38b38615742a781e47e5db34aa7e4"
+     "sizing": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09"
     },
     "job": null,
     "facts": {
@@ -426,6 +444,52 @@
        "tt_pff"
       ]
      }
+    },
+    {
+     "ts": "2026-09-29T04:56:02",
+     "status": "fail",
+     "failing_count": 53,
+     "total": 54,
+     "inputs": {
+      "netlist": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
+      "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
     }
    ]
   }
@@ -439,25 +503,25 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-09-29T04:00:04"
+   "hashed": "2026-09-29T04:59:28"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
-   "sha256": "dir_text:4874de8758fcd777d8d8fe42699589a358e0a9da1d65ef86b6da5f580228bb40",
-   "hashed": "2026-09-29T04:00:04"
+   "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+   "hashed": "2026-09-29T04:59:28"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
-   "hashed": "2026-09-29T04:00:04"
+   "hashed": "2026-09-29T04:59:28"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
-   "sha256": "json_canonical:bb8bf578756c6512807b68e778d16a57d40ff1ab33a64b2a365cf3347e9fcf09",
-   "hashed": "2026-09-29T04:00:04"
+   "sha256": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78",
+   "hashed": "2026-09-29T04:59:28"
   }
  },
  "open_issues": [
@@ -1340,6 +1404,22 @@
    "gate": "sim_tt",
    "status": "pass",
    "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-09-29T04:56:02",
+   "event": "gate",
+   "gate": "sim_pvt",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 53
+  },
+  {
+   "ts": "2026-09-29T04:59:28",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 7,
    "failing_count": 0
   }
  ]

@@ -86,9 +86,11 @@ l_sw:
   value: 5e-07
   min: 2.8e-07
   max: 1e-06
-# R1 length at 2 um width: 22 kOhm nominal (11..44 kOhm), zeta ~0.55
+# R1 length at 2 um width: ~26 kOhm (11..44 kOhm), zeta ~0.65; raised from 126 um
+# (22 kOhm) on 09-29 because PM(P*N=16) fell to 44.7 deg at tt_27c after the Icp
+# trim; 150 um gives 49.5 deg (fc 480 kHz)
 r1_l:
-  value: 0.000126
+  value: 0.00015
   min: 6e-05
   max: 0.00025
 # C1 side (square MIM): 2 fF/um2 -> 20 pF at 100 um
