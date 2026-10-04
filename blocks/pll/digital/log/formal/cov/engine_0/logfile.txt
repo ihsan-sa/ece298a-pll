@@ -199,3 +199,14 @@
 ##   0:02:52  Checking cover reachability in step 133..
 ##   0:02:58  Checking cover reachability in step 134..
 ##   0:03:04  Checking cover reachability in step 135..
+##   0:03:14  Checking cover reachability in step 136..
+##   0:03:26  Checking cover reachability in step 137..
+##   0:03:37  Checking cover reachability in step 138..
+##   0:03:44  Checking cover reachability in step 139..
+##   0:03:54  Checking cover reachability in step 140..
+##   0:04:07  Checking cover reachability in step 141..
+##   0:04:15  Checking cover reachability in step 142..
+##   0:04:22  Checking cover reachability in step 143..
+##   0:04:32  Checking cover reachability in step 144..
+##   0:04:43  Checking cover reachability in step 145..
+##   0:04:54  Checking cover reachability in step 146..

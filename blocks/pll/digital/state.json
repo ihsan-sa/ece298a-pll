@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-10-03T21:03:39",
+ "updated": "2026-10-03T21:05:30",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -657,7 +657,17 @@
    ]
   }
  },
- "jobs": {},
+ "jobs": {
+  "1": {
+   "gate": "harden",
+   "pid": 36209,
+   "started": "2026-10-03T21:05:30",
+   "finished": null,
+   "status": "running",
+   "log": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/jobs/job-1.log",
+   "result": null
+  }
+ },
  "holdout": {
   "sha": "dir_text:38f6e12da866835d1060ae470f4353cd34fa57c3270835a658412279bcc8a875",
   "written_by": "tb-writer",
@@ -831,7 +841,7 @@
   }
  ],
  "next_issue_id": 7,
- "next_job_id": 1,
+ "next_job_id": 2,
  "budgets": {
   "fix_loops": {
    "sim": 2,
@@ -1593,6 +1603,13 @@
    "status": "pass",
    "attempt": 3,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T21:05:30",
+   "event": "job_start",
+   "job": "1",
+   "gate": "harden",
+   "pid": 36209
   }
  ]
 }

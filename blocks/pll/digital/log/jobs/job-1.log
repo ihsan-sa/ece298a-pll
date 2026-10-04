@@ -1,0 +1,1 @@
+gate harden: ERROR (clock.domains ['clk', 'vco_out'] names more than one clock; harden constrains exactly one clock port - keep the one the block's flops run on) - see /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/reports/gate-harden.json

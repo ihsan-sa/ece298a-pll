@@ -215,3 +215,14 @@ SBY 21:04:14 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/forma
 SBY 21:04:20 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:02:52  Checking cover reachability in step 133..
 SBY 21:04:26 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:02:58  Checking cover reachability in step 134..
 SBY 21:04:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:04  Checking cover reachability in step 135..
+SBY 21:04:41 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:14  Checking cover reachability in step 136..
+SBY 21:04:54 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:26  Checking cover reachability in step 137..
+SBY 21:05:05 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:37  Checking cover reachability in step 138..
+SBY 21:05:12 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:44  Checking cover reachability in step 139..
+SBY 21:05:22 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:03:54  Checking cover reachability in step 140..
+SBY 21:05:35 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:07  Checking cover reachability in step 141..
+SBY 21:05:43 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:15  Checking cover reachability in step 142..
+SBY 21:05:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:22  Checking cover reachability in step 143..
+SBY 21:05:59 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:32  Checking cover reachability in step 144..
+SBY 21:06:11 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:43  Checking cover reachability in step 145..
+SBY 21:06:21 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:54  Checking cover reachability in step 146..
