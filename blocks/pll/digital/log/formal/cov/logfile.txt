@@ -226,3 +226,4 @@ SBY 21:05:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/forma
 SBY 21:05:59 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:32  Checking cover reachability in step 144..
 SBY 21:06:11 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:43  Checking cover reachability in step 145..
 SBY 21:06:21 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:04:54  Checking cover reachability in step 146..
+SBY 21:06:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:05:04  Checking cover reachability in step 147..

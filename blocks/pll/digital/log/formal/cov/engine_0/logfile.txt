@@ -210,3 +210,4 @@
 ##   0:04:32  Checking cover reachability in step 144..
 ##   0:04:43  Checking cover reachability in step 145..
 ##   0:04:54  Checking cover reachability in step 146..
+##   0:05:04  Checking cover reachability in step 147..
