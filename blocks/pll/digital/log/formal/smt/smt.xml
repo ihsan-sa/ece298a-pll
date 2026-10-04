@@ -1,108 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite timestamp="2026-09-28T14:14:53" hostname="iiks1" package="smt" id="0" name="default" tests="14" errors="1" failures="0" time="0" skipped="14">
+<testsuite timestamp="2026-10-03T20:07:48" hostname="iiks1" package="smt" id="0" name="default" tests="14" errors="0" failures="2" time="0" skipped="13">
 <properties>
 <property name="os" value="Linux"/>
 <property name="expect" value="PASS"/>
-<property name="status" value="ERROR"/>
+<property name="status" value="FAIL"/>
 </properties>
 <testcase classname="default" name="build execution" time="0">
-<error type="ERROR"/>
+<failure type="FAIL" message="Task returned status FAIL." />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.7-141.77" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.7-141.77" id="COVER_FB_ILLEGAL">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.7-144.77" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.7-144.77" id="COVER_FB_ILLEGAL">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.7-140.77" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.7-140.77" id="COVER_FB_N5">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-143.77" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-143.77" id="COVER_FB_N5">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.7-142.37" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.7-142.37" id="COVER_LOCK">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.37" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.37" id="COVER_LOCK">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-143.69" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-143.69" id="COVER_LOCK_DROP">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.7-146.69" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.7-146.69" id="COVER_LOCK_DROP">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.7-137.39" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.7-137.39" id="COVER_PFD_DN">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.7-140.39" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.7-140.39" id="COVER_PFD_DN">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.7-138.79" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.7-138.79" id="COVER_PFD_RESET">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.7-141.79" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.7-141.79" id="COVER_PFD_RESET">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.7-136.39" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:136.7-136.39" id="COVER_PFD_UP">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-139.39" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-139.39" id="COVER_PFD_UP">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-139.82" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-139.82" id="COVER_PRE_PERIOD">
+<testcase classname="default" name="Property COVER in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.7-142.82" time="0" type="COVER" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.7-142.82" id="COVER_PRE_PERIOD">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:113.9-115.78" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:113.9-115.78" id="divider_ratio">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.9-118.78" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.9-118.78" id="divider_ratio">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:130.9-130.80" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:130.9-130.80" id="lock_not_while_wide">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-133.80" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-133.80" id="lock_not_while_wide">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.7-118.56" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.7-118.56" id="pfd_never_both_high">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.7-121.56" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.7-121.56" id="pfd_never_both_high">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.9-124.55" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.9-124.55" id="pfd_reset_on_both">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-127.55" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-127.55" id="pfd_reset_on_both">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.9-108.77" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.9-108.77" id="prescaler_div8">
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.9-111.77" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.9-111.77" id="prescaler_div8">
 <skipped />
 </testcase>
-<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.9-101.62" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.9-101.62" id="reset_forces_outputs">
-<skipped />
+<testcase classname="default" name="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.9-104.62" time="0" type="ASSERT" location="/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.9-104.62" id="reset_forces_outputs" tracefile="engine_0/trace.vcd">
+<failure type="ASSERT" message="Property ASSERT in ihsan_sa_pll_formal at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.9-104.62 failed. Trace file: engine_0/trace.vcd" />
 </testcase>
-<system-out>SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Removing directory '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll_formal.sv'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_ctrl_regs.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_divider.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_lock_det.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_pfd.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_prescaler.v'.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0: smtbmc yices
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src; yosys -ql ../model/design.log ../model/design.ys&quot;
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: Warning: found logic loop in module pll_pfd:
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $procdff$323 ($adff) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: ARST[0] --&gt; Q[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_fb_q source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:15.19-15.27
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159 ($and) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_rst source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$161 ($or) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_clr source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: Warning: found logic loop in module pll_pfd:
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159 ($and) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: A[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_rst source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$161 ($or) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: B[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_clr source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: cell $procdff$326 ($adff) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: ARST[0] --&gt; Q[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: wire \pfd_ref_q source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:15.8-15.17
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: finished (returncode=0)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/model; yosys -ql design_prep.log design_prep.ys&quot;
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: Warning: found logic loop in module pll_pfd:
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: cell $or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$161 ($or) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: B[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: wire \pfd_clr source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.8-19.15
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: cell $auto$clk2fflogic.cc:123:mux$554 ($mux)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: S[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: wire \pfd_ref_q source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:15.8-15.17
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159 ($and) source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: A[0] --&gt; Y[0]
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: wire \pfd_rst source: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:18.19-18.26
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: finished (returncode=0)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/model; yosys -ql design_smt2.log design_smt2.ys&quot;
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: ERROR: Found logic loop in module pll_pfd! See cell $and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$159.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: finished (returncode=1)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: task failed. ERROR.
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) did not return a status
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: engine_0 did not produce any traces
-SBY 14:14:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] DONE (ERROR, rc=16)
+<system-out>SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Removing directory '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll_formal.sv'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/ihsan_sa_pll.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_ctrl_regs.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_divider.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_lock_det.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_pfd.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] Copy '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v' to '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src/pll_prescaler.v'.
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0: smtbmc yices
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] base: finished (returncode=0)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] prep: finished (returncode=0)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] smt2: finished (returncode=0)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: starting process &quot;cd /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt; yosys-smtbmc -s yices --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2&quot;
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  BMC failed!
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Assert failed in ihsan_sa_pll_formal: reset_forces_outputs
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 18..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 17..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 16..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace.yw
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: ##   0:00:00  Status: failed
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: ##   0:00:00  Trying induction in step 15..
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: finished (returncode=1)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.basecase: Status returned by engine for basecase: FAIL
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] engine_0.induction: terminating process
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: engine_0 (smtbmc yices) returned FAIL for basecase
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary: counterexample trace [basecase]: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt/engine_0/trace.vcd
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] summary:   failed assertion ihsan_sa_pll_formal.reset_forces_outputs at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.9-104.62 step 1
+SBY 20:07:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/smt] DONE (FAIL, rc=2)
 </system-out>
 <system-err>
 </system-err>

@@ -1,0 +1,20 @@
+[options]
+mode cover
+depth 100
+multiclock on
+
+[engines]
+smtbmc yices
+
+[script]
+read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cut.il
+chformal -assert2cover
+
+[files]
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v
+/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v

@@ -1,0 +1,471 @@
+{
+ "script": "gate",
+ "gate": "formal",
+ "phase": "P4",
+ "tool": "formal",
+ "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "status": "fail",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 11,
+  "by_severity": {
+   "error": 9,
+   "info": 2
+  },
+  "by_source": {
+   "sby-abc-pdr": 5,
+   "sby-smtbmc": 4,
+   "check_formal": 2
+  }
+ },
+ "failing_count": 9,
+ "failing": [
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-DIV-N"
+   ],
+   "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-LOCK-NO-WIDE"
+   ],
+   "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PFD-NO-OVERLAP"
+   ],
+   "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PFD-RESET"
+   ],
+   "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PRE-DIV8"
+   ],
+   "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "property_failed",
+   "refs": [
+    "REQ-RST-ASYNC"
+   ],
+   "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): sby found a counterexample",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): sby found a counterexample",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_LOCK was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_LOCK was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_LOCK_DROP was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_LOCK_DROP was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_PRE_PERIOD was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_PRE_PERIOD was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  }
+ ],
+ "violations": [
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-DIV-N"
+   ],
+   "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-LOCK-NO-WIDE"
+   ],
+   "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PFD-NO-OVERLAP"
+   ],
+   "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PFD-RESET"
+   ],
+   "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "engine_disagreement",
+   "refs": [
+    "REQ-PRE-DIV8"
+   ],
+   "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): abc pdr found a counterexample smtbmc's k-induction did not",
+   "source": "sby-abc-pdr",
+   "items": [
+    {
+     "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): abc pdr found a counterexample smtbmc's k-induction did not",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "property_failed",
+   "refs": [
+    "REQ-RST-ASYNC"
+   ],
+   "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): sby found a counterexample",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): sby found a counterexample",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_LOCK was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_LOCK was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_LOCK_DROP was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_LOCK_DROP was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  },
+  {
+   "check": "formal",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cover_not_reached",
+   "refs": [],
+   "msg": "cover point COVER_PRE_PERIOD was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+   "source": "sby-smtbmc",
+   "items": [
+    {
+     "msg": "cover point COVER_PRE_PERIOD was not reached to depth 100 (spec.yaml formal.cover_depth) - if the state is reachable, raise formal.cover_depth (add it if absent) to at least the cycles its sequence needs; leave formal.depth at what the asserts need for induction - a deep prove depth makes k-induction infeasible",
+     "file": null,
+     "line": null
+    }
+   ],
+   "depth": 100
+  },
+  {
+   "check": "formal",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "async_reset_cut_applied",
+   "refs": [],
+   "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff) with a one-step register (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).): every verdict here holds under that one-step reset delay, not the RTL's zero-delay clear - glitch-width reset behaviour stays with sim",
+   "source": "check_formal",
+   "items": [
+    {
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff) with a one-step register (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).): every verdict here holds under that one-step reset delay, not the RTL's zero-delay clear - glitch-width reset behaviour stays with sim",
+     "file": null,
+     "line": null
+    }
+   ],
+   "signal": "dut.u_pfd.pfd_ref_q"
+  },
+  {
+   "check": "formal",
+   "severity": "info",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "async_reset_cut_applied",
+   "refs": [],
+   "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff) with a one-step register (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).): every verdict here holds under that one-step reset delay, not the RTL's zero-delay clear - glitch-width reset behaviour stays with sim",
+   "source": "check_formal",
+   "items": [
+    {
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff) with a one-step register (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).): every verdict here holds under that one-step reset delay, not the RTL's zero-delay clear - glitch-width reset behaviour stays with sim",
+     "file": null,
+     "line": null
+    }
+   ],
+   "signal": "dut.u_pfd.pfd_fb_q"
+  }
+ ],
+ "facts": {
+  "top": "ihsan_sa_pll",
+  "formal_top": "ihsan_sa_pll_formal",
+  "depth": 20,
+  "cover_depth": 100,
+  "frontend": "native",
+  "frontend_why": null,
+  "multiclock": true,
+  "multiclock_why": "6 clock signals (\\clk, \\clk_fb, \\dut.u_pre.pre_q0, \\dut.u_pre.pre_q1, \\dut.u_pre.pre_q2, \\vco_out); negative-edge cell(s) $flatten\\dut.\\u_div.$procdff$321, $flatten\\dut.\\u_lock.$procdff$347; async reset/latch cell(s) $adff",
+  "proven": [],
+  "bounded": [],
+  "failed": [
+   "REQ-DIV-N",
+   "REQ-LOCK-NO-WIDE",
+   "REQ-PFD-NO-OVERLAP",
+   "REQ-PFD-RESET",
+   "REQ-PRE-DIV8",
+   "REQ-RST-ASYNC"
+  ],
+  "vacuous": [],
+  "smt_status": "FAIL",
+  "pdr_status": "FAIL",
+  "cover_points": [
+   "COVER_FB_ILLEGAL",
+   "COVER_FB_N5",
+   "COVER_LOCK",
+   "COVER_LOCK_DROP",
+   "COVER_PFD_DN",
+   "COVER_PFD_RESET",
+   "COVER_PFD_UP",
+   "COVER_PRE_PERIOD"
+  ],
+  "async_reset_cuts": [
+   {
+    "signal": "dut.u_pfd.pfd_ref_q",
+    "why": "Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).",
+    "cell_type": "$adff"
+   },
+   {
+    "signal": "dut.u_pfd.pfd_fb_q",
+    "why": "Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).",
+    "cell_type": "$adff"
+   }
+  ],
+  "async_reset_cuts_note": "smt/pdr's proven/bounded verdicts above hold for the design's clock edges under a ONE-STEP-DELAYED version of each cut reset (formal.async_reset_cuts), not the RTL's own zero-delay async clear; the glitch-width reset behaviour (both flops briefly both-set before the real, instant clear catches up) is not covered here - that stays sim's job"
+ },
+ "recorded_ts": "2026-10-03T20:09:30",
+ "attempts": 2
+}

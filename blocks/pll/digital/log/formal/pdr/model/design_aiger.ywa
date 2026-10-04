@@ -1,0 +1,60 @@
+{
+  "version": "Yosys Witness Aiger map",
+  "gennerator": "Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)",
+  "latch_count": 110,
+  "input_count": 37,
+  "clocks": [],
+  "inputs": [
+    {"input": 0, "offset": 0, "path": ["\\clk"]},
+    {"input": 1, "offset": 0, "path": ["\\vco_out"]},
+    {"input": 2, "offset": 0, "path": ["\\rst_n"]},
+    {"input": 3, "offset": 0, "path": ["\\pll_en_in"]},
+    {"input": 4, "offset": 0, "path": ["\\obs_sel"]},
+    {"input": 5, "offset": 0, "path": ["\\n_sel"]},
+    {"input": 6, "offset": 1, "path": ["\\n_sel"]},
+    {"input": 7, "offset": 2, "path": ["\\n_sel"]},
+    {"input": 8, "offset": 0, "path": ["\\cp_trim_in"]},
+    {"input": 9, "offset": 1, "path": ["\\cp_trim_in"]}
+  ],
+  "seqs": [],
+  "inits": [
+    {"input": 19, "offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q1"]},
+    {"input": 13, "offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_370"]},
+    {"input": 30, "offset": 4, "path": ["\\dut", "\\u_lock", "\\lock_cnt"]},
+    {"input": 29, "offset": 3, "path": ["\\dut", "\\u_lock", "\\lock_cnt"]},
+    {"input": 28, "offset": 2, "path": ["\\dut", "\\u_lock", "\\lock_cnt"]},
+    {"input": 27, "offset": 1, "path": ["\\dut", "\\u_lock", "\\lock_cnt"]},
+    {"input": 26, "offset": 0, "path": ["\\dut", "\\u_lock", "\\lock_cnt"]},
+    {"input": 20, "offset": 0, "path": ["\\dut.u_pfd.pfd_ref_q$async_cut"]},
+    {"input": 14, "offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_369"]},
+    {"input": 15, "offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_368"]},
+    {"input": 16, "offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_367"]},
+    {"input": 17, "offset": 0, "path": ["\\_witness_", "\\anyinit_procdff_366"]},
+    {"input": 23, "offset": 0, "path": ["\\dut", "\\u_ctrl", "\\pll_en"]},
+    {"input": 18, "offset": 0, "path": ["\\dut", "\\u_pre", "\\q3"]},
+    {"input": 36, "offset": 0, "path": ["\\dut", "\\u_lock", "\\wide_q"]},
+    {"input": 21, "offset": 0, "path": ["\\dut.u_pfd.pfd_fb_q$async_cut"]},
+    {"input": 12, "offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q0"]},
+    {"input": 24, "offset": 0, "path": ["\\dut", "\\u_ctrl", "\\cp_trim0"]},
+    {"input": 25, "offset": 0, "path": ["\\dut", "\\u_ctrl", "\\cp_trim1"]},
+    {"input": 10, "offset": 0, "path": ["\\dut", "\\u_pre", "\\pre_q2"]},
+    {"input": 22, "offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_ref_q"]},
+    {"input": 32, "offset": 0, "path": ["\\dut", "\\u_div", "\\fb_en"]},
+    {"input": 31, "offset": 0, "path": ["\\dut", "\\u_pfd", "\\pfd_fb_q"]},
+    {"input": 35, "offset": 2, "path": ["\\dut", "\\u_div", "\\div_cnt"]},
+    {"input": 34, "offset": 1, "path": ["\\dut", "\\u_div", "\\div_cnt"]},
+    {"input": 33, "offset": 0, "path": ["\\dut", "\\u_div", "\\div_cnt"]},
+    {"input": 11, "offset": 0, "path": ["\\dut", "\\u_lock", "\\lock"]}
+  ],
+  "asserts": [
+    ["\\divider_ratio"],
+    ["\\lock_not_while_wide"],
+    ["\\pfd_never_both_high"],
+    ["\\pfd_reset_on_both"],
+    ["\\prescaler_div8"],
+    ["\\reset_forces_outputs"]
+  ],
+  "assumes": [
+    ["\\_witness_", "\\check_assume__home_ihsan__cc_worktrees_ece298a_pll_blocks_pll_digital_formal_ihsan_sa_pll_formal_sv_37_12"]
+  ]
+}

@@ -33,6 +33,9 @@ module ihsan_sa_pll_formal (
   reg past_valid = 1'b0;
   always @($global_clock) past_valid <= 1'b1;
 
+  // Every run starts in reset, as on silicon (the flops have no init value).
+  always @($global_clock) if (!past_valid) assume (!rst_n);
+
   // clk_pre (vco_out/8) is internal; with obs_sel = 0 obs_out is clk_pre
   // (REQ-OBS-SEL), so the /8 check observes it through obs_out.
   wire clk_pre_obs = obs_out;

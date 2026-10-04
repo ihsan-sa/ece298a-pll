@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-09-28T13:35:29",
+ "updated": "2026-10-03T20:10:28",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -460,6 +460,96 @@
      "human_hold": 1
     }
    ]
+  },
+  "formal": {
+   "phase": "P4",
+   "status": "fail",
+   "attempts": 2,
+   "last": {
+    "ts": "2026-10-03T20:09:30",
+    "status": "fail",
+    "failing_count": 9,
+    "total": 11,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "formal": "dir_text:0ee160ed4d25470d96bbef0a55011640aac884eb352df5718e650be0a2753c2b",
+     "spec_yaml": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82"
+    },
+    "job": null,
+    "facts": {
+     "depth": 20,
+     "cover_depth": 100
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-10-03T20:05:29",
+     "status": "fail",
+     "failing_count": 7,
+     "total": 9,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "formal": "dir_text:ca4ce2bd392690e4b87697e1c8cfdeacc4f0ae123151f0d48ded80274724ef78",
+      "spec_yaml": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82"
+     },
+     "job": null,
+     "facts": {
+      "depth": 20,
+      "cover_depth": 100
+     }
+    },
+    {
+     "ts": "2026-10-03T20:09:30",
+     "status": "fail",
+     "failing_count": 9,
+     "total": 11,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "formal": "dir_text:0ee160ed4d25470d96bbef0a55011640aac884eb352df5718e650be0a2753c2b",
+      "spec_yaml": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82"
+     },
+     "job": null,
+     "facts": {
+      "depth": 20,
+      "cover_depth": 100
+     }
+    }
+   ]
+  },
+  "synth": {
+   "phase": "P5",
+   "status": "fail",
+   "attempts": 1,
+   "last": {
+    "ts": "2026-10-03T20:10:28",
+    "status": "fail",
+    "failing_count": 6,
+    "total": 6,
+    "inputs": {
+     "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+     "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+    },
+    "job": null,
+    "facts": {
+     "area": 333.6704
+    }
+   },
+   "history": [
+    {
+     "ts": "2026-10-03T20:10:28",
+     "status": "fail",
+     "failing_count": 6,
+     "total": 6,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null,
+     "facts": {
+      "area": 333.6704
+     }
+    }
+   ]
   }
  },
  "jobs": {},
@@ -475,8 +565,8 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c",
-   "hashed": "2026-09-28T13:34:50"
+   "sha256": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82",
+   "hashed": "2026-10-03T20:09:30"
   },
   "holdout": {
    "path": "holdout",
@@ -496,7 +586,7 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-   "hashed": "2026-09-28T13:35:29"
+   "hashed": "2026-10-03T20:10:28"
   },
   "tb": {
    "path": "tb",
@@ -508,13 +598,19 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml_sans_formal",
    "sha256": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
-   "hashed": "2026-09-28T13:35:29"
+   "hashed": "2026-10-03T20:10:28"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
    "kind": "mutant_rulings",
    "sha256": null,
    "hashed": "2026-09-28T13:33:14"
+  },
+  "formal": {
+   "path": "formal",
+   "kind": "formal",
+   "sha256": "dir_text:0ee160ed4d25470d96bbef0a55011640aac884eb352df5718e650be0a2753c2b",
+   "hashed": "2026-10-03T20:09:30"
   }
  },
  "open_issues": [
@@ -1129,6 +1225,30 @@
    "status": "pass",
    "attempt": 3,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T20:05:29",
+   "event": "gate",
+   "gate": "formal",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 7
+  },
+  {
+   "ts": "2026-10-03T20:09:30",
+   "event": "gate",
+   "gate": "formal",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 9
+  },
+  {
+   "ts": "2026-10-03T20:10:28",
+   "event": "gate",
+   "gate": "synth",
+   "status": "fail",
+   "attempt": 1,
+   "failing_count": 6
   }
  ]
 }

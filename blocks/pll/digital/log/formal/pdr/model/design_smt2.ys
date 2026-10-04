@@ -1,0 +1,8 @@
+# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/pdr/model/
+read_rtlil design_prep.il
+hierarchy -smtcheck
+delete */t:$print
+formalff -assume
+dffunmap
+stat
+write_smt2 -wires design_smt2.smt2

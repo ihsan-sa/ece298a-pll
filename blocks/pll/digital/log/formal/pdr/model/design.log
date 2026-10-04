@@ -1,0 +1,32 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cut.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll_formal'. Setting top module to ihsan_sa_pll_formal.
+
+2.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll_formal
+
+2.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll_formal
+Removed 0 unused modules.
+Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing jny backend.
+
+4. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: 37790da848, time: 0.03s, user: 0.02s, system: 0.01s, MEM: 26.93 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 34% 2x read_rtlil (0 sec), 31% 2x write_rtlil (0 sec), ...

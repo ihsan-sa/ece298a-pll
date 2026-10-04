@@ -1,0 +1,285 @@
+{
+ "script": "gate",
+ "gate": "synth",
+ "phase": "P5",
+ "tool": "synth",
+ "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "status": "fail",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 6,
+  "by_severity": {
+   "error": 6
+  },
+  "by_source": {
+   "yosys": 6
+  }
+ },
+ "failing_count": 6,
+ "failing": [
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_ctrl_regs survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_ctrl_regs survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_divider survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_divider survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_lock_det survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_lock_det survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_pfd survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_pfd survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_prescaler survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_prescaler survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "5 instance(s) of submodules survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "5 instance(s) of submodules survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "violations": [
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_ctrl_regs survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_ctrl_regs survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_divider survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_divider survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_lock_det survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_lock_det survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_pfd survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_pfd survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "1 instance(s) of pll_prescaler survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "1 instance(s) of pll_prescaler survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "synth",
+   "severity": "error",
+   "file": null,
+   "module": null,
+   "line": null,
+   "kind": "cell_not_in_liberty",
+   "refs": [],
+   "msg": "5 instance(s) of submodules survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+   "source": "yosys",
+   "items": [
+    {
+     "msg": "5 instance(s) of submodules survive in the netlist but gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib does not define that cell (a blackbox stub in rtl/ hides it from yosys) - pick the library that has it (spec.yaml std_cell) or use a cell this one has",
+     "file": null,
+     "line": null
+    }
+   ]
+  }
+ ],
+ "facts": {
+  "top": "ihsan_sa_pll",
+  "std_cell": {
+   "library": "gf180mcu_fd_sc_mcu7t5v0",
+   "corner": "tt_025C_3v30",
+   "source": "tt_template",
+   "liberty": "gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib"
+  },
+  "cells": {
+   "gf180mcu_fd_sc_mcu7t5v0__and2_1": 3,
+   "gf180mcu_fd_sc_mcu7t5v0__and3_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__and4_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__aoi211_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 13,
+   "gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__dffrnq_1": 18,
+   "gf180mcu_fd_sc_mcu7t5v0__dlya_1": 2,
+   "gf180mcu_fd_sc_mcu7t5v0__mux2_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__nand2_1": 2,
+   "gf180mcu_fd_sc_mcu7t5v0__nor2_1": 5,
+   "gf180mcu_fd_sc_mcu7t5v0__nor3_1": 2,
+   "gf180mcu_fd_sc_mcu7t5v0__nor4_1": 5,
+   "gf180mcu_fd_sc_mcu7t5v0__oai21_1": 3,
+   "gf180mcu_fd_sc_mcu7t5v0__oai32_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__or2_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__or3_1": 1,
+   "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 2,
+   "pll_ctrl_regs": 1,
+   "pll_divider": 1,
+   "pll_lock_det": 1,
+   "pll_pfd": 1,
+   "pll_prescaler": 1,
+   "submodules": 5
+  },
+  "area": 333.6704,
+  "netlist": "synth/ihsan_sa_pll.v"
+ },
+ "recorded_ts": "2026-10-03T20:10:28",
+ "attempts": 1
+}

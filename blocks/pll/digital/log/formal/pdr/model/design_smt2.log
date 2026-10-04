@@ -1,0 +1,71 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `ihsan_sa_pll_formal'. Setting top module to ihsan_sa_pll_formal.
+
+2.1. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll_formal
+
+2.2. Analyzing design hierarchy..
+Top module:  \ihsan_sa_pll_formal
+Removed 0 unused modules.
+Module ihsan_sa_pll_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== ihsan_sa_pll_formal ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      299 wires
+      463 wire bits
+      110 public wires
+      171 public wire bits
+       15 ports
+       18 port bits
+      258 cells
+        6   $add
+        2   $and
+       21   $anyinit
+        6   $assert
+        1   $assume
+        5   $eq
+        8   $eqx
+       38   $ff
+        2   $ge
+        3   $le
+       34   $logic_and
+       22   $logic_not
+        8   $logic_or
+       85   $mux
+        3   $ne
+        5   $not
+        2   $or
+        6   $scopeinfo
+        1   $sub
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module ihsan_sa_pll_formal.
+
+End of script. Logfile hash: 73fcb07d3a, time: 0.02s, user: 0.02s, system: 0.02s, MEM: 27.97 MB peak
+Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
+Time spent: 58% 2x write_smt2 (0 sec), 29% 2x read_rtlil (0 sec), ...

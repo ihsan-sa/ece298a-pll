@@ -1,0 +1,8 @@
+# running in /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/pdr/src/
+read_rtlil /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cut.il
+
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il
