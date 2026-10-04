@@ -186,7 +186,8 @@ must_keep: [pfd_dly0, pfd_dly1]
 # period (40 vco_out periods) with each clock edge taking >= 2 steps.
 formal:
   depth: 20
-  cover_depth: 100
+  cover_depth: 300
+  timeout_s: 7200
   async_reset_cuts:
     - signal: dut.u_pfd.pfd_ref_q
       why: "Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02)."

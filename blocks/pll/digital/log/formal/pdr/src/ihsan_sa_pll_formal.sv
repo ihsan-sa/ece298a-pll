@@ -52,26 +52,45 @@ module ihsan_sa_pll_formal (
   reg       fb_seen  = 1'b0;
   reg       fb_ok    = 1'b0;   // obs_sel 0 and n_sel unchanged since then
   reg [2:0] n_last   = 3'd1;
+  reg [2:0] n_q      = 3'd1;   // n_sel one step ago
+  reg       n_stab   = 1'b1;   // n_sel unchanged since the last clk_fb rise
+  // The divider samples n_sel during the period BEFORE a clk_fb rise (the
+  // edge's own count and the falling-edge enable), so a period is checked
+  // only when n_sel was already stable through the whole previous period:
+  // the first period after an N change is a settling transient.
+  wire n_stab_now = n_stab && (n_sel == n_q);
   // ---- lock shadow: wide samples (pfd_up|pfd_dn at clk falling edge) ----
   reg        wide_s  = 1'b1;   // sample of the current reference cycle
   reg [15:0] hist    = 16'hFFFF; // samples closed by the last 16 clk rises
   reg [15:0] hist_q  = 16'hFFFF;
 
-  reg vco_q = 1'b0, prep_q = 1'b0, fb_q = 1'b0, clk_q = 1'b0;
+  reg vco_q = 1'b0, prep_q = 1'b0, fb_q = 1'b0, clk_q = 1'b0, obs_q = 1'b0;
+  // A sample at a clock edge sees the value just BEFORE the edge, as a
+  // flop does: a pulse that starts in the edge's own step is not sampled.
+  reg wide_q = 1'b0;
   always @($global_clock) begin
     vco_q <= vco_out; prep_q <= clk_pre_obs; fb_q <= clk_fb; clk_q <= clk;
+    obs_q <= obs_sel; wide_q <= pfd_up | pfd_dn;
+    n_q <= n_sel;
   end
   wire vco_rise = past_valid && vco_out && !vco_q;
-  wire pre_rise = past_valid && clk_pre_obs && !prep_q;
+  // obs_out only shows clk_pre while obs_sel is 0; a rise in the step
+  // obs_sel returns to 0 is the mux switching, not a clk_pre edge.
+  wire pre_rise = past_valid && clk_pre_obs && !prep_q && !obs_sel && !obs_q;
   wire fb_rise  = past_valid && clk_fb && !fb_q;
   wire clk_rise = past_valid && clk && !clk_q;
   wire clk_fall = past_valid && !clk && clk_q;
+
+  // hist including the cycle a clk rise closes in this very step: lock
+  // updates on that rise in the same step, one step before hist does.
+  wire [15:0] hist_now = clk_rise ? {hist[14:0], wide_s} : hist;
 
   always @($global_clock) begin : shadow
     hist_q <= hist;
     if (!rst_n) begin
       vco_cnt <= 4'd0; pre_seen <= 1'b0; pre_ok <= 1'b0;
       pre_cnt <= 4'd0; fb_seen <= 1'b0; fb_ok <= 1'b0; n_last <= n_sel;
+      n_stab <= 1'b1;
       wide_s <= 1'b1; hist <= 16'hFFFF;
     end else begin
       if (pre_rise) begin
@@ -81,12 +100,14 @@ module ihsan_sa_pll_formal (
         if (obs_sel) pre_ok <= 1'b0;
       end
       if (fb_rise) begin
-        pre_cnt <= 4'd0; fb_seen <= 1'b1; fb_ok <= !obs_sel; n_last <= n_sel;
+        pre_cnt <= 4'd0; fb_seen <= 1'b1; n_last <= n_sel;
+        fb_ok <= !obs_sel && n_stab_now; n_stab <= 1'b1;
       end else begin
         if (pre_rise && pre_cnt != 4'hF) pre_cnt <= pre_cnt + 4'd1;
         if (obs_sel || n_sel != n_last) fb_ok <= 1'b0;
+        if (n_sel != n_q) n_stab <= 1'b0;
       end
-      if (clk_fall) wide_s <= pfd_up | pfd_dn;
+      if (clk_fall) wide_s <= wide_q;
       if (clk_rise) begin
         hist <= {hist[14:0], wide_s};
         wide_s <= 1'b0;
@@ -105,10 +126,13 @@ module ihsan_sa_pll_formal (
 
       // REQ-PRE-DIV8: clk_pre rises exactly once per 8 vco_out rises -
       // never more than 8 rises between clk_pre rises, and exactly 8 at
-      // each clk_pre rise after the first.
+      // each clk_pre rise after the first. The 8th vco_out rise lands in
+      // the same step as the clk_pre rise it causes, so it is counted as
+      // vco_rise on top of vco_cnt (N = 1 in divider_ratio is the same).
       if (rst_n && $past(rst_n) && pre_ok && !obs_sel)
-        prescaler_div8: assert ((vco_cnt <= 4'd8) &&
-                                (!pre_rise || !pre_seen || vco_cnt == 4'd8));
+        prescaler_div8: assert (({1'b0, vco_cnt} + {4'd0, vco_rise} <= 5'd8) &&
+                                (!pre_rise || !pre_seen ||
+                                 {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd8));
 
       // REQ-DIV-N: clk_fb rises exactly once per N clk_pre rises (N = 1
       // passes clk_pre through: clk_fb rises in the same step).
@@ -130,7 +154,7 @@ module ihsan_sa_pll_formal (
       // in the reference cycle it covers or the 15 before (one-step skew
       // between the clk rise and lock's update is tolerated).
       if (rst_n)
-        lock_not_while_wide: assert (!lock || hist == 16'h0 || hist_q == 16'h0);
+        lock_not_while_wide: assert (!lock || hist_now == 16'h0 || hist_q == 16'h0);
     end
   end
 
@@ -139,7 +163,8 @@ module ihsan_sa_pll_formal (
       COVER_PFD_UP:     cover (pfd_up);
       COVER_PFD_DN:     cover (pfd_dn);
       COVER_PFD_RESET:  cover ($past(pfd_up) && fb_rise && !pfd_up && !pfd_dn);
-      COVER_PRE_PERIOD: cover (pre_rise && pre_seen && pre_ok && vco_cnt == 4'd8);
+      COVER_PRE_PERIOD: cover (pre_rise && pre_seen && pre_ok &&
+                               {1'b0, vco_cnt} + {4'd0, vco_rise} == 5'd8);
       COVER_FB_N5:      cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd5);
       COVER_FB_ILLEGAL: cover (fb_rise && fb_seen && fb_ok && n_sel == 3'd0);
       COVER_LOCK:       cover (lock);

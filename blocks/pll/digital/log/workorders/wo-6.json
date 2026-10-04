@@ -1,0 +1,114 @@
+{
+ "id": 6,
+ "created": "2026-10-03T20:46:41",
+ "gate": "formal",
+ "phase": "P4",
+ "workspace": "blocks/pll/digital",
+ "fixer": "rtl",
+ "role_prompt": "skills/vde/agents/fixer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit rtl/ only; re-run the failed gate (lint/sim/mutate/formal/cover/synth as applicable) when done.",
+  "A finding from `mutate` means the TESTBENCH missed something, not the RTL - route mutate failures to the testbench domain instead of editing rtl/ to satisfy a weak test."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/property_failed.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "property_failed"
+  ],
+  "checks": [
+   "sby-smtbmc"
+  ],
+  "severity": "error",
+  "count": 1,
+  "violations": [
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "property_failed",
+    "refs": [
+     "REQ-PRE-DIV8"
+    ],
+    "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): sby found a counterexample",
+    "source": "sby-smtbmc",
+    "items": [
+     {
+      "msg": "requirement REQ-PRE-DIV8 (property prescaler_div8): sby found a counterexample",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [
+  {
+   "file": null,
+   "module": null,
+   "kinds": [
+    "async_reset_cut_applied"
+   ],
+   "checks": [
+    "check_formal"
+   ],
+   "severity": "info",
+   "count": 2,
+   "violations": [
+    {
+     "check": "formal",
+     "severity": "info",
+     "file": null,
+     "module": null,
+     "line": null,
+     "kind": "async_reset_cut_applied",
+     "refs": [],
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+     "source": "check_formal",
+     "items": [
+      {
+       "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+       "file": null,
+       "line": null
+      }
+     ],
+     "signal": "dut.u_pfd.pfd_ref_q"
+    },
+    {
+     "check": "formal",
+     "severity": "info",
+     "file": null,
+     "module": null,
+     "line": null,
+     "kind": "async_reset_cut_applied",
+     "refs": [],
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+     "source": "check_formal",
+     "items": [
+      {
+       "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+       "file": null,
+       "line": null
+      }
+     ],
+     "signal": "dut.u_pfd.pfd_fb_q"
+    }
+   ]
+  }
+ ],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

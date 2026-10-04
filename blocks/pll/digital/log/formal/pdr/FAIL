@@ -1,6 +1,0 @@
-Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
-Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-engine_0 (abc pdr) returned FAIL
-counterexample trace: engine_0/trace.vcd
-counterexample trace: engine_0/trace.yw
-  failed assertion ihsan_sa_pll_formal.pfd_never_both_high at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.7-121.56 step 1

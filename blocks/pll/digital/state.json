@@ -4,21 +4,21 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-10-03T20:10:28",
+ "updated": "2026-10-03T21:03:39",
  "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-27T01:04:42",
+    "ts": "2026-10-03T21:03:22",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     "spec_yaml": "json_canonical:6684bc685cbdea109cc7039b0fe143f705088a761acf6bcf67bc9c827b22d24c"
     },
     "job": null
    },
@@ -62,21 +62,31 @@
       "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-03T21:03:22",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "spec_yaml": "json_canonical:6684bc685cbdea109cc7039b0fe143f705088a761acf6bcf67bc9c827b22d24c"
+     },
+     "job": null
     }
    ]
   },
   "lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-27T01:25:06",
+    "ts": "2026-10-03T21:03:22",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     },
     "job": null
    },
@@ -124,15 +134,26 @@
       "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-03T21:03:22",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null
     }
    ]
   },
   "sim": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-09-28T13:30:44",
+    "ts": "2026-10-03T21:03:35",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -236,14 +257,21 @@
      "facts": {
       "tests_passed": 15
      }
-    }
-   ],
-   "stale": [
+    },
     {
-     "ts": "2026-09-28T13:33:46",
-     "edit_class": "tb_edit",
-     "refs": [],
-     "human_hold": 1
+     "ts": "2026-10-03T21:03:35",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null,
+     "facts": {
+      "tests_passed": 15
+     }
     }
    ]
   },
@@ -317,16 +345,16 @@
   "cover": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-09-28T13:34:50",
+    "ts": "2026-10-03T21:03:39",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
-     "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     "spec_yaml": "json_canonical:6684bc685cbdea109cc7039b0fe143f705088a761acf6bcf67bc9c827b22d24c"
     },
     "job": null,
     "facts": {
@@ -367,6 +395,26 @@
       "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
       "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
       "spec_yaml": "json_canonical:c9e51f1f04e643a054e125bd8f1cfe9eea9a124986e0e42fd5eb7f25247fba2c"
+     },
+     "job": null,
+     "facts": {
+      "line_pct": 100.0,
+      "toggle_pct": 100.0,
+      "line_covered": 103,
+      "line_total": 103,
+      "toggle_covered": 156,
+      "toggle_total": 156
+     }
+    },
+    {
+     "ts": "2026-10-03T21:03:39",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "tb": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
+      "spec_yaml": "json_canonical:6684bc685cbdea109cc7039b0fe143f705088a761acf6bcf67bc9c827b22d24c"
      },
      "job": null,
      "facts": {
@@ -458,15 +506,21 @@
      "edit_class": "tb_edit",
      "refs": [],
      "human_hold": 1
+    },
+    {
+     "ts": "2026-10-03T21:02:50",
+     "edit_class": "formal_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   },
   "formal": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 2,
+   "attempts": 3,
    "last": {
-    "ts": "2026-10-03T20:09:30",
+    "ts": "2026-10-03T20:45:34",
     "status": "fail",
     "failing_count": 9,
     "total": 11,
@@ -513,25 +567,62 @@
       "depth": 20,
       "cover_depth": 100
      }
+    },
+    {
+     "ts": "2026-10-03T20:45:34",
+     "status": "fail",
+     "failing_count": 9,
+     "total": 11,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "formal": "dir_text:0ee160ed4d25470d96bbef0a55011640aac884eb352df5718e650be0a2753c2b",
+      "spec_yaml": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82"
+     },
+     "job": null,
+     "facts": {
+      "depth": 20,
+      "cover_depth": 100
+     }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-03T20:56:09",
+     "edit_class": "gate_error",
+     "refs": [],
+     "human_hold": 0,
+     "error": "CheckError: sby (cov) timed out after 500s - raise spec.yaml formal.timeout_s (at most 7200) or shorten the sequences the properties need: Command '['/home/ihsan/.claude/skills/chip-flow/bin/eda', 'sby', '-f', '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov.sby', '-d', '/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov']' timed out after 500.0 seconds"
+    },
+    {
+     "ts": "2026-10-03T21:02:50",
+     "edit_class": "formal_edit",
+     "refs": [],
+     "human_hold": 1
+    },
+    {
+     "ts": "2026-10-03T21:02:50",
+     "edit_class": "spec_formal_edit",
+     "refs": [],
+     "human_hold": 1
     }
    ]
   },
   "synth": {
    "phase": "P5",
-   "status": "fail",
-   "attempts": 1,
+   "status": "pass",
+   "attempts": 2,
    "last": {
-    "ts": "2026-10-03T20:10:28",
-    "status": "fail",
-    "failing_count": 6,
-    "total": 6,
+    "ts": "2026-10-03T21:03:04",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 0,
     "inputs": {
      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
     },
     "job": null,
     "facts": {
-     "area": 333.6704
+     "area": 2166.6624
     }
    },
    "history": [
@@ -547,6 +638,20 @@
      "job": null,
      "facts": {
       "area": 333.6704
+     }
+    },
+    {
+     "ts": "2026-10-03T21:03:04",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "rtl": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+      "spec_yaml_sans_formal": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224"
+     },
+     "job": null,
+     "facts": {
+      "area": 2166.6624
      }
     }
    ]
@@ -565,8 +670,8 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:7fbaeb26e4c978a16d38bc830e78470d9168cce3d1fbf25a593b0874d184fa82",
-   "hashed": "2026-10-03T20:09:30"
+   "sha256": "json_canonical:6684bc685cbdea109cc7039b0fe143f705088a761acf6bcf67bc9c827b22d24c",
+   "hashed": "2026-10-03T21:03:39"
   },
   "holdout": {
    "path": "holdout",
@@ -586,19 +691,19 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
-   "hashed": "2026-10-03T20:10:28"
+   "hashed": "2026-10-03T21:03:39"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:052af20e5f8df5b5f2bc6b6fbfedf5cc1eceea14569da45fea5dc52c37413560",
-   "hashed": "2026-09-28T13:34:50"
+   "hashed": "2026-10-03T21:03:39"
   },
   "spec_yaml_sans_formal": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml_sans_formal",
    "sha256": "json_canonical_sans_formal:08fd0975f7d5116e45920eef43d5b9120ed832afcd70581c17d55bd037abf224",
-   "hashed": "2026-10-03T20:10:28"
+   "hashed": "2026-10-03T21:03:35"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -610,7 +715,7 @@
    "path": "formal",
    "kind": "formal",
    "sha256": "dir_text:0ee160ed4d25470d96bbef0a55011640aac884eb352df5718e650be0a2753c2b",
-   "hashed": "2026-10-03T20:09:30"
+   "hashed": "2026-10-03T20:45:34"
   }
  },
  "open_issues": [
@@ -669,15 +774,70 @@
    "count": 4,
    "work_order": "blocks/pll/digital/log/workorders/wo-3.json",
    "note": "17/19; mutants 5,10 set an already-0 bit of K=16 to 0 (equivalent); prover refuses multiclock; needs owner ruling in spec/mutant_rulings.yaml"
+  },
+  {
+   "id": 4,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0,
+   "opened": "2026-10-03T20:46:41",
+   "closed": null,
+   "gate": "formal",
+   "phase": "P4",
+   "fixer": "formal",
+   "kinds": [
+    "engine_disagreement"
+   ],
+   "severity": "error",
+   "count": 5,
+   "work_order": "blocks/pll/digital/log/workorders/wo-4.json",
+   "note": "harness fixes, formal rerun in flight"
+  },
+  {
+   "id": 5,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0,
+   "opened": "2026-10-03T20:46:41",
+   "closed": null,
+   "gate": "formal",
+   "phase": "P4",
+   "fixer": "formal",
+   "kinds": [
+    "cover_not_reached"
+   ],
+   "severity": "error",
+   "count": 3,
+   "work_order": "blocks/pll/digital/log/workorders/wo-5.json",
+   "note": "harness fixes, formal rerun in flight"
+  },
+  {
+   "id": 6,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0,
+   "opened": "2026-10-03T20:46:41",
+   "closed": null,
+   "gate": "formal",
+   "phase": "P4",
+   "fixer": "rtl",
+   "kinds": [
+    "property_failed"
+   ],
+   "severity": "error",
+   "count": 1,
+   "work_order": "blocks/pll/digital/log/workorders/wo-6.json",
+   "note": "harness fixes, formal rerun in flight"
   }
  ],
- "next_issue_id": 4,
+ "next_issue_id": 7,
  "next_job_id": 1,
  "budgets": {
   "fix_loops": {
    "sim": 2,
    "holdout": 2,
-   "mutate": 2
+   "mutate": 2,
+   "formal": 2
   }
  },
  "decisions": [
@@ -789,6 +949,38 @@
    "gates_marked": [
     "sim",
     "mutate",
+    "cover"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-10-03T21:02:50",
+   "class": "formal_edit",
+   "refs": [],
+   "note": "fix formal: harness off-by-ones (same-step vco rise, obs_sel mux edge, N-change settling period, pre-edge PFD sample, lock/hist step skew); RTL untouched",
+   "human_hold": 1,
+   "gates": [
+    "formal",
+    "mutate"
+   ],
+   "gates_marked": [
+    "formal",
+    "mutate"
+   ],
+   "stale_artifacts": []
+  },
+  {
+   "ts": "2026-10-03T21:02:50",
+   "class": "spec_formal_edit",
+   "refs": [],
+   "note": "fix formal: cover_depth 300, timeout_s 7200 for COVER_LOCK/LOCK_DROP",
+   "human_hold": 1,
+   "gates": [
+    "formal",
+    "cover"
+   ],
+   "gates_marked": [
+    "formal",
     "cover"
    ],
    "stale_artifacts": []
@@ -1249,6 +1441,158 @@
    "status": "fail",
    "attempt": 1,
    "failing_count": 6
+  },
+  {
+   "ts": "2026-10-03T20:45:34",
+   "event": "gate",
+   "gate": "formal",
+   "status": "fail",
+   "attempt": 3,
+   "failing_count": 9
+  },
+  {
+   "ts": "2026-10-03T20:46:40",
+   "event": "budget_defaulted",
+   "path": "fix_loops.formal",
+   "value": 3
+  },
+  {
+   "ts": "2026-10-03T20:46:40",
+   "event": "budget",
+   "path": "fix_loops.formal",
+   "remaining": 2
+  },
+  {
+   "ts": "2026-10-03T20:46:40",
+   "event": "snapshot",
+   "label": "pre-fix-formal-a1",
+   "files": 12
+  },
+  {
+   "ts": "2026-10-03T20:46:41",
+   "event": "issue_open",
+   "id": 4,
+   "gate": "formal",
+   "fixer": "formal",
+   "kinds": [
+    "engine_disagreement"
+   ]
+  },
+  {
+   "ts": "2026-10-03T20:46:41",
+   "event": "issue_open",
+   "id": 5,
+   "gate": "formal",
+   "fixer": "formal",
+   "kinds": [
+    "cover_not_reached"
+   ]
+  },
+  {
+   "ts": "2026-10-03T20:46:41",
+   "event": "issue_open",
+   "id": 6,
+   "gate": "formal",
+   "fixer": "rtl",
+   "kinds": [
+    "property_failed"
+   ]
+  },
+  {
+   "ts": "2026-10-03T20:56:09",
+   "event": "gate_error",
+   "gate": "formal",
+   "error": "CheckError: sby (cov) timed out after 500s - raise spec.yaml formal.timeout_s (at most 7200) or shorten the sequences the properties need: Command '['/home/ihsan/.claude/skills/chip-flow/bin/eda', 'sb"
+  },
+  {
+   "ts": "2026-10-03T21:02:50",
+   "event": "edit",
+   "edit_class": "formal_edit",
+   "refs": [],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-10-03T21:02:50",
+   "event": "edit",
+   "edit_class": "spec_formal_edit",
+   "refs": [],
+   "human_hold": 1
+  },
+  {
+   "ts": "2026-10-03T21:03:01",
+   "event": "issue",
+   "id": 4,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:01",
+   "event": "issue",
+   "id": 5,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:01",
+   "event": "issue",
+   "id": 6,
+   "status": "fixing",
+   "agent": "property-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:04",
+   "event": "gate",
+   "gate": "synth",
+   "status": "pass",
+   "attempt": 2,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:22",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:22",
+   "event": "gate",
+   "gate": "lint",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:22",
+   "event": "gate_error",
+   "gate": "sim",
+   "error": "ModuleNotFoundError: No module named 'cocotb_tools'"
+  },
+  {
+   "ts": "2026-10-03T21:03:23",
+   "event": "gate_error",
+   "gate": "cover",
+   "error": "ModuleNotFoundError: No module named 'cocotb_tools'"
+  },
+  {
+   "ts": "2026-10-03T21:03:35",
+   "event": "gate",
+   "gate": "sim",
+   "status": "pass",
+   "attempt": 7,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-03T21:03:39",
+   "event": "gate",
+   "gate": "cover",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
   }
  ]
 }

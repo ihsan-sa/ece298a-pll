@@ -1,6 +1,8 @@
 ##   0:00:00  Solver: yices
 ##   0:00:00  Checking cover reachability in step 0..
 ##   0:00:00  Checking cover reachability in step 1..
+##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic
+##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic
 ##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: pfd_never_both_high
 ##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: reset_forces_outputs
 ##   0:00:00  Writing trace to VCD file: engine_0/trace0.vcd
@@ -14,25 +16,19 @@
 ##   0:00:00  Writing trace to constraints file: engine_0/trace1.smtc
 ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace1.yw
 ##   0:00:00  Checking cover reachability in step 1..
-##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: COVER_PFD_UP
+##   0:00:00  Checking cover reachability in step 2..
+##   0:00:00  Reached cover statement in step 2 at ihsan_sa_pll_formal: COVER_PFD_UP
 ##   0:00:00  Writing trace to VCD file: engine_0/trace2.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace2_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace2.smtc
 ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace2.yw
-##   0:00:00  Checking cover reachability in step 1..
-##   0:00:00  Reached cover statement in step 1 at ihsan_sa_pll_formal: COVER_PFD_DN
+##   0:00:00  Checking cover reachability in step 2..
+##   0:00:00  Checking cover reachability in step 3..
+##   0:00:00  Reached cover statement in step 3 at ihsan_sa_pll_formal: prescaler_div8
 ##   0:00:00  Writing trace to VCD file: engine_0/trace3.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace3_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace3.smtc
 ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace3.yw
-##   0:00:00  Checking cover reachability in step 1..
-##   0:00:00  Checking cover reachability in step 2..
-##   0:00:00  Checking cover reachability in step 3..
-##   0:00:00  Reached cover statement in step 3 at ihsan_sa_pll_formal: prescaler_div8
-##   0:00:00  Writing trace to VCD file: engine_0/trace4.vcd
-##   0:00:00  Writing trace to Verilog testbench: engine_0/trace4_tb.v
-##   0:00:00  Writing trace to constraints file: engine_0/trace4.smtc
-##   0:00:00  Writing trace to Yosys witness file: engine_0/trace4.yw
 ##   0:00:00  Checking cover reachability in step 3..
 ##   0:00:00  Checking cover reachability in step 4..
 ##   0:00:00  Checking cover reachability in step 5..
@@ -49,113 +45,156 @@
 ##   0:00:00  Checking cover reachability in step 16..
 ##   0:00:00  Checking cover reachability in step 17..
 ##   0:00:00  Checking cover reachability in step 18..
+##   0:00:00  Reached cover statement in step 18 at ihsan_sa_pll_formal: COVER_PRE_PERIOD
+##   0:00:00  Writing trace to VCD file: engine_0/trace4.vcd
+##   0:00:00  Writing trace to Verilog testbench: engine_0/trace4_tb.v
+##   0:00:00  Writing trace to constraints file: engine_0/trace4.smtc
+##   0:00:00  Writing trace to Yosys witness file: engine_0/trace4.yw
+##   0:00:00  Checking cover reachability in step 18..
 ##   0:00:00  Reached cover statement in step 18 at ihsan_sa_pll_formal: COVER_PFD_RESET
 ##   0:00:00  Reached cover statement in step 18 at ihsan_sa_pll_formal: pfd_reset_on_both
 ##   0:00:00  Writing trace to VCD file: engine_0/trace5.vcd
-##   0:00:00  Writing trace to Verilog testbench: engine_0/trace5_tb.v
-##   0:00:00  Writing trace to constraints file: engine_0/trace5.smtc
-##   0:00:00  Writing trace to Yosys witness file: engine_0/trace5.yw
-##   0:00:00  Checking cover reachability in step 18..
-##   0:00:00  Checking cover reachability in step 19..
-##   0:00:00  Reached cover statement in step 19 at ihsan_sa_pll_formal: divider_ratio
-##   0:00:00  Writing trace to VCD file: engine_0/trace6.vcd
-##   0:00:00  Writing trace to Verilog testbench: engine_0/trace6_tb.v
-##   0:00:00  Writing trace to constraints file: engine_0/trace6.smtc
-##   0:00:00  Writing trace to Yosys witness file: engine_0/trace6.yw
-##   0:00:00  Checking cover reachability in step 19..
-##   0:00:00  Checking cover reachability in step 20..
-##   0:00:00  Checking cover reachability in step 21..
-##   0:00:00  Checking cover reachability in step 22..
+##   0:00:01  Writing trace to Verilog testbench: engine_0/trace5_tb.v
+##   0:00:01  Writing trace to constraints file: engine_0/trace5.smtc
+##   0:00:01  Writing trace to Yosys witness file: engine_0/trace5.yw
+##   0:00:01  Checking cover reachability in step 18..
+##   0:00:01  Reached cover statement in step 18 at ihsan_sa_pll_formal: COVER_PFD_DN
+##   0:00:01  Writing trace to VCD file: engine_0/trace6.vcd
+##   0:00:01  Writing trace to Verilog testbench: engine_0/trace6_tb.v
+##   0:00:01  Writing trace to constraints file: engine_0/trace6.smtc
+##   0:00:01  Writing trace to Yosys witness file: engine_0/trace6.yw
+##   0:00:01  Checking cover reachability in step 18..
+##   0:00:01  Checking cover reachability in step 19..
+##   0:00:01  Reached cover statement in step 19 at ihsan_sa_pll_formal: divider_ratio
+##   0:00:01  Writing trace to VCD file: engine_0/trace7.vcd
+##   0:00:01  Writing trace to Verilog testbench: engine_0/trace7_tb.v
+##   0:00:01  Writing trace to constraints file: engine_0/trace7.smtc
+##   0:00:01  Writing trace to Yosys witness file: engine_0/trace7.yw
+##   0:00:01  Checking cover reachability in step 19..
+##   0:00:01  Checking cover reachability in step 20..
+##   0:00:01  Checking cover reachability in step 21..
+##   0:00:01  Checking cover reachability in step 22..
 ##   0:00:01  Checking cover reachability in step 23..
 ##   0:00:01  Checking cover reachability in step 24..
 ##   0:00:01  Checking cover reachability in step 25..
 ##   0:00:01  Checking cover reachability in step 26..
 ##   0:00:01  Checking cover reachability in step 27..
-##   0:00:01  Checking cover reachability in step 28..
-##   0:00:01  Checking cover reachability in step 29..
-##   0:00:01  Checking cover reachability in step 30..
-##   0:00:01  Checking cover reachability in step 31..
+##   0:00:02  Checking cover reachability in step 28..
+##   0:00:02  Checking cover reachability in step 29..
+##   0:00:02  Checking cover reachability in step 30..
+##   0:00:02  Checking cover reachability in step 31..
 ##   0:00:02  Checking cover reachability in step 32..
 ##   0:00:02  Checking cover reachability in step 33..
 ##   0:00:02  Checking cover reachability in step 34..
 ##   0:00:02  Reached cover statement in step 34 at ihsan_sa_pll_formal: COVER_FB_ILLEGAL
-##   0:00:02  Writing trace to VCD file: engine_0/trace7.vcd
-##   0:00:02  Writing trace to Verilog testbench: engine_0/trace7_tb.v
-##   0:00:02  Writing trace to constraints file: engine_0/trace7.smtc
-##   0:00:02  Writing trace to Yosys witness file: engine_0/trace7.yw
-##   0:00:02  Checking cover reachability in step 34..
-##   0:00:02  Reached cover statement in step 34 at ihsan_sa_pll_formal: COVER_FB_N5
 ##   0:00:02  Writing trace to VCD file: engine_0/trace8.vcd
 ##   0:00:02  Writing trace to Verilog testbench: engine_0/trace8_tb.v
 ##   0:00:02  Writing trace to constraints file: engine_0/trace8.smtc
-##   0:00:03  Writing trace to Yosys witness file: engine_0/trace8.yw
+##   0:00:02  Writing trace to Yosys witness file: engine_0/trace8.yw
+##   0:00:02  Checking cover reachability in step 34..
+##   0:00:02  Reached cover statement in step 34 at ihsan_sa_pll_formal: COVER_FB_N5
+##   0:00:02  Writing trace to VCD file: engine_0/trace9.vcd
+##   0:00:03  Writing trace to Verilog testbench: engine_0/trace9_tb.v
+##   0:00:03  Writing trace to constraints file: engine_0/trace9.smtc
+##   0:00:03  Writing trace to Yosys witness file: engine_0/trace9.yw
 ##   0:00:03  Checking cover reachability in step 34..
 ##   0:00:03  Checking cover reachability in step 35..
 ##   0:00:03  Checking cover reachability in step 36..
 ##   0:00:03  Checking cover reachability in step 37..
 ##   0:00:03  Checking cover reachability in step 38..
-##   0:00:04  Checking cover reachability in step 39..
-##   0:00:04  Checking cover reachability in step 40..
-##   0:00:04  Checking cover reachability in step 41..
-##   0:00:04  Checking cover reachability in step 42..
-##   0:00:05  Checking cover reachability in step 43..
-##   0:00:05  Checking cover reachability in step 44..
-##   0:00:06  Checking cover reachability in step 45..
-##   0:00:06  Checking cover reachability in step 46..
-##   0:00:06  Checking cover reachability in step 47..
-##   0:00:07  Checking cover reachability in step 48..
-##   0:00:07  Checking cover reachability in step 49..
-##   0:00:08  Checking cover reachability in step 50..
-##   0:00:09  Checking cover reachability in step 51..
-##   0:00:09  Checking cover reachability in step 52..
-##   0:00:10  Checking cover reachability in step 53..
-##   0:00:10  Checking cover reachability in step 54..
-##   0:00:11  Checking cover reachability in step 55..
-##   0:00:11  Checking cover reachability in step 56..
-##   0:00:12  Checking cover reachability in step 57..
-##   0:00:13  Checking cover reachability in step 58..
-##   0:00:14  Checking cover reachability in step 59..
-##   0:00:15  Checking cover reachability in step 60..
-##   0:00:16  Checking cover reachability in step 61..
-##   0:00:17  Checking cover reachability in step 62..
-##   0:00:17  Checking cover reachability in step 63..
-##   0:00:18  Checking cover reachability in step 64..
-##   0:00:19  Checking cover reachability in step 65..
-##   0:00:20  Checking cover reachability in step 66..
-##   0:00:22  Checking cover reachability in step 67..
-##   0:00:23  Checking cover reachability in step 68..
-##   0:00:24  Checking cover reachability in step 69..
-##   0:00:25  Checking cover reachability in step 70..
-##   0:00:26  Checking cover reachability in step 71..
-##   0:00:28  Checking cover reachability in step 72..
-##   0:00:29  Checking cover reachability in step 73..
-##   0:00:31  Checking cover reachability in step 74..
-##   0:00:32  Checking cover reachability in step 75..
-##   0:00:34  Checking cover reachability in step 76..
-##   0:00:35  Checking cover reachability in step 77..
-##   0:00:37  Checking cover reachability in step 78..
-##   0:00:40  Checking cover reachability in step 79..
-##   0:00:42  Checking cover reachability in step 80..
-##   0:00:44  Checking cover reachability in step 81..
-##   0:00:46  Checking cover reachability in step 82..
-##   0:00:48  Checking cover reachability in step 83..
-##   0:00:51  Checking cover reachability in step 84..
-##   0:00:53  Checking cover reachability in step 85..
-##   0:00:55  Checking cover reachability in step 86..
-##   0:00:58  Checking cover reachability in step 87..
-##   0:01:01  Checking cover reachability in step 88..
-##   0:01:04  Checking cover reachability in step 89..
-##   0:01:07  Checking cover reachability in step 90..
-##   0:01:09  Checking cover reachability in step 91..
-##   0:01:12  Checking cover reachability in step 92..
-##   0:01:15  Checking cover reachability in step 93..
-##   0:01:19  Checking cover reachability in step 94..
-##   0:01:23  Checking cover reachability in step 95..
-##   0:01:27  Checking cover reachability in step 96..
-##   0:01:30  Checking cover reachability in step 97..
-##   0:01:33  Checking cover reachability in step 98..
-##   0:01:36  Checking cover reachability in step 99..
-##   0:01:40  Unreached cover statement at ihsan_sa_pll_formal: COVER_LOCK
-##   0:01:40  Unreached cover statement at ihsan_sa_pll_formal: COVER_LOCK_DROP
-##   0:01:40  Unreached cover statement at ihsan_sa_pll_formal: COVER_PRE_PERIOD
-##   0:01:40  Status: failed
+##   0:00:03  Checking cover reachability in step 39..
+##   0:00:03  Checking cover reachability in step 40..
+##   0:00:03  Checking cover reachability in step 41..
+##   0:00:03  Checking cover reachability in step 42..
+##   0:00:04  Checking cover reachability in step 43..
+##   0:00:04  Checking cover reachability in step 44..
+##   0:00:04  Checking cover reachability in step 45..
+##   0:00:04  Checking cover reachability in step 46..
+##   0:00:04  Checking cover reachability in step 47..
+##   0:00:04  Checking cover reachability in step 48..
+##   0:00:04  Checking cover reachability in step 49..
+##   0:00:04  Checking cover reachability in step 50..
+##   0:00:05  Checking cover reachability in step 51..
+##   0:00:05  Checking cover reachability in step 52..
+##   0:00:05  Checking cover reachability in step 53..
+##   0:00:05  Checking cover reachability in step 54..
+##   0:00:05  Checking cover reachability in step 55..
+##   0:00:06  Checking cover reachability in step 56..
+##   0:00:07  Checking cover reachability in step 57..
+##   0:00:07  Checking cover reachability in step 58..
+##   0:00:07  Checking cover reachability in step 59..
+##   0:00:08  Checking cover reachability in step 60..
+##   0:00:08  Checking cover reachability in step 61..
+##   0:00:08  Checking cover reachability in step 62..
+##   0:00:09  Checking cover reachability in step 63..
+##   0:00:09  Checking cover reachability in step 64..
+##   0:00:09  Checking cover reachability in step 65..
+##   0:00:10  Checking cover reachability in step 66..
+##   0:00:11  Checking cover reachability in step 67..
+##   0:00:11  Checking cover reachability in step 68..
+##   0:00:12  Checking cover reachability in step 69..
+##   0:00:12  Checking cover reachability in step 70..
+##   0:00:13  Checking cover reachability in step 71..
+##   0:00:14  Checking cover reachability in step 72..
+##   0:00:14  Checking cover reachability in step 73..
+##   0:00:15  Checking cover reachability in step 74..
+##   0:00:15  Checking cover reachability in step 75..
+##   0:00:17  Checking cover reachability in step 76..
+##   0:00:17  Checking cover reachability in step 77..
+##   0:00:18  Checking cover reachability in step 78..
+##   0:00:19  Checking cover reachability in step 79..
+##   0:00:20  Checking cover reachability in step 80..
+##   0:00:20  Checking cover reachability in step 81..
+##   0:00:22  Checking cover reachability in step 82..
+##   0:00:23  Checking cover reachability in step 83..
+##   0:00:24  Checking cover reachability in step 84..
+##   0:00:26  Checking cover reachability in step 85..
+##   0:00:27  Checking cover reachability in step 86..
+##   0:00:28  Checking cover reachability in step 87..
+##   0:00:30  Checking cover reachability in step 88..
+##   0:00:31  Checking cover reachability in step 89..
+##   0:00:32  Checking cover reachability in step 90..
+##   0:00:34  Checking cover reachability in step 91..
+##   0:00:35  Checking cover reachability in step 92..
+##   0:00:37  Checking cover reachability in step 93..
+##   0:00:38  Checking cover reachability in step 94..
+##   0:00:40  Checking cover reachability in step 95..
+##   0:00:42  Checking cover reachability in step 96..
+##   0:00:44  Checking cover reachability in step 97..
+##   0:00:45  Checking cover reachability in step 98..
+##   0:00:47  Checking cover reachability in step 99..
+##   0:00:49  Checking cover reachability in step 100..
+##   0:00:51  Checking cover reachability in step 101..
+##   0:00:52  Checking cover reachability in step 102..
+##   0:00:56  Checking cover reachability in step 103..
+##   0:00:58  Checking cover reachability in step 104..
+##   0:01:00  Checking cover reachability in step 105..
+##   0:01:02  Checking cover reachability in step 106..
+##   0:01:04  Checking cover reachability in step 107..
+##   0:01:07  Checking cover reachability in step 108..
+##   0:01:10  Checking cover reachability in step 109..
+##   0:01:13  Checking cover reachability in step 110..
+##   0:01:16  Checking cover reachability in step 111..
+##   0:01:21  Checking cover reachability in step 112..
+##   0:01:24  Checking cover reachability in step 113..
+##   0:01:29  Checking cover reachability in step 114..
+##   0:01:31  Checking cover reachability in step 115..
+##   0:01:35  Checking cover reachability in step 116..
+##   0:01:39  Checking cover reachability in step 117..
+##   0:01:42  Checking cover reachability in step 118..
+##   0:01:45  Checking cover reachability in step 119..
+##   0:01:49  Checking cover reachability in step 120..
+##   0:01:52  Checking cover reachability in step 121..
+##   0:01:56  Checking cover reachability in step 122..
+##   0:01:59  Checking cover reachability in step 123..
+##   0:02:02  Checking cover reachability in step 124..
+##   0:02:06  Checking cover reachability in step 125..
+##   0:02:10  Checking cover reachability in step 126..
+##   0:02:19  Checking cover reachability in step 127..
+##   0:02:24  Checking cover reachability in step 128..
+##   0:02:29  Checking cover reachability in step 129..
+##   0:02:35  Checking cover reachability in step 130..
+##   0:02:40  Checking cover reachability in step 131..
+##   0:02:47  Checking cover reachability in step 132..
+##   0:02:52  Checking cover reachability in step 133..
+##   0:02:58  Checking cover reachability in step 134..

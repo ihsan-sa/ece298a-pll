@@ -1,0 +1,193 @@
+{
+ "id": 4,
+ "created": "2026-10-03T20:46:41",
+ "gate": "formal",
+ "phase": "P4",
+ "workspace": "blocks/pll/digital",
+ "fixer": "formal",
+ "role_prompt": "skills/vde/agents/property-writer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit formal/*.sv, or spec/spec.yaml's own 'formal: {depth}' key ONLY (M5: 'widen the induction depth' has to mean editing this field - depth is not a property-file concept - so this domain's scope explicitly includes it; nothing else in spec.yaml). A bounded-not-proven or cover_not_reached result names the depth reached - widen it, or fix the property itself, never loosen either to make the gate pass."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/vde/reference/remediations/engine_disagreement.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "engine_disagreement"
+  ],
+  "checks": [
+   "sby-abc-pdr"
+  ],
+  "severity": "error",
+  "count": 5,
+  "violations": [
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "engine_disagreement",
+    "refs": [
+     "REQ-DIV-N"
+    ],
+    "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+    "source": "sby-abc-pdr",
+    "items": [
+     {
+      "msg": "requirement REQ-DIV-N (property divider_ratio): abc pdr found a counterexample smtbmc's k-induction did not",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "engine_disagreement",
+    "refs": [
+     "REQ-LOCK-NO-WIDE"
+    ],
+    "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+    "source": "sby-abc-pdr",
+    "items": [
+     {
+      "msg": "requirement REQ-LOCK-NO-WIDE (property lock_not_while_wide): abc pdr found a counterexample smtbmc's k-induction did not",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "engine_disagreement",
+    "refs": [
+     "REQ-PFD-NO-OVERLAP"
+    ],
+    "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+    "source": "sby-abc-pdr",
+    "items": [
+     {
+      "msg": "requirement REQ-PFD-NO-OVERLAP (property pfd_never_both_high): abc pdr found a counterexample smtbmc's k-induction did not",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "engine_disagreement",
+    "refs": [
+     "REQ-PFD-RESET"
+    ],
+    "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+    "source": "sby-abc-pdr",
+    "items": [
+     {
+      "msg": "requirement REQ-PFD-RESET (property pfd_reset_on_both): abc pdr found a counterexample smtbmc's k-induction did not",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "formal",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "engine_disagreement",
+    "refs": [
+     "REQ-RST-ASYNC"
+    ],
+    "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): abc pdr found a counterexample smtbmc's k-induction did not",
+    "source": "sby-abc-pdr",
+    "items": [
+     {
+      "msg": "requirement REQ-RST-ASYNC (property reset_forces_outputs): abc pdr found a counterexample smtbmc's k-induction did not",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [
+  {
+   "file": null,
+   "module": null,
+   "kinds": [
+    "async_reset_cut_applied"
+   ],
+   "checks": [
+    "check_formal"
+   ],
+   "severity": "info",
+   "count": 2,
+   "violations": [
+    {
+     "check": "formal",
+     "severity": "info",
+     "file": null,
+     "module": null,
+     "line": null,
+     "kind": "async_reset_cut_applied",
+     "refs": [],
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+     "source": "check_formal",
+     "items": [
+      {
+       "msg": "formal model cuts the async reset of dut.u_pfd.pfd_ref_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+       "file": null,
+       "line": null
+      }
+     ],
+     "signal": "dut.u_pfd.pfd_ref_q"
+    },
+    {
+     "check": "formal",
+     "severity": "info",
+     "file": null,
+     "module": null,
+     "line": null,
+     "kind": "async_reset_cut_applied",
+     "refs": [],
+     "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+     "source": "check_formal",
+     "items": [
+      {
+       "msg": "formal model cuts the async reset of dut.u_pfd.pfd_fb_q ($adff): its ARST cone reads the cut flops' pre-reset values, not their Q (spec.yaml formal.async_reset_cuts, why: Approved by perms for Ihsan on his redirect (#iiks1 ts 1791072039.428359), not his own ruling. Classic tri-state PFD: AND(up,dn) through two delay cells clears pfd_ref_q and pfd_fb_q asynchronously, a loop sby cannot model. Cut in the formal model only, RTL unchanged. The reset pulse and its width stay checked by the cocotb PFD tests and the cosim reset-width measurement (sim_pvt passed 2026-10-02).) - every verdict here is the settled zero-delay clear; the glitch and the reset pulse width stay with sim",
+       "file": null,
+       "line": null
+      }
+     ],
+     "signal": "dut.u_pfd.pfd_fb_q"
+    }
+   ]
+  }
+ ],
+ "artifacts": {
+  "workspace": "blocks/pll/digital",
+  "spec": "blocks/pll/digital/spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

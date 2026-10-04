@@ -9,6 +9,110 @@
         "name": "ihsan_sa_pll_formal",
         "cell_sorts": [
           {
+            "type": "$initstate",
+            "ports": [
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_initstate_cell",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_initstate_cell",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eqx",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_edge_eqx",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_same_eqx",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_edge_eqx",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_same_eqx",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
             "type": "$scopeinfo",
             "ports": [
 
@@ -100,48 +204,6 @@
             ]
           },
           {
-            "type": "$dff",
-            "ports": [
-                {
-                  "name": "CLK",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "D",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Q",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "dut.u_pfd.pfd_fb_q$async_cut_reg",
-                  "attributes": {
-
-                  },
-                  "parameters": {
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "dut.u_pfd.pfd_ref_q$async_cut_reg",
-                  "attributes": {
-
-                  },
-                  "parameters": {
-                    "CLK_POLARITY": "1",
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
             "type": "$check",
             "ports": [
                 {
@@ -170,7 +232,7 @@
                   "name": "COVER_FB_ILLEGAL",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.7-144.77"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.7-169.77"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -186,7 +248,7 @@
                   "name": "COVER_FB_N5",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.7-143.77"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.7-168.77"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -202,7 +264,7 @@
                   "name": "COVER_LOCK",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.37"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -218,7 +280,7 @@
                   "name": "COVER_LOCK_DROP",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.7-146.69"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -234,7 +296,7 @@
                   "name": "COVER_PFD_DN",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.7-140.39"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:164.7-164.39"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -250,7 +312,7 @@
                   "name": "COVER_PFD_RESET",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.7-141.79"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.7-165.79"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -266,7 +328,7 @@
                   "name": "COVER_PFD_UP",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-139.39"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -282,7 +344,7 @@
                   "name": "COVER_PRE_PERIOD",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.7-142.82"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.7-167.75"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -315,7 +377,7 @@
                   "name": "divider_ratio",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.9-118.78"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -331,7 +393,7 @@
                   "name": "lock_not_while_wide",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-133.80"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -347,7 +409,7 @@
                   "name": "pfd_never_both_high",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.7-121.56"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -363,7 +425,7 @@
                   "name": "pfd_reset_on_both",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.9-127.55"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.9-151.55"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -379,7 +441,7 @@
                   "name": "prescaler_div8",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.9-111.77"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.9-135.78"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -395,7 +457,7 @@
                   "name": "reset_forces_outputs",
                   "attributes": {
                     "keep": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.9-104.62"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62"
                   },
                   "parameters": {
                     "ARGS_WIDTH": "00000000000000000000000000000000",
@@ -425,14 +487,27 @@
                 {
                   "name": "Y",
                   "direction": "",
-                  "range": [5, 0]
+                  "range": [4, 0]
                 }
             ],
             "cells": [
                 {
-                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116$86",
+                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$52",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.33-116.67"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.53-106.67"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$97",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.33-140.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -443,9 +518,9 @@
                   }
                 },
                 {
-                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118$91",
+                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$102",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.33-118.59"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.33-142.59"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -456,9 +531,22 @@
                   }
                 },
                 {
-                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$39",
+                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167$133",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.53-80.67"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.32-167.66"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000101"
+                  }
+                },
+                {
+                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$47",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.53-99.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -469,20 +557,7 @@
                   }
                 },
                 {
-                  "name": "$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$43",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.53-86.67"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000100",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
-                  "name": "$flatten\\dut.\\u_div.$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:25$176",
+                  "name": "$flatten\\dut.\\u_div.$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:25$192",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:25.31-25.45"
                   },
@@ -495,7 +570,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$154",
+                  "name": "$flatten\\dut.\\u_lock.$add$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$170",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.49-22.64"
                   },
@@ -530,9 +605,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$84",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$95",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.57-115.72"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.57-139.72"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -543,9 +618,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118$92",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$103",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.33-118.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.33-142.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -556,22 +631,22 @@
                   }
                 },
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$122",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167$134",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.66-142.81"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:167.32-167.74"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000100",
+                    "A_WIDTH": "00000000000000000000000000000101",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000100",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$126",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168$138",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.63-143.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.63-168.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -582,7 +657,20 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$153",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61$18",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.32-61.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_lock.$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$169",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.25-22.38"
                   },
@@ -595,7 +683,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$162",
+                  "name": "$flatten\\dut.\\u_lock.$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$178",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32"
                   },
@@ -630,7 +718,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_lock.$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26$159",
+                  "name": "$flatten\\dut.\\u_lock.$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26$175",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:26.27-26.42"
                   },
@@ -643,7 +731,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$165",
+                  "name": "$flatten\\dut.\\u_pfd.$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$181",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.34"
                   },
@@ -656,9 +744,22 @@
                   }
                 },
                 {
-                  "name": "$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:89$46",
+                  "name": "$flatten\\dut.\\u_pfd.$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$181$async_cut",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:89.31-89.46"
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:73$21",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:73.33-73.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -686,9 +787,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$106",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$117",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.47-133.60"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.47-157.64"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -697,9 +798,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$108",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$119",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.64-133.79"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.68-157.83"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -708,9 +809,9 @@
                   }
                 },
                 {
-                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$130",
+                  "name": "$eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$142",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.63-144.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.63-169.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -719,9 +820,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$59",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$68",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.39-103.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.39-124.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -730,9 +831,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$61",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$70",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.50-103.58"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.50-124.58"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -741,9 +842,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103$63",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124$72",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:103.62-103.69"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:124.62-124.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -752,9 +853,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104$65",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$74",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.39-104.48"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.39-125.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -763,9 +864,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104$67",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$76",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.52-104.61"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.52-125.61"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -774,9 +875,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$74",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$84",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.34-111.43"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-134.43"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -785,9 +886,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$75",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$85",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.47-111.56"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.47-134.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -796,9 +897,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$82",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$93",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.45-115.53"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.45-139.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -807,9 +908,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117$88",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$100",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117.33-117.41"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.45-141.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -818,9 +919,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117$89",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$99",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117.45-117.53"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-141.41"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -829,9 +930,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121$96",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$107",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.36-121.55"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.36-145.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -840,9 +941,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$116",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$127",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.60-141.67"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.60-165.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -851,9 +952,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$118",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$129",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.71-141.78"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.71-165.78"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -862,9 +963,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$132",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$144",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.47-146.52"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.47-171.52"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -884,9 +985,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64$20",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$23",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64.44-64.50"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.44-76.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -895,9 +996,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$23",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$26",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65.48-65.55"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.48-79.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -906,9 +1007,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66$26",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$30",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66.43-66.48"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.71-79.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -917,9 +1018,9 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67$29",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$33",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67.40-67.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.43-80.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -928,9 +1029,20 @@
                   }
                 },
                 {
-                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68$31",
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$36",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68.33-68.37"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.40-81.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$38",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.33-82.37"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -961,9 +1073,9 @@
             ],
             "cells": [
                 {
-                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$37",
+                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$50",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.25-80.40"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.25-106.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -974,28 +1086,41 @@
                   }
                 },
                 {
-                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$41",
+                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107$53",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.25-86.40"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000100",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000100",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87$44",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87.24-87.39"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.24-107.39"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000011",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108$55",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.13-108.25"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000011",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$ne$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$45",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.25-99.40"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000100",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000100",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }
@@ -1027,7 +1152,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46$150",
+                  "name": "$flatten\\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46$166",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46.20-46.46"
                   },
@@ -1036,7 +1161,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$procmux$193",
+                  "name": "$flatten\\dut.\\u_div.$procmux$209",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:24.14-24.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:24.10-25.46"
@@ -1046,7 +1171,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18$172",
+                  "name": "$flatten\\dut.\\u_div.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18$188",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18.24-18.55"
                   },
@@ -1055,7 +1180,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:21$156",
+                  "name": "$flatten\\dut.\\u_lock.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:21$172",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:21.24-22.64"
                   },
@@ -1064,7 +1189,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$155",
+                  "name": "$flatten\\dut.\\u_lock.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$171",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64"
                   },
@@ -1073,81 +1198,9 @@
                   }
                 },
                 {
-                  "name": "$procmux$209",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.9-138.28|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.5-147.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$211",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.16|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.7-133.81"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$213",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$215",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.11-126.70|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.7-127.56"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$217",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$219",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$221",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.72|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.7-118.79"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$223",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
                   "name": "$procmux$225",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109.11-109.54|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109.7-111.78"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.28|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.5-172.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1156,7 +1209,7 @@
                 {
                   "name": "$procmux$227",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.11-156.16|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:156.7-157.85"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1165,7 +1218,7 @@
                 {
                   "name": "$procmux$229",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:101.11-101.17|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:101.7-104.63"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1174,7 +1227,7 @@
                 {
                   "name": "$procmux$231",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.9-98.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:98.5-134.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-150.70|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.7-151.56"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1183,35 +1236,43 @@
                 {
                   "name": "$procmux$233",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.11-90.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.7-93.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000010000"
-                  }
-                },
-                {
-                  "name": "$procmux$236",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000010000"
-                  }
-                },
-                {
-                  "name": "$procmux$238",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:89.11-89.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:89.7-89.47"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$240",
+                  "name": "$procmux$235",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.11-90.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.7-93.10"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$237",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.72|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.7-142.79"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$239",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$241",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.54|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.7-135.79"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1220,155 +1281,160 @@
                 {
                   "name": "$procmux$243",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$246",
+                  "name": "$procmux$245",
                   "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.11-83.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.7-88.10"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.11-122.17|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:122.7-125.63"
                   },
                   "parameters": {
-                    "WIDTH": "00000000000000000000000000000011"
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$247",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.9-119.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:119.5-158.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
                   "name": "$procmux$249",
                   "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.11-111.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.7-114.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$procmux$252",
+                  "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000010000"
+                  }
+                },
+                {
+                  "name": "$procmux$254",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.11-110.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.7-110.38"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$256",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.11-111.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.7-114.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$259",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$261",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.13-108.25|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:108.9-108.42"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$264",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$267",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$270",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
                   }
                 },
                 {
-                  "name": "$procmux$251",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87.13-87.39|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87.9-87.55"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$254",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.11-83.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.7-88.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$257",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$260",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.11-83.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.7-88.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$263",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$265",
-                  "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.13-86.40|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.9-86.68"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
-                  "name": "$procmux$268",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.11-83.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:83.7-88.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
-                  "name": "$procmux$271",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
                   "name": "$procmux$273",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.13-81.20|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.9-81.37"
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$procmux$275",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.13-107.39|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.9-107.55"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$276",
+                  "name": "$procmux$278",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.11-77.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.7-82.10"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$279",
+                  "name": "$procmux$281",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$282",
+                  "name": "$procmux$284",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.11-77.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.7-82.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$procmux$285",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -1377,27 +1443,27 @@
                 {
                   "name": "$procmux$287",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.13-80.40|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.9-80.68"
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$289",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.13-106.40|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.9-106.68"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procmux$290",
+                  "name": "$procmux$292",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.11-77.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:77.7-82.10"
-                  },
-                  "parameters": {
-                    "WIDTH": "00000000000000000000000000000100"
-                  }
-                },
-                {
-                  "name": "$procmux$293",
-                  "attributes": {
-                    "full_case": "00000000000000000000000000000001",
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.9-72.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:72.5-94.8"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.11-102.18|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.7-109.10"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
@@ -1405,6 +1471,94 @@
                 },
                 {
                   "name": "$procmux$295",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$297",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.13-100.20|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:100.9-100.37"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$300",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$303",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$306",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$309",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$311",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.13-99.40|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.9-99.68"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$314",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.11-96.19|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:96.7-101.10"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$317",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.9-90.15|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:90.5-115.8"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000100"
+                  }
+                },
+                {
+                  "name": "$procmux$319",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.31-37.42|/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:37.27-37.60"
                   },
@@ -1419,6 +1573,60 @@
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_expect_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_hold_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_pre_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_expect_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_hold_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_pre_mux",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
                   }
                 }
             ]
@@ -1449,7 +1657,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$352",
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$376",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
                   },
@@ -1461,7 +1669,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$357",
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$381",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
                   },
@@ -1473,7 +1681,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_ctrl.$procdff$362",
+                  "name": "$flatten\\dut.\\u_ctrl.$procdff$386",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v:12.3-21.8"
                   },
@@ -1485,7 +1693,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$procdff$321",
+                  "name": "$flatten\\dut.\\u_div.$procdff$345",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:27.3-29.31"
                   },
@@ -1497,7 +1705,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$procdff$326",
+                  "name": "$flatten\\dut.\\u_div.$procdff$350",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:22.3-25.46"
                   },
@@ -1509,7 +1717,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$337",
+                  "name": "$flatten\\dut.\\u_lock.$procdff$361",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:28.3-35.8"
                   },
@@ -1521,7 +1729,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$342",
+                  "name": "$flatten\\dut.\\u_lock.$procdff$366",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:28.3-35.8"
                   },
@@ -1533,7 +1741,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_lock.$procdff$347",
+                  "name": "$flatten\\dut.\\u_lock.$procdff$371",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:24.3-26.43"
                   },
@@ -1545,9 +1753,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$procdff$329",
+                  "name": "$flatten\\dut.\\u_pfd.$procdff$353",
                   "attributes": {
-
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:33.3-35.35"
                   },
                   "parameters": {
                     "ARST_POLARITY": "1",
@@ -1557,9 +1765,9 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$procdff$332",
+                  "name": "$flatten\\dut.\\u_pfd.$procdff$356",
                   "attributes": {
-
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:29.3-31.36"
                   },
                   "parameters": {
                     "ARST_POLARITY": "1",
@@ -1569,7 +1777,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$301",
+                  "name": "$flatten\\dut.\\u_pre.$procdff$325",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:25.3-27.27"
                   },
@@ -1581,7 +1789,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$306",
+                  "name": "$flatten\\dut.\\u_pre.$procdff$330",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:21.3-23.35"
                   },
@@ -1593,7 +1801,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$311",
+                  "name": "$flatten\\dut.\\u_pre.$procdff$335",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:17.3-19.35"
                   },
@@ -1605,7 +1813,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$procdff$316",
+                  "name": "$flatten\\dut.\\u_pre.$procdff$340",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:13.3-15.35"
                   },
@@ -1614,6 +1822,41 @@
                     "ARST_VALUE": "0",
                     "CLK_POLARITY": "1",
                     "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$assert",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+
                   }
                 }
             ]
@@ -1639,7 +1882,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:31$179",
+                  "name": "$flatten\\dut.\\u_div.$and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:31$195",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:31.19-31.34"
                   },
@@ -1652,9 +1895,22 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$163",
+                  "name": "$flatten\\dut.\\u_pfd.$and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$179",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16.19-16.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.\\u_pfd.$and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:16$179$async_cut",
+                  "attributes": {
+
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1687,7 +1943,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$ge$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$168",
+                  "name": "$flatten\\dut.\\u_div.$ge$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$184",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17.25-17.38"
                   },
@@ -1700,7 +1956,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_div.$ge$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:20$173",
+                  "name": "$flatten\\dut.\\u_div.$ge$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:20$189",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:20.25-20.40"
                   },
@@ -1748,7 +2004,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$169",
+                  "name": "$flatten\\dut.\\u_div.$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$185",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17.44-17.57"
                   },
@@ -1761,22 +2017,22 @@
                   }
                 },
                 {
-                  "name": "$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$73",
+                  "name": "$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$83",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.34-110.49"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.34-133.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000100",
+                    "A_WIDTH": "00000000000000000000000000000101",
                     "B_SIGNED": "00000000000000000000000000000000",
                     "B_WIDTH": "00000000000000000000000000000100",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116$87",
+                  "name": "$le$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$98",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.33-116.84"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.33-140.84"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1822,7 +2078,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$170",
+                  "name": "$flatten\\dut.\\u_div.$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17$186",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:17.24-17.58"
                   },
@@ -1835,9 +2091,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$58",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104$49",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-102.66"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:104.18-104.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1848,9 +2104,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$60",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106$51",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-103.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:106.13-106.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1861,9 +2117,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$62",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$67",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-103.58"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-123.66"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1874,9 +2130,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$64",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$69",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-103.69"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1887,9 +2143,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$66",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$71",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-104.48"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.58"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1900,9 +2156,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102$68",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$73",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:102.39-104.61"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-124.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1913,9 +2169,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109$69",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$75",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109.11-109.32"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-125.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1926,9 +2182,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109$70",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123$77",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109.11-109.42"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.39-125.61"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1939,9 +2195,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109$72",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$78",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:109.11-109.54"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1952,9 +2208,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110$79",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$79",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:110.33-111.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.42"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1965,9 +2221,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$80",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132$81",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.32"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:132.11-132.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1978,9 +2234,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$81",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$90",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.41"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.33-135.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -1991,9 +2247,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$83",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$91",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.53"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2004,9 +2260,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115$85",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$92",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:115.11-115.72"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.41"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2017,9 +2273,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116$94",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$94",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:116.32-118.77"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2030,9 +2286,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121$95",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139$96",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:121.38-121.54"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:139.11-139.72"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2043,9 +2299,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$101",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140$105",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.11-126.70"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.32-142.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2056,9 +2312,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125$97",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145$106",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:125.11-125.32"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.38-145.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2069,9 +2325,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126$98",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$108",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126.13-126.37"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-149.32"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2082,9 +2338,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126$99",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149$112",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126.43-126.68"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:149.11-150.70"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2095,9 +2351,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127$104",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$109",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:127.36-127.54"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.13-150.37"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2108,9 +2364,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138$114",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$110",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:138.9-138.28"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.43-150.68"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2121,9 +2377,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$115",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151$115",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.32-141.56"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:151.36-151.54"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2134,9 +2390,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$117",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162$125",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.32-141.67"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:162.9-162.28"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2147,9 +2403,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$119",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$126",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.32-141.78"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2160,9 +2416,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$120",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$128",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.32-142.52"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2173,9 +2429,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$121",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165$130",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.32-142.62"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:165.32-165.78"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2186,9 +2442,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142$123",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$131",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:142.32-142.81"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-166.52"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2199,9 +2455,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143$127",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$132",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:143.32-143.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-166.62"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2212,9 +2468,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$128",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166$135",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.32-144.50"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:166.32-167.74"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2225,9 +2481,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$129",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168$139",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.32-144.59"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:168.32-168.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2238,9 +2494,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144$131",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$140",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:144.32-144.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2251,9 +2507,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$133",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$141",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.32-146.52"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.59"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2264,9 +2520,35 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146$134",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169$143",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:146.32-146.68"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:169.32-169.76"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$145",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-171.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171$146",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.32-171.68"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2290,9 +2572,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64$19",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61$19",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64.19-64.40"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.21-61.45"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2303,9 +2585,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64$21",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$22",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:64.19-64.50"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.19-76.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2316,9 +2598,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$22",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76$24",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65.19-65.44"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:76.19-76.50"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2329,9 +2611,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65$24",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$25",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:65.19-65.55"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.44"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2342,9 +2624,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66$25",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$27",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66.19-66.39"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.55"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2355,9 +2637,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66$27",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$29",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:66.19-66.48"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.67"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2368,9 +2650,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67$28",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79$31",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67.19-67.36"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:79.19-79.77"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2381,9 +2663,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67$30",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$32",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:67.19-67.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.39"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2394,9 +2676,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68$32",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$34",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68.19-68.37"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.19-80.48"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2407,9 +2689,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68$33",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$35",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:68.19-68.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.19-81.36"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2420,9 +2702,9 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80$38",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81$37",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:80.13-80.40"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:81.19-81.46"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2433,9 +2715,35 @@
                   }
                 },
                 {
-                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86$42",
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$39",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:86.13-86.40"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.19-82.37"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82$40",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:82.19-82.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99$46",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:99.13-99.40"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2463,207 +2771,315 @@
             ],
             "cells": [
                 {
-                  "name": "$procdff$363",
+                  "name": "$procdff$387",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.3-148.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$364",
+                  "name": "$procdff$388",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.3-148.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$365",
+                  "name": "$procdff$389",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:137.3-148.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:161.3-173.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$366",
+                  "name": "$procdff$390",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:97.3-135.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$367",
+                  "name": "$procdff$391",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:97.3-135.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$368",
+                  "name": "$procdff$392",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:97.3-135.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$369",
+                  "name": "$procdff$393",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:97.3-135.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$370",
+                  "name": "$procdff$394",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:97.3-135.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:118.3-159.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$371",
+                  "name": "$procdff$395",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procdff$372",
+                  "name": "$procdff$396",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$373",
+                  "name": "$procdff$397",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$374",
+                  "name": "$procdff$398",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000100"
                   }
                 },
                 {
-                  "name": "$procdff$375",
+                  "name": "$procdff$399",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$376",
+                  "name": "$procdff$400",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$377",
+                  "name": "$procdff$401",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000011"
                   }
                 },
                 {
-                  "name": "$procdff$378",
+                  "name": "$procdff$402",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$379",
+                  "name": "$procdff$403",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$404",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000010000"
                   }
                 },
                 {
-                  "name": "$procdff$380",
+                  "name": "$procdff$405",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:70.3-95.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:88.3-116.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000010000"
                   }
                 },
                 {
-                  "name": "$procdff$381",
+                  "name": "$procdff$406",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.3-63.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000011"
+                  }
+                },
+                {
+                  "name": "$procdff$407",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$382",
+                  "name": "$procdff$408",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.3-63.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$383",
+                  "name": "$procdff$409",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.3-63.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$384",
+                  "name": "$procdff$410",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:61.3-63.6"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procdff$385",
+                  "name": "$procdff$411",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$412",
+                  "attributes": {
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:71.3-75.6"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$413",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:34.3-34.46"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_arst_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_clk_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_d_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_q_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_arst_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_clk_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_d_past_ff",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_q_past_ff",
+                  "attributes": {
+
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -2692,7 +3108,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_div.$sub$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18$171",
+                  "name": "$flatten\\dut.\\u_div.$sub$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18$187",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_divider.v:18.35-18.47"
                   },
@@ -2722,7 +3138,7 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.\\u_pfd.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$164",
+                  "name": "$flatten\\dut.\\u_pfd.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19$180",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_pfd.v:19.18-19.24"
                   },
@@ -2733,7 +3149,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:15$182",
+                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:15$198",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:15.27-15.34"
                   },
@@ -2744,7 +3160,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:19$185",
+                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:19$201",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:19.27-19.34"
                   },
@@ -2755,7 +3171,7 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:23$188",
+                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:23$204",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:23.27-23.34"
                   },
@@ -2766,9 +3182,31 @@
                   }
                 },
                 {
-                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:27$191",
+                  "name": "$flatten\\dut.\\u_pre.$not$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:27$207",
                   "attributes": {
                     "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:27.23-27.26"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_fb_q$async_initstate_not",
+                  "attributes": {
+
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "dut.u_pfd.pfd_ref_q$async_initstate_not",
+                  "attributes": {
+
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2799,9 +3237,9 @@
             ],
             "cells": [
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$76",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107$54",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.34-111.56"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:107.13-107.39"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2812,9 +3250,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111$78",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$86",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:111.34-111.75"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-134.56"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2825,9 +3263,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117$90",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134$89",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117.33-117.53"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:134.34-135.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2838,9 +3276,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117$93",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$101",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:117.33-118.76"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-141.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2851,9 +3289,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126$100",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141$104",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:126.12-126.69"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:141.33-142.76"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2864,9 +3302,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$107",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150$111",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.38-133.60"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:150.12-150.69"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2877,9 +3315,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133$109",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$118",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:133.38-133.79"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.38-157.64"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2890,9 +3328,9 @@
                   }
                 },
                 {
-                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87$45",
+                  "name": "$logic_or$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157$120",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:87.13-87.39"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.38-157.83"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -2909,7 +3347,7 @@
             "keep": "00000000000000000000000000000001",
             "hdlname": "ihsan_sa_pll_formal",
             "top": "00000000000000000000000000000001",
-            "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:8.1-150.10"
+            "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:8.1-175.10"
         }
       }
   ]

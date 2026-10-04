@@ -48,605 +48,560 @@ module ihsan_sa_pll(clk, rst_n, n_sel, vco_out, pll_en_in, obs_sel, cp_trim_in, 
   (* src = "rtl/ihsan_sa_pll.v:21.23-21.31" *)
   output cp_trim1;
   wire cp_trim1;
-  (* src = "rtl/ihsan_sa_pll.v:23.8-23.15" *)
-  wire clk_pre;
-  (* src = "rtl/ihsan_sa_pll.v:24.8-24.14" *)
-  wire obs_q3;
-  gf180mcu_fd_sc_mcu7t5v0__mux2_1 _0_ (
-    .I0(clk_pre),
-    .I1(obs_q3),
-    .S(obs_sel),
-    .Z(obs_out)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "rtl/ihsan_sa_pll.v:40.17-43.48" *)
-  pll_ctrl_regs u_ctrl (
-    .clk(clk),
-    .cp_trim0(cp_trim0),
-    .cp_trim1(cp_trim1),
-    .cp_trim_in(cp_trim_in),
-    .pll_en(pll_en),
-    .pll_en_in(pll_en_in),
-    .rst_n(rst_n)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "rtl/ihsan_sa_pll.v:29.15-30.72" *)
-  pll_divider u_div (
-    .clk_fb(clk_fb),
-    .clk_pre(clk_pre),
-    .n_sel(n_sel),
-    .rst_n(rst_n)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "rtl/ihsan_sa_pll.v:36.16-38.19" *)
-  pll_lock_det u_lock (
-    .clk(clk),
-    .lock(lock),
-    .pfd_dn(pfd_dn),
-    .pfd_up(pfd_up),
-    .rst_n(rst_n)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "rtl/ihsan_sa_pll.v:32.11-34.40" *)
-  pll_pfd u_pfd (
-    .clk(clk),
-    .clk_fb(clk_fb),
-    .pfd_dn(pfd_dn),
-    .pfd_up(pfd_up),
-    .rst_n(rst_n)
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "rtl/ihsan_sa_pll.v:26.17-27.76" *)
-  pll_prescaler u_pre (
-    .clk_pre(clk_pre),
-    .obs_q3(obs_q3),
-    .rst_n(rst_n),
-    .vco_out(vco_out)
-  );
-endmodule
-
-(* src = "rtl/pll_ctrl_regs.v:3.1-22.10" *)
-module pll_ctrl_regs(clk, rst_n, pll_en_in, cp_trim_in, pll_en, cp_trim0, cp_trim1);
-  (* src = "rtl/pll_ctrl_regs.v:4.23-4.26" *)
-  input clk;
-  wire clk;
-  (* src = "rtl/pll_ctrl_regs.v:5.23-5.28" *)
-  input rst_n;
-  wire rst_n;
-  (* src = "rtl/pll_ctrl_regs.v:6.23-6.32" *)
-  input pll_en_in;
-  wire pll_en_in;
-  (* src = "rtl/pll_ctrl_regs.v:7.23-7.33" *)
-  input [1:0] cp_trim_in;
-  wire [1:0] cp_trim_in;
-  (* src = "rtl/pll_ctrl_regs.v:8.23-8.29" *)
-  output pll_en;
-  wire pll_en;
-  (* src = "rtl/pll_ctrl_regs.v:9.23-9.31" *)
-  output cp_trim0;
-  wire cp_trim0;
-  (* src = "rtl/pll_ctrl_regs.v:10.23-10.31" *)
-  output cp_trim1;
-  wire cp_trim1;
-  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _0_ (
-    .CLK(clk),
-    .D(pll_en_in),
-    .Q(pll_en),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _1_ (
-    .CLK(clk),
-    .D(cp_trim_in[0]),
-    .Q(cp_trim0),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _2_ (
-    .CLK(clk),
-    .D(cp_trim_in[1]),
-    .Q(cp_trim1),
-    .RN(rst_n)
-  );
-endmodule
-
-(* src = "rtl/pll_divider.v:7.1-32.10" *)
-module pll_divider(clk_pre, rst_n, n_sel, clk_fb);
-  (* src = "rtl/pll_divider.v:8.23-8.30" *)
-  input clk_pre;
-  wire clk_pre;
-  (* src = "rtl/pll_divider.v:9.23-9.28" *)
-  input rst_n;
-  wire rst_n;
-  (* src = "rtl/pll_divider.v:10.23-10.28" *)
-  input [2:0] n_sel;
-  wire [2:0] n_sel;
-  (* src = "rtl/pll_divider.v:11.23-11.29" *)
-  output clk_fb;
-  wire clk_fb;
   (* src = "rtl/pll_divider.v:22.3-25.46" *)
-  wire [2:0] _00_;
-  wire _01_;
-  wire _02_;
-  wire _03_;
-  wire _04_;
-  wire _05_;
-  wire _06_;
-  wire _07_;
-  wire _08_;
-  wire _09_;
-  wire _10_;
-  (* src = "rtl/pll_divider.v:13.13-13.20" *)
-  wire [2:0] div_cnt;
-  (* src = "rtl/pll_divider.v:14.13-14.18" *)
-  wire fb_en;
-  (* src = "rtl/pll_divider.v:20.14-20.18" *)
-  wire last;
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _11_ (
-    .I(div_cnt[0]),
-    .ZN(_01_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _12_ (
-    .I(div_cnt[2]),
-    .ZN(_02_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _13_ (
-    .I(div_cnt[1]),
-    .ZN(_03_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _14_ (
-    .I(n_sel[1]),
-    .ZN(_04_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _15_ (
-    .I(n_sel[2]),
-    .ZN(_05_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__aoi21_1 _16_ (
-    .A1(_03_),
-    .A2(_05_),
-    .B(_04_),
-    .ZN(_06_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__aoi211_1 _17_ (
-    .A1(_03_),
-    .A2(n_sel[2]),
-    .B(_01_),
-    .C(n_sel[0]),
-    .ZN(_07_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _18_ (
-    .A1(n_sel[1]),
-    .A2(n_sel[2]),
-    .B(_02_),
-    .ZN(_08_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__or3_1 _19_ (
-    .A1(_06_),
-    .A2(_07_),
-    .A3(_08_),
-    .Z(last)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nand2_1 _20_ (
-    .A1(div_cnt[0]),
-    .A2(div_cnt[1]),
-    .ZN(_09_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__xor2_1 _21_ (
-    .A1(_01_),
-    .A2(div_cnt[1]),
-    .Z(_10_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _22_ (
-    .A1(_06_),
-    .A2(_07_),
-    .A3(_08_),
-    .A4(_10_),
-    .ZN(_00_[1])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _23_ (
-    .A1(div_cnt[0]),
-    .A2(_06_),
-    .A3(_07_),
-    .A4(_08_),
-    .ZN(_00_[0])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _24_ (
-    .A1(_06_),
-    .A2(_07_),
-    .A3(_08_),
-    .A4(_09_),
-    .ZN(_00_[2])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__and2_1 _25_ (
-    .A1(clk_pre),
-    .A2(fb_en),
-    .Z(clk_fb)
-  );
-  (* src = "rtl/pll_divider.v:27.3-29.31" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _26_ (
-    .CLKN(clk_pre),
-    .D(last),
-    .Q(fb_en),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_divider.v:22.3-25.46" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _27_ (
-    .CLK(clk_pre),
-    .D(_00_[0]),
-    .Q(div_cnt[0]),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_divider.v:22.3-25.46" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _28_ (
-    .CLK(clk_pre),
-    .D(_00_[1]),
-    .Q(div_cnt[1]),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_divider.v:22.3-25.46" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _29_ (
-    .CLK(clk_pre),
-    .D(_00_[2]),
-    .Q(div_cnt[2]),
-    .RN(rst_n)
-  );
-endmodule
-
-(* src = "rtl/pll_lock_det.v:10.1-36.10" *)
-module pll_lock_det(clk, rst_n, pfd_up, pfd_dn, lock);
-  (* src = "rtl/pll_lock_det.v:11.17-11.20" *)
-  input clk;
-  wire clk;
-  (* src = "rtl/pll_lock_det.v:12.17-12.22" *)
-  input rst_n;
-  wire rst_n;
-  (* src = "rtl/pll_lock_det.v:13.17-13.23" *)
-  input pfd_up;
-  wire pfd_up;
-  (* src = "rtl/pll_lock_det.v:14.17-14.23" *)
-  input pfd_dn;
-  wire pfd_dn;
-  (* src = "rtl/pll_lock_det.v:15.17-15.21" *)
-  output lock;
-  wire lock;
-  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
   wire _00_;
-  (* src = "rtl/pll_lock_det.v:24.3-26.43" *)
+  (* src = "rtl/pll_divider.v:22.3-25.46" *)
   wire _01_;
+  (* src = "rtl/pll_divider.v:22.3-25.46" *)
   wire _02_;
+  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
   wire _03_;
+  (* src = "rtl/pll_lock_det.v:24.3-26.43" *)
   wire _04_;
+  (* src = "rtl/pll_prescaler.v:13.3-15.35" *)
   wire _05_;
+  (* src = "rtl/pll_prescaler.v:17.3-19.35" *)
   wire _06_;
+  (* src = "rtl/pll_prescaler.v:21.3-23.35" *)
   wire _07_;
+  (* src = "rtl/pll_prescaler.v:25.3-27.27" *)
   wire _08_;
   wire _09_;
   wire _10_;
   wire _11_;
   wire _12_;
   wire _13_;
+  wire _14_;
+  wire _15_;
+  wire _16_;
+  wire _17_;
+  wire _18_;
+  wire _19_;
+  wire _20_;
+  wire _21_;
+  wire _22_;
+  wire _23_;
+  wire _24_;
+  wire _25_;
+  wire _26_;
+  wire _27_;
+  wire _28_;
+  wire _29_;
+  (* src = "rtl/ihsan_sa_pll.v:23.8-23.15" *)
+  wire clk_pre;
+  (* src = "rtl/ihsan_sa_pll.v:24.8-24.14" *)
+  wire obs_q3;
+  (* hdlname = "u_ctrl clk" *)
+  (* src = "rtl/pll_ctrl_regs.v:4.23-4.26" *)
+  wire \u_ctrl.clk ;
+  (* hdlname = "u_ctrl cp_trim0" *)
+  (* src = "rtl/pll_ctrl_regs.v:9.23-9.31" *)
+  wire \u_ctrl.cp_trim0 ;
+  (* hdlname = "u_ctrl cp_trim1" *)
+  (* src = "rtl/pll_ctrl_regs.v:10.23-10.31" *)
+  wire \u_ctrl.cp_trim1 ;
+  (* hdlname = "u_ctrl cp_trim_in" *)
+  (* src = "rtl/pll_ctrl_regs.v:7.23-7.33" *)
+  wire [1:0] \u_ctrl.cp_trim_in ;
+  (* hdlname = "u_ctrl pll_en" *)
+  (* src = "rtl/pll_ctrl_regs.v:8.23-8.29" *)
+  wire \u_ctrl.pll_en ;
+  (* hdlname = "u_ctrl pll_en_in" *)
+  (* src = "rtl/pll_ctrl_regs.v:6.23-6.32" *)
+  wire \u_ctrl.pll_en_in ;
+  (* hdlname = "u_ctrl rst_n" *)
+  (* src = "rtl/pll_ctrl_regs.v:5.23-5.28" *)
+  wire \u_ctrl.rst_n ;
+  (* hdlname = "u_div clk_fb" *)
+  (* src = "rtl/pll_divider.v:11.23-11.29" *)
+  wire \u_div.clk_fb ;
+  (* hdlname = "u_div clk_pre" *)
+  (* src = "rtl/pll_divider.v:8.23-8.30" *)
+  wire \u_div.clk_pre ;
+  (* hdlname = "u_div div_cnt" *)
+  (* src = "rtl/pll_divider.v:13.13-13.20" *)
+  wire [2:0] \u_div.div_cnt ;
+  (* hdlname = "u_div fb_en" *)
+  (* src = "rtl/pll_divider.v:14.13-14.18" *)
+  wire \u_div.fb_en ;
+  (* hdlname = "u_div last" *)
+  (* src = "rtl/pll_divider.v:20.14-20.18" *)
+  wire \u_div.last ;
+  (* hdlname = "u_div n_sel" *)
+  (* src = "rtl/pll_divider.v:10.23-10.28" *)
+  wire [2:0] \u_div.n_sel ;
+  (* hdlname = "u_div rst_n" *)
+  (* src = "rtl/pll_divider.v:9.23-9.28" *)
+  wire \u_div.rst_n ;
+  (* hdlname = "u_lock clk" *)
+  (* src = "rtl/pll_lock_det.v:11.17-11.20" *)
+  wire \u_lock.clk ;
+  (* hdlname = "u_lock cnt_nxt" *)
   (* src = "rtl/pll_lock_det.v:21.14-21.21" *)
-  wire [4:0] cnt_nxt;
+  wire [4:0] \u_lock.cnt_nxt ;
+  (* hdlname = "u_lock lock" *)
+  (* src = "rtl/pll_lock_det.v:15.17-15.21" *)
+  wire \u_lock.lock ;
+  (* hdlname = "u_lock lock_cnt" *)
   (* src = "rtl/pll_lock_det.v:20.13-20.21" *)
-  wire [4:0] lock_cnt;
+  wire [4:0] \u_lock.lock_cnt ;
+  (* hdlname = "u_lock pfd_dn" *)
+  (* src = "rtl/pll_lock_det.v:14.17-14.23" *)
+  wire \u_lock.pfd_dn ;
+  (* hdlname = "u_lock pfd_up" *)
+  (* src = "rtl/pll_lock_det.v:13.17-13.23" *)
+  wire \u_lock.pfd_up ;
+  (* hdlname = "u_lock rst_n" *)
+  (* src = "rtl/pll_lock_det.v:12.17-12.22" *)
+  wire \u_lock.rst_n ;
+  (* hdlname = "u_lock wide_q" *)
   (* src = "rtl/pll_lock_det.v:19.13-19.19" *)
-  wire wide_q;
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _14_ (
-    .I(lock_cnt[4]),
-    .ZN(_02_)
+  wire \u_lock.wide_q ;
+  (* hdlname = "u_pfd clk" *)
+  (* src = "rtl/pll_pfd.v:9.17-9.20" *)
+  wire \u_pfd.clk ;
+  (* hdlname = "u_pfd clk_fb" *)
+  (* src = "rtl/pll_pfd.v:10.17-10.23" *)
+  wire \u_pfd.clk_fb ;
+  (* hdlname = "u_pfd pfd_both" *)
+  (* src = "rtl/pll_pfd.v:16.8-16.16" *)
+  wire \u_pfd.pfd_both ;
+  (* hdlname = "u_pfd pfd_dly_mid" *)
+  (* keep = 32'd1 *)
+  (* src = "rtl/pll_pfd.v:17.19-17.30" *)
+  wire \u_pfd.pfd_dly_mid ;
+  (* hdlname = "u_pfd pfd_dn" *)
+  (* src = "rtl/pll_pfd.v:13.17-13.23" *)
+  wire \u_pfd.pfd_dn ;
+  (* hdlname = "u_pfd pfd_fb_q" *)
+  (* src = "rtl/pll_pfd.v:15.19-15.27" *)
+  wire \u_pfd.pfd_fb_q ;
+  (* hdlname = "u_pfd pfd_ref_q" *)
+  (* src = "rtl/pll_pfd.v:15.8-15.17" *)
+  wire \u_pfd.pfd_ref_q ;
+  (* hdlname = "u_pfd pfd_rst" *)
+  (* keep = 32'd1 *)
+  (* src = "rtl/pll_pfd.v:18.19-18.26" *)
+  wire \u_pfd.pfd_rst ;
+  (* hdlname = "u_pfd pfd_up" *)
+  (* src = "rtl/pll_pfd.v:12.17-12.23" *)
+  wire \u_pfd.pfd_up ;
+  (* hdlname = "u_pfd rst_n" *)
+  (* src = "rtl/pll_pfd.v:11.17-11.22" *)
+  wire \u_pfd.rst_n ;
+  (* hdlname = "u_pre clk_pre" *)
+  (* src = "rtl/pll_prescaler.v:8.17-8.24" *)
+  wire \u_pre.clk_pre ;
+  (* hdlname = "u_pre obs_q3" *)
+  (* src = "rtl/pll_prescaler.v:9.17-9.23" *)
+  wire \u_pre.obs_q3 ;
+  (* hdlname = "u_pre pre_q0" *)
+  (* src = "rtl/pll_prescaler.v:11.7-11.13" *)
+  wire \u_pre.pre_q0 ;
+  (* hdlname = "u_pre pre_q1" *)
+  (* src = "rtl/pll_prescaler.v:11.15-11.21" *)
+  wire \u_pre.pre_q1 ;
+  (* hdlname = "u_pre pre_q2" *)
+  (* src = "rtl/pll_prescaler.v:11.23-11.29" *)
+  wire \u_pre.pre_q2 ;
+  (* hdlname = "u_pre q3" *)
+  (* src = "rtl/pll_prescaler.v:11.31-11.33" *)
+  wire \u_pre.q3 ;
+  (* hdlname = "u_pre rst_n" *)
+  (* src = "rtl/pll_prescaler.v:7.17-7.22" *)
+  wire \u_pre.rst_n ;
+  (* hdlname = "u_pre vco_out" *)
+  (* src = "rtl/pll_prescaler.v:6.17-6.24" *)
+  wire \u_pre.vco_out ;
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _30_ (
+    .I(\u_pre.pre_q2 ),
+    .ZN(_07_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _15_ (
-    .I(wide_q),
-    .ZN(_03_)
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _31_ (
+    .I(\u_pre.pre_q0 ),
+    .ZN(_05_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__and2_1 _16_ (
-    .A1(lock_cnt[1]),
-    .A2(lock_cnt[0]),
-    .Z(_04_)
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _32_ (
+    .I(\u_pre.pre_q1 ),
+    .ZN(_06_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__and3_1 _17_ (
-    .A1(lock_cnt[2]),
-    .A2(lock_cnt[1]),
-    .A3(lock_cnt[0]),
-    .Z(_05_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__and4_1 _18_ (
-    .A1(lock_cnt[2]),
-    .A2(lock_cnt[3]),
-    .A3(lock_cnt[1]),
-    .A4(lock_cnt[0]),
-    .Z(_06_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__xor2_1 _19_ (
-    .A1(lock_cnt[4]),
-    .A2(_06_),
-    .Z(_07_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nand2_1 _20_ (
-    .A1(_03_),
-    .A2(_07_),
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _33_ (
+    .I(\u_pre.q3 ),
     .ZN(_08_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _21_ (
-    .I(_08_),
-    .ZN(cnt_nxt[4])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _22_ (
-    .A1(lock_cnt[3]),
-    .A2(_05_),
-    .B(_03_),
-    .ZN(_09_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _23_ (
-    .A1(_06_),
-    .A2(_09_),
-    .ZN(cnt_nxt[3])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _24_ (
-    .A1(lock_cnt[2]),
-    .A2(_04_),
-    .ZN(_10_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor3_1 _25_ (
-    .A1(wide_q),
-    .A2(_05_),
-    .A3(_10_),
-    .ZN(cnt_nxt[2])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _26_ (
-    .A1(lock_cnt[1]),
-    .A2(lock_cnt[0]),
-    .B(_03_),
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _34_ (
+    .I(\u_lock.wide_q ),
     .ZN(_11_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _27_ (
-    .A1(_04_),
-    .A2(_11_),
-    .ZN(cnt_nxt[1])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _28_ (
-    .A1(lock_cnt[2]),
-    .A2(lock_cnt[3]),
-    .A3(_02_),
-    .A4(lock_cnt[1]),
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _35_ (
+    .I(\u_lock.lock_cnt [4]),
     .ZN(_12_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__nor3_1 _29_ (
-    .A1(wide_q),
-    .A2(lock_cnt[0]),
-    .A3(_12_),
-    .ZN(cnt_nxt[0])
-  );
-  gf180mcu_fd_sc_mcu7t5v0__oai32_1 _30_ (
-    .A1(wide_q),
-    .A2(lock_cnt[0]),
-    .A3(_12_),
-    .B1(_11_),
-    .B2(_04_),
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _36_ (
+    .I(n_sel[2]),
     .ZN(_13_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _31_ (
-    .A1(_08_),
-    .A2(cnt_nxt[3]),
-    .A3(cnt_nxt[2]),
-    .A4(_13_),
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _37_ (
+    .I(n_sel[0]),
+    .ZN(_14_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _38_ (
+    .I(n_sel[1]),
+    .ZN(_15_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _39_ (
+    .I(rst_n),
+    .ZN(_16_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__and3_1 _40_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.lock_cnt [1]),
+    .A3(\u_lock.lock_cnt [2]),
+    .Z(_17_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__and4_1 _41_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.lock_cnt [1]),
+    .A3(\u_lock.lock_cnt [2]),
+    .A4(\u_lock.lock_cnt [3]),
+    .Z(_18_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _42_ (
+    .A1(\u_lock.lock_cnt [3]),
+    .A2(_17_),
+    .ZN(_19_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor3_1 _43_ (
+    .A1(\u_lock.wide_q ),
+    .A2(_18_),
+    .A3(_19_),
+    .ZN(\u_lock.cnt_nxt [3])
+  );
+  gf180mcu_fd_sc_mcu7t5v0__aoi21_1 _44_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.lock_cnt [1]),
+    .B(\u_lock.lock_cnt [2]),
+    .ZN(_20_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor3_1 _45_ (
+    .A1(\u_lock.wide_q ),
+    .A2(_17_),
+    .A3(_20_),
+    .ZN(\u_lock.cnt_nxt [2])
+  );
+  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _46_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.lock_cnt [1]),
+    .B(_11_),
+    .ZN(_21_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__aoi21_1 _47_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.lock_cnt [1]),
+    .B(_21_),
+    .ZN(\u_lock.cnt_nxt [1])
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _48_ (
+    .A1(\u_lock.lock_cnt [1]),
+    .A2(\u_lock.lock_cnt [2]),
+    .A3(\u_lock.lock_cnt [3]),
+    .A4(_12_),
+    .ZN(_22_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor3_1 _49_ (
+    .A1(\u_lock.lock_cnt [0]),
+    .A2(\u_lock.wide_q ),
+    .A3(_22_),
+    .ZN(\u_lock.cnt_nxt [0])
+  );
+  gf180mcu_fd_sc_mcu7t5v0__xor2_1 _50_ (
+    .A1(\u_lock.lock_cnt [4]),
+    .A2(_18_),
+    .Z(_23_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__and2_1 _51_ (
+    .A1(_11_),
+    .A2(_23_),
+    .Z(\u_lock.cnt_nxt [4])
+  );
+  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _52_ (
+    .A1(\u_div.div_cnt [1]),
+    .A2(n_sel[2]),
+    .B(n_sel[1]),
+    .ZN(_24_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__oai211_1 _53_ (
+    .A1(\u_div.div_cnt [1]),
+    .A2(_13_),
+    .B(\u_div.div_cnt [0]),
+    .C(_14_),
+    .ZN(_25_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__aoi21_1 _54_ (
+    .A1(_13_),
+    .A2(_15_),
+    .B(\u_div.div_cnt [2]),
+    .ZN(_26_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nand3_1 _55_ (
+    .A1(_24_),
+    .A2(_25_),
+    .A3(_26_),
+    .ZN(\u_div.last )
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nand2_1 _56_ (
+    .A1(\u_div.div_cnt [1]),
+    .A2(\u_div.div_cnt [0]),
+    .ZN(_27_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__xnor2_1 _57_ (
+    .A1(\u_div.div_cnt [1]),
+    .A2(\u_div.div_cnt [0]),
+    .ZN(_28_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _58_ (
+    .A1(\u_div.last ),
+    .A2(_28_),
+    .ZN(_01_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _59_ (
+    .A1(\u_div.div_cnt [0]),
+    .A2(\u_div.last ),
     .ZN(_00_)
   );
-  gf180mcu_fd_sc_mcu7t5v0__or2_1 _32_ (
-    .A1(pfd_up),
-    .A2(pfd_dn),
-    .Z(_01_)
+  gf180mcu_fd_sc_mcu7t5v0__oai211_1 _60_ (
+    .A1(_18_),
+    .A2(_19_),
+    .B(_23_),
+    .C(_11_),
+    .ZN(_29_)
   );
-  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _33_ (
-    .CLK(clk),
+  gf180mcu_fd_sc_mcu7t5v0__nor4_1 _61_ (
+    .A1(\u_lock.cnt_nxt [2]),
+    .A2(\u_lock.cnt_nxt [1]),
+    .A3(\u_lock.cnt_nxt [0]),
+    .A4(_29_),
+    .ZN(_03_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__and2_1 _62_ (
+    .A1(\u_pre.pre_q2 ),
+    .A2(\u_div.fb_en ),
+    .Z(\u_pfd.clk_fb )
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _63_ (
+    .A1(\u_div.last ),
+    .A2(_27_),
+    .ZN(_02_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__or2_1 _64_ (
+    .A1(\u_pfd.pfd_ref_q ),
+    .A2(\u_pfd.pfd_fb_q ),
+    .Z(_04_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__mux2_1 _65_ (
+    .I0(\u_pre.pre_q2 ),
+    .I1(\u_pre.q3 ),
+    .S(obs_sel),
+    .Z(obs_out)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__and2_1 _66_ (
+    .A1(\u_pfd.pfd_ref_q ),
+    .A2(\u_pfd.pfd_fb_q ),
+    .Z(\u_pfd.pfd_both )
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _67_ (
+    .A1(\u_pfd.pfd_rst ),
+    .A2(_16_),
+    .ZN(_09_)
+  );
+  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _68_ (
+    .A1(\u_pfd.pfd_rst ),
+    .A2(_16_),
+    .ZN(_10_)
+  );
+  (* src = "rtl/pll_prescaler.v:13.3-15.35" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _69_ (
+    .CLK(vco_out),
+    .D(_05_),
+    .Q(\u_pre.pre_q0 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_prescaler.v:21.3-23.35" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _70_ (
+    .CLK(\u_pre.pre_q1 ),
+    .D(_07_),
+    .Q(\u_pre.pre_q2 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_prescaler.v:25.3-27.27" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _71_ (
+    .CLK(\u_pre.pre_q2 ),
+    .D(_08_),
+    .Q(\u_pre.q3 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_prescaler.v:17.3-19.35" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _72_ (
+    .CLK(\u_pre.pre_q0 ),
+    .D(_06_),
+    .Q(\u_pre.pre_q1 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_divider.v:27.3-29.31" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _73_ (
+    .CLKN(\u_pre.pre_q2 ),
+    .D(\u_div.last ),
+    .Q(\u_div.fb_en ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_divider.v:22.3-25.46" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _74_ (
+    .CLK(\u_pre.pre_q2 ),
     .D(_00_),
-    .Q(lock),
+    .Q(\u_div.div_cnt [0]),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_divider.v:22.3-25.46" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _75_ (
+    .CLK(\u_pre.pre_q2 ),
+    .D(_01_),
+    .Q(\u_div.div_cnt [1]),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_divider.v:22.3-25.46" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _76_ (
+    .CLK(\u_pre.pre_q2 ),
+    .D(_02_),
+    .Q(\u_div.div_cnt [2]),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_pfd.v:33.3-35.35" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _77_ (
+    .CLK(\u_pfd.clk_fb ),
+    .D(1'h1),
+    .Q(\u_pfd.pfd_fb_q ),
+    .RN(_10_)
+  );
+  (* src = "rtl/pll_pfd.v:29.3-31.36" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _78_ (
+    .CLK(clk),
+    .D(1'h1),
+    .Q(\u_pfd.pfd_ref_q ),
+    .RN(_09_)
+  );
+  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _79_ (
+    .CLK(clk),
+    .D(\u_lock.cnt_nxt [0]),
+    .Q(\u_lock.lock_cnt [0]),
     .RN(rst_n)
   );
   (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _34_ (
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _80_ (
     .CLK(clk),
-    .D(cnt_nxt[0]),
-    .Q(lock_cnt[0]),
+    .D(\u_lock.cnt_nxt [1]),
+    .Q(\u_lock.lock_cnt [1]),
     .RN(rst_n)
   );
   (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _35_ (
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _81_ (
     .CLK(clk),
-    .D(cnt_nxt[1]),
-    .Q(lock_cnt[1]),
+    .D(\u_lock.cnt_nxt [2]),
+    .Q(\u_lock.lock_cnt [2]),
     .RN(rst_n)
   );
   (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _36_ (
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _82_ (
     .CLK(clk),
-    .D(cnt_nxt[2]),
-    .Q(lock_cnt[2]),
+    .D(\u_lock.cnt_nxt [3]),
+    .Q(\u_lock.lock_cnt [3]),
     .RN(rst_n)
   );
   (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _37_ (
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _83_ (
     .CLK(clk),
-    .D(cnt_nxt[3]),
-    .Q(lock_cnt[3]),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _38_ (
-    .CLK(clk),
-    .D(cnt_nxt[4]),
-    .Q(lock_cnt[4]),
+    .D(\u_lock.cnt_nxt [4]),
+    .Q(\u_lock.lock_cnt [4]),
     .RN(rst_n)
   );
   (* src = "rtl/pll_lock_det.v:24.3-26.43" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _39_ (
+  gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1 _84_ (
     .CLKN(clk),
-    .D(_01_),
-    .Q(wide_q),
+    .D(_04_),
+    .Q(\u_lock.wide_q ),
     .SETN(rst_n)
   );
-endmodule
-
-(* src = "rtl/pll_pfd.v:8.1-39.10" *)
-module pll_pfd(clk, clk_fb, rst_n, pfd_up, pfd_dn);
-  (* src = "rtl/pll_pfd.v:9.17-9.20" *)
-  input clk;
-  wire clk;
-  (* src = "rtl/pll_pfd.v:10.17-10.23" *)
-  input clk_fb;
-  wire clk_fb;
-  (* src = "rtl/pll_pfd.v:11.17-11.22" *)
-  input rst_n;
-  wire rst_n;
-  (* src = "rtl/pll_pfd.v:12.17-12.23" *)
-  output pfd_up;
-  wire pfd_up;
-  (* src = "rtl/pll_pfd.v:13.17-13.23" *)
-  output pfd_dn;
-  wire pfd_dn;
-  wire _0_;
-  wire _1_;
-  wire _2_;
-  (* src = "rtl/pll_pfd.v:16.8-16.16" *)
-  wire pfd_both;
-  (* keep = 32'd1 *)
-  (* src = "rtl/pll_pfd.v:17.19-17.30" *)
-  wire pfd_dly_mid;
-  (* src = "rtl/pll_pfd.v:15.19-15.27" *)
-  wire pfd_fb_q;
-  (* src = "rtl/pll_pfd.v:15.8-15.17" *)
-  wire pfd_ref_q;
-  (* keep = 32'd1 *)
-  (* src = "rtl/pll_pfd.v:18.19-18.26" *)
-  wire pfd_rst;
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _3_ (
-    .I(rst_n),
-    .ZN(_2_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__and2_1 _4_ (
-    .A1(pfd_ref_q),
-    .A2(pfd_fb_q),
-    .Z(pfd_both)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _5_ (
-    .A1(pfd_rst),
-    .A2(_2_),
-    .ZN(_0_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__nor2_1 _6_ (
-    .A1(pfd_rst),
-    .A2(_2_),
-    .ZN(_1_)
-  );
-  (* src = "rtl/pll_pfd.v:33.3-35.35" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _7_ (
-    .CLK(clk_fb),
-    .D(1'h1),
-    .Q(pfd_fb_q),
-    .RN(_0_)
-  );
-  (* src = "rtl/pll_pfd.v:29.3-31.36" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _8_ (
+  (* src = "rtl/pll_lock_det.v:28.3-35.8" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _85_ (
     .CLK(clk),
-    .D(1'h1),
-    .Q(pfd_ref_q),
-    .RN(_1_)
+    .D(_03_),
+    .Q(\u_lock.lock ),
+    .RN(rst_n)
   );
+  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _86_ (
+    .CLK(clk),
+    .D(cp_trim_in[0]),
+    .Q(\u_ctrl.cp_trim0 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _87_ (
+    .CLK(clk),
+    .D(cp_trim_in[1]),
+    .Q(\u_ctrl.cp_trim1 ),
+    .RN(rst_n)
+  );
+  (* src = "rtl/pll_ctrl_regs.v:12.3-21.8" *)
+  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _88_ (
+    .CLK(clk),
+    .D(pll_en_in),
+    .Q(\u_ctrl.pll_en ),
+    .RN(rst_n)
+  );
+  (* hdlname = "u_pfd pfd_dly0" *)
   (* keep = 32'd1 *)
   (* module_not_derived = 32'd1 *)
   (* src = "rtl/pll_pfd.v:22.46-22.89" *)
-  gf180mcu_fd_sc_mcu7t5v0__dlya_1 pfd_dly0 (
-    .I(pfd_both),
-    .Z(pfd_dly_mid)
+  gf180mcu_fd_sc_mcu7t5v0__dlya_1 \u_pfd.pfd_dly0  (
+    .I(\u_pfd.pfd_both ),
+    .Z(\u_pfd.pfd_dly_mid )
   );
+  (* hdlname = "u_pfd pfd_dly1" *)
   (* keep = 32'd1 *)
   (* module_not_derived = 32'd1 *)
   (* src = "rtl/pll_pfd.v:23.46-23.85" *)
-  gf180mcu_fd_sc_mcu7t5v0__dlya_1 pfd_dly1 (
-    .I(pfd_dly_mid),
-    .Z(pfd_rst)
+  gf180mcu_fd_sc_mcu7t5v0__dlya_1 \u_pfd.pfd_dly1  (
+    .I(\u_pfd.pfd_dly_mid ),
+    .Z(\u_pfd.pfd_rst )
   );
-  assign pfd_dn = pfd_fb_q;
-  assign pfd_up = pfd_ref_q;
-endmodule
-
-(* src = "rtl/pll_prescaler.v:5.1-31.10" *)
-module pll_prescaler(vco_out, rst_n, clk_pre, obs_q3);
-  (* src = "rtl/pll_prescaler.v:6.17-6.24" *)
-  input vco_out;
-  wire vco_out;
-  (* src = "rtl/pll_prescaler.v:7.17-7.22" *)
-  input rst_n;
-  wire rst_n;
-  (* src = "rtl/pll_prescaler.v:8.17-8.24" *)
-  output clk_pre;
-  wire clk_pre;
-  (* src = "rtl/pll_prescaler.v:9.17-9.23" *)
-  output obs_q3;
-  wire obs_q3;
-  (* src = "rtl/pll_prescaler.v:13.3-15.35" *)
-  wire _00_;
-  (* src = "rtl/pll_prescaler.v:17.3-19.35" *)
-  wire _01_;
-  (* src = "rtl/pll_prescaler.v:21.3-23.35" *)
-  wire _02_;
-  (* src = "rtl/pll_prescaler.v:25.3-27.27" *)
-  wire _03_;
-  (* src = "rtl/pll_prescaler.v:11.7-11.13" *)
-  wire pre_q0;
-  (* src = "rtl/pll_prescaler.v:11.15-11.21" *)
-  wire pre_q1;
-  (* src = "rtl/pll_prescaler.v:11.23-11.29" *)
-  wire pre_q2;
-  (* src = "rtl/pll_prescaler.v:11.31-11.33" *)
-  wire q3;
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _04_ (
-    .I(pre_q2),
-    .ZN(_02_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _05_ (
-    .I(pre_q1),
-    .ZN(_01_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _06_ (
-    .I(pre_q0),
-    .ZN(_00_)
-  );
-  gf180mcu_fd_sc_mcu7t5v0__clkinv_1 _07_ (
-    .I(q3),
-    .ZN(_03_)
-  );
-  (* src = "rtl/pll_prescaler.v:25.3-27.27" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _08_ (
-    .CLK(pre_q2),
-    .D(_03_),
-    .Q(q3),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_prescaler.v:21.3-23.35" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _09_ (
-    .CLK(pre_q1),
-    .D(_02_),
-    .Q(pre_q2),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_prescaler.v:17.3-19.35" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _10_ (
-    .CLK(pre_q0),
-    .D(_01_),
-    .Q(pre_q1),
-    .RN(rst_n)
-  );
-  (* src = "rtl/pll_prescaler.v:13.3-15.35" *)
-  gf180mcu_fd_sc_mcu7t5v0__dffrnq_1 _11_ (
-    .CLK(vco_out),
-    .D(_00_),
-    .Q(pre_q0),
-    .RN(rst_n)
-  );
-  assign obs_q3 = q3;
-  assign clk_pre = pre_q2;
+  assign \u_pfd.pfd_up  = \u_pfd.pfd_ref_q ;
+  assign \u_pfd.pfd_dn  = \u_pfd.pfd_fb_q ;
+  assign \u_div.clk_pre  = \u_pre.pre_q2 ;
+  assign \u_div.rst_n  = rst_n;
+  assign \u_div.n_sel  = n_sel;
+  assign \u_div.clk_fb  = \u_pfd.clk_fb ;
+  assign \u_lock.pfd_dn  = \u_pfd.pfd_fb_q ;
+  assign \u_lock.pfd_up  = \u_pfd.pfd_ref_q ;
+  assign \u_lock.rst_n  = rst_n;
+  assign \u_lock.clk  = clk;
+  assign \u_pre.vco_out  = vco_out;
+  assign \u_pre.rst_n  = rst_n;
+  assign \u_pre.clk_pre  = \u_pre.pre_q2 ;
+  assign \u_pre.obs_q3  = \u_pre.q3 ;
+  assign \u_pfd.clk  = clk;
+  assign \u_pfd.rst_n  = rst_n;
+  assign \u_ctrl.cp_trim_in  = cp_trim_in;
+  assign \u_ctrl.pll_en_in  = pll_en_in;
+  assign \u_ctrl.rst_n  = rst_n;
+  assign \u_ctrl.clk  = clk;
+  assign obs_q3 = \u_pre.q3 ;
+  assign clk_pre = \u_pre.pre_q2 ;
+  assign cp_trim1 = \u_ctrl.cp_trim1 ;
+  assign cp_trim0 = \u_ctrl.cp_trim0 ;
+  assign pll_en = \u_ctrl.pll_en ;
+  assign pfd_dn = \u_pfd.pfd_fb_q ;
+  assign pfd_up = \u_pfd.pfd_ref_q ;
+  assign lock = \u_lock.lock ;
+  assign clk_fb = \u_pfd.clk_fb ;
 endmodule
