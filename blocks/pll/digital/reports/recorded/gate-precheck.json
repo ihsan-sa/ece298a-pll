@@ -1,0 +1,28 @@
+{
+ "script": "gate",
+ "gate": "precheck",
+ "phase": "P6",
+ "tool": "precheck",
+ "input_digest": "dir_text:ea54fb38c3312cf929b282578e51c0f7f2c49c4828d25cb7cbffabca164076bc",
+ "status": "pass",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 0,
+  "by_severity": {},
+  "by_source": {}
+ },
+ "failing_count": 0,
+ "failing": [],
+ "violations": [],
+ "facts": {
+  "top": "tt_um_ihsan_sa_pll",
+  "checks_run": 12
+ },
+ "recorded_ts": "2026-10-05T05:16:57",
+ "attempts": 2
+}

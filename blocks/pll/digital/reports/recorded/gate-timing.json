@@ -1,0 +1,299 @@
+{
+ "script": "gate",
+ "gate": "timing",
+ "phase": "P6",
+ "tool": "timing",
+ "input_digest": "dir_text:ea54fb38c3312cf929b282578e51c0f7f2c49c4828d25cb7cbffabca164076bc",
+ "status": "fail",
+ "criteria": {
+  "fail_severities": [
+   "error"
+  ],
+  "max_count": 0
+ },
+ "counts": {
+  "total": 6,
+  "by_severity": {
+   "error": 6
+  },
+  "by_source": {
+   "opensta": 6
+  }
+ },
+ "failing_count": 6,
+ "failing": [
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2600ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2600ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "max_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner max_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner max_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "max_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner min_ss_125C_3v00: worst setup slack -1.2300ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner min_ss_125C_3v00: worst setup slack -1.2300ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "min_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner min_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner min_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "min_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2500ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2500ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "nom_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner nom_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner nom_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "nom_ss_125C_3v00"
+  }
+ ],
+ "violations": [
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner max_ss_125C_3v00: worst setup slack -1.2600ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner max_ss_125C_3v00: worst setup slack -1.2600ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "max_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner max_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner max_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "max_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner min_ss_125C_3v00: worst setup slack -1.2300ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner min_ss_125C_3v00: worst setup slack -1.2300ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "min_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner min_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner min_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "min_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "setup_violation",
+   "refs": [],
+   "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2500ns",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner nom_ss_125C_3v00: worst setup slack -1.2500ns",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "nom_ss_125C_3v00"
+  },
+  {
+   "check": "timing",
+   "severity": "error",
+   "file": null,
+   "module": "tt_um_ihsan_sa_pll",
+   "line": null,
+   "kind": "slew_or_cap_or_fanout_violation",
+   "refs": [],
+   "msg": "corner nom_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+   "source": "opensta",
+   "items": [
+    {
+     "msg": "corner nom_ss_125C_3v00: max slew: 4 violating pin(s): uo_out[0], _111_/Z, uo_out[1], _112_/Z",
+     "file": null,
+     "line": null
+    }
+   ],
+   "corner": "nom_ss_125C_3v00"
+  }
+ ],
+ "facts": {
+  "top": "tt_um_ihsan_sa_pll",
+  "corners": {
+   "max_ff_n40C_3v60": {
+    "setup_ws": 1.66,
+    "hold_ws": 0.53
+   },
+   "max_ss_125C_3v00": {
+    "setup_ws": -1.26,
+    "hold_ws": 2.56
+   },
+   "max_tt_025C_3v30": {
+    "setup_ws": 0.8,
+    "hold_ws": 1.15
+   },
+   "min_ff_n40C_3v60": {
+    "setup_ws": 1.66,
+    "hold_ws": 0.53
+   },
+   "min_ss_125C_3v00": {
+    "setup_ws": -1.23,
+    "hold_ws": 2.54
+   },
+   "min_tt_025C_3v30": {
+    "setup_ws": 0.81,
+    "hold_ws": 1.14
+   },
+   "nom_ff_n40C_3v60": {
+    "setup_ws": 1.66,
+    "hold_ws": 0.53
+   },
+   "nom_ss_125C_3v00": {
+    "setup_ws": -1.25,
+    "hold_ws": 2.55
+   },
+   "nom_tt_025C_3v30": {
+    "setup_ws": 0.81,
+    "hold_ws": 1.14
+   }
+  }
+ },
+ "recorded_ts": "2026-10-05T05:13:27",
+ "attempts": 2
+}

@@ -8,21 +8,21 @@ module testbench(input clock, output reg genclock);
 `endif
   reg genclock = 1;
   reg [31:0] cycle = 0;
-  reg [2:0] PI_n_sel;
-  reg [0:0] PI_rst_n;
-  wire [0:0] PI_clk = clock;
-  reg [1:0] PI_cp_trim_in;
-  reg [0:0] PI_vco_out;
   reg [0:0] PI_obs_sel;
+  reg [1:0] PI_cp_trim_in;
+  reg [0:0] PI_rst_n;
   reg [0:0] PI_pll_en_in;
+  wire [0:0] PI_clk = clock;
+  reg [2:0] PI_n_sel;
+  reg [0:0] PI_vco_out;
   ihsan_sa_pll_formal UUT (
-    .n_sel(PI_n_sel),
-    .rst_n(PI_rst_n),
-    .clk(PI_clk),
-    .cp_trim_in(PI_cp_trim_in),
-    .vco_out(PI_vco_out),
     .obs_sel(PI_obs_sel),
-    .pll_en_in(PI_pll_en_in)
+    .cp_trim_in(PI_cp_trim_in),
+    .rst_n(PI_rst_n),
+    .pll_en_in(PI_pll_en_in),
+    .clk(PI_clk),
+    .n_sel(PI_n_sel),
+    .vco_out(PI_vco_out)
   );
 `ifndef VERILATOR
   initial begin
@@ -109,212 +109,212 @@ module testbench(input clock, output reg genclock);
     UUT.wide_s = 1'b0;
 
     // state 0
-    PI_n_sel = 3'b000;
-    PI_rst_n = 1'b1;
-    PI_cp_trim_in = 2'b00;
-    PI_vco_out = 1'b0;
     PI_obs_sel = 1'b0;
+    PI_cp_trim_in = 2'b00;
+    PI_rst_n = 1'b1;
     PI_pll_en_in = 1'b0;
+    PI_n_sel = 3'b000;
+    PI_vco_out = 1'b0;
   end
   always @(posedge clock) begin
     // state 1
     if (cycle == 0) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 2
     if (cycle == 1) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 3
     if (cycle == 2) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 4
     if (cycle == 3) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 5
     if (cycle == 4) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 6
     if (cycle == 5) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 7
     if (cycle == 6) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 8
     if (cycle == 7) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 9
     if (cycle == 8) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 10
     if (cycle == 9) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 11
     if (cycle == 10) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 12
     if (cycle == 11) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 13
     if (cycle == 12) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 14
     if (cycle == 13) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 15
     if (cycle == 14) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 16
     if (cycle == 15) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 17
     if (cycle == 16) begin
-      PI_n_sel <= 3'b100;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b100;
+      PI_vco_out <= 1'b0;
     end
 
     // state 18
     if (cycle == 17) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b0;
     end
 
     // state 19
     if (cycle == 18) begin
-      PI_n_sel <= 3'b101;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b101;
+      PI_vco_out <= 1'b0;
     end
 
     // state 20
     if (cycle == 19) begin
-      PI_n_sel <= 3'b000;
-      PI_rst_n <= 1'b1;
-      PI_cp_trim_in <= 2'b00;
-      PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
+      PI_cp_trim_in <= 2'b00;
+      PI_rst_n <= 1'b1;
       PI_pll_en_in <= 1'b0;
+      PI_n_sel <= 3'b000;
+      PI_vco_out <= 1'b1;
     end
 
     genclock <= cycle < 20;

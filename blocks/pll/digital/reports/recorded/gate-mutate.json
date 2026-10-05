@@ -4,7 +4,7 @@
  "phase": "P4",
  "tool": "mutate",
  "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
- "status": "fail",
+ "status": "pass",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,36 +12,16 @@
   "max_count": 0
  },
  "counts": {
-  "total": 3,
+  "total": 2,
   "by_severity": {
-   "info": 2,
-   "error": 1
+   "info": 2
   },
   "by_source": {
-   "mcy": 3
+   "mutant_rulings": 2
   }
  },
- "failing_count": 1,
- "failing": [
-  {
-   "check": "mutate",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "kill_rate_below_threshold",
-   "refs": [],
-   "msg": "kill rate 0.89 (17/19) is below 0.90",
-   "source": "mcy",
-   "items": [
-    {
-     "msg": "kill rate 0.89 (17/19) is below 0.90",
-     "file": null,
-     "line": null
-    }
-   ]
-  }
- ],
+ "failing_count": 0,
+ "failing": [],
  "violations": [
   {
    "check": "mutate",
@@ -49,13 +29,13 @@
    "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
    "module": null,
    "line": null,
-   "kind": "survivor_stuck_other",
+   "kind": "equivalent_stuck_other",
    "refs": [],
-   "msg": "mutant 5 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
-   "source": "mcy",
+   "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant 5 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
+     "msg": "mutant 5 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22$18 -port B -portbit 0 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
      "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:22.24-22.64",
      "line": null
     }
@@ -67,32 +47,14 @@
    "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
    "module": null,
    "line": null,
-   "kind": "survivor_stuck_other",
+   "kind": "equivalent_stuck_other",
    "refs": [],
-   "msg": "mutant 10 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
-   "source": "mcy",
+   "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+   "source": "mutant_rulings",
    "items": [
     {
-     "msg": "mutant 10 (stuck_other) survived: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
+     "msg": "mutant 10 (stuck_other) is accepted as equivalent by owner ruling (perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling) and left out of the kill rate: mutate -mode const0 -module pll_lock_det -cell $eq$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34$25 -port B -portbit 2 -src /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
      "file": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_lock_det.v:34.20-34.32",
-     "line": null
-    }
-   ]
-  },
-  {
-   "check": "mutate",
-   "severity": "error",
-   "file": null,
-   "module": null,
-   "line": null,
-   "kind": "kill_rate_below_threshold",
-   "refs": [],
-   "msg": "kill rate 0.89 (17/19) is below 0.90",
-   "source": "mcy",
-   "items": [
-    {
-     "msg": "kill rate 0.89 (17/19) is below 0.90",
-     "file": null,
      "line": null
     }
    ]
@@ -101,22 +63,23 @@
  "facts": {
   "top": "ihsan_sa_pll",
   "total_mutants": 19,
-  "equivalent": 0,
-  "equivalent_ids": [],
-  "scored_mutants": 19,
+  "equivalent": 2,
+  "equivalent_ids": [
+   5,
+   10
+  ],
+  "scored_mutants": 17,
   "killed": 17,
-  "survived": 2,
-  "kill_rate": 0.8947,
-  "survivors_by_class": {
-   "stuck_other": 2
+  "survived": 0,
+  "kill_rate": 1.0,
+  "survivors_by_class": {},
+  "equivalent_by": {
+   "5": "accepted by owner ruling: perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling",
+   "10": "accepted by owner ruling: perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 \u2014 not his own ruling"
   },
-  "equivalent_by": {},
-  "unproven_survivors": {
-   "5": "not a single, unmodified clock - outside the proof; module pll_lock_det alone: not a single, unmodified clock - outside the proof",
-   "10": "not a single, unmodified clock - outside the proof; module pll_lock_det alone: not a single, unmodified clock - outside the proof"
-  },
-  "wall_s": 131.58
+  "unproven_survivors": {},
+  "wall_s": 84.59
  },
- "recorded_ts": "2026-09-28T13:33:14",
- "attempts": 2
+ "recorded_ts": "2026-10-05T04:47:35",
+ "attempts": 3
 }

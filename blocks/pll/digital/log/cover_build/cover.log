@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791075817
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791189953
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Verilator version 5.052 2026-09-05
      0.00ns INFO     cocotb.regression                  Running tests
@@ -57,22 +57,22 @@
  57876.71ns INFO     cocotb.regression                  *********************************************************************************************
                                                         ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *********************************************************************************************
-                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.05      88175.55  **
-                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.02     297320.34  **
-                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.06     233757.67  **
-                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.01     235487.97  **
-                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.01     247738.65  **
-                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.02     167640.52  **
-                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.02     161432.68  **
-                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.01     239479.27  **
-                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.01     216471.10  **
-                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.02     230630.21  **
-                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.02     233503.99  **
-                                                        ** test_pll.test_ctrl_regs               PASS         617.00           0.00     698874.54  **
-                                                        ** test_pll.test_async_reset_outputs     PASS        2083.00           0.01     245323.05  **
-                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     141459.51  **
-                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.00      20619.32  **
+                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.06      77829.49  **
+                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.03     239083.84  **
+                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.08     180043.72  **
+                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.02     167469.49  **
+                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.02     171792.08  **
+                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.02     158302.83  **
+                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.03     151462.72  **
+                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.02     192444.94  **
+                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.02     178007.70  **
+                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.02     200404.97  **
+                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.02     186996.99  **
+                                                        ** test_pll.test_ctrl_regs               PASS         617.00           0.00     618814.36  **
+                                                        ** test_pll.test_async_reset_outputs     PASS        2083.00           0.01     154501.07  **
+                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     130343.05  **
+                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.00      20265.14  **
                                                         *********************************************************************************************
-                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57876.71           0.29     198337.13  **
+                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57876.71           0.36     161180.45  **
                                                         *********************************************************************************************
 - :0: Verilog $finish

@@ -8,21 +8,21 @@ module testbench(input clock, output reg genclock);
 `endif
   reg genclock = 1;
   reg [31:0] cycle = 0;
-  reg [0:0] PI_pll_en_in;
-  reg [0:0] PI_vco_out;
-  wire [0:0] PI_clk = clock;
-  reg [0:0] PI_obs_sel;
-  reg [1:0] PI_cp_trim_in;
   reg [2:0] PI_n_sel;
+  reg [1:0] PI_cp_trim_in;
+  reg [0:0] PI_pll_en_in;
   reg [0:0] PI_rst_n;
+  reg [0:0] PI_vco_out;
+  reg [0:0] PI_obs_sel;
+  wire [0:0] PI_clk = clock;
   ihsan_sa_pll_formal UUT (
-    .pll_en_in(PI_pll_en_in),
-    .vco_out(PI_vco_out),
-    .clk(PI_clk),
-    .obs_sel(PI_obs_sel),
-    .cp_trim_in(PI_cp_trim_in),
     .n_sel(PI_n_sel),
-    .rst_n(PI_rst_n)
+    .cp_trim_in(PI_cp_trim_in),
+    .pll_en_in(PI_pll_en_in),
+    .rst_n(PI_rst_n),
+    .vco_out(PI_vco_out),
+    .obs_sel(PI_obs_sel),
+    .clk(PI_clk)
   );
 `ifndef VERILATOR
   initial begin
@@ -112,42 +112,42 @@ module testbench(input clock, output reg genclock);
     UUT.wide_s = 1'b1;
 
     // state 0
+    PI_n_sel = 3'b000;
+    PI_cp_trim_in = 2'b00;
     PI_pll_en_in = 1'b0;
+    PI_rst_n = 1'b0;
     PI_vco_out = 1'b0;
     PI_obs_sel = 1'b0;
-    PI_cp_trim_in = 2'b00;
-    PI_n_sel = 3'b000;
-    PI_rst_n = 1'b0;
   end
   always @(posedge clock) begin
     // state 1
     if (cycle == 0) begin
+      PI_n_sel <= 3'b110;
+      PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
+      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
-      PI_cp_trim_in <= 2'b00;
-      PI_n_sel <= 3'b110;
-      PI_rst_n <= 1'b1;
     end
 
     // state 2
     if (cycle == 1) begin
+      PI_n_sel <= 3'b111;
+      PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
+      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
-      PI_cp_trim_in <= 2'b00;
-      PI_n_sel <= 3'b111;
-      PI_rst_n <= 1'b1;
     end
 
     // state 3
     if (cycle == 2) begin
+      PI_n_sel <= 3'b110;
+      PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
+      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
-      PI_cp_trim_in <= 2'b00;
-      PI_n_sel <= 3'b110;
-      PI_rst_n <= 1'b1;
     end
 
     genclock <= cycle < 3;

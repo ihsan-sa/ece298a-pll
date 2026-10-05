@@ -1,0 +1,7 @@
+equivalent:
+  - id: 5
+    ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 — not his own ruling"
+    evidence: "const0 on pll_lock_det $ternary at rtl/pll_lock_det.v:22 port B bit 0 = K[0]; K=5b10000 so that bit is already 0 — a no-op. Unprovable automatically because the design is multiclock. Verified in the repo."
+  - id: 10
+    ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-04 — not his own ruling"
+    evidence: "const0 on pll_lock_det $eq at rtl/pll_lock_det.v:34 port B bit 2 = K[2]; K=5b10000 so that bit is already 0 — a no-op. Same multiclock reason. Verified in the repo."
