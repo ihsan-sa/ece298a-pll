@@ -3,7 +3,7 @@
  "gate": "formal",
  "phase": "P4",
  "tool": "formal",
- "input_digest": "dir_text:4313dc4237b33f689d5a5c1d000a76c537f8b5773939fdfb51b2022cbd7800f3",
+ "input_digest": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -235,6 +235,6 @@
   ],
   "async_reset_cuts_note": "smt/pdr's proven/bounded verdicts above hold for a model in which each cut flop's async clear (formal.async_reset_cuts) reads the cut flops' PRE-RESET values instead of their Q - the clear lands in the same step the flop sets, and every other reset input (rst_n) is unchanged - so they show the settled zero-delay behaviour, not the delta-cycle glitch (both flops briefly both-set before the clear catches up) or the reset pulse's width, which stay sim's job"
  },
- "recorded_ts": "2026-10-05T06:24:47",
- "attempts": 5
+ "recorded_ts": "2026-10-05T15:26:29",
+ "attempts": 6
 }

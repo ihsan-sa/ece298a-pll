@@ -214,3 +214,142 @@
 ##   0:08:53  Checking cover reachability in step 148..
 ##   0:09:04  Checking cover reachability in step 149..
 ##   0:09:24  Checking cover reachability in step 150..
+##   0:10:04  Checking cover reachability in step 151..
+##   0:10:58  Checking cover reachability in step 152..
+##   0:11:19  Checking cover reachability in step 153..
+##   0:11:43  Checking cover reachability in step 154..
+##   0:12:11  Checking cover reachability in step 155..
+##   0:12:46  Checking cover reachability in step 156..
+##   0:13:14  Checking cover reachability in step 157..
+##   0:13:51  Checking cover reachability in step 158..
+##   0:14:19  Checking cover reachability in step 159..
+##   0:14:40  Checking cover reachability in step 160..
+##   0:15:25  Checking cover reachability in step 161..
+##   0:16:19  Checking cover reachability in step 162..
+##   0:16:50  Checking cover reachability in step 163..
+##   0:17:50  waiting for solver (1 minute)
+##   0:17:54  Checking cover reachability in step 164..
+##   0:18:54  waiting for solver (1 minute)
+##   0:18:56  Checking cover reachability in step 165..
+##   0:19:50  Checking cover reachability in step 166..
+##   0:20:35  Checking cover reachability in step 167..
+##   0:21:02  Checking cover reachability in step 168..
+##   0:21:57  Checking cover reachability in step 169..
+##   0:22:33  Checking cover reachability in step 170..
+##   0:23:00  Checking cover reachability in step 171..
+##   0:23:27  Checking cover reachability in step 172..
+##   0:24:06  Checking cover reachability in step 173..
+##   0:24:34  Checking cover reachability in step 174..
+##   0:25:06  Checking cover reachability in step 175..
+##   0:25:57  Checking cover reachability in step 176..
+##   0:26:38  Checking cover reachability in step 177..
+##   0:27:16  Checking cover reachability in step 178..
+##   0:27:53  Checking cover reachability in step 179..
+##   0:28:23  Checking cover reachability in step 180..
+##   0:28:51  Checking cover reachability in step 181..
+##   0:29:18  Checking cover reachability in step 182..
+##   0:29:59  Checking cover reachability in step 183..
+##   0:30:38  Checking cover reachability in step 184..
+##   0:31:03  Checking cover reachability in step 185..
+##   0:31:41  Checking cover reachability in step 186..
+##   0:32:09  Checking cover reachability in step 187..
+##   0:32:43  Checking cover reachability in step 188..
+##   0:33:09  Checking cover reachability in step 189..
+##   0:34:07  Checking cover reachability in step 190..
+##   0:35:07  Checking cover reachability in step 191..
+##   0:35:45  Checking cover reachability in step 192..
+##   0:36:36  Checking cover reachability in step 193..
+##   0:36:59  Checking cover reachability in step 194..
+##   0:37:39  Checking cover reachability in step 195..
+##   0:38:34  Checking cover reachability in step 196..
+##   0:39:25  Checking cover reachability in step 197..
+##   0:40:13  Checking cover reachability in step 198..
+##   0:41:13  waiting for solver (1 minute)
+##   0:41:16  Checking cover reachability in step 199..
+##   0:42:01  Checking cover reachability in step 200..
+##   0:43:01  waiting for solver (1 minute)
+##   0:43:19  Checking cover reachability in step 201..
+##   0:44:06  Checking cover reachability in step 202..
+##   0:44:59  Checking cover reachability in step 203..
+##   0:45:31  Checking cover reachability in step 204..
+##   0:46:22  Checking cover reachability in step 205..
+##   0:47:20  Checking cover reachability in step 206..
+##   0:47:58  Checking cover reachability in step 207..
+##   0:48:58  waiting for solver (1 minute)
+##   0:49:06  Checking cover reachability in step 208..
+##   0:50:00  Checking cover reachability in step 209..
+##   0:50:46  Checking cover reachability in step 210..
+##   0:51:44  Checking cover reachability in step 211..
+##   0:52:39  Checking cover reachability in step 212..
+##   0:53:11  Checking cover reachability in step 213..
+##   0:54:11  waiting for solver (1 minute)
+##   0:54:28  Checking cover reachability in step 214..
+##   0:55:27  Checking cover reachability in step 215..
+##   0:56:27  waiting for solver (1 minute)
+##   0:56:35  Checking cover reachability in step 216..
+##   0:57:22  Checking cover reachability in step 217..
+##   0:58:16  Checking cover reachability in step 218..
+##   0:59:00  Checking cover reachability in step 219..
+##   0:59:59  Checking cover reachability in step 220..
+##   1:00:59  waiting for solver (1 minute)
+##   1:01:01  Checking cover reachability in step 221..
+##   1:02:01  waiting for solver (1 minute)
+##   1:02:23  Checking cover reachability in step 222..
+##   1:03:18  Checking cover reachability in step 223..
+##   1:04:18  waiting for solver (1 minute)
+##   1:04:23  Checking cover reachability in step 224..
+##   1:05:10  Checking cover reachability in step 225..
+##   1:06:10  waiting for solver (1 minute)
+##   1:06:12  Checking cover reachability in step 226..
+##   1:07:11  Checking cover reachability in step 227..
+##   1:08:11  waiting for solver (1 minute)
+##   1:08:33  Checking cover reachability in step 228..
+##   1:09:33  waiting for solver (1 minute)
+##   1:09:52  Checking cover reachability in step 229..
+##   1:10:52  waiting for solver (1 minute)
+##   1:11:01  Checking cover reachability in step 230..
+##   1:12:01  waiting for solver (1 minute)
+##   1:12:14  Checking cover reachability in step 231..
+##   1:13:14  waiting for solver (1 minute)
+##   1:13:18  Checking cover reachability in step 232..
+##   1:14:06  Checking cover reachability in step 233..
+##   1:15:06  waiting for solver (1 minute)
+##   1:15:17  Checking cover reachability in step 234..
+##   1:16:17  waiting for solver (1 minute)
+##   1:16:29  Checking cover reachability in step 235..
+##   1:17:29  waiting for solver (1 minute)
+##   1:17:53  Checking cover reachability in step 236..
+##   1:18:53  waiting for solver (1 minute)
+##   1:19:06  Checking cover reachability in step 237..
+##   1:20:06  waiting for solver (1 minute)
+##   1:21:18  Checking cover reachability in step 238..
+##   1:22:18  waiting for solver (1 minute)
+##   1:23:55  Checking cover reachability in step 239..
+##   1:24:55  waiting for solver (1 minute)
+##   1:26:16  Checking cover reachability in step 240..
+##   1:27:16  waiting for solver (1 minute)
+##   1:28:00  Checking cover reachability in step 241..
+##   1:29:00  waiting for solver (1 minute)
+##   1:29:45  Checking cover reachability in step 242..
+##   1:30:45  waiting for solver (1 minute)
+##   1:31:12  Checking cover reachability in step 243..
+##   1:32:12  waiting for solver (1 minute)
+##   1:33:03  Checking cover reachability in step 244..
+##   1:34:03  waiting for solver (1 minute)
+##   1:34:27  Reached cover statement in step 244 at ihsan_sa_pll_formal: COVER_LOCK
+##   1:34:28  Writing trace to VCD file: engine_0/trace10.vcd
+##   1:34:31  Writing trace to Verilog testbench: engine_0/trace10_tb.v
+##   1:34:31  Writing trace to constraints file: engine_0/trace10.smtc
+##   1:34:31  Writing trace to Yosys witness file: engine_0/trace10.yw
+##   1:34:31  Checking cover reachability in step 244..
+##   1:35:31  waiting for solver (1 minute)
+##   1:36:08  Checking cover reachability in step 245..
+##   1:37:08  waiting for solver (1 minute)
+##   1:37:17  Checking cover reachability in step 246..
+##   1:38:17  waiting for solver (1 minute)
+##   1:38:46  Reached cover statement in step 246 at ihsan_sa_pll_formal: COVER_LOCK_DROP
+##   1:38:46  Writing trace to VCD file: engine_0/trace11.vcd
+##   1:38:49  Writing trace to Verilog testbench: engine_0/trace11_tb.v
+##   1:38:49  Writing trace to constraints file: engine_0/trace11.smtc
+##   1:38:49  Writing trace to Yosys witness file: engine_0/trace11.yw
+##   1:38:50  Status: passed

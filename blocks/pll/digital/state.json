@@ -4,7 +4,7 @@
  "block": "pll",
  "workspace": "blocks/pll/digital",
  "created": "2026-09-27T00:35:39",
- "updated": "2026-10-05T13:44:58",
+ "updated": "2026-10-05T15:26:29",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -840,14 +840,14 @@
   "formal": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-05T06:24:47",
+    "ts": "2026-10-05T15:26:29",
     "status": "pass",
     "failing_count": 0,
     "total": 8,
     "inputs": {
-     "rtl": "dir_text:4313dc4237b33f689d5a5c1d000a76c537f8b5773939fdfb51b2022cbd7800f3",
+     "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
      "formal": "dir_text:198bd2a395cf8d24094ae05d48044957d6815fc32fe1e1f3edeb1de8c9925b08",
      "spec_yaml": "json_canonical:af61b50535e58cd6e8d9ca224d05fc03bacb06c85f39fe2a3e2182d3dbc55db9"
     },
@@ -937,16 +937,22 @@
       "depth": 20,
       "cover_depth": 300
      }
-    }
-   ],
-   "stale": [
+    },
     {
-     "ts": "2026-10-05T13:33:44",
-     "edit_class": "rtl_edit",
-     "refs": [
-      "rtl/ihsan_sa_pll.v"
-     ],
-     "human_hold": 1
+     "ts": "2026-10-05T15:26:29",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 8,
+     "inputs": {
+      "rtl": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
+      "formal": "dir_text:198bd2a395cf8d24094ae05d48044957d6815fc32fe1e1f3edeb1de8c9925b08",
+      "spec_yaml": "json_canonical:af61b50535e58cd6e8d9ca224d05fc03bacb06c85f39fe2a3e2182d3dbc55db9"
+     },
+     "job": null,
+     "facts": {
+      "depth": 20,
+      "cover_depth": 300
+     }
     }
    ]
   },
@@ -1811,7 +1817,7 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:af61b50535e58cd6e8d9ca224d05fc03bacb06c85f39fe2a3e2182d3dbc55db9",
-   "hashed": "2026-10-05T13:34:17"
+   "hashed": "2026-10-05T15:26:29"
   },
   "holdout": {
    "path": "holdout",
@@ -1847,7 +1853,7 @@
    "path": "rtl",
    "kind": "rtl",
    "sha256": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
-   "hashed": "2026-10-05T13:40:48"
+   "hashed": "2026-10-05T15:26:29"
   },
   "tb": {
    "path": "tb",
@@ -1871,7 +1877,7 @@
    "path": "formal",
    "kind": "formal",
    "sha256": "dir_text:198bd2a395cf8d24094ae05d48044957d6815fc32fe1e1f3edeb1de8c9925b08",
-   "hashed": "2026-10-05T06:24:47"
+   "hashed": "2026-10-05T15:26:29"
   },
   "harden_config": {
    "path": "harden/config.json",
@@ -3674,6 +3680,14 @@
    "gate": "precheck",
    "status": "pass",
    "attempt": 4,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-05T15:26:29",
+   "event": "gate",
+   "gate": "formal",
+   "status": "pass",
+   "attempt": 6,
    "failing_count": 0
   }
  ]

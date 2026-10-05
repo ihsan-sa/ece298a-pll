@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-05T13:56:49",
+ "updated": "2026-10-05T14:14:11",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -138,14 +138,14 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-09-28T19:19:11",
+    "ts": "2026-10-05T14:14:11",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
-     "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+     "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
     },
     "job": null
@@ -191,6 +191,17 @@
      "total": 0,
      "inputs": {
       "netlist": "dir_text:ba4b3cb44377bcae10e01cad0a819ed0894e2b99d81f53ebe107496e9ebf98da",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-10-05T14:14:11",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
       "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
      },
      "job": null
@@ -595,13 +606,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-10-02T18:43:12"
+   "hashed": "2026-10-05T14:14:11"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-02T18:43:12"
+   "hashed": "2026-10-05T14:14:11"
   },
   "tb": {
    "path": "tb",
@@ -1553,6 +1564,14 @@
    "status": "fixed",
    "agent": "fixer",
    "attempts": 1
+  },
+  {
+   "ts": "2026-10-05T14:14:11",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
   }
  ]
 }

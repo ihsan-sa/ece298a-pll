@@ -230,3 +230,163 @@ SBY 13:56:15 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/forma
 SBY 13:56:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:08:53  Checking cover reachability in step 148..
 SBY 13:56:42 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:09:04  Checking cover reachability in step 149..
 SBY 13:57:02 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:09:24  Checking cover reachability in step 150..
+SBY 13:57:43 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:04  Checking cover reachability in step 151..
+SBY 13:58:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:10:58  Checking cover reachability in step 152..
+SBY 13:58:57 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:11:19  Checking cover reachability in step 153..
+SBY 13:59:22 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:11:43  Checking cover reachability in step 154..
+SBY 13:59:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:12:11  Checking cover reachability in step 155..
+SBY 14:00:25 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:12:46  Checking cover reachability in step 156..
+SBY 14:00:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:13:14  Checking cover reachability in step 157..
+SBY 14:01:30 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:13:51  Checking cover reachability in step 158..
+SBY 14:01:58 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:14:19  Checking cover reachability in step 159..
+SBY 14:02:19 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:14:40  Checking cover reachability in step 160..
+SBY 14:03:04 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:15:25  Checking cover reachability in step 161..
+SBY 14:03:58 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:16:19  Checking cover reachability in step 162..
+SBY 14:04:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:16:50  Checking cover reachability in step 163..
+SBY 14:05:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:17:50  waiting for solver (1 minute)
+SBY 14:05:33 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:17:54  Checking cover reachability in step 164..
+SBY 14:06:33 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:18:54  waiting for solver (1 minute)
+SBY 14:06:35 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:18:56  Checking cover reachability in step 165..
+SBY 14:07:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:19:50  Checking cover reachability in step 166..
+SBY 14:08:14 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:20:35  Checking cover reachability in step 167..
+SBY 14:08:41 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:21:02  Checking cover reachability in step 168..
+SBY 14:09:35 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:21:57  Checking cover reachability in step 169..
+SBY 14:10:11 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:22:33  Checking cover reachability in step 170..
+SBY 14:10:38 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:23:00  Checking cover reachability in step 171..
+SBY 14:11:06 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:23:27  Checking cover reachability in step 172..
+SBY 14:11:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:24:06  Checking cover reachability in step 173..
+SBY 14:12:13 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:24:34  Checking cover reachability in step 174..
+SBY 14:12:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:25:06  Checking cover reachability in step 175..
+SBY 14:13:36 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:25:57  Checking cover reachability in step 176..
+SBY 14:14:17 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:26:38  Checking cover reachability in step 177..
+SBY 14:14:54 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:27:16  Checking cover reachability in step 178..
+SBY 14:15:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:27:53  Checking cover reachability in step 179..
+SBY 14:16:02 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:28:23  Checking cover reachability in step 180..
+SBY 14:16:29 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:28:51  Checking cover reachability in step 181..
+SBY 14:16:57 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:29:18  Checking cover reachability in step 182..
+SBY 14:17:38 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:29:59  Checking cover reachability in step 183..
+SBY 14:18:17 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:30:38  Checking cover reachability in step 184..
+SBY 14:18:42 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:31:03  Checking cover reachability in step 185..
+SBY 14:19:19 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:31:41  Checking cover reachability in step 186..
+SBY 14:19:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:32:09  Checking cover reachability in step 187..
+SBY 14:20:21 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:32:43  Checking cover reachability in step 188..
+SBY 14:20:48 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:33:09  Checking cover reachability in step 189..
+SBY 14:21:46 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:34:07  Checking cover reachability in step 190..
+SBY 14:22:46 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:35:07  Checking cover reachability in step 191..
+SBY 14:23:24 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:35:45  Checking cover reachability in step 192..
+SBY 14:24:15 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:36:36  Checking cover reachability in step 193..
+SBY 14:24:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:36:59  Checking cover reachability in step 194..
+SBY 14:25:18 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:37:39  Checking cover reachability in step 195..
+SBY 14:26:13 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:38:34  Checking cover reachability in step 196..
+SBY 14:27:04 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:39:25  Checking cover reachability in step 197..
+SBY 14:27:51 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:40:13  Checking cover reachability in step 198..
+SBY 14:28:52 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:41:13  waiting for solver (1 minute)
+SBY 14:28:55 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:41:16  Checking cover reachability in step 199..
+SBY 14:29:40 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:42:01  Checking cover reachability in step 200..
+SBY 14:30:40 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:43:01  waiting for solver (1 minute)
+SBY 14:30:58 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:43:19  Checking cover reachability in step 201..
+SBY 14:31:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:44:06  Checking cover reachability in step 202..
+SBY 14:32:38 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:44:59  Checking cover reachability in step 203..
+SBY 14:33:10 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:45:31  Checking cover reachability in step 204..
+SBY 14:34:01 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:46:22  Checking cover reachability in step 205..
+SBY 14:34:59 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:47:20  Checking cover reachability in step 206..
+SBY 14:35:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:47:58  Checking cover reachability in step 207..
+SBY 14:36:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:48:58  waiting for solver (1 minute)
+SBY 14:36:44 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:49:06  Checking cover reachability in step 208..
+SBY 14:37:38 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:50:00  Checking cover reachability in step 209..
+SBY 14:38:24 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:50:46  Checking cover reachability in step 210..
+SBY 14:39:23 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:51:44  Checking cover reachability in step 211..
+SBY 14:40:18 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:52:39  Checking cover reachability in step 212..
+SBY 14:40:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:53:11  Checking cover reachability in step 213..
+SBY 14:41:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:54:11  waiting for solver (1 minute)
+SBY 14:42:06 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:54:28  Checking cover reachability in step 214..
+SBY 14:43:05 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:55:27  Checking cover reachability in step 215..
+SBY 14:44:05 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:56:27  waiting for solver (1 minute)
+SBY 14:44:14 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:56:35  Checking cover reachability in step 216..
+SBY 14:45:00 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:57:22  Checking cover reachability in step 217..
+SBY 14:45:55 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:58:16  Checking cover reachability in step 218..
+SBY 14:46:39 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:59:00  Checking cover reachability in step 219..
+SBY 14:47:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   0:59:59  Checking cover reachability in step 220..
+SBY 14:48:37 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:00:59  waiting for solver (1 minute)
+SBY 14:48:40 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:01:01  Checking cover reachability in step 221..
+SBY 14:49:40 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:02:01  waiting for solver (1 minute)
+SBY 14:50:02 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:02:23  Checking cover reachability in step 222..
+SBY 14:50:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:03:18  Checking cover reachability in step 223..
+SBY 14:51:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:04:18  waiting for solver (1 minute)
+SBY 14:52:02 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:04:23  Checking cover reachability in step 224..
+SBY 14:52:49 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:05:10  Checking cover reachability in step 225..
+SBY 14:53:49 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:06:10  waiting for solver (1 minute)
+SBY 14:53:51 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:06:12  Checking cover reachability in step 226..
+SBY 14:54:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:07:11  Checking cover reachability in step 227..
+SBY 14:55:50 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:08:11  waiting for solver (1 minute)
+SBY 14:56:12 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:08:33  Checking cover reachability in step 228..
+SBY 14:57:12 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:09:33  waiting for solver (1 minute)
+SBY 14:57:31 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:09:52  Checking cover reachability in step 229..
+SBY 14:58:31 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:10:52  waiting for solver (1 minute)
+SBY 14:58:39 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:11:01  Checking cover reachability in step 230..
+SBY 14:59:39 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:12:01  waiting for solver (1 minute)
+SBY 14:59:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:12:14  Checking cover reachability in step 231..
+SBY 15:00:53 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:13:14  waiting for solver (1 minute)
+SBY 15:00:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:13:18  Checking cover reachability in step 232..
+SBY 15:01:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:14:06  Checking cover reachability in step 233..
+SBY 15:02:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:15:06  waiting for solver (1 minute)
+SBY 15:02:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:15:17  Checking cover reachability in step 234..
+SBY 15:03:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:16:17  waiting for solver (1 minute)
+SBY 15:04:08 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:16:29  Checking cover reachability in step 235..
+SBY 15:05:08 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:17:29  waiting for solver (1 minute)
+SBY 15:05:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:17:53  Checking cover reachability in step 236..
+SBY 15:06:32 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:18:53  waiting for solver (1 minute)
+SBY 15:06:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:19:06  Checking cover reachability in step 237..
+SBY 15:07:45 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:20:06  waiting for solver (1 minute)
+SBY 15:08:57 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:21:18  Checking cover reachability in step 238..
+SBY 15:09:57 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:22:18  waiting for solver (1 minute)
+SBY 15:11:34 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:23:55  Checking cover reachability in step 239..
+SBY 15:12:34 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:24:55  waiting for solver (1 minute)
+SBY 15:13:55 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:26:16  Checking cover reachability in step 240..
+SBY 15:14:55 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:27:16  waiting for solver (1 minute)
+SBY 15:15:39 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:28:00  Checking cover reachability in step 241..
+SBY 15:16:39 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:29:00  waiting for solver (1 minute)
+SBY 15:17:23 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:29:45  Checking cover reachability in step 242..
+SBY 15:18:23 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:30:45  waiting for solver (1 minute)
+SBY 15:18:51 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:31:12  Checking cover reachability in step 243..
+SBY 15:19:51 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:32:12  waiting for solver (1 minute)
+SBY 15:20:41 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:33:03  Checking cover reachability in step 244..
+SBY 15:21:41 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:03  waiting for solver (1 minute)
+SBY 15:22:06 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:27  Reached cover statement in step 244 at ihsan_sa_pll_formal: COVER_LOCK
+SBY 15:22:06 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:28  Writing trace to VCD file: engine_0/trace10.vcd
+SBY 15:22:09 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:31  Writing trace to Verilog testbench: engine_0/trace10_tb.v
+SBY 15:22:09 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:31  Writing trace to constraints file: engine_0/trace10.smtc
+SBY 15:22:09 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:31  Writing trace to Yosys witness file: engine_0/trace10.yw
+SBY 15:22:10 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:34:31  Checking cover reachability in step 244..
+SBY 15:23:10 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:35:31  waiting for solver (1 minute)
+SBY 15:23:46 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:36:08  Checking cover reachability in step 245..
+SBY 15:24:46 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:37:08  waiting for solver (1 minute)
+SBY 15:24:55 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:37:17  Checking cover reachability in step 246..
+SBY 15:25:56 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:17  waiting for solver (1 minute)
+SBY 15:26:25 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:46  Reached cover statement in step 246 at ihsan_sa_pll_formal: COVER_LOCK_DROP
+SBY 15:26:25 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:46  Writing trace to VCD file: engine_0/trace11.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:49  Writing trace to Verilog testbench: engine_0/trace11_tb.v
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:49  Writing trace to constraints file: engine_0/trace11.smtc
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:49  Writing trace to Yosys witness file: engine_0/trace11.yw
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: ##   1:38:50  Status: passed
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: finished (returncode=0)
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] engine_0: Status returned by engine: pass
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: Elapsed clock time [H:MM:SS (secs)]: 1:38:51 (5931)
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: Elapsed process time [H:MM:SS (secs)]: 0:59:55 (3595)
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: engine_0 (smtbmc yices) returned pass
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: cover trace: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/engine_0/trace0.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_fb_q$async_cut_matches_clk2fflogic at  step 1
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.\dut.u_pfd.pfd_ref_q$async_cut_matches_clk2fflogic at  step 1
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.pfd_never_both_high at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:145.7-145.56 step 1
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.reset_forces_outputs at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:123.9-125.62 step 1
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: cover trace: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/engine_0/trace1.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.lock_not_while_wide at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:157.9-157.84 step 1
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: cover trace: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/engine_0/trace10.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.COVER_LOCK at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:170.7-170.37 step 244
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: cover trace: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/engine_0/trace11.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.COVER_LOCK_DROP at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:171.7-171.69 step 246
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: cover trace: /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/engine_0/trace2.vcd
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary:   reached cover statement ihsan_sa_pll_formal.COVER_PFD_UP at /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:163.7-163.39 step 2
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: and 7 further traces
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] summary: see /home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov/PASS for a complete summary
+SBY 15:26:28 [/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/log/formal/cov] DONE (PASS, rc=0)

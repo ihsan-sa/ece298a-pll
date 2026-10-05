@@ -1,0 +1,8 @@
+.include head_tt.inc
+ikick 0 xdut.r1 pulse(0 1u 1n 50p 50p 1n 1)
+.control
+save v(xdut.r1) @m.xdut.xmn_i1.m0[gm] @m.xdut.xmp_i1.m0[gm] @m.xdut.xmn_i1.m0[id] @m.xdut.xmp_i1.m0[id] @m.xdut.xmn_s1.m0[gm] @m.xdut.xmp_s1.m0[gm]
+tran 10p 40n
+wrdata gm.txt v(xdut.r1) @m.xdut.xmn_i1.m0[gm] @m.xdut.xmp_i1.m0[gm] @m.xdut.xmn_i1.m0[id] @m.xdut.xmp_i1.m0[id] @m.xdut.xmn_s1.m0[gm] @m.xdut.xmp_s1.m0[gm]
+.endc
+.end
