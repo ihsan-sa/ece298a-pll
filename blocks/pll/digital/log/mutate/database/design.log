@@ -191,6 +191,6 @@ Optimizing module ihsan_sa_pll.
 9. Executing RTLIL backend.
 Output filename: database/design.il
 
-End of script. Logfile hash: 7dfc3c7c1d, time: 0.02s, user: 0.02s, system: 0.01s, MEM: 28.71 MB peak
+End of script. Logfile hash: 7dfc3c7c1d, time: 0.06s, user: 0.02s, system: 0.01s, MEM: 28.52 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 66% 12x read_verilog (0 sec), 8% 2x write_rtlil (0 sec), ...
+Time spent: 66% 12x read_verilog (0 sec), 7% 2x write_rtlil (0 sec), ...

@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791189944
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791221642
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -23,13 +23,13 @@
  35511.81ns INFO     cocotb.regression                  *************************************************************************************************************
                                                         ** TEST                                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *************************************************************************************************************
-                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.10      48846.12  **
-                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.11     148606.57  **
-                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.03     159864.02  **
-                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.02     142048.88  **
-                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.03     115949.82  **
-                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.05      51409.40  **
-                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00     594532.21  **
+                                                        ** test_pll_holdout.test_midrun_reset_pulse              PASS        5035.00           0.08      60673.59  **
+                                                        ** test_pll_holdout.test_live_nsel_changes               PASS       16401.00           0.29      55820.53  **
+                                                        ** test_pll_holdout.test_wide_on_fifteenth_clean_cycle   PASS        4834.90           0.05      91428.52  **
+                                                        ** test_pll_holdout.test_dn_side_wide_drops_lock         PASS        2594.90           0.03      94041.87  **
+                                                        ** test_pll_holdout.test_pfd_extreme_offsets             PASS        3345.00           0.07      47632.06  **
+                                                        ** test_pll_holdout.test_obs_sel_live_fast_vco           PASS        2364.00           0.07      32116.98  **
+                                                        ** test_pll_holdout.test_ctrl_regs_every_cycle           PASS         937.00           0.00     605172.45  **
                                                         *************************************************************************************************************
-                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           0.34     103592.47  **
+                                                        ** TESTS=7 PASS=7 FAIL=0 SKIP=0                                     35511.81           0.62      57093.73  **
                                                         *************************************************************************************************************

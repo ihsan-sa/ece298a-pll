@@ -101,7 +101,7 @@ module \ihsan_sa_pll_formal
   attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:53.13-53.18"
   attribute \init 1'0
   wire \fb_ok
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:10.23-10.30"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:15.23-15.30"
   attribute \hdlname "dut vco_out"
   wire \dut.vco_out
   attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_prescaler.v:6.17-6.24"
@@ -271,52 +271,58 @@ module \ihsan_sa_pll_formal
   attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/pll_ctrl_regs.v:4.23-4.26"
   attribute \hdlname "dut u_ctrl clk"
   wire \dut.u_ctrl.clk
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:8.23-8.28"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:13.23-13.28"
   attribute \hdlname "dut rst_n"
   wire \dut.rst_n
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:11.23-11.32"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:16.23-16.32"
   attribute \hdlname "dut pll_en_in"
   wire \dut.pll_en_in
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:19.23-19.29"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:24.23-24.29"
   attribute \hdlname "dut pll_en"
   wire \dut.pll_en
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:17.23-17.29"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:22.23-22.29"
   attribute \hdlname "dut pfd_up"
   wire \dut.pfd_up
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:18.23-18.29"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:23.23-23.29"
   attribute \hdlname "dut pfd_dn"
   wire \dut.pfd_dn
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:12.23-12.30"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:17.23-17.30"
   attribute \hdlname "dut obs_sel"
   wire \dut.obs_sel
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:24.8-24.14"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:29.8-29.14"
   attribute \hdlname "dut obs_q3"
   wire \dut.obs_q3
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:14.23-14.30"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:19.23-19.30"
   attribute \hdlname "dut obs_out"
   wire \dut.obs_out
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:9.23-9.28"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:31.8-31.15"
+  attribute \hdlname "dut obs_int"
+  wire \dut.obs_int
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:14.23-14.28"
   attribute \hdlname "dut n_sel"
   wire width 3 \dut.n_sel
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:16.23-16.27"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:21.23-21.27"
   attribute \hdlname "dut lock"
   wire \dut.lock
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:13.23-13.33"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:18.23-18.33"
   attribute \hdlname "dut cp_trim_in"
   wire width 2 \dut.cp_trim_in
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:21.23-21.31"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:26.23-26.31"
   attribute \hdlname "dut cp_trim1"
   wire \dut.cp_trim1
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:20.23-20.31"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:25.23-25.31"
   attribute \hdlname "dut cp_trim0"
   wire \dut.cp_trim0
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:23.8-23.15"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:28.8-28.15"
   attribute \hdlname "dut clk_pre"
   wire \dut.clk_pre
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:15.23-15.29"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:30.8-30.18"
+  attribute \hdlname "dut clk_fb_int"
+  wire \dut.clk_fb_int
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:20.23-20.29"
   attribute \hdlname "dut clk_fb"
   wire \dut.clk_fb
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:7.23-7.26"
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:12.23-12.26"
   attribute \hdlname "dut clk"
   wire \dut.clk
   attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:140.9-142.78"
@@ -750,7 +756,7 @@ module \ihsan_sa_pll_formal
   attribute \module_hdlname "pll_prescaler"
   attribute \module "pll_prescaler"
   attribute \hdlname "dut u_pre"
-  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:26.17-27.76"
+  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:33.17-34.76"
   attribute \cell_module_not_derived 1
   cell $scopeinfo \dut.u_pre
     parameter \TYPE "module"
@@ -916,7 +922,7 @@ module \ihsan_sa_pll_formal
   attribute \module_hdlname "pll_pfd"
   attribute \module "pll_pfd"
   attribute \hdlname "dut u_pfd"
-  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:32.11-34.40"
+  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:39.11-41.40"
   attribute \cell_module_not_derived 1
   cell $scopeinfo \dut.u_pfd
     parameter \TYPE "module"
@@ -925,7 +931,7 @@ module \ihsan_sa_pll_formal
   attribute \module_hdlname "pll_lock_det"
   attribute \module "pll_lock_det"
   attribute \hdlname "dut u_lock"
-  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.16-38.19"
+  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:43.16-45.19"
   attribute \cell_module_not_derived 1
   cell $scopeinfo \dut.u_lock
     parameter \TYPE "module"
@@ -934,7 +940,7 @@ module \ihsan_sa_pll_formal
   attribute \module_hdlname "pll_divider"
   attribute \module "pll_divider"
   attribute \hdlname "dut u_div"
-  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:29.15-30.72"
+  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.15-37.76"
   attribute \cell_module_not_derived 1
   cell $scopeinfo \dut.u_div
     parameter \TYPE "module"
@@ -943,12 +949,12 @@ module \ihsan_sa_pll_formal
   attribute \module_hdlname "pll_ctrl_regs"
   attribute \module "pll_ctrl_regs"
   attribute \hdlname "dut u_ctrl"
-  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:40.17-43.48"
+  attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.17-50.48"
   attribute \cell_module_not_derived 1
   cell $scopeinfo \dut.u_ctrl
     parameter \TYPE "module"
   end
-  attribute \module_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:6.1-47.10"
+  attribute \module_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:11.1-67.10"
   attribute \module_hdlname "ihsan_sa_pll"
   attribute \module "ihsan_sa_pll"
   attribute \cell_src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:25.16-30.27"
@@ -2752,8 +2758,8 @@ module \ihsan_sa_pll_formal
     connect \B 1'1
     connect \A \pre_cnt
   end
-  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46.20-46.46"
-  cell $mux $flatten\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46$166
+  attribute \src "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.20-53.46"
+  cell $mux $flatten\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$166
     parameter \WIDTH 1
     connect \Y \obs_out
     connect \S \obs_sel
@@ -3305,12 +3311,14 @@ module \ihsan_sa_pll_formal
   connect \cp_trim1 \dut.u_ctrl.cp_trim1
   connect \dut.clk \clk
   connect \dut.clk_fb \clk_fb
+  connect \dut.clk_fb_int \clk_fb
   connect \dut.clk_pre \dut.u_pre.pre_q2
   connect \dut.cp_trim0 \dut.u_ctrl.cp_trim0
   connect \dut.cp_trim1 \dut.u_ctrl.cp_trim1
   connect \dut.cp_trim_in \cp_trim_in
   connect \dut.lock \dut.u_lock.lock
   connect \dut.n_sel \n_sel
+  connect \dut.obs_int \obs_out
   connect \dut.obs_out \obs_out
   connect \dut.obs_q3 \dut.u_pre.q3
   connect \dut.obs_sel \obs_sel

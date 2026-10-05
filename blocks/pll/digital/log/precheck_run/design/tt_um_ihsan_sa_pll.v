@@ -54,10 +54,12 @@ module tt_um_ihsan_sa_pll (clk,
  wire net28;
  wire net1;
  wire \u_ihsan_sa_pll.clk_fb ;
+ wire \u_ihsan_sa_pll.clk_fb_int ;
  wire \u_ihsan_sa_pll.clk_pre ;
  wire \u_ihsan_sa_pll.cp_trim0 ;
  wire \u_ihsan_sa_pll.cp_trim1 ;
  wire \u_ihsan_sa_pll.lock ;
+ wire \u_ihsan_sa_pll.obs_int ;
  wire \u_ihsan_sa_pll.obs_out ;
  wire \u_ihsan_sa_pll.obs_q3 ;
  wire \u_ihsan_sa_pll.pfd_dn ;
@@ -111,13 +113,13 @@ module tt_um_ihsan_sa_pll (clk,
  wire net10;
  wire net;
  wire net31;
- wire \u_ihsan_sa_pll.clk_fb_regs ;
+ wire \u_ihsan_sa_pll.clk_fb_int_regs ;
  wire clknet_0_clk;
  wire clknet_1_0__leaf_clk;
  wire clknet_1_1__leaf_clk;
  wire net33;
+ wire \clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ;
  wire net32;
- wire \clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ;
  wire \clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ;
  wire \clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ;
@@ -126,10 +128,10 @@ module tt_um_ihsan_sa_pll (clk,
  wire \clknet_0_u_ihsan_sa_pll.clk_pre_regs ;
  wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ;
  wire \clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ;
- wire \clknet_0_u_ihsan_sa_pll.clk_fb ;
- wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb ;
- wire \clknet_0_u_ihsan_sa_pll.clk_fb_regs ;
- wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_regs ;
+ wire \clknet_0_u_ihsan_sa_pll.clk_fb_int ;
+ wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int ;
+ wire \clknet_0_u_ihsan_sa_pll.clk_fb_int_regs ;
+ wire \clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int_regs ;
  wire delaynet_0_clk_pre;
 
  gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_0_104 (.VDD(VPWR),
@@ -1820,27 +1822,23 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_492 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_492 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_29_508 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_496 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_29_516 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_29_523 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_29_532 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_555 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_29_548 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_29_556 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_29_559 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -1968,15 +1966,23 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_247 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_247 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_311 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_279 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_317 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_295 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_303 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_334 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -1984,31 +1990,19 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_349 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_350 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_357 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_358 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_361 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_363 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_366 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_37 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_370 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_378 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2020,51 +2014,63 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_30_387 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_401 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_451 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_433 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_457 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_449 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_489 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_453 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_30_505 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_457 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_513 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_473 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_517 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_477 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_527 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_479 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_542 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_518 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_30_574 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_30_522 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_590 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_524 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_594 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_527 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_30_548 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_30_559 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_30_591 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2096,19 +2102,31 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_31_282 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_282 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_352 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_290 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_360 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_294 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_401 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_344 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_348 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_352 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_354 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2120,7 +2138,23 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_31_422 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_31_422 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_454 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_462 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_31_464 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_478 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2132,15 +2166,11 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_508 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_508 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_31_550 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_31_558 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_31_516 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2196,15 +2226,15 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_32_279 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_279 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_295 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_287 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_303 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_321 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2216,59 +2246,35 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_382 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_373 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_384 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_381 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_391 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_403 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_442 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_32_445 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_450 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_453 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_454 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_457 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_32_457 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_32_501 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_473 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_477 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_512 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_520 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_32_524 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_32_557 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_32_589 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_32_517 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2304,83 +2310,43 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_282 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_282 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_290 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_298 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_292 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_346 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_347 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_352 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_349 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_354 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_356 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_462 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_358 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_566 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_377 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_568 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_413 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_595 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_417 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_419 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_422 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_33_468 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_33_484 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_488 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_492 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_33_562 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_33_594 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_602 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_33_604 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_33_603 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2416,19 +2382,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_34_247 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_279 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_287 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_317 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_34_247 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2436,7 +2390,11 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_351 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_343 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_347 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2444,55 +2402,39 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_379 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_387 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_383 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_399 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_413 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_427 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_443 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_457 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_451 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_462 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_497 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_504 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_34_527 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_506 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_535 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_34_553 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_539 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_541 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_34_574 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_34_590 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_34_594 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_34_585 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2516,15 +2458,39 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_64 FILLER_35_212 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_35_212 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_276 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_244 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_282 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_248 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_275 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_279 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_35_282 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_290 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_294 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_330 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2540,67 +2506,19 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_368 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_408 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_372 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_484 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_374 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_532 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_415 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_419 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_35_430 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_438 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_479 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_484 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_488 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_492 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_35_504 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_35_559 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_576 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_35_592 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_35_600 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_35_588 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2640,15 +2558,15 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_36_247 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_247 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_263 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_255 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_325 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_317 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2656,11 +2574,11 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_363 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_361 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_365 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_369 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2668,47 +2586,27 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_372 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_377 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_380 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_387 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_384 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_409 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_408 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_36_439 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_450 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_523 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_457 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_471 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_36_486 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_36_581 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_36_589 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_593 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_36_527 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2736,43 +2634,47 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_244 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_244 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_260 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_252 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_282 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_282 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_352 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_298 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_396 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_332 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_412 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_348 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_462 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_352 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_37_498 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_360 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_37_542 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_37_402 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_550 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_418 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_37_488 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2892,31 +2794,23 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_240 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_240 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_38_252 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_274 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_268 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_278 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_300 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_308 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_304 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_308 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_312 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_336 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2932,23 +2826,31 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_32 FILLER_38_376 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_402 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_410 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_406 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_418 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_410 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_444 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_412 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_460 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_439 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_441 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_470 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2960,19 +2862,15 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_480 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_507 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_509 (.VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__fill_1 FILLER_38_52 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_560 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_568 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -2980,11 +2878,15 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fillcap_8 FILLER_38_594 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_576 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__fill_2 FILLER_38_602 (.VDD(VPWR),
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_16 FILLER_38_584 (.VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__fillcap_4 FILLER_38_600 (.VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
@@ -4534,7 +4436,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__and2_1 _049_ (.A1(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre ),
     .A2(\u_ihsan_sa_pll.u_div.fb_en ),
-    .Z(\u_ihsan_sa_pll.clk_fb ),
+    .Z(\u_ihsan_sa_pll.clk_fb_int ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -4695,7 +4597,7 @@ module tt_um_ihsan_sa_pll (clk,
  gf180mcu_fd_sc_mcu7t5v0__oai21_1 _070_ (.A1(net31),
     .A2(net6),
     .B(_030_),
-    .ZN(\u_ihsan_sa_pll.obs_out ),
+    .ZN(\u_ihsan_sa_pll.obs_int ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -4715,7 +4617,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _073_ (.D(net7),
-    .RN(net33),
+    .RN(net9),
     .CLK(clknet_1_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.cp_trim0 ),
     .VDD(VPWR),
@@ -4723,7 +4625,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _074_ (.D(net5),
-    .RN(net9),
+    .RN(net33),
     .CLK(clknet_1_1__leaf_clk),
     .Q(\u_ihsan_sa_pll.pll_en ),
     .VDD(VPWR),
@@ -4809,7 +4711,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _084_ (.D(net27),
     .RN(_010_),
-    .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_regs ),
+    .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int_regs ),
     .Q(\u_ihsan_sa_pll.pfd_dn ),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4829,7 +4731,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _086_ (.D(_001_),
-    .RN(net33),
+    .RN(net10),
     .CLK(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.div_cnt[1] ),
     .VDD(VPWR),
@@ -4838,7 +4740,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _087_ (.D(_002_),
     .RN(net10),
-    .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
+    .CLK(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.div_cnt[2] ),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4846,7 +4748,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1 _088_ (.D(\u_ihsan_sa_pll.u_div.last ),
     .RN(net33),
-    .CLKN(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
+    .CLKN(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .Q(\u_ihsan_sa_pll.u_div.fb_en ),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4854,7 +4756,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _089_ (.D(net29),
     .RN(net33),
-    .CLK(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
+    .CLK(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
     .Q(\u_ihsan_sa_pll.u_pre.pre_q1 ),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4877,56 +4779,56 @@ module tt_um_ihsan_sa_pll (clk,
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__dffrnq_4 _092_ (.D(net28),
-    .RN(net10),
+    .RN(net33),
     .CLK(ui_in[3]),
     .Q(\u_ihsan_sa_pll.u_pre.pre_q0 ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 _111_ (.I(\u_ihsan_sa_pll.obs_out ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _111_ (.I(\u_ihsan_sa_pll.obs_out ),
     .Z(uo_out[0]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 _112_ (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _112_ (.I(\u_ihsan_sa_pll.clk_fb ),
     .Z(uo_out[1]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _113_ (.I(\u_ihsan_sa_pll.lock ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _113_ (.I(\u_ihsan_sa_pll.lock ),
     .Z(uo_out[2]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _114_ (.I(\u_ihsan_sa_pll.pfd_up ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _114_ (.I(\u_ihsan_sa_pll.pfd_up ),
     .Z(uo_out[3]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _115_ (.I(\u_ihsan_sa_pll.pfd_dn ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _115_ (.I(\u_ihsan_sa_pll.pfd_dn ),
     .Z(uo_out[4]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _116_ (.I(\u_ihsan_sa_pll.pll_en ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _116_ (.I(\u_ihsan_sa_pll.pll_en ),
     .Z(uo_out[5]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _117_ (.I(\u_ihsan_sa_pll.cp_trim0 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _117_ (.I(\u_ihsan_sa_pll.cp_trim0 ),
     .Z(uo_out[6]),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_2 _118_ (.I(\u_ihsan_sa_pll.cp_trim1 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 _118_ (.I(\u_ihsan_sa_pll.cp_trim1 ),
     .Z(uo_out[7]),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -4938,14 +4840,14 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.clk_fb  (.I(\u_ihsan_sa_pll.clk_fb ),
-    .Z(\clknet_0_u_ihsan_sa_pll.clk_fb ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.clk_fb_int  (.I(\u_ihsan_sa_pll.clk_fb_int ),
+    .Z(\clknet_0_u_ihsan_sa_pll.clk_fb_int ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.clk_fb_regs  (.I(\u_ihsan_sa_pll.clk_fb_regs ),
-    .Z(\clknet_0_u_ihsan_sa_pll.clk_fb_regs ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_0_u_ihsan_sa_pll.clk_fb_int_regs  (.I(\u_ihsan_sa_pll.clk_fb_int_regs ),
+    .Z(\clknet_0_u_ihsan_sa_pll.clk_fb_int_regs ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -4974,14 +4876,14 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb ),
-    .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb_int ),
+    .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb_regs ),
-    .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_regs ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_fb_int_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_fb_int_regs ),
+    .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int_regs ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -4994,6 +4896,12 @@ module tt_um_ihsan_sa_pll (clk,
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.clk_pre_regs  (.I(\clknet_0_u_ihsan_sa_pll.clk_pre_regs ),
     .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_pre_regs ),
+    .VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_0__f_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\u_ihsan_sa_pll.u_pre.pre_q0 ),
+    .Z(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -5016,12 +4924,6 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q0  (.I(\u_ihsan_sa_pll.u_pre.pre_q0 ),
-    .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
-    .VDD(VPWR),
-    .VNW(VPWR),
-    .VPW(VGND),
-    .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \clkbuf_1_1__f_u_ihsan_sa_pll.u_pre.pre_q1  (.I(\clknet_0_u_ihsan_sa_pll.u_pre.pre_q1 ),
     .Z(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q1 ),
     .VDD(VPWR),
@@ -5034,8 +4936,8 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 clkbuf_regs_1_clk_pre (.I(\u_ihsan_sa_pll.clk_fb ),
-    .Z(\u_ihsan_sa_pll.clk_fb_regs ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 clkbuf_regs_1_clk_pre (.I(\u_ihsan_sa_pll.clk_fb_int ),
+    .Z(\u_ihsan_sa_pll.clk_fb_int_regs ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -5045,7 +4947,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_2 clkload1 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_2 clkload1 (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.u_pre.pre_q0 ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -5055,7 +4957,7 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__clkbuf_4 clkload3 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
+ gf180mcu_fd_sc_mcu7t5v0__inv_1 clkload3 (.I(\clknet_1_1__leaf_u_ihsan_sa_pll.clk_pre_regs ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
@@ -5078,49 +4980,49 @@ module tt_um_ihsan_sa_pll (clk,
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input1 (.I(rst_n),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input1 (.I(rst_n),
     .Z(net1),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input2 (.I(ui_in[0]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input2 (.I(ui_in[0]),
     .Z(net2),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input3 (.I(ui_in[1]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input3 (.I(ui_in[1]),
     .Z(net3),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input4 (.I(ui_in[2]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input4 (.I(ui_in[2]),
     .Z(net4),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input5 (.I(ui_in[6]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input5 (.I(ui_in[6]),
     .Z(net5),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input6 (.I(ui_in[7]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input6 (.I(ui_in[7]),
     .Z(net6),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input7 (.I(uio_in[0]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input7 (.I(uio_in[0]),
     .Z(net7),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),
     .VSS(VGND));
- gf180mcu_fd_sc_mcu7t5v0__buf_1 input8 (.I(uio_in[1]),
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 input8 (.I(uio_in[1]),
     .Z(net8),
     .VDD(VPWR),
     .VNW(VPWR),
@@ -5214,6 +5116,18 @@ module tt_um_ihsan_sa_pll (clk,
     .VPW(VGND),
     .VSS(VGND));
  gf180mcu_fd_sc_mcu7t5v0__tiel tt_um_ihsan_sa_pll_25 (.ZN(net25),
+    .VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_clk_fb_obuf  (.I(\clknet_1_0__leaf_u_ihsan_sa_pll.clk_fb_int ),
+    .Z(\u_ihsan_sa_pll.clk_fb ),
+    .VDD(VPWR),
+    .VNW(VPWR),
+    .VPW(VGND),
+    .VSS(VGND));
+ gf180mcu_fd_sc_mcu7t5v0__clkbuf_8 \u_ihsan_sa_pll.u_obs_obuf  (.I(\u_ihsan_sa_pll.obs_int ),
+    .Z(\u_ihsan_sa_pll.obs_out ),
     .VDD(VPWR),
     .VNW(VPWR),
     .VPW(VGND),

@@ -38,12 +38,14 @@ extern const VlVarTableEntry Vtop___024root__VpiVarTable0[] = {
 extern const VlVarTableEntry Vtop___024root__VpiVarTable1[] = {
     {"clk", offsetof(Vtop___024root, ihsan_sa_pll__DOT__clk), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"clk_fb", offsetof(Vtop___024root, ihsan_sa_pll__DOT__clk_fb), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
+    {"clk_fb_int", offsetof(Vtop___024root, ihsan_sa_pll__DOT__clk_fb_int), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"clk_pre", offsetof(Vtop___024root, ihsan_sa_pll__DOT__clk_pre), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"cp_trim0", offsetof(Vtop___024root, ihsan_sa_pll__DOT__cp_trim0), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"cp_trim1", offsetof(Vtop___024root, ihsan_sa_pll__DOT__cp_trim1), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"cp_trim_in", offsetof(Vtop___024root, ihsan_sa_pll__DOT__cp_trim_in), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 1, {1, 0, 0, 0, 0, 0}},
     {"lock", offsetof(Vtop___024root, ihsan_sa_pll__DOT__lock), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"n_sel", offsetof(Vtop___024root, ihsan_sa_pll__DOT__n_sel), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 1, {2, 0, 0, 0, 0, 0}},
+    {"obs_int", offsetof(Vtop___024root, ihsan_sa_pll__DOT__obs_int), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"obs_out", offsetof(Vtop___024root, ihsan_sa_pll__DOT__obs_out), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"obs_q3", offsetof(Vtop___024root, ihsan_sa_pll__DOT__obs_q3), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
     {"obs_sel", offsetof(Vtop___024root, ihsan_sa_pll__DOT__obs_sel), VLVT_UINT8, (VLVD_NODIR|VLVF_PUB_RW|VLVF_CONTINUOUSLY|VLVF_NET), 0, 0, {0, 0, 0, 0, 0, 0}},
@@ -149,7 +151,7 @@ Vtop__Syms::Vtop__Syms(VerilatedContext* contextp, const char* namep, Vtop* mode
     // Setup export functions - final: 1
     // Setup public variables
     __Vscopep_TOP->varsInsertFromTable(Vtop___024root__VpiVarTable0, 15, &(TOP));
-    __Vscopep_ihsan_sa_pll->varsInsertFromTable(Vtop___024root__VpiVarTable1, 17, &(TOP));
+    __Vscopep_ihsan_sa_pll->varsInsertFromTable(Vtop___024root__VpiVarTable1, 19, &(TOP));
     __Vscopep_ihsan_sa_pll__u_ctrl->varsInsertFromTable(Vtop___024root__VpiVarTable2, 7, &(TOP));
     __Vscopep_ihsan_sa_pll__u_div->varsInsertFromTable(Vtop___024root__VpiVarTable3, 9, &(TOP));
     __Vscopep_ihsan_sa_pll__u_lock->varsInsertFromTable(Vtop___024root__VpiVarTable4, 8, &(TOP));

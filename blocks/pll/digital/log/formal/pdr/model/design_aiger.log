@@ -252,10 +252,10 @@ Removed 0 unused cells and 217 unused wires.
 
         +----------Local Count, excluding submodules.
         | 
-     1886 wires
-     2107 wire bits
-      132 public wires
-      210 public wire bits
+     1888 wires
+     2109 wire bits
+      134 public wires
+      212 public wire bits
         7 ports
        10 port bits
      1993 cells
@@ -282,6 +282,6 @@ Warning: Treating undriven bit ihsan_sa_pll_formal.\cp_trim_in [1] like $anyseq.
 Warning: Treating a total of 10 undriven bits in ihsan_sa_pll_formal like $anyseq.
 
 Warnings: 11 unique messages, 11 total
-End of script. Logfile hash: b82fcdead6, time: 0.49s, user: 0.15s, system: 0.02s, MEM: 36.45 MB peak
+End of script. Logfile hash: 078d89d7bf, time: 0.57s, user: 0.15s, system: 0.02s, MEM: 36.36 MB peak
 Yosys 0.69 (git sha1 9f75ca1f9, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 24% 7x opt_clean (0 sec), 23% 1x techmap (0 sec), ...
+Time spent: 23% 7x opt_clean (0 sec), 23% 1x techmap (0 sec), ...

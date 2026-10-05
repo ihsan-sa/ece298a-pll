@@ -3,7 +3,7 @@
  "gate": "cover",
  "phase": "P4",
  "tool": "cover",
- "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "input_digest": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -23,11 +23,11 @@
   "top": "ihsan_sa_pll",
   "line_pct": 100.0,
   "toggle_pct": 100.0,
-  "line_covered": 103,
-  "line_total": 103,
-  "toggle_covered": 156,
-  "toggle_total": 156
+  "line_covered": 105,
+  "line_total": 105,
+  "toggle_covered": 160,
+  "toggle_total": 160
  },
- "recorded_ts": "2026-10-05T04:45:57",
- "attempts": 4
+ "recorded_ts": "2026-10-05T13:34:17",
+ "attempts": 7
 }

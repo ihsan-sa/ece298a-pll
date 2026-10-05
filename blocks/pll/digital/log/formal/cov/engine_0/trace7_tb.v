@@ -8,21 +8,21 @@ module testbench(input clock, output reg genclock);
 `endif
   reg genclock = 1;
   reg [31:0] cycle = 0;
+  wire [0:0] PI_clk = clock;
   reg [2:0] PI_n_sel;
+  reg [0:0] PI_rst_n;
   reg [1:0] PI_cp_trim_in;
   reg [0:0] PI_pll_en_in;
-  reg [0:0] PI_rst_n;
   reg [0:0] PI_vco_out;
   reg [0:0] PI_obs_sel;
-  wire [0:0] PI_clk = clock;
   ihsan_sa_pll_formal UUT (
+    .clk(PI_clk),
     .n_sel(PI_n_sel),
+    .rst_n(PI_rst_n),
     .cp_trim_in(PI_cp_trim_in),
     .pll_en_in(PI_pll_en_in),
-    .rst_n(PI_rst_n),
     .vco_out(PI_vco_out),
-    .obs_sel(PI_obs_sel),
-    .clk(PI_clk)
+    .obs_sel(PI_obs_sel)
   );
 `ifndef VERILATOR
   initial begin
@@ -113,9 +113,9 @@ module testbench(input clock, output reg genclock);
 
     // state 0
     PI_n_sel = 3'b000;
+    PI_rst_n = 1'b0;
     PI_cp_trim_in = 2'b00;
     PI_pll_en_in = 1'b0;
-    PI_rst_n = 1'b0;
     PI_vco_out = 1'b0;
     PI_obs_sel = 1'b0;
   end
@@ -123,9 +123,9 @@ module testbench(input clock, output reg genclock);
     // state 1
     if (cycle == 0) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -133,9 +133,9 @@ module testbench(input clock, output reg genclock);
     // state 2
     if (cycle == 1) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -143,9 +143,9 @@ module testbench(input clock, output reg genclock);
     // state 3
     if (cycle == 2) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -153,9 +153,9 @@ module testbench(input clock, output reg genclock);
     // state 4
     if (cycle == 3) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -163,9 +163,9 @@ module testbench(input clock, output reg genclock);
     // state 5
     if (cycle == 4) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -173,9 +173,9 @@ module testbench(input clock, output reg genclock);
     // state 6
     if (cycle == 5) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -183,9 +183,9 @@ module testbench(input clock, output reg genclock);
     // state 7
     if (cycle == 6) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -193,9 +193,9 @@ module testbench(input clock, output reg genclock);
     // state 8
     if (cycle == 7) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -203,9 +203,9 @@ module testbench(input clock, output reg genclock);
     // state 9
     if (cycle == 8) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -213,9 +213,9 @@ module testbench(input clock, output reg genclock);
     // state 10
     if (cycle == 9) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -223,9 +223,9 @@ module testbench(input clock, output reg genclock);
     // state 11
     if (cycle == 10) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -233,9 +233,9 @@ module testbench(input clock, output reg genclock);
     // state 12
     if (cycle == 11) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -243,9 +243,9 @@ module testbench(input clock, output reg genclock);
     // state 13
     if (cycle == 12) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -253,9 +253,9 @@ module testbench(input clock, output reg genclock);
     // state 14
     if (cycle == 13) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -263,9 +263,9 @@ module testbench(input clock, output reg genclock);
     // state 15
     if (cycle == 14) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -273,9 +273,9 @@ module testbench(input clock, output reg genclock);
     // state 16
     if (cycle == 15) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -283,9 +283,9 @@ module testbench(input clock, output reg genclock);
     // state 17
     if (cycle == 16) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b0;
       PI_obs_sel <= 1'b0;
     end
@@ -293,9 +293,9 @@ module testbench(input clock, output reg genclock);
     // state 18
     if (cycle == 17) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end
@@ -303,9 +303,9 @@ module testbench(input clock, output reg genclock);
     // state 19
     if (cycle == 18) begin
       PI_n_sel <= 3'b000;
+      PI_rst_n <= 1'b1;
       PI_cp_trim_in <= 2'b00;
       PI_pll_en_in <= 1'b0;
-      PI_rst_n <= 1'b1;
       PI_vco_out <= 1'b1;
       PI_obs_sel <= 1'b0;
     end

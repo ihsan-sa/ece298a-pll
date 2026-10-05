@@ -2,7 +2,7 @@
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:233  in gpi_load_users                  Running entry func 'initialize' from loaded library '/home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb/simulator.cpython-312-x86_64-linux-gnu.so'
      -.--ns INFO     pygpi                              ..ib/pygpi/embed.cpp:114  in initialize                      Using Python 3.12.12 interpreter at /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/bin/python3.12
      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:74   in gpi_print_registered_impl       GPI: VPI support registered
-     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791189940
+     0.00ns INFO     cocotb.initialize                  Seeding Python random module with 1791221636
      0.00ns INFO     cocotb.initialize                  Initialized cocotb v2.1.0 from /home/ihsan/.cc/toolchains/iic-osic-tools-2026.09/usr/local/lib/python3.12/dist-packages/cocotb
      0.00ns INFO     cocotb.initialize                  Running on Icarus Verilog version 14.0 (devel)
      0.00ns INFO     cocotb.regression                  Running tests
@@ -30,48 +30,48 @@
                                                             Spec: pfd_up OR pfd_dn still high at the clk falling edge is a wide
  55045.71ns INFO     cocotb.regression                  test_pll.test_lock_deassert_dn passed
  55045.71ns INFO     cocotb.regression                  running test_pll.test_ctrl_regs (12/15)
- 55662.71ns INFO     cocotb.regression                  test_pll.test_ctrl_regs passed
- 55662.71ns INFO     cocotb.regression                  running test_pll.test_async_reset_outputs (13/15)
- 57745.71ns INFO     cocotb.regression                  test_pll.test_async_reset_outputs passed
- 57745.71ns INFO     cocotb.regression                  running test_pll.test_tt_tieoff (14/15)
- 57826.71ns INFO     cocotb.regression                  test_pll.test_tt_tieoff passed
- 57826.71ns INFO     cocotb.regression                  running test_pll.test_no_vctrl_bias_ua (15/15)
- 57876.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
- 57876.71ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
- 57876.71ns WARNING  gpi                                Failed to find a handle at index 0 via any registered implementation
- 57876.71ns INFO     cocotb.regression                  test_pll.test_no_vctrl_bias_ua passed
- 57876.71ns INFO     cocotb.regression                  *********************************************************************************************
+ 55671.71ns INFO     cocotb.regression                  test_pll.test_ctrl_regs passed
+ 55671.71ns INFO     cocotb.regression                  running test_pll.test_async_reset_outputs (13/15)
+ 57758.71ns INFO     cocotb.regression                  test_pll.test_async_reset_outputs passed
+ 57758.71ns INFO     cocotb.regression                  running test_pll.test_tt_tieoff (14/15)
+ 57839.71ns INFO     cocotb.regression                  test_pll.test_tt_tieoff passed
+ 57839.71ns INFO     cocotb.regression                  running test_pll.test_no_vctrl_bias_ua (15/15)
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 2 is not in the range of [1:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 2 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 3 is not in the range of [2:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 3 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
+ 57889.71ns ERROR    gpi                                Invalid Index - Index 5 is not in the range of [4:0]
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 5 via any registered implementation
+ 57889.71ns WARNING  gpi                                Failed to find a handle at index 0 via any registered implementation
+ 57889.71ns INFO     cocotb.regression                  test_pll.test_no_vctrl_bias_ua passed
+ 57889.71ns INFO     cocotb.regression                  *********************************************************************************************
                                                         ** TEST                                 STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
                                                         *********************************************************************************************
-                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.08      55909.78  **
-                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.05     150769.58  **
-                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.11     130617.39  **
-                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.03     105943.79  **
-                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.02     130498.36  **
-                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.05      69689.45  **
-                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.04     100521.15  **
-                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.03     109499.78  **
-                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.02     120042.53  **
-                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.05      91857.21  **
-                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.05      88238.72  **
-                                                        ** test_pll.test_ctrl_regs               PASS         617.00           0.00     295625.79  **
-                                                        ** test_pll.test_async_reset_outputs     PASS        2083.00           0.03      75682.20  **
-                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00      90941.34  **
-                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.01       6208.23  **
+                                                        ** test_pll.test_prescaler_div8          PASS        4341.00           0.09      48514.26  **
+                                                        ** test_pll.test_obs_sel                 PASS        7402.00           0.07     103620.40  **
+                                                        ** test_pll.test_divider_ratio           PASS       14905.00           0.15      98031.68  **
+                                                        ** test_pll.test_divider_illegal_codes   PASS        3183.00           0.03      97145.99  **
+                                                        ** test_pll.test_reset_release_clean     PASS        2848.00           0.03     103983.58  **
+                                                        ** test_pll.test_pfd_up_lead             PASS        3825.00           0.06      66936.53  **
+                                                        ** test_pll.test_pfd_dn_lead             PASS        3825.00           0.07      51541.48  **
+                                                        ** test_pll.test_pfd_frequency           PASS        3572.00           0.05      73878.67  **
+                                                        ** test_pll.test_lock_assert             PASS        2674.90           0.03     102132.66  **
+                                                        ** test_pll.test_lock_deassert           PASS        4194.90           0.03     151067.59  **
+                                                        ** test_pll.test_lock_deassert_dn        PASS        4274.90           0.03     144613.74  **
+                                                        ** test_pll.test_ctrl_regs               PASS         626.00           0.00     514693.86  **
+                                                        ** test_pll.test_async_reset_outputs     PASS        2087.00           0.01     164079.37  **
+                                                        ** test_pll.test_tt_tieoff               PASS          81.00           0.00     163693.56  **
+                                                        ** test_pll.test_no_vctrl_bias_ua        PASS          50.00           0.00      19395.93  **
                                                         *********************************************************************************************
-                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57876.71           0.59      98594.92  **
+                                                        ** TESTS=15 PASS=15 FAIL=0 SKIP=0                   57889.71           0.67      86315.17  **
                                                         *********************************************************************************************

@@ -51,6 +51,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ ihsan_sa_pll__DOT__cp_trim1;
         CData/*0:0*/ ihsan_sa_pll__DOT__clk_pre;
         CData/*0:0*/ ihsan_sa_pll__DOT__obs_q3;
+        CData/*0:0*/ ihsan_sa_pll__DOT__clk_fb_int;
+        CData/*0:0*/ ihsan_sa_pll__DOT__obs_int;
         CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__clk;
         CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__rst_n;
         CData/*2:0*/ ihsan_sa_pll__DOT____Vtogcov__n_sel;
@@ -68,6 +70,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__cp_trim1;
         CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__clk_pre;
         CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__obs_q3;
+        CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__clk_fb_int;
+        CData/*0:0*/ ihsan_sa_pll__DOT____Vtogcov__obs_int;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT__clk;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT__rst_n;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT__pll_en_in;
@@ -78,12 +82,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__clk;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__rst_n;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__pll_en_in;
+    };
+    struct {
         CData/*1:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__cp_trim_in;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__pll_en;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__cp_trim0;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_ctrl__DOT____Vtogcov__cp_trim1;
-    };
-    struct {
         CData/*4:0*/ ihsan_sa_pll__DOT__u_lock__DOT____VlemCond_1;
         CData/*4:0*/ ihsan_sa_pll__DOT__u_lock__DOT____VlemCond_0;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_lock__DOT__clk;
@@ -144,12 +148,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
         CData/*2:0*/ ihsan_sa_pll__DOT__u_div__DOT____Vtogcov__n_m1;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_div__DOT____Vtogcov__last;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__vco_out;
+    };
+    struct {
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__rst_n;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__clk_pre;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__obs_q3;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__pre_q0;
-    };
-    struct {
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__pre_q1;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__pre_q2;
         CData/*0:0*/ ihsan_sa_pll__DOT__u_pre__DOT__q3;
@@ -184,7 +188,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop___024root final {
     // INTERNAL VARIABLES
     Vtop__Syms* vlSymsp;
     const char* vlNamep;
-    uint32_t __Vcoverage[245]{};
+    uint32_t __Vcoverage[249]{};
 
     // PARAMETERS
     static constexpr CData/*4:0*/ ihsan_sa_pll__DOT__u_lock__DOT__K = 0x10U;

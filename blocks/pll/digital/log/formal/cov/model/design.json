@@ -160,7 +160,7 @@
                     "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/formal/ihsan_sa_pll_formal.sv:25.16-30.27",
                     "module": "ihsan_sa_pll",
                     "module_hdlname": "ihsan_sa_pll",
-                    "module_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:6.1-47.10"
+                    "module_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:11.1-67.10"
                   },
                   "parameters": {
                     "TYPE": "module"
@@ -170,7 +170,7 @@
                   "name": "dut.u_ctrl",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:40.17-43.48",
+                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:47.17-50.48",
                     "hdlname": "dut u_ctrl",
                     "module": "pll_ctrl_regs",
                     "module_hdlname": "pll_ctrl_regs",
@@ -184,7 +184,7 @@
                   "name": "dut.u_div",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:29.15-30.72",
+                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.15-37.76",
                     "hdlname": "dut u_div",
                     "module": "pll_divider",
                     "module_hdlname": "pll_divider",
@@ -198,7 +198,7 @@
                   "name": "dut.u_lock",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:36.16-38.19",
+                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:43.16-45.19",
                     "hdlname": "dut u_lock",
                     "module": "pll_lock_det",
                     "module_hdlname": "pll_lock_det",
@@ -212,7 +212,7 @@
                   "name": "dut.u_pfd",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:32.11-34.40",
+                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:39.11-41.40",
                     "hdlname": "dut u_pfd",
                     "module": "pll_pfd",
                     "module_hdlname": "pll_pfd",
@@ -226,7 +226,7 @@
                   "name": "dut.u_pre",
                   "attributes": {
                     "cell_module_not_derived": "00000000000000000000000000000001",
-                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:26.17-27.76",
+                    "cell_src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:33.17-34.76",
                     "hdlname": "dut u_pre",
                     "module": "pll_prescaler",
                     "module_hdlname": "pll_prescaler",
@@ -1187,9 +1187,9 @@
             ],
             "cells": [
                 {
-                  "name": "$flatten\\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46$166",
+                  "name": "$flatten\\dut.$ternary$/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:53$166",
                   "attributes": {
-                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:46.20-46.46"
+                    "src": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/digital/rtl/ihsan_sa_pll.v:53.20-53.46"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"

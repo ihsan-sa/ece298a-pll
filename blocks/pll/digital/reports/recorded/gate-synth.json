@@ -3,7 +3,7 @@
  "gate": "synth",
  "phase": "P5",
  "tool": "synth",
- "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "input_digest": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -32,6 +32,7 @@
    "gf180mcu_fd_sc_mcu7t5v0__and3_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__and4_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__aoi21_1": 3,
+   "gf180mcu_fd_sc_mcu7t5v0__clkbuf_8": 2,
    "gf180mcu_fd_sc_mcu7t5v0__clkinv_1": 10,
    "gf180mcu_fd_sc_mcu7t5v0__dffnrnq_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__dffnsnq_1": 1,
@@ -49,9 +50,9 @@
    "gf180mcu_fd_sc_mcu7t5v0__xnor2_1": 1,
    "gf180mcu_fd_sc_mcu7t5v0__xor2_1": 1
   },
-  "area": 2166.6624,
+  "area": 2280.8128,
   "netlist": "synth/ihsan_sa_pll.v"
  },
- "recorded_ts": "2026-10-05T04:46:01",
- "attempts": 3
+ "recorded_ts": "2026-10-05T13:34:24",
+ "attempts": 5
 }

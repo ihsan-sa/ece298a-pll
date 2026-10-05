@@ -271,6 +271,8 @@
 (define-fun |ihsan_sa_pll_formal_n dut.clk| ((state |ihsan_sa_pll_formal_s|)) Bool (|ihsan_sa_pll_formal#39| state))
 ; yosys-smt2-wire dut.clk_fb 1
 (define-fun |ihsan_sa_pll_formal_n dut.clk_fb| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
+; yosys-smt2-wire dut.clk_fb_int 1
+(define-fun |ihsan_sa_pll_formal_n dut.clk_fb_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#63| state)) #b1))
 ; yosys-smt2-wire dut.clk_pre 1
 (define-fun |ihsan_sa_pll_formal_n dut.clk_pre| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#58| state)) #b1))
 ; yosys-smt2-wire dut.cp_trim0 1
@@ -286,6 +288,8 @@
 (define-fun |ihsan_sa_pll_formal_n dut.lock| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#94| state)) #b1))
 ; yosys-smt2-wire dut.n_sel 3
 (define-fun |ihsan_sa_pll_formal_n dut.n_sel| ((state |ihsan_sa_pll_formal_s|)) (_ BitVec 3) (|ihsan_sa_pll_formal#86| state))
+; yosys-smt2-wire dut.obs_int 1
+(define-fun |ihsan_sa_pll_formal_n dut.obs_int| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#69| state)) #b1))
 ; yosys-smt2-wire dut.obs_out 1
 (define-fun |ihsan_sa_pll_formal_n dut.obs_out| ((state |ihsan_sa_pll_formal_s|)) Bool (= ((_ extract 0 0) (|ihsan_sa_pll_formal#69| state)) #b1))
 ; yosys-smt2-wire dut.obs_q3 1

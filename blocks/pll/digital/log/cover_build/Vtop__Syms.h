@@ -30,7 +30,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop__Syms final : public VerilatedSyms {
     Vtop___024root                 TOP;
 
     // COVERAGE
-    uint32_t __Vcoverage[245];
+    uint32_t __Vcoverage[249];
 
     // SCOPE NAMES
     VerilatedScope* __Vscopep_TOP;

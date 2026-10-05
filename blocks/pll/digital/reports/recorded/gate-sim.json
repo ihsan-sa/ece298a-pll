@@ -3,7 +3,7 @@
  "gate": "sim",
  "phase": "P4",
  "tool": "sim",
- "input_digest": "dir_text:9e181375afa489d426afbb5d8223651b91e0614bd96238458d78aa97270383f1",
+ "input_digest": "dir_text:f808285d38575f0d883468250bf839ca71a3b20a05422f508c69e078d6d8230e",
  "status": "pass",
  "criteria": {
   "fail_severities": [
@@ -40,6 +40,6 @@
   ],
   "tests_passed": 15
  },
- "recorded_ts": "2026-10-05T04:45:43",
- "attempts": 8
+ "recorded_ts": "2026-10-05T13:34:00",
+ "attempts": 11
 }

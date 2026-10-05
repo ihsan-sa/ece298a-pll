@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-02T18:43:12",
+ "updated": "2026-10-05T13:56:49",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -637,11 +637,11 @@
   },
   {
    "id": 2,
-   "status": "escalated",
+   "status": "fixed",
    "agent": "fixer",
    "attempts": 1,
    "opened": "2026-09-28T13:59:15",
-   "closed": null,
+   "closed": "2026-10-05T13:56:48",
    "gate": "netlist_lint",
    "phase": "P4",
    "fixer": "netlist",
@@ -655,15 +655,15 @@
    "severity": "error",
    "count": 5,
    "work_order": "blocks/pll/analog/log/workorders/wo-2.json",
-   "note": "fixer: all 3 causes bench-side (ol_tb 1GH feed inductor in tran; vco_tb ~700 s/point x13 vs 900 s; presc_tb runs no analysis at tt). No netlist edit. No route to bench-writer: reported as chip-flow gap 7 (req-20260928T182249Z-2524223). Also: VCO no swing at vctrl 0.3 V, ~1.23 GHz at 3.0 V (sizing, via sim_tt)."
+   "note": "bench fixes (ol_tb lfeed, vco_tb budget) + chip-flow corner-skip (ccdd36c); sim_tt PASS 09-29, sim_pvt run 5 PASS 10-02 on netlist 1ef1fe40"
   },
   {
    "id": 3,
-   "status": "escalated",
+   "status": "fixed",
    "agent": null,
    "attempts": 0,
    "opened": "2026-09-28T14:41:25",
-   "closed": null,
+   "closed": "2026-10-05T13:56:48",
    "gate": "sim_tt",
    "phase": "P4",
    "fixer": "netlist",
@@ -677,7 +677,7 @@
    "severity": "error",
    "count": 5,
    "work_order": "blocks/pll/analog/log/workorders/wo-3.json",
-   "note": "same bench-side engine errors as issue 2 (ol_tb inductor, presc_tb no analysis at tt, vco_tb run length); waiting on chip-flow gap 7"
+   "note": "same as issue 2; sim_tt PASS 2026-09-29T04:59 on the current netlist/tb"
   },
   {
    "id": 4,
@@ -699,11 +699,11 @@
   },
   {
    "id": 5,
-   "status": "escalated",
+   "status": "fixed",
    "agent": "fixer",
    "attempts": 1,
    "opened": "2026-09-28T14:41:25",
-   "closed": null,
+   "closed": "2026-10-05T13:56:49",
    "gate": "sim_tt",
    "phase": "P4",
    "fixer": "sizing",
@@ -714,7 +714,7 @@
    "severity": "error",
    "count": 2,
    "work_order": "blocks/pll/analog/log/workorders/wo-5.json",
-   "note": "overlap: charge sharing, vdump floats; needs the spec.md item-1 vdump unity-gain buffer (P2 topology). VCO resize rv2i_l 5e-5, w_rp 6u, w_rn 3u follows."
+   "note": "vdump unity-gain buffer + VCO resize landed 09-29; sim_tt PASS 09-29, sim_pvt run 5 PASS 10-02"
   }
  ],
  "next_issue_id": 6,
@@ -1529,6 +1529,30 @@
    "status": "pass",
    "attempt": 4,
    "failing_count": 0
+  },
+  {
+   "ts": "2026-10-05T13:56:48",
+   "event": "issue",
+   "id": 2,
+   "status": "fixed",
+   "agent": "fixer",
+   "attempts": 1
+  },
+  {
+   "ts": "2026-10-05T13:56:48",
+   "event": "issue",
+   "id": 3,
+   "status": "fixed",
+   "agent": null,
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-05T13:56:49",
+   "event": "issue",
+   "id": 5,
+   "status": "fixed",
+   "agent": "fixer",
+   "attempts": 1
   }
  ]
 }

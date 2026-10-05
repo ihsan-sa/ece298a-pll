@@ -9,6 +9,12 @@ from pll_ref import (REF_T, LockModel, Monitor, decode_n, now, ref_clock,
                      vco_clock, wait_until)
 
 TV = 10.0  # vco_out period for open-loop tests: clk_pre = 80 ns
+# glsim's SDF pass runs these tests on the hardened netlist, where every
+# port-observed edge carries cell and clock-tree delay and a PFD pulse
+# carries the reset delay. Both slacks stay under the smallest step an RTL
+# fault moves an edge by (a 5 ns vco half period, the 5 ns minimum dt).
+GL_TOL = 1.0   # two port-observed edges or widths that are equal at RTL
+GL_SKEW = 4.0  # PFD: port-to-PFD clock skew plus the reset delay
 
 
 async def init(dut, n_sel=1, obs_sel=0):
@@ -90,7 +96,7 @@ async def test_obs_sel(dut):
         r = m.rises(t0 + div * TV)
         check_period(f"obs_out obs_sel={sel}", r, div * TV)
         for s, w in m.pulses(t0 + div * TV):
-            assert abs(w - div * TV / 2) <= 0.01, (
+            assert abs(w - div * TV / 2) <= GL_TOL, (
                 f"obs_sel={sel}: high time {w} ns, expected {div * TV / 2} (50% duty)")
         dut.rst_n.value = 0
         await Timer(20, unit="ns")
@@ -111,16 +117,18 @@ async def check_ratio(dut, code):
         k = sum(1 for t in pre if a < t <= b)
         assert k == n, f"n_sel={code}: {k} clk_pre rises per clk_fb period, expected {n}"
     for t in r:
-        assert any(abs(t - p) < 0.01 for p in pre), (
+        assert any(abs(t - p) <= GL_TOL for p in pre), (
             f"n_sel={code}: clk_fb rise at {t} not aligned to a clk_pre rise")
     if n == 1:
         # pure pass-through: identical waveform to clk_pre
         a, b = m_fb.pulses(t0 + 8 * TV), m_pre.pulses(t0 + 8 * TV)
         n_cmp = min(len(a), len(b))
-        assert n_cmp >= 8 and a[:n_cmp] == b[:n_cmp], (
+        assert n_cmp >= 8 and all(
+            abs(x[0] - y[0]) <= GL_TOL and abs(x[1] - y[1]) <= GL_TOL
+            for x, y in zip(a[:n_cmp], b[:n_cmp])), (
             f"n_sel={code}: clk_fb {a[:3]} is not clk_pre {b[:3]} passed through")
     for s, w in m_fb.pulses(t0):
-        assert abs(w - 4 * TV) <= 0.01, (
+        assert abs(w - 4 * TV) <= GL_TOL, (
             f"n_sel={code}: clk_fb high time {w}, expected one clk_pre high time {4 * TV}")
     dut.rst_n.value = 0
     await Timer(20, unit="ns")
@@ -182,6 +190,9 @@ async def pfd_setup(dut, offsets):
 
 
 async def lead_test(dut, lead_sig, other_sig, ref_leads):
+    # width tracks dt: dt plus one offset c shared by every dt (0 at RTL;
+    # skew plus reset delay at gate level)
+    c = None
     for dt in (5.0, 15.0, 30.0):
         offs = [(-dt if ref_leads else dt)] * 12
         mu, md = Monitor(dut.pfd_up), Monitor(dut.pfd_dn)
@@ -192,17 +203,21 @@ async def lead_test(dut, lead_sig, other_sig, ref_leads):
         t0 = min(fb[2], rises[2]) - 1
         lp = lead.pulses(t0, fb[-1])
         assert len(lp) >= 8, f"dt={dt}: {lead_sig} pulsed {len(lp)} times"
+        if c is None:
+            c = lp[0][1] - dt
+            assert abs(c) <= GL_SKEW, f"dt={dt}: {lead_sig} width {lp[0][1]}, expected {dt}"
         for s, w in lp:
-            assert abs(w - dt) <= 0.01, f"dt={dt}: {lead_sig} width {w}, expected {dt}"
+            assert abs(w - dt - c) <= GL_TOL, (
+                f"dt={dt}: {lead_sig} width {w}, expected {dt} + {c:.3f} (tracks dt)")
             start = rises if ref_leads else fb
-            assert any(abs(s - x) <= 0.01 for x in start), (
+            assert any(abs(s - x) <= GL_SKEW for x in start), (
                 f"dt={dt}: {lead_sig} pulse at {s} not started by the leading edge")
         for s, w in other.pulses(t0, fb[-1]):
-            assert w <= 0.5, f"dt={dt}: {other_sig} pulse {w} ns, expected reset-width only"
+            assert w <= GL_SKEW, f"dt={dt}: {other_sig} pulse {w} ns, expected reset-width only"
         # REQ-PFD-RESET: both cleared right after the lagging edge
         ends = fb if ref_leads else rises
         for e in ends[3:-1]:
-            await wait_until(e + 0.2)
+            await wait_until(e + GL_SKEW + 0.5)
             assert int(dut.pfd_up.value) == 0 and int(dut.pfd_dn.value) == 0, (
                 f"dt={dt}: PFD not reset after lagging edge at {e}: "
                 f"up={dut.pfd_up.value} dn={dut.pfd_dn.value}")
@@ -341,7 +356,7 @@ async def test_ctrl_regs(dut):
         await Timer(1, unit="ns")
         got = (int(dut.pll_en.value), int(dut.cp_trim1.value) * 2 + int(dut.cp_trim0.value))
         assert got == prev, f"step {i}: outputs changed before clk edge: {got} vs held {prev}"
-        await wait_until(rises[i + 1] + 1)
+        await wait_until(rises[i + 1] + 10)  # past clk-to-output delay
         got = (int(dut.pll_en.value), int(dut.cp_trim1.value) * 2 + int(dut.cp_trim0.value))
         assert got == (en, trim), f"step {i}: (pll_en, trim) = {got}, expected {(en, trim)}"
         prev = got
@@ -356,7 +371,7 @@ async def test_async_reset_outputs(dut):
     await wait_until(fb[-1] - 3)
     dut.obs_sel.value = 0
     dut.rst_n.value = 0
-    await Timer(1, unit="ns")
+    await Timer(5, unit="ns")  # past the reset-to-output delay
     for s in ("pfd_up", "pfd_dn", "lock", "clk_fb", "obs_out", "pll_en", "cp_trim0", "cp_trim1"):
         assert int(getattr(dut, s).value) == 0, f"{s}={getattr(dut, s).value} during rst_n low"
 
