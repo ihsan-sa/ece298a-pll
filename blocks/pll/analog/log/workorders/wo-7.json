@@ -1,0 +1,620 @@
+{
+ "id": 7,
+ "created": "2026-10-06T17:22:59",
+ "gate": "bench_strength",
+ "phase": "P4",
+ "workspace": ".",
+ "fixer": "testbench",
+ "role_prompt": "skills/ade/agents/bench-writer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit tb/ (and the reference model it scores against) only; a mutate survivor names the mutant class the test must now kill."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/survivor_connection_removed.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "survivor_connection_removed"
+  ],
+  "checks": [
+   "netlistlib"
+  ],
+  "severity": "error",
+  "count": 29,
+  "violations": [
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xC1"
+    ],
+    "msg": "mutant xC1_connection_removed (xC1: last terminal disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xC1_connection_removed (xC1: last terminal disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xC2"
+    ],
+    "msg": "mutant xC2_connection_removed (xC2: last terminal disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xC2_connection_removed (xC2: last terminal disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_B2"
+    ],
+    "msg": "mutant xMN_B2_connection_removed (xMN_B2: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_B2_connection_removed (xMN_B2: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_BUFL2"
+    ],
+    "msg": "mutant xMN_BUFL2_connection_removed (xMN_BUFL2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_BUFL2_connection_removed (xMN_BUFL2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_BUFT"
+    ],
+    "msg": "mutant xMN_BUFT_connection_removed (xMN_BUFT: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_BUFT_connection_removed (xMN_BUFT: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_DND"
+    ],
+    "msg": "mutant xMN_DND_connection_removed (xMN_DND: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_DND_connection_removed (xMN_DND: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_DN"
+    ],
+    "msg": "mutant xMN_DN_connection_removed (xMN_DN: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_DN_connection_removed (xMN_DN: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_ENB"
+    ],
+    "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_ENB_connection_removed (xMN_ENB: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_ENN"
+    ],
+    "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_ENN_connection_removed (xMN_ENN: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_ENS"
+    ],
+    "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_ENS_connection_removed (xMN_ENS: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_ENV"
+    ],
+    "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_ENV_connection_removed (xMN_ENV: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_G1"
+    ],
+    "msg": "mutant xMN_G1_connection_removed (xMN_G1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_G1_connection_removed (xMN_G1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_SW0B"
+    ],
+    "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_SW0B_connection_removed (xMN_SW0B: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_SW0"
+    ],
+    "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_SW0_connection_removed (xMN_SW0: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_SW1B"
+    ],
+    "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_SW1B_connection_removed (xMN_SW1B: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_SW1"
+    ],
+    "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_SW1_connection_removed (xMN_SW1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMN_V2I"
+    ],
+    "msg": "mutant xMN_V2I_connection_removed (xMN_V2I: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_V2I_connection_removed (xMN_V2I: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_BUF1"
+    ],
+    "msg": "mutant xMP_BUF1_connection_removed (xMP_BUF1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_BUF1_connection_removed (xMP_BUF1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_BUFT"
+    ],
+    "msg": "mutant xMP_BUFT_connection_removed (xMP_BUFT: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_BUFT_connection_removed (xMP_BUFT: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_ENB"
+    ],
+    "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_ENB_connection_removed (xMP_ENB: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_ENP"
+    ],
+    "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_ENP_connection_removed (xMP_ENP: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_ENV"
+    ],
+    "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_ENV_connection_removed (xMP_ENV: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_G2"
+    ],
+    "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_G2_connection_removed (xMP_G2: drain (bulk tied to its own source) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_I1"
+    ],
+    "msg": "mutant xMP_I1_connection_removed (xMP_I1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_I1_connection_removed (xMP_I1: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_I2"
+    ],
+    "msg": "mutant xMP_I2_connection_removed (xMP_I2: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_I2_connection_removed (xMP_I2: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_I3"
+    ],
+    "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_I3_connection_removed (xMP_I3: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_I4"
+    ],
+    "msg": "mutant xMP_I4_connection_removed (xMP_I4: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_I4_connection_removed (xMP_I4: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xMP_I5"
+    ],
+    "msg": "mutant xMP_I5_connection_removed (xMP_I5: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMP_I5_connection_removed (xMP_I5: bulk disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   },
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_connection_removed",
+    "refs": [
+     "xR1"
+    ],
+    "msg": "mutant xR1_connection_removed (xR1: first terminal (a resistor's body carries only parasitics) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xR1_connection_removed (xR1: first terminal (a resistor's body carries only parasitics) disconnected) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": ".",
+  "spec": "spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}

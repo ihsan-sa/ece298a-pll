@@ -1,0 +1,60 @@
+{
+ "id": 8,
+ "created": "2026-10-06T17:22:59",
+ "gate": "bench_strength",
+ "phase": "P4",
+ "workspace": ".",
+ "fixer": "testbench",
+ "role_prompt": "skills/ade/agents/bench-writer.md",
+ "allowed_scripts": [
+  "engine/scripts/gate.py",
+  "engine/scripts/state.py"
+ ],
+ "guidance": [
+  "Read the remediation reference(s) listed in `remediations` FIRST: what the finding means, known false-positive classes, the cheapest-first fix ladder, and the traps this project already hit. They are keyed to your cluster's kinds.",
+  "Edit tb/ (and the reference model it scores against) only; a mutate survivor names the mutant class the test must now kill."
+ ],
+ "remediations": [
+  "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/survivor_type_flipped.md"
+ ],
+ "cluster": {
+  "file": null,
+  "module": null,
+  "kinds": [
+   "survivor_type_flipped"
+  ],
+  "checks": [
+   "netlistlib"
+  ],
+  "severity": "error",
+  "count": 1,
+  "violations": [
+   {
+    "check": "bench_strength",
+    "severity": "error",
+    "file": null,
+    "module": null,
+    "line": null,
+    "kind": "survivor_type_flipped",
+    "refs": [
+     "xMN_BUFL1"
+    ],
+    "msg": "mutant xMN_BUFL1_type_flipped (xMN_BUFL1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+    "source": "netlistlib",
+    "items": [
+     {
+      "msg": "mutant xMN_BUFL1_type_flipped (xMN_BUFL1: nfet_03v3 -> pfet_03v3) survived every bench's bounds - the bench cannot tell this design apart from a faulty one",
+      "file": null,
+      "line": null
+     }
+    ]
+   }
+  ]
+ },
+ "info_context": [],
+ "artifacts": {
+  "workspace": ".",
+  "spec": "spec/spec.yaml"
+ },
+ "scope": "fix ONLY the findings in `cluster`; `info_context` (same gate, below its failing severity) is background only, never its own fix target; do not touch unrelated files; re-run the failed gate when done"
+}
