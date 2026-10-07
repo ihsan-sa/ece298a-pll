@@ -1,0 +1,59 @@
+{
+ "script": "fix_dispatch",
+ "status": "violations",
+ "workspace": ".",
+ "gate": "bench_strength",
+ "counts": {
+  "orders": 2,
+  "violations": 37,
+  "by_domain": {
+   "testbench": 2
+  },
+  "with_remediation": 2,
+  "info_only_clusters": 0,
+  "info_only_violations": 0
+ },
+ "orders": [
+  {
+   "id": 9,
+   "fixer": "testbench",
+   "role_prompt": "skills/ade/agents/bench-writer.md",
+   "severity": "error",
+   "file": null,
+   "kinds": [
+    "survivor_size_doubled"
+   ],
+   "count": 24,
+   "remediations": [
+    "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/survivor_size_doubled.md"
+   ],
+   "info_context_clusters": 0,
+   "work_order": "log/workorders/wo-9.json"
+  },
+  {
+   "id": 10,
+   "fixer": "testbench",
+   "role_prompt": "skills/ade/agents/bench-writer.md",
+   "severity": "error",
+   "file": null,
+   "kinds": [
+    "survivor_connection_removed"
+   ],
+   "count": 13,
+   "remediations": [
+    "/home/ihsan/.claude/skills/chip-flow/skills/ade/reference/remediations/survivor_connection_removed.md"
+   ],
+   "info_context_clusters": 0,
+   "work_order": "log/workorders/wo-10.json"
+  }
+ ],
+ "parallel_groups": [
+  [
+   9
+  ],
+  [
+   10
+  ]
+ ],
+ "out_dir": "log/workorders"
+}

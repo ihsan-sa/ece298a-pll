@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-06T17:26:47",
+ "updated": "2026-10-07T06:57:47",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -609,15 +609,15 @@
   "bench_strength": {
    "phase": "P4",
    "status": "fail",
-   "attempts": 1,
+   "attempts": 2,
    "last": {
-    "ts": "2026-10-06T13:47:15",
+    "ts": "2026-10-07T06:50:47",
     "status": "fail",
-    "failing_count": 93,
-    "total": 93,
+    "failing_count": 37,
+    "total": 37,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-     "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+     "tb": "dir_text:0bc20410fa67ff780bfa1a70542411ecde2f83165fbbb795c706e75be8ac0d82",
      "mutant_rulings": null,
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
@@ -625,11 +625,11 @@
     "job": null,
     "facts": {
      "total_mutants": 253,
-     "killed": 160,
-     "survived": 93,
+     "killed": 216,
+     "survived": 37,
      "devices_total": 87,
      "devices_mutated": 87,
-     "killed_by_sensitivity": 0,
+     "killed_by_sensitivity": 53,
      "equivalent": 0,
      "below_spread": 0
     }
@@ -658,6 +658,30 @@
       "equivalent": 0,
       "below_spread": 0
      }
+    },
+    {
+     "ts": "2026-10-07T06:50:47",
+     "status": "fail",
+     "failing_count": 37,
+     "total": 37,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:0bc20410fa67ff780bfa1a70542411ecde2f83165fbbb795c706e75be8ac0d82",
+      "mutant_rulings": null,
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "total_mutants": 253,
+      "killed": 216,
+      "survived": 37,
+      "devices_total": 87,
+      "devices_mutated": 87,
+      "killed_by_sensitivity": 53,
+      "equivalent": 0,
+      "below_spread": 0
+     }
     }
    ]
   }
@@ -671,31 +695,31 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-10-06T17:25:35"
+   "hashed": "2026-10-07T06:50:47"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-06T13:47:15"
+   "hashed": "2026-10-07T06:50:47"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
-   "hashed": "2026-10-06T13:47:15"
+   "sha256": "dir_text:0bc20410fa67ff780bfa1a70542411ecde2f83165fbbb795c706e75be8ac0d82",
+   "hashed": "2026-10-07T06:50:47"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78",
-   "hashed": "2026-10-06T13:47:15"
+   "hashed": "2026-10-07T06:50:47"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
    "kind": "mutant_rulings",
    "sha256": null,
-   "hashed": "2026-10-06T13:47:15"
+   "hashed": "2026-10-07T06:50:47"
   }
  },
  "open_issues": [
@@ -851,15 +875,49 @@
    "count": 1,
    "work_order": "log/workorders/wo-8.json",
    "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix"
+  },
+  {
+   "id": 9,
+   "status": "fixing",
+   "agent": "bench-writer",
+   "attempts": 0,
+   "opened": "2026-10-07T06:57:39",
+   "closed": null,
+   "gate": "bench_strength",
+   "phase": "P4",
+   "fixer": "testbench",
+   "kinds": [
+    "survivor_size_doubled"
+   ],
+   "severity": "error",
+   "count": 24,
+   "work_order": "log/workorders/wo-9.json"
+  },
+  {
+   "id": 10,
+   "status": "fixing",
+   "agent": "bench-writer",
+   "attempts": 0,
+   "opened": "2026-10-07T06:57:39",
+   "closed": null,
+   "gate": "bench_strength",
+   "phase": "P4",
+   "fixer": "testbench",
+   "kinds": [
+    "survivor_connection_removed"
+   ],
+   "severity": "error",
+   "count": 13,
+   "work_order": "log/workorders/wo-10.json"
   }
  ],
- "next_issue_id": 9,
+ "next_issue_id": 11,
  "next_job_id": 1,
  "budgets": {
   "fix_loops": {
    "netlist_lint": 2,
    "sim_tt": 2,
-   "bench_strength": 2
+   "bench_strength": 1
   }
  },
  "decisions": [],
@@ -1808,6 +1866,62 @@
    "event": "issue",
    "id": 8,
    "status": "escalated",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T06:50:47",
+   "event": "gate",
+   "gate": "bench_strength",
+   "status": "fail",
+   "attempt": 2,
+   "failing_count": 37
+  },
+  {
+   "ts": "2026-10-07T06:57:38",
+   "event": "budget",
+   "path": "fix_loops.bench_strength",
+   "remaining": 1
+  },
+  {
+   "ts": "2026-10-07T06:57:39",
+   "event": "snapshot",
+   "label": "pre-fix-bench_strength-a2",
+   "files": 17
+  },
+  {
+   "ts": "2026-10-07T06:57:39",
+   "event": "issue_open",
+   "id": 9,
+   "gate": "bench_strength",
+   "fixer": "testbench",
+   "kinds": [
+    "survivor_size_doubled"
+   ]
+  },
+  {
+   "ts": "2026-10-07T06:57:39",
+   "event": "issue_open",
+   "id": 10,
+   "gate": "bench_strength",
+   "fixer": "testbench",
+   "kinds": [
+    "survivor_connection_removed"
+   ]
+  },
+  {
+   "ts": "2026-10-07T06:57:47",
+   "event": "issue",
+   "id": 9,
+   "status": "fixing",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T06:57:47",
+   "event": "issue",
+   "id": 10,
+   "status": "fixing",
    "agent": "bench-writer",
    "attempts": 0
   }
