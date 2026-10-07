@@ -4,7 +4,7 @@
  "phase": "P4",
  "tool": "sim_tt",
  "input_digest": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
- "status": "pass",
+ "status": "fail",
  "criteria": {
   "fail_severities": [
    "error"
@@ -12,13 +12,99 @@
   "max_count": 0
  },
  "counts": {
-  "total": 0,
-  "by_severity": {},
-  "by_source": {}
+  "total": 2,
+  "by_severity": {
+   "error": 2
+  },
+  "by_source": {
+   "sim_run": 2
+  }
  },
- "failing_count": 0,
- "failing": [],
- "violations": [],
+ "failing_count": 2,
+ "failing": [
+  {
+   "check": "sim_tt",
+   "severity": "error",
+   "file": "tb/pll_analog_ol_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "sim_bench_not_run",
+   "refs": [
+    "pll_analog_ol_tb.cir"
+   ],
+   "msg": "pll_analog_ol_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_ol_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+     "file": "tb/pll_analog_ol_tb.cir",
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "sim_tt",
+   "severity": "error",
+   "file": "tb/pll_analog_presc_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "sim_bench_not_run",
+   "refs": [
+    "pll_analog_presc_tb.cir"
+   ],
+   "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+     "file": "tb/pll_analog_presc_tb.cir",
+     "line": null
+    }
+   ]
+  }
+ ],
+ "violations": [
+  {
+   "check": "sim_tt",
+   "severity": "error",
+   "file": "tb/pll_analog_ol_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "sim_bench_not_run",
+   "refs": [
+    "pll_analog_ol_tb.cir"
+   ],
+   "msg": "pll_analog_ol_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_ol_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+     "file": "tb/pll_analog_ol_tb.cir",
+     "line": null
+    }
+   ]
+  },
+  {
+   "check": "sim_tt",
+   "severity": "error",
+   "file": "tb/pll_analog_presc_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "sim_bench_not_run",
+   "refs": [
+    "pll_analog_presc_tb.cir"
+   ],
+   "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the corners this run sweeps (tt), so the bench never ran here. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+     "file": "tb/pll_analog_presc_tb.cir",
+     "line": null
+    }
+   ]
+  }
+ ],
  "facts": {
   "top": "pll_analog",
   "corners": [
@@ -49,25 +135,6 @@
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_cp_tb__tt.cir"
    },
    {
-    "bench": "pll_analog_ol_tb.cir",
-    "corner": "tt",
-    "process": "typical",
-    "passive": "typical",
-    "temp_c": 27,
-    "vdd": "3.3",
-    "returncode": 0,
-    "measures": {
-     "ol_pm_pn16_nopad_deg": 49.5144,
-     "ol_pm_pn16_pad5p_deg": 33.8996,
-     "ol_fc_pn16_nopad_khz": 479.973,
-     "ol_pm_pn8_nopad_deg": 55.296,
-     "ol_pm_pn40_nopad_deg": 35.937
-    },
-    "engine_errors": [],
-    "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_ol_tb__tt.cir"
-   },
-   {
     "bench": "pll_analog_overlap_tb.cir",
     "corner": "tt",
     "process": "typical",
@@ -81,19 +148,6 @@
     "engine_errors": [],
     "violations": [],
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_overlap_tb__tt.cir"
-   },
-   {
-    "bench": "pll_analog_presc_tb.cir",
-    "corner": "tt",
-    "process": "typical",
-    "passive": "typical",
-    "temp_c": 27,
-    "vdd": "3.3",
-    "returncode": 0,
-    "measures": {},
-    "engine_errors": [],
-    "violations": [],
-    "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_presc_tb__tt.cir"
    },
    {
     "bench": "pll_analog_pwr_tb.cir",
@@ -149,8 +203,26 @@
     "violations": [],
     "deck": "/home/ihsan/.cc/worktrees/ece298a/pll/blocks/pll/analog/log/sim/pll_analog_vco_tb__tt.cir"
    }
+  ],
+  "not_scored": [
+   {
+    "bench": "pll_analog_ol_tb.cir",
+    "corner": "tt",
+    "reason": "no bound in the sidecar is scored at this corner"
+   },
+   {
+    "bench": "pll_analog_presc_tb.cir",
+    "corner": "tt",
+    "reason": "no bound in the sidecar is scored at this corner"
+   }
   ]
  },
- "recorded_ts": "2026-09-29T04:59:28",
- "attempts": 7
+ "inputs_at_start": {
+  "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+  "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+  "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+  "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+ },
+ "recorded_ts": "2026-10-07T07:03:54",
+ "attempts": 8
 }

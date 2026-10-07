@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-07T06:57:47",
+ "updated": "2026-10-07T09:03:09",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -220,16 +220,16 @@
   },
   "sim_tt": {
    "phase": "P4",
-   "status": "pass",
-   "attempts": 7,
+   "status": "fail",
+   "attempts": 8,
    "last": {
-    "ts": "2026-09-29T04:59:28",
-    "status": "pass",
-    "failing_count": 0,
-    "total": 0,
+    "ts": "2026-10-07T07:03:54",
+    "status": "fail",
+    "failing_count": 2,
+    "total": 2,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-     "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+     "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
     },
@@ -366,21 +366,39 @@
        "tt"
       ]
      }
+    },
+    {
+     "ts": "2026-10-07T07:03:54",
+     "status": "fail",
+     "failing_count": 2,
+     "total": 2,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
     }
    ]
   },
   "sim_pvt": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 4,
+   "attempts": 5,
    "last": {
-    "ts": "2026-10-02T18:43:12",
+    "ts": "2026-10-07T07:43:21",
     "status": "pass",
     "failing_count": 0,
     "total": 1,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-     "tb": "dir_text:d35484e7817132d38bb87b9453874cd491a4bf71d2d9d651ed98d6943d3a3d69",
+     "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
     },
@@ -603,35 +621,81 @@
        "tt_pff"
       ]
      }
+    },
+    {
+     "ts": "2026-10-07T07:43:21",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt_m40c_vm10",
+       "tt_m40c",
+       "tt_m40c_vp10",
+       "tt_27c_vm10",
+       "tt_27c",
+       "tt_27c_vp10",
+       "tt_125c_vm10",
+       "tt_125c",
+       "tt_125c_vp10",
+       "ss_m40c_vm10",
+       "ss_m40c",
+       "ss_m40c_vp10",
+       "ss_27c_vm10",
+       "ss_27c",
+       "ss_27c_vp10",
+       "ss_125c_vm10",
+       "ss_125c",
+       "ss_125c_vp10",
+       "ff_m40c_vm10",
+       "ff_m40c",
+       "ff_m40c_vp10",
+       "ff_27c_vm10",
+       "ff_27c",
+       "ff_27c_vp10",
+       "ff_125c_vm10",
+       "ff_125c",
+       "ff_125c_vp10",
+       "tt_pss",
+       "tt_pff"
+      ]
+     }
     }
    ]
   },
   "bench_strength": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 2,
+   "status": "pass",
+   "attempts": 3,
    "last": {
-    "ts": "2026-10-07T06:50:47",
-    "status": "fail",
-    "failing_count": 37,
-    "total": 37,
+    "ts": "2026-10-07T09:00:53",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 34,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-     "tb": "dir_text:0bc20410fa67ff780bfa1a70542411ecde2f83165fbbb795c706e75be8ac0d82",
-     "mutant_rulings": null,
+     "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+     "mutant_rulings": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
     },
     "job": null,
     "facts": {
      "total_mutants": 253,
-     "killed": 216,
-     "survived": 37,
+     "killed": 219,
+     "survived": 34,
      "devices_total": 87,
      "devices_mutated": 87,
-     "killed_by_sensitivity": 53,
+     "killed_by_sensitivity": 73,
      "equivalent": 0,
-     "below_spread": 0
+     "below_spread": 34
     }
    },
    "history": [
@@ -682,6 +746,30 @@
       "equivalent": 0,
       "below_spread": 0
      }
+    },
+    {
+     "ts": "2026-10-07T09:00:53",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 34,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+      "mutant_rulings": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "total_mutants": 253,
+      "killed": 219,
+      "survived": 34,
+      "devices_total": 87,
+      "devices_mutated": 87,
+      "killed_by_sensitivity": 73,
+      "equivalent": 0,
+      "below_spread": 34
+     }
     }
    ]
   }
@@ -695,31 +783,31 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-10-07T06:50:47"
+   "hashed": "2026-10-07T09:00:53"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-07T06:50:47"
+   "hashed": "2026-10-07T09:00:53"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
-   "sha256": "dir_text:0bc20410fa67ff780bfa1a70542411ecde2f83165fbbb795c706e75be8ac0d82",
-   "hashed": "2026-10-07T06:50:47"
+   "sha256": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+   "hashed": "2026-10-07T09:00:53"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78",
-   "hashed": "2026-10-07T06:50:47"
+   "hashed": "2026-10-07T09:00:53"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
    "kind": "mutant_rulings",
-   "sha256": null,
-   "hashed": "2026-10-07T06:50:47"
+   "sha256": "json_canonical:35732ca1253de092c03552429d2dd82fad58e3cf4c187124dd5523243d8d6825",
+   "hashed": "2026-10-07T09:00:53"
   }
  },
  "open_issues": [
@@ -824,11 +912,11 @@
   },
   {
    "id": 6,
-   "status": "escalated",
+   "status": "superseded",
    "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-10-06T17:22:59",
-   "closed": null,
+   "closed": "2026-10-07T09:03:09",
    "gate": "bench_strength",
    "phase": "P4",
    "fixer": "testbench",
@@ -838,15 +926,16 @@
    "severity": "error",
    "count": 63,
    "work_order": "log/workorders/wo-6.json",
-   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix"
+   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix",
+   "superseded_by": 9
   },
   {
    "id": 7,
-   "status": "escalated",
+   "status": "superseded",
    "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-10-06T17:22:59",
-   "closed": null,
+   "closed": "2026-10-07T09:03:09",
    "gate": "bench_strength",
    "phase": "P4",
    "fixer": "testbench",
@@ -856,15 +945,16 @@
    "severity": "error",
    "count": 29,
    "work_order": "log/workorders/wo-7.json",
-   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix"
+   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix",
+   "superseded_by": 10
   },
   {
    "id": 8,
-   "status": "escalated",
+   "status": "superseded",
    "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-10-06T17:22:59",
-   "closed": null,
+   "closed": "2026-10-07T09:03:09",
    "gate": "bench_strength",
    "phase": "P4",
    "fixer": "testbench",
@@ -874,15 +964,16 @@
    "severity": "error",
    "count": 1,
    "work_order": "log/workorders/wo-8.json",
-   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix"
+   "note": "bench-writer a1: 2% sensitivities in tb/*.bounds.json, predicted 53/93 killed offline; tt_27c bounds unscored by engine (req-20261006T212631Z-210509); rerun bench_strength after fix",
+   "superseded_by": 9
   },
   {
    "id": 9,
-   "status": "fixing",
+   "status": "fixed",
    "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-10-07T06:57:39",
-   "closed": null,
+   "closed": "2026-10-07T09:03:09",
    "gate": "bench_strength",
    "phase": "P4",
    "fixer": "testbench",
@@ -891,15 +982,16 @@
    ],
    "severity": "error",
    "count": 24,
-   "work_order": "log/workorders/wo-9.json"
+   "work_order": "log/workorders/wo-9.json",
+   "note": "box rerun 2026-10-07 on engine 19b997a: gate bench_strength PASS (0 failing / 34 total) with the a2 sensitivities and 34 below_spread rulings"
   },
   {
    "id": 10,
-   "status": "fixing",
+   "status": "fixed",
    "agent": "bench-writer",
    "attempts": 0,
    "opened": "2026-10-07T06:57:39",
-   "closed": null,
+   "closed": "2026-10-07T09:03:09",
    "gate": "bench_strength",
    "phase": "P4",
    "fixer": "testbench",
@@ -908,7 +1000,8 @@
    ],
    "severity": "error",
    "count": 13,
-   "work_order": "log/workorders/wo-10.json"
+   "work_order": "log/workorders/wo-10.json",
+   "note": "box rerun 2026-10-07 on engine 19b997a: gate bench_strength PASS (0 failing / 34 total) with the a2 sensitivities and 34 below_spread rulings"
   }
  ],
  "next_issue_id": 11,
@@ -1922,6 +2015,70 @@
    "event": "issue",
    "id": 10,
    "status": "fixing",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T07:03:54",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "fail",
+   "attempt": 8,
+   "failing_count": 2
+  },
+  {
+   "ts": "2026-10-07T07:43:21",
+   "event": "gate",
+   "gate": "sim_pvt",
+   "status": "pass",
+   "attempt": 5,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-07T09:00:53",
+   "event": "gate",
+   "gate": "bench_strength",
+   "status": "pass",
+   "attempt": 3,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-07T09:03:09",
+   "event": "issue",
+   "id": 9,
+   "status": "fixed",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T09:03:09",
+   "event": "issue",
+   "id": 10,
+   "status": "fixed",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T09:03:09",
+   "event": "issue",
+   "id": 6,
+   "status": "superseded",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T09:03:09",
+   "event": "issue",
+   "id": 8,
+   "status": "superseded",
+   "agent": "bench-writer",
+   "attempts": 0
+  },
+  {
+   "ts": "2026-10-07T09:03:09",
+   "event": "issue",
+   "id": 7,
+   "status": "superseded",
    "agent": "bench-writer",
    "attempts": 0
   }

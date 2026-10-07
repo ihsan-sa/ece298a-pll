@@ -3088,6 +3088,12 @@
   ],
   "scoped_out": []
  },
- "recorded_ts": "2026-10-02T18:43:12",
- "attempts": 4
+ "inputs_at_start": {
+  "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+  "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+  "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+  "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+ },
+ "recorded_ts": "2026-10-07T07:43:21",
+ "attempts": 5
 }
