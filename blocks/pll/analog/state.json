@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-07T09:03:09",
+ "updated": "2026-10-08T09:42:43",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -220,13 +220,13 @@
   },
   "sim_tt": {
    "phase": "P4",
-   "status": "fail",
-   "attempts": 8,
+   "status": "pass",
+   "attempts": 9,
    "last": {
-    "ts": "2026-10-07T07:03:54",
-    "status": "fail",
-    "failing_count": 2,
-    "total": 2,
+    "ts": "2026-10-08T09:29:58",
+    "status": "pass",
+    "failing_count": 0,
+    "total": 1,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
      "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
@@ -372,6 +372,24 @@
      "status": "fail",
      "failing_count": 2,
      "total": 2,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
+      "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+      "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
+     },
+     "job": null,
+     "facts": {
+      "corners": [
+       "tt"
+      ]
+     }
+    },
+    {
+     "ts": "2026-10-08T09:29:58",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 1,
      "inputs": {
       "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
       "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
@@ -777,31 +795,39 @@
  "jobs": {},
  "holdout": null,
  "optimise": null,
- "human": {},
+ "human": {
+  "H1": {
+   "status": "presented",
+   "challenge": "H1-101694",
+   "digest": "6cd9a644f08d24947e4593ef41a468c3f5e2a1925b41f2ad863d8865d93d8425",
+   "presented": "2026-10-08T09:42:43",
+   "phase": "P4"
+  }
+ },
  "artifacts": {
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-10-07T09:00:53"
+   "hashed": "2026-10-08T09:29:58"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-07T09:00:53"
+   "hashed": "2026-10-08T09:29:58"
   },
   "tb": {
    "path": "tb",
    "kind": "tb",
    "sha256": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
-   "hashed": "2026-10-07T09:00:53"
+   "hashed": "2026-10-08T09:29:58"
   },
   "sizing": {
    "path": "sizing/sizing.yaml",
    "kind": "sizing",
    "sha256": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78",
-   "hashed": "2026-10-07T09:00:53"
+   "hashed": "2026-10-08T09:29:58"
   },
   "mutant_rulings": {
    "path": "spec/mutant_rulings.yaml",
@@ -1013,7 +1039,14 @@
    "bench_strength": 1
   }
  },
- "decisions": [],
+ "decisions": [
+  {
+   "what": "mc not run: not applicable",
+   "why": "gate mc answered applicable: false ('spec.yaml has no mc.enabled: true') on 2026-10-08, so it records nothing. The 34 below_spread rulings stay held to the 2% floor, since no mc sigma will exist to reopen them against.",
+   "phase": "P4",
+   "ts": "2026-10-08T09:38:20"
+  }
+ ],
  "edits": [
   {
    "ts": "2026-09-28T13:59:49",
@@ -2081,6 +2114,26 @@
    "status": "superseded",
    "agent": "bench-writer",
    "attempts": 0
+  },
+  {
+   "ts": "2026-10-08T09:29:58",
+   "event": "gate",
+   "gate": "sim_tt",
+   "status": "pass",
+   "attempt": 9,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-08T09:38:20",
+   "event": "decision",
+   "what": "mc not run: not applicable"
+  },
+  {
+   "ts": "2026-10-08T09:42:43",
+   "event": "human_presented",
+   "checkpoint": "H1",
+   "challenge": "H1-101694",
+   "digest": "6cd9a644f08d24947e4593ef41a468c3f5e2a1925b41f2ad863d8865d93d8425"
   }
  ]
 }
