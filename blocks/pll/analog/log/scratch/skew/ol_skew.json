@@ -1,0 +1,310 @@
+{
+ "script": "sim_run",
+ "status": "violations",
+ "counts": {
+  "total": 1,
+  "by_severity": {
+   "error": 1
+  },
+  "by_source": {
+   "sim_run": 1
+  }
+ },
+ "violations": [
+  {
+   "check": "sim",
+   "severity": "error",
+   "file": "tb/pll_analog_presc_tb.cir",
+   "module": null,
+   "line": null,
+   "kind": "sim_bench_not_run",
+   "refs": [
+    "pll_analog_presc_tb.cir"
+   ],
+   "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the spec's corners (ss_pff, ff_pss), so no gate ever runs it. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+   "source": "sim_run",
+   "items": [
+    {
+     "msg": "pll_analog_presc_tb.cir: no bound in its sidecar is scored at any of the spec's corners (ss_pff, ff_pss), so no gate ever runs it. Scope at least one bound's `corners` to a corner in this sweep (or \"all\"), or name the corner in the spec's corner set",
+     "file": "tb/pll_analog_presc_tb.cir",
+     "line": null
+    }
+   ]
+  }
+ ],
+ "top": "pll_analog",
+ "corners": [
+  "ss_pff",
+  "ff_pss"
+ ],
+ "results": [
+  {
+   "bench": "pll_analog_cp_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "icp_up_code00_ua": 27.0609,
+    "icp_dn_code00_ua": 26.8581,
+    "icp_up_code00_tt_ua": 27.0609,
+    "icp_up_code01_ua": 33.7285,
+    "icp_up_code10_ua": 40.3759,
+    "icp_up_code11_ua": 53.6205,
+    "icp_code11_over_code00_ratio": 1.98148,
+    "cp_updn_mismatch_pct": 7.84894,
+    "vctrl_leak_off_na": 0.0024259
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_cp_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_cp_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "icp_up_code00_ua": 14.2457,
+    "icp_dn_code00_ua": 13.6448,
+    "icp_up_code00_tt_ua": 14.2457,
+    "icp_up_code01_ua": 17.6896,
+    "icp_up_code10_ua": 21.1173,
+    "icp_up_code11_ua": 27.9371,
+    "icp_code11_over_code00_ratio": 1.96109,
+    "cp_updn_mismatch_pct": 8.6882,
+    "vctrl_leak_off_na": 0.00349625
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_cp_tb__ff_pss.cir"
+  },
+  {
+   "bench": "pll_analog_ol_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "ol_pm_pn16_nopad_pvt_deg": 50.0041
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_ol_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_ol_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "ol_pm_pn16_nopad_pvt_deg": 43.3352
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_ol_tb__ff_pss.cir"
+  },
+  {
+   "bench": "pll_analog_overlap_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "cp_overlap_net_charge_fc": 3.60887
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_overlap_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_overlap_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "cp_overlap_net_charge_fc": 2.19684
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_overlap_tb__ff_pss.cir"
+  },
+  {
+   "bench": "pll_analog_pwr_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "standby_current_ua": 0.000224804,
+    "vco_out_off_toggles": 0.0
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_pwr_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_pwr_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "standby_current_ua": 0.00014813,
+    "vco_out_off_toggles": 0.0
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_pwr_tb__ff_pss.cir"
+  },
+  {
+   "bench": "pll_analog_startup_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "startup_time_us": 0.543381
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_startup_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_startup_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "startup_time_us": 0.900329
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_startup_tb__ff_pss.cir"
+  },
+  {
+   "bench": "pll_analog_vco_tb.cir",
+   "corner": "ss_pff",
+   "names": [
+    "ss_pff"
+   ],
+   "process": "ss",
+   "passive": "ff",
+   "temp_c": 125,
+   "vdd": "2.97",
+   "returncode": 0,
+   "measures": {
+    "vco_kvco_mhz_per_v": 115.239,
+    "vco_df_dv_min_mhz_per_v": 11.8365,
+    "vco_fmin_tt_mhz": 16.9314,
+    "vco_fmax_tt_mhz": 290.047,
+    "vco_out_swing_pct_vdd": 100.885,
+    "vco_out_duty_pct": 54.1057,
+    "vco_fmax_ff_mhz": 310.392,
+    "vco_out_tr_ns": 0.065957,
+    "vco_out_tf_ns": 0.064048
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_vco_tb__ss_pff.cir"
+  },
+  {
+   "bench": "pll_analog_vco_tb.cir",
+   "corner": "ff_pss",
+   "names": [
+    "ff_pss"
+   ],
+   "process": "ff",
+   "passive": "ss",
+   "temp_c": -40,
+   "vdd": "3.63",
+   "returncode": 0,
+   "measures": {
+    "vco_kvco_mhz_per_v": 49.7066,
+    "vco_df_dv_min_mhz_per_v": 3.4297,
+    "vco_fmin_tt_mhz": 7.51488,
+    "vco_fmax_tt_mhz": 158.126,
+    "vco_out_swing_pct_vdd": 100.196,
+    "vco_out_duty_pct": 53.687,
+    "vco_fmax_ff_mhz": 158.952,
+    "vco_out_tr_ns": 0.051717,
+    "vco_out_tf_ns": 0.04609
+   },
+   "engine_errors": [],
+   "violations": [],
+   "deck": "blocks/pll/analog/log/sim/pll_analog_vco_tb__ff_pss.cir"
+  }
+ ],
+ "not_scored": [
+  {
+   "bench": "pll_analog_presc_tb.cir",
+   "corner": "ss_pff",
+   "reason": "no bound in the sidecar is scored at this corner"
+  },
+  {
+   "bench": "pll_analog_presc_tb.cir",
+   "corner": "ff_pss",
+   "reason": "no bound in the sidecar is scored at this corner"
+  }
+ ],
+ "out_of_scope": [],
+ "report_schema": 1,
+ "checker_version": 1,
+ "generated_at": "2026-10-10T15:52:57+00:00",
+ "input": "blocks/pll/analog",
+ "input_digest": "dir_text:1c1a5f37b0832fff4597bc8470affa725e122fd0a065374e0b4d4d8788db116f"
+}

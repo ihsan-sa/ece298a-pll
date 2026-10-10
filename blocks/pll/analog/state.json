@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-10T11:51:32",
+ "updated": "2026-10-10T11:53:04",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -178,9 +178,9 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 6,
+   "attempts": 7,
    "last": {
-    "ts": "2026-10-10T11:51:32",
+    "ts": "2026-10-10T11:53:04",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
@@ -248,6 +248,17 @@
     },
     {
      "ts": "2026-10-10T11:51:32",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-10-10T11:53:04",
      "status": "pass",
      "failing_count": 0,
      "total": 0,
@@ -874,13 +885,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
-   "hashed": "2026-10-10T11:51:32"
+   "hashed": "2026-10-10T11:53:04"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-10T11:51:32"
+   "hashed": "2026-10-10T11:53:04"
   },
   "tb": {
    "path": "tb",
@@ -2290,6 +2301,14 @@
    "gate": "netlist_lint",
    "status": "pass",
    "attempt": 6,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-10T11:53:04",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 7,
    "failing_count": 0
   }
  ]
