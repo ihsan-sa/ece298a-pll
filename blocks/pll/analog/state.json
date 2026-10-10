@@ -4,7 +4,7 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-10T11:46:05",
+ "updated": "2026-10-10T11:51:32",
  "phase": "P4",
  "toolchain": null,
  "gates": {
@@ -178,15 +178,15 @@
   "netlist_lint": {
    "phase": "P4",
    "status": "pass",
-   "attempts": 5,
+   "attempts": 6,
    "last": {
-    "ts": "2026-10-05T14:14:11",
+    "ts": "2026-10-10T11:51:32",
     "status": "pass",
     "failing_count": 0,
     "total": 0,
     "inputs": {
      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-     "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
+     "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
     },
     "job": null
    },
@@ -245,14 +245,17 @@
       "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
      },
      "job": null
-    }
-   ],
-   "stale": [
+    },
     {
-     "ts": "2026-10-10T11:44:23",
-     "edit_class": "spec_edit",
-     "refs": [],
-     "human_hold": 2
+     "ts": "2026-10-10T11:51:32",
+     "status": "pass",
+     "failing_count": 0,
+     "total": 0,
+     "inputs": {
+      "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
+      "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
+     },
+     "job": null
     }
    ]
   },
@@ -871,13 +874,13 @@
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
    "sha256": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
-   "hashed": "2026-10-10T11:46:05"
+   "hashed": "2026-10-10T11:51:32"
   },
   "netlist": {
    "path": "netlist",
    "kind": "netlist",
    "sha256": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-   "hashed": "2026-10-08T09:29:58"
+   "hashed": "2026-10-10T11:51:32"
   },
   "tb": {
    "path": "tb",
@@ -2279,6 +2282,14 @@
    "gate": "spec_lint",
    "status": "pass",
    "attempt": 15,
+   "failing_count": 0
+  },
+  {
+   "ts": "2026-10-10T11:51:32",
+   "event": "gate",
+   "gate": "netlist_lint",
+   "status": "pass",
+   "attempt": 6,
    "failing_count": 0
   }
  ]
