@@ -91,6 +91,7 @@
     "vdd": "3.3",
     "returncode": 0,
     "measures": {
+     "ol_pm_pn16_nopad_pvt_deg": 49.5144,
      "ol_pm_pn16_nopad_deg": 49.5144,
      "ol_pm_pn16_pad5p_deg": 33.8996,
      "ol_fc_pn16_nopad_khz": 479.973,
@@ -227,10 +228,10 @@
  },
  "inputs_at_start": {
   "netlist": "dir_text:1ef1fe40a6df065d759ad4d172cf1844365ea43e88cf0afc2cd29b388cbb681e",
-  "tb": "dir_text:9c12cb0fefef8a797bd3ed344bf031a06410874c2d45cdf2a1fc825dcf0d1b66",
-  "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
+  "tb": "dir_text:75f9cbb01e815e85fc1694b031991dadbb4b68958220779ebd031d7d9ba9b037",
+  "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
   "sizing": "json_canonical:429052419ccf2b75a4fc2ec239291b317f44114890a6ed0e84d86b36d91e5c78"
  },
- "recorded_ts": "2026-10-08T09:29:58",
- "attempts": 9
+ "recorded_ts": "2026-10-10T12:03:54",
+ "attempts": 10
 }
