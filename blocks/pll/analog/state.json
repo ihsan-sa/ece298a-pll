@@ -4,21 +4,21 @@
  "block": "pll_analog",
  "workspace": "blocks/pll/analog",
  "created": "2026-09-27T00:35:38",
- "updated": "2026-10-10T11:42:38",
+ "updated": "2026-10-10T11:44:23",
  "phase": "P4",
  "toolchain": null,
  "gates": {
   "spec_lint": {
    "phase": "P1",
-   "status": "pass",
-   "attempts": 12,
+   "status": "fail",
+   "attempts": 14,
    "last": {
-    "ts": "2026-10-06T17:25:35",
-    "status": "pass",
-    "failing_count": 0,
-    "total": 0,
+    "ts": "2026-10-10T11:43:53",
+    "status": "fail",
+    "failing_count": 11,
+    "total": 11,
     "inputs": {
-     "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
+     "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
     },
     "job": null
    },
@@ -142,6 +142,34 @@
       "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
      },
      "job": null
+    },
+    {
+     "ts": "2026-10-10T11:43:40",
+     "status": "fail",
+     "failing_count": 13,
+     "total": 13,
+     "inputs": {
+      "spec_yaml": "json_canonical:8b60617cbd15ef3a4bdb1795213d2214ac5edaa8fef7ea0820e932ac9be131f4"
+     },
+     "job": null
+    },
+    {
+     "ts": "2026-10-10T11:43:53",
+     "status": "fail",
+     "failing_count": 11,
+     "total": 11,
+     "inputs": {
+      "spec_yaml": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326"
+     },
+     "job": null
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-10T11:44:23",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
     }
    ]
   },
@@ -215,6 +243,14 @@
       "spec_yaml": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686"
      },
      "job": null
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-10T11:44:23",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
     }
    ]
   },
@@ -402,6 +438,14 @@
        "tt"
       ]
      }
+    }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-10T11:44:23",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
     }
    ]
   },
@@ -686,6 +730,14 @@
       ]
      }
     }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-10T11:44:23",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
+    }
    ]
   },
   "bench_strength": {
@@ -789,6 +841,14 @@
       "below_spread": 34
      }
     }
+   ],
+   "stale": [
+    {
+     "ts": "2026-10-10T11:44:23",
+     "edit_class": "spec_edit",
+     "refs": [],
+     "human_hold": 2
+    }
    ]
   }
  },
@@ -808,8 +868,8 @@
   "spec_yaml": {
    "path": "spec/spec.yaml",
    "kind": "spec_yaml",
-   "sha256": "json_canonical:a6dda367759da7c9b76d71ce468ed390a30ac2d49e2628aeb63fbb6199714686",
-   "hashed": "2026-10-08T09:29:58"
+   "sha256": "json_canonical:de9c984144aacb0e7b1dc64c52c983c5f9142af94f08ea2f78be2ce7f2d40326",
+   "hashed": "2026-10-10T11:43:53"
   },
   "netlist": {
    "path": "netlist",
@@ -1314,6 +1374,33 @@
     "sim_tt"
    ],
    "stale_artifacts": []
+  },
+  {
+   "ts": "2026-10-10T11:44:23",
+   "class": "spec_edit",
+   "refs": [],
+   "note": "H1 revision: Icp windows to resistor-skew spread (code00 12-30), new ol_pm_pn16_nopad_pvt_deg >=30 at all corners; owner delegated the call",
+   "human_hold": 2,
+   "gates": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength",
+    "mc",
+    "drc",
+    "lvs",
+    "pex_sim",
+    "release"
+   ],
+   "gates_marked": [
+    "spec_lint",
+    "netlist_lint",
+    "sim_tt",
+    "sim_pvt",
+    "bench_strength"
+   ],
+   "stale_artifacts": []
   }
  ],
  "spawns": [
@@ -1347,6 +1434,13 @@
   {
    "ts": "2026-10-10T11:42:38",
    "role": "spec-writer",
+   "model": "opus",
+   "effort": "high",
+   "phase": "P4"
+  },
+  {
+   "ts": "2026-10-10T11:44:23",
+   "role": "bench-writer",
    "model": "opus",
    "effort": "high",
    "phase": "P4"
@@ -2146,6 +2240,35 @@
    "ts": "2026-10-10T11:42:38",
    "event": "spawn",
    "role": "spec-writer",
+   "model": "opus"
+  },
+  {
+   "ts": "2026-10-10T11:43:40",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "fail",
+   "attempt": 13,
+   "failing_count": 13
+  },
+  {
+   "ts": "2026-10-10T11:43:53",
+   "event": "gate",
+   "gate": "spec_lint",
+   "status": "fail",
+   "attempt": 14,
+   "failing_count": 11
+  },
+  {
+   "ts": "2026-10-10T11:44:23",
+   "event": "edit",
+   "edit_class": "spec_edit",
+   "refs": [],
+   "human_hold": 2
+  },
+  {
+   "ts": "2026-10-10T11:44:23",
+   "event": "spawn",
+   "role": "bench-writer",
    "model": "opus"
   }
  ]

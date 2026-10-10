@@ -118,23 +118,25 @@ corners:
 # Units are in the name. "all" = the whole grid above.
 measures:
   # --- charge pump ---------------------------------------------------
+  # Windows: nominal -40/+50 % over the grid and transistor/resistor skew
+  # (Vgs/R self-bias: worst Icp is at ss_pff / ff_pss, not ss / ff).
   - name: icp_up_code00_ua
-    bounds: {min: 15.0, max: 25.0}
+    bounds: {min: 12.0, max: 30.0}
     corners: all
   - name: icp_dn_code00_ua
-    bounds: {min: 15.0, max: 25.0}
+    bounds: {min: 12.0, max: 30.0}
     corners: all
   - name: icp_up_code00_tt_ua
     bounds: {min: 18.0, max: 22.0}
     corners: [tt_27c]
   - name: icp_up_code01_ua
-    bounds: {min: 18.75, max: 31.25}
+    bounds: {min: 15.0, max: 37.5}
     corners: all
   - name: icp_up_code10_ua
-    bounds: {min: 22.5, max: 37.5}
+    bounds: {min: 18.0, max: 45.0}
     corners: all
   - name: icp_up_code11_ua
-    bounds: {min: 30.0, max: 50.0}
+    bounds: {min: 24.0, max: 60.0}
     corners: all
   - name: icp_code11_over_code00_ratio
     bounds: {min: 1.8, max: 2.2}
@@ -152,6 +154,11 @@ measures:
   - name: ol_pm_pn16_nopad_deg
     bounds: {min: 45.0}
     corners: [tt_27c]
+  # Loop gain Icp*Kvco moves ~4.6x over PVT and resistor skew: 30 deg is
+  # the floor at every corner, 45 deg stays the nominal target above.
+  - name: ol_pm_pn16_nopad_pvt_deg
+    bounds: {min: 30.0}
+    corners: all
   - name: ol_pm_pn16_pad5p_deg
     bounds: {min: 25.0}
     corners: [tt_27c]
@@ -218,6 +225,6 @@ measures:
 # Post-layout re-simulation of Kvco and Icp (brief: layout section). Same
 # bounds as pre-layout at the corners those measures run.
 post_layout_bounds:
-  icp_up_code00_ua: {min: 15.0, max: 25.0}
-  icp_dn_code00_ua: {min: 15.0, max: 25.0}
+  icp_up_code00_ua: {min: 12.0, max: 30.0}
+  icp_dn_code00_ua: {min: 12.0, max: 30.0}
   vco_kvco_mhz_per_v: {min: 40.0, max: 250.0}

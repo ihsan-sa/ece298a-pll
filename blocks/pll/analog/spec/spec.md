@@ -94,17 +94,18 @@ the rail. Rise/fall are 20 %-80 %. "all" = the 27-corner grid.
 
 | Measure | Bound | Corners | What it is |
 |---|---|---|---|
-| `icp_up_code00_ua` | 15..25 | all | UP source current, mid-range `vctrl` (vdd/2), code 00 |
-| `icp_dn_code00_ua` | 15..25 | all | DN sink current, same conditions |
+| `icp_up_code00_ua` | 12..30 | all | UP source current, mid-range `vctrl` (vdd/2), code 00 (20 uA nominal, -40/+50 % over PVT and resistor skew) |
+| `icp_dn_code00_ua` | 12..30 | all | DN sink current, same conditions |
 | `icp_up_code00_tt_ua` | 18..22 | tt_27c | code 00 nominal check (20 uA +-10 %) |
-| `icp_up_code01_ua` | 18.75..31.25 | all | code 01 (25 uA +-25 %) |
-| `icp_up_code10_ua` | 22.5..37.5 | all | code 10 (30 uA +-25 %) |
-| `icp_up_code11_ua` | 30..50 | all | code 11 (40 uA +-25 %) |
+| `icp_up_code01_ua` | 15..37.5 | all | code 01 (25 uA nominal, -40/+50 % over PVT and resistor skew) |
+| `icp_up_code10_ua` | 18..45 | all | code 10 (30 uA nominal, -40/+50 %) |
+| `icp_up_code11_ua` | 24..60 | all | code 11 (40 uA nominal, -40/+50 %) |
 | `icp_code11_over_code00_ratio` | 1.8..2.2 | all | the codes reach 2x |
 | `cp_updn_mismatch_pct` | <= 10 | all | max of 100*abs(Iup-Idn)/Icp over the `vctrl` range (systematic; GF180 models carry no per-instance mismatch) |
 | `cp_overlap_net_charge_fc` | <= 10 | all | abs net charge into `vctrl` per event with both inputs high for 1 ns, incl. charge sharing |
 | `vctrl_leak_off_na` | <= 1 | all | abs current into `vctrl` with both inputs low, over the range |
 | `ol_pm_pn16_nopad_deg` | >= 45 | tt_27c | open-loop phase margin, pump-filter-VCO with ideal 1/16 divider, no pad |
+| `ol_pm_pn16_nopad_pvt_deg` | >= 30 | all | same definition as `ol_pm_pn16_nopad_deg`, at every corner: loop gain Icp*Kvco moves ~4.6x over PVT and resistor skew, and 30 deg is the floor across corners |
 | `ol_pm_pn16_pad5p_deg` | >= 25 (warn) | tt_27c | same with 5 pF on `vctrl` (reported; brief estimate 32) |
 | `ol_fc_pn16_nopad_khz` | 200..1000 (warn) | tt_27c | unity-gain crossover, P*N = 16, no pad |
 | `ol_pm_pn8_nopad_deg` | >= 30 (warn) | tt_27c | phase margin at P*N = 8 |
@@ -125,9 +126,29 @@ the rail. Rise/fall are 20 %-80 %. "all" = the 27-corner grid.
 | `startup_time_us` | <= 5 | all | `pll_en` rise to a running, full-swing `vco_out`, with 5 pF on `vctrl` and on `bias_ref` |
 
 Post-layout (`post_layout_bounds`): `icp_up_code00_ua`, `icp_dn_code00_ua`
-and `vco_kvco_mhz_per_v` re-simulated from the extracted netlist hold the
-same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
+(12..30) and `vco_kvco_mhz_per_v` re-simulated from the extracted netlist
+hold the same bounds. No Monte Carlo: the brief asks for no yield number, and GF180
 poly models have no per-instance mismatch to draw from anyway.
+
+### Revision 2026-10-10 (H1)
+
+The charge-pump bias is Vgs/R self-biased, so the worst Icp is not at the
+grid's ss/ff corners (slow transistors partly cancel slow resistors) but at
+transistor/resistor skews: a scratch `sim_run` at code 00 read 14.25 uA
+(ff_pss) to 27.06 uA (ss_pff), about 12.3..29.2 uA with temperature
+extrapolated, against 15.09..24.68 uA over the 27-point grid. The range is
+already centred on ~20 uA, so re-centring the bias buys nothing; the old
++-25 % windows were a proxy for loop gain, which moves ~4.6x (Kvco
+49.7..115 MHz/V), so the Icp windows were widened to the skew spread plus
+margin and the real requirement, a stable loop, is now
+`ol_pm_pn16_nopad_pvt_deg` >= 30 deg at every corner. `passive_skew_corners`
+(ss_pff, ff_pss) cannot yet be added alongside the 27-point grid (engine
+gap, reported to chip-flow), so the skew numbers above come from a scratch
+run, not a gate. The same run read fmax (`vctrl` = vdd) of
+331.75 MHz at `tt_pff` (1.3 MHz under the prescaler's 333 MHz bound) against
+264.8 MHz at ff_m40c_vp10, but the bound stays scored at ff_m40c_vp10 only:
+spec_lint does not accept the engine-appended passive corner `tt_pff` in a
+measure's corner list (measure_bad_corners).
 
 ### Layout (checked by later gates, not by ngspice)
 
