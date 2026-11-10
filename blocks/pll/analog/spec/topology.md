@@ -25,8 +25,8 @@ NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 `vfilt` (R1-C1 junction),
 `vbp_vco`, `vbn_vco`, `vi` (V2I drain), `vs` (V2I source), `vcl` (ceiling drain), `r1..r5` (ring),
 `nb` (NAND output), `vco_out` (the buffered VCO clock: internal since
-2026-10-31, the benches read it as `xdut.vco_out`), and the TSPC divider's
-`dx`, `dy`, `dqn`, `dqb`, `da`, `db`, `dc`.
+2026-10-31, the benches read it as `xdut.vco_out`), and the /2's
+`clkb`, `ck`, `m1`, `m2`, `mf`, `s1`, `sf`, `dr`, `dqn`, `dqb`.
 
 ## Blocks and refdes
 
@@ -156,7 +156,7 @@ starve, gate `vbn_vco`, source vss). 20 devices: `MP_S1..MP_S5`,
 - `MP_O` / `MN_O`: inverter `nb` -> `vco_out`, sized for 15 fF, tr/tf <=
   0.15 ns. With pll_en = 0 vco_out is held at 0 (vco_out_off_toggles).
 
-Device count: 2 + 12 + 23 + 10 + 3 + 10 + 20 + 6 = 86.
+Device count (2026-11-10, with the standby holds and the static /2): 128 in the subcircuit.
 
 ## Design equations (sized against at P4 / optimise)
 
@@ -262,22 +262,38 @@ vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
 vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).
 
-### 8. TSPC /2: vco_out -> vco_div2 (2026-10-31, issue #48)
+Standby holds (2026-11-10): `MP_HT1A`, `MP_HT2`, `MP_HT1B` (trim-leg drains
+`t1a`, `t2`, `t1b`) and `MP_HP1`..`MP_HP5` (the ring's starve drains `p1`..`p5`),
+each gate `pll_en`, source vdd, connect those nodes to the supply while
+`pll_en` is low. Without them a node whose switch or stage is off had only
+junction leakage, so the rising vbp or vbp_vco coupled it above the rail and
+it stayed there: 3.76 to 4.01 V for up to 100 us at +10 % supply, past the 3.63 V gate-oxide DC limit
+(DRM 14.1.4.2). They are off while `pll_en` is high.
+
+### 8. Static master-slave /2: vco_out -> vco_div2 (2026-11-10, was TSPC since 2026-10-31, issue #48)
 The digital half clocks at vco/2, so no library flop has to toggle at the
-VCO's ceiling (digital issue 8). A true single-phase clocked flop
-(Yuan-Svensson) with D tied to its own inverted output:
-- Stage 1 (`MP_DA` gate `dqn` vdd -> `da`, `MP_DB` gate `vco_out` `da` ->
-  `dx`, `MN_DA` gate `dqn` `dx` -> vss): `dx` = NOT `dqn` while `vco_out`
-  is low.
-- Stage 2 (`MP_DC` gate `vco_out` vdd -> `dy`, `MN_DB` gate `dx` `dy` ->
-  `db`, `MN_DC` gate `vco_out` `db` -> vss): `dy` precharges high while
-  `vco_out` is low and becomes NOT `dx` on its rising edge.
-- Stage 3 (`MP_DD` gate `dy` vdd -> `dqn`, `MN_DD` gate `vco_out` `dqn` ->
-  `dc`, `MN_DE` gate `dy` `dc` -> vss): `dqn` = NOT `dy`, held while
-  `vco_out` is low. So `dqn` toggles on every rising edge of `vco_out`.
-- `MP_DR` (gate `pll_en`, vdd -> `dqn`): in standby `vco_out` sits low and
-  `dqn` would float; this holds it high so every node is static.
+VCO's ceiling (digital issue 8). The TSPC flop it replaces left nodes
+floating between edges; held by leakage, they coupled above vdd. Here every
+node is driven: a static master-slave flop of pass gates and keepers, D tied
+to its own inverted output.
+- Clock phases: `MP_DCI`/`MN_DCI` give `clkb` = NOT `vco_out`; `MN_DCT`/`MP_DCT`
+  (gates tied to vdd and vss, always on) pass `vco_out` to `ck` with about the
+  inverter's delay. A pass gate whose two clock edges arrive apart lifts its
+  held node above vdd by clock feedthrough; arriving together, the two
+  feedthroughs cancel.
+- Master: pass gate `MN_DT1`/`MP_DT1` (`s1` -> `m1`, open while `vco_out` is
+  low), inverter `MP_DF1`/`MN_DF1` (`m1` -> `m2`), keeper `MP_DK1`/`MN_DK1`
+  (`m2` -> `mf`) closed onto `m1` by `MN_DT2`/`MP_DT2` while `vco_out` is high.
+- Slave: pass gate `MN_DT3`/`MP_DT3` (`m2` -> `s1`, open while `vco_out` is
+  high), NAND-like stage `MP_DF2`/`MN_DF2` with `MN_DF2R`/`MP_DF2R` on
+  `pll_en` (`s1` -> `dqn`; in standby `dqn` is held high), keeper
+  `MP_DK2`/`MN_DK2` (`dqn` -> `sf`) closed onto `s1` by `MN_DT4`/`MP_DT4`
+  while `vco_out` is low. So `dqn` toggles on every rising edge of `vco_out`.
+- `MN_DXA`..`MN_DXD`: NMOS gate capacitors, 4 x 1 um (about 20 fF when high),
+  on `m1`, `s1`, `mf`, `sf`, so the feedthrough charge that is left moves
+  those nodes less. Matched phases plus these keep the repeating peak under
+  75 mV over 3.63 V at every corner (DRM 14.1.4.2; without them, +289 mV).
 - `MP_DO1`/`MN_DO1` (`dqn` -> `dqb`) and `MP_DO2`/`MN_DO2` (`dqb` ->
   `vco_div2`): the pin's buffer.
-All L = 0.28 um. The macro's pins are the interface's, so `vco_out` is no
-longer a pin; the tile's digital half takes `vco_div2`.
+L = 0.28 um except the capacitors. The macro's pins are the interface's, so
+`vco_out` is no longer a pin; the tile's digital half takes `vco_div2`.

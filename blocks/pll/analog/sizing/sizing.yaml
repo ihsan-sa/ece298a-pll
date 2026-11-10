@@ -93,12 +93,13 @@ r1_l:
   value: 0.00015
   min: 6e-05
   max: 0.00025
-# C1 (cap_nmos_03v3_b): total W at L = c1_l, about 3.98 fF/um2 at 1.6 V ->
-# 20.1 pF at 420 um x 12 um (12 units of 35 um); was a 100 um MIM (20 pF)
+# C1 (cap_nmos_03v3_b): W of one of its 12 parallel units (m=12) at L = c1_l,
+# as drawn, so LVS compares like for like; about 3.98 fF/um2 at 1.6 V ->
+# 20.1 pF at 12 x 35 um x 12 um; was a 100 um MIM (20 pF)
 c1_w:
-  value: 0.00042
-  min: 0.0003
-  max: 0.0005
+  value: 3.5e-05
+  min: 2.5e-05
+  max: 4.1e-05
 c1_l:
   value: 1.2e-05
   min: 1.0e-05

@@ -10,7 +10,7 @@ private routing channel above it:
 
   ring     the VCO ring block (ring_block): stages in the order
            3 2 4 1 5, then NAND2 (r5's input first), output
-           inverter and the TSPC /2 (vco_out -> vco_div2), flush right
+           inverter and the static /2 (vco_out -> vco_div2), flush right
            under the vco_div2 pin. NMOS half below one shared channel, PMOS half
            mirrored above it. Each stage is one column: its inverter
            (2 fingers, drain in the middle) next to the channel, its
@@ -147,6 +147,17 @@ DEV = {
     "MP_T1B": ("p", "t1b", "vbp", "vdd", W_BP, L_BP, 1),
     "MN_SW0B": ("n", "t1c", "cp_trim0", "t1b", 2.0, LMIN, 1),
     "MN_SW1B": ("n", "vcp_n", "cp_trim1", "t1c", 2.0, LMIN, 1),
+    "MP_HT1A": ("p", "t1a", "pll_en", "vdd", 1.0, 1.0, 1),
+    "MP_HT2": ("p", "t2", "pll_en", "vdd", 1.0, 1.0, 1),
+    "MP_HT1B": ("p", "t1b", "pll_en", "vdd", 1.0, 1.0, 1),
+    "MP_HT1C": ("p", "t1a", "cp_trim0", "vdd", 1.0, LMIN, 1),
+    "MP_HT1D": ("p", "t1b", "cp_trim0", "vdd", 1.0, LMIN, 1),
+    "MP_HT2B": ("p", "t2", "cp_trim1", "vdd", 1.0, LMIN, 1),
+    "MP_HP1": ("p", "p1", "pll_en", "vdd", 1.0, 0.28, 1),
+    "MP_HP2": ("p", "p2", "pll_en", "vdd", 1.0, 0.28, 1),
+    "MP_HP3": ("p", "p3", "pll_en", "vdd", 1.0, 0.28, 1),
+    "MP_HP4": ("p", "p4", "pll_en", "vdd", 1.0, 0.28, 1),
+    "MP_HP5": ("p", "p5", "pll_en", "vdd", 1.0, 0.28, 1),
     "MN_CPREF": ("n", "vcp_n", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MN_CPREF2": ("n", "vcp_p", "vcp_n", "vss", W_CPN, L_CPN, 2),
     "MP_CPREF": ("p", "vcp_p", "vcp_p", "vdd", W_CPP, L_CPP, 2),
@@ -187,17 +198,33 @@ DEV = {
     "MN_G2": ("n", "ng", "pll_en", "vss", W_GN, LMIN, 1),
     "MP_O": ("p", "vco_out", "nb", "vdd", W_OP, LMIN, 2),
     "MN_O": ("n", "vco_out", "nb", "vss", W_ON, LMIN, 1),
-    # (8) TSPC /2, vco_out -> vco_div2 (netlist block 8)
-    "MP_DA": ("p", "da", "dqn", "vdd", 2.0, LMIN, 1),
-    "MP_DB": ("p", "dx", "vco_out", "da", 2.0, LMIN, 1),
-    "MN_DA": ("n", "dx", "dqn", "vss", 1.0, LMIN, 1),
-    "MP_DC": ("p", "dy", "vco_out", "vdd", 2.0, LMIN, 1),
-    "MN_DB": ("n", "dy", "dx", "db", 2.0, LMIN, 1),
-    "MN_DC": ("n", "db", "vco_out", "vss", 2.0, LMIN, 1),
-    "MP_DD": ("p", "dqn", "dy", "vdd", 2.0, LMIN, 1),
-    "MN_DD": ("n", "dqn", "vco_out", "dc", 2.0, LMIN, 1),
-    "MN_DE": ("n", "dc", "dy", "vss", 2.0, LMIN, 1),
-    "MP_DR": ("p", "dqn", "pll_en", "vdd", 0.5, LMIN, 1),
+    # (8) static master-slave /2, vco_out -> vco_div2 (netlist block 8)
+    "MP_DCI": ("p", "clkb", "vco_out", "vdd", 1.0, LMIN, 1),
+    "MN_DCI": ("n", "clkb", "vco_out", "vss", 0.5, LMIN, 1),
+    "MN_DCT": ("n", "ck", "vdd", "vco_out", 0.5, LMIN, 1),
+    "MP_DCT": ("p", "ck", "vss", "vco_out", 1.0, LMIN, 1),
+    "MN_DXA": ("n", "vss", "m1", "vss", 4.0, 1.0, 1),
+    "MN_DXB": ("n", "vss", "s1", "vss", 4.0, 1.0, 1),
+    "MN_DXC": ("n", "vss", "mf", "vss", 4.0, 1.0, 1),
+    "MN_DXD": ("n", "vss", "sf", "vss", 4.0, 1.0, 1),
+    "MN_DT1": ("n", "m1", "clkb", "s1", 1.0, LMIN, 1),
+    "MP_DT1": ("p", "m1", "ck", "s1", 2.0, LMIN, 1),
+    "MP_DF1": ("p", "m2", "m1", "vdd", 2.0, LMIN, 1),
+    "MN_DF1": ("n", "m2", "m1", "vss", 1.0, LMIN, 1),
+    "MP_DK1": ("p", "mf", "m2", "vdd", 1.0, LMIN, 1),
+    "MN_DK1": ("n", "mf", "m2", "vss", 0.5, LMIN, 1),
+    "MN_DT2": ("n", "m1", "ck", "mf", 0.5, LMIN, 1),
+    "MP_DT2": ("p", "m1", "clkb", "mf", 1.0, LMIN, 1),
+    "MN_DT3": ("n", "s1", "ck", "m2", 1.0, LMIN, 1),
+    "MP_DT3": ("p", "s1", "clkb", "m2", 2.0, LMIN, 1),
+    "MP_DF2": ("p", "dqn", "s1", "vdd", 2.0, LMIN, 1),
+    "MN_DF2": ("n", "dqn", "s1", "dr", 2.0, LMIN, 1),
+    "MN_DF2R": ("n", "dr", "pll_en", "vss", 2.0, LMIN, 1),
+    "MP_DF2R": ("p", "dqn", "pll_en", "vdd", 1.0, LMIN, 1),
+    "MP_DK2": ("p", "sf", "dqn", "vdd", 1.0, LMIN, 1),
+    "MN_DK2": ("n", "sf", "dqn", "vss", 0.5, LMIN, 1),
+    "MN_DT4": ("n", "s1", "clkb", "sf", 0.5, LMIN, 1),
+    "MP_DT4": ("p", "s1", "ck", "sf", 1.0, LMIN, 1),
     "MP_DO1": ("p", "dqb", "dqn", "vdd", 2.0, LMIN, 1),
     "MN_DO1": ("n", "dqb", "dqn", "vss", 1.0, LMIN, 1),
     "MP_DO2": ("p", "vco_div2", "dqb", "vdd", 6.0, LMIN, 1),
@@ -229,21 +256,30 @@ RING_ORDER = [3, 2, 4, 1, 5]   # every hop spans 1-2 stages; 5 next to NAND
 # A group's devices abut, sharing the diffusion between them (a stage's
 # starve device and inverter share n_k / p_k; the NAND's series pair
 # shares ng; its parallel PMOS pair shares nb).
+# the static /2, left to right. An inverter's NMOS and PMOS share a
+# column (same gate net, same output pad). A pass gate's NMOS and PMOS
+# take a column each: their gates are opposite clock phases, and paired
+# they would set clkb under vco_out at one gate and over it at the next
+# (a track cycle in the shared channel).
+DIV_COLS = [
+    ("MN_DCI", "MP_DCI"), ("MN_DCT", None), (None, "MP_DCT"),
+    ("MN_DXA", None), ("MN_DT1", None), (None, "MP_DT1"), ("MN_DXC", None),
+    ("MN_DF1", "MP_DF1"), ("MN_DK1", "MP_DK1"), ("MN_DT2", None),
+    (None, "MP_DT2"), ("MN_DT3", None), (None, "MP_DT3"),
+    ("MN_DF2R", "MP_DF2R"), ("MN_DF2", "MP_DF2"), ("MN_DK2", "MP_DK2"),
+    ("MN_DXB", None), ("MN_DXD", None),
+    ("MN_DT4", None), (None, "MP_DT4"), ("MN_DO1", "MP_DO1"),
+    ("MN_DO2", "MP_DO2")]
 RING_COLS = (
     [("stage", k) for k in RING_ORDER]
     + [("row", ["MN_G1", "MN_G2"], ["MP_G1", "MP_G2"]),
        ("row", ["MN_O"], ["MP_O"]), ("row", [], ["MP_O"]),
-       # the TSPC /2: each series pair abuts its own strap (da, db, dc);
-       # NMOS and PMOS paired so no NMOS stub faces a PMOS stub of a net
-       # that must sit below it in the shared channel (no track cycle)
-       ("row", ["MN_DA", "MN_DC", "MN_DB", "MN_DD", "MN_DE", "MN_DO1",
-                "MN_DO2"],
-        ["MP_DA", "MP_DB", "MP_DC", "MP_DR", "MP_DD", "MP_DO1",
-         "MP_DO2"])])
+       # the static /2, columns from DIV_COLS
+       ] + [("row", [n] if n else [], [q] if q else []) for n, q in DIV_COLS])
 # nets that live only between a stage's (or the NAND's) own devices,
 # joined by a metal2 strap under them: no channel stub
 INTERNAL = {f"n{k}" for k in range(1, 6)} | {f"p{k}" for k in range(1, 6)} \
-    | {"ng", "da", "db", "dc"}
+    | {"ng", "dr"}
 
 # rows bottom to top: (name, kind, items). An item is a device name (its
 # next unit) or "T" (a tap). Taps are also added wherever a row runs more
@@ -272,7 +308,9 @@ ROWS = [
     ("cp_p", "p", ["MP_CPREF", "MP_UPS", "MP_UPS", "MP_CPREF",
                    "MP_BUFT", "MP_T4", "MP_BUFT", "MP_T4", "MP_T2",
                    "MP_T1A", "MP_B2", "MP_B1", "MP_T1B", "MP_T2",
-                   "MP_T4", "MP_BUFT", "MP_T4", "MP_BUFT"]),
+                   "MP_T4", "MP_BUFT", "MP_T4", "MP_BUFT",
+                   "MP_HT2", "MP_HT1A", "MP_HT1B", "MP_HT2B", "MP_HT1C",
+                   "MP_HT1D"]),
     ("cap_a", "c", ["C1"] * 7),
     ("cap_b", "c", ["C1"] * 5 + ["C2"]),
 ]
@@ -558,10 +596,19 @@ def fin_w(dev):
     return wt / nu / RING_NF.get(dev, 1)
 
 
+def gate_right(dev):
+    """True when the left pad's net is neither a rail nor a strap net, so a
+    gate via over it would sit on that pad's own channel stub."""
+    return DEV[dev][3] not in ("vdd", "vss") and DEV[dev][3] not in INTERNAL
+
+
 def dev_width(draw_fet, dev):
     cell, nf = ring_dev_cell(draw_fet, dev)
-    comp, _sd, _g = fet_geom_nf(cell, nf)
-    return comp[2] - comp[0]
+    comp, sd, _g = fet_geom_nf(cell, nf)
+    right = comp[2]
+    if gate_right(dev):
+        right = max(right, sd[-1][2] + GOFF + TRK_W / 2)
+    return right - comp[0]
 
 
 def ring_place(top, draw_fet, dev, xl, ybot, used, imps):
@@ -581,10 +628,16 @@ def ring_place(top, draw_fet, dev, xl, ybot, used, imps):
     imp = LY["nplus"] if typ == "n" else LY["pplus"]
     imps.extend(tbox(b, dx, dy) for b in layoutlib.layer_boxes(cell, imp))
     gy0, gy1 = gps[0][1], gps[0][3]
-    # the gate via sits over the left pad, whose net leaves away from the
-    # channel, so the jog is no longer than the gate pads' own span
-    xg = cx(sd[0])
-    rect(top, xg - TRK_W / 2, gy0, gps[-1][2], gy1, M1)
+    if gate_right(dev):
+        # both pads' nets go to the channel (a pass gate): the gate via
+        # sits GOFF right of the right pad instead, as in the other rows
+        xg = sd[-1][2] + GOFF
+        rect(top, gps[0][0], gy0, xg + TRK_W / 2, gy1, M1)
+    else:
+        # the gate via sits over the left pad, whose net leaves away from
+        # the channel, so the jog is no longer than the gate pads' own span
+        xg = cx(sd[0])
+        rect(top, xg - TRK_W / 2, gy0, gps[-1][2], gy1, M1)
     via(top, xg, (gy0 + gy1) / 2, "via1", M1, M2)
     return sd, nets, g, (xg, (gy0 + gy1) / 2), tbox(comp, dx, dy)
 
@@ -658,7 +711,7 @@ def ring_half(top, draw_fet, kind, cols, used):
                 xmax = max(xmax, scomp[2], sxg + 0.2)
             tops.append(max(b[3] for b in sd) + 0.9)
             xmax = max(xmax, comp[2], xg + 0.2)
-            xi = comp[2] + NEXT_XR
+            xi = max(comp[2], xg + TRK_W / 2) + NEXT_XR
     # neighbouring columns sit closer than implant spacing (NP.2/PP.2):
     # one implant fills the gap between two devices that face each other
     for a in imps:
@@ -709,6 +762,10 @@ def ring_block(top, draw_fet, y0, x0, ntracks, used):
             ncols.append((x, f"MN_S{k}", [f"MN_I{k}"]))
             pcols.append((x, f"MP_S{k}", [f"MP_I{k}"]))
             x += w + NEXT_X
+            # the stage's power-down hold on p_k sits beside it, on the
+            # same p_k strap, gate on pll_en in the shared channel
+            pcols.append((x, None, [f"MP_HP{k}"]))
+            x += dev_width(draw_fet, f"MP_HP{k}") + NEXT_X
             prev_stage = True
         else:
             _t, ng, pg = col

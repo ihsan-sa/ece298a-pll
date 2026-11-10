@@ -1,0 +1,34 @@
+# Per-device voltage stress decks for pex_sim (engine/lib/stresslib.py).
+# The +10 % fast corners set the overshoot. tt_27c is there because the disable
+# hold figure at nominal supply is part of the ruling on the trim nodes.
+# The ring free-runs in the enable and supply decks, so they carry no repeating
+# window: the four cycle decks, at the same pinned vctrl, judge that case.
+decks:
+  - name: enable
+    bench: pll_analog_stress_enable.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+  - name: supply
+    bench: pll_analog_stress_supply.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10]
+  - name: lock
+    bench: pll_analog_stress_lock.cir
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: up
+    bench: pll_analog_stress_up.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: dn
+    bench: pll_analog_stress_dn.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
+  - name: swap
+    bench: pll_analog_stress_swap.cir
+    corners: [ff_pss, ff_125c_vp10]
+    repeating:
+      - {name: cycles, start_s: 2.24e-06, stop_s: 3.12e-06, period_s: 8.0e-08}
