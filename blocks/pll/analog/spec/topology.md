@@ -271,10 +271,15 @@ vbn_vco, vst at vss; MN_ENS open; MP_BUFT and MN_BUFT off (vbt, vnt, vbl,
 vbh, vdump float, no DC path); NAND forces vco_out = 0. Only device
 leakage remains (standby_current_ua <= 1).
 
-Standby holds (2026-11-10): `MP_HT1A`, `MP_HT2`, `MP_HT1B` (trim-leg drains
-`t1a`, `t2`, `t1b`) and `MP_HP1`..`MP_HP5` (the ring's starve drains `p1`..`p5`),
-each gate `pll_en`, source vdd, connect those nodes to the supply while
-`pll_en` is low. Without them a node whose switch or stage is off had only
+Standby holds (2026-11-10): `MP_HT1C`, `MP_HT1D` (gate `cp_trim0`) and
+`MP_HT2B` (gate `cp_trim1`) hold the trim-leg drains `t1a`, `t1b`, `t2` at vdd
+while that leg's switch is open; `MP_HP1`..`MP_HP5` (gate `pll_en`) hold the
+ring's starve drains `p1`..`p5` while `pll_en` is low. The trim holds must not
+be gated by `pll_en` (2026-11-11, review): with a trim bit high in standby the
+switch puts the leg on `vcp_n`, which `MN_ENN` holds at vss, and a `pll_en`
+hold on the same leg drew 70 to 210 uA from vdd. With a switch closed the leg
+sits on the clamped `vcp_n`; the one island left, `t1b`/`t1c` at trim0 = 1 and
+trim1 = 0, is run by the `enable_t01` stress deck. Without them a node whose switch or stage is off had only
 junction leakage, so the rising vbp or vbp_vco coupled it above the rail and
 it stayed there: 3.76 to 4.01 V for up to 100 us at +10 % supply, past the 3.63 V gate-oxide DC limit
 (DRM 14.1.4.2). They are off while `pll_en` is high.

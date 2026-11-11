@@ -17,7 +17,20 @@ decks:
       - {label: MN_ST, pair: Vgd, max_v: 3.835, corners: [ff_pss, ff_125c_vp10],
          why: "schematic 3.740 V, extracted 3.717 V at ff_pss; half the 190 mV margin to 3.93 V"}
       - {label: MP_STL, pair: Vgs, max_v: 3.83, corners: [ff_pss, ff_125c_vp10],
-         why: "en_b dip at the enable edge: extracted 3.731 V at ff_125c_vp10; half the margin to 3.93 V"}
+         why: "max of both edges: extracted 3.731 V at ff_125c_vp10 from the en_b dip at enable (3.04 us); at ff_pss the peak, 3.720 V, is at the disable edge (7.00 us); half the margin to 3.93 V"}
+  # The trim bits are user pins and stay set through standby, so the enable
+  # cycle also runs with them high: 11 (every leg on vcp_n) and 01 (the
+  # t1b/t1c island behind MP_T1B). See spec/topology.md, standby holds.
+  - name: enable_t11
+    bench: pll_analog_stress_enable_t11.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
+  - name: enable_t01
+    bench: pll_analog_stress_enable_t01.cir
+    timeout_s: 5400
+    corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
   - name: supply
     bench: pll_analog_stress_supply.cir
     timeout_s: 5400
