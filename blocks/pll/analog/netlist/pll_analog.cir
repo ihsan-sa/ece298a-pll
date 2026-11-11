@@ -39,8 +39,11 @@
 .subckt pll_analog vco_div2 pfd_up pfd_dn pll_en cp_trim0 cp_trim1 vctrl bias_ref vdd vss
 
 * (1) enable inverter: pll_en -> en_b
+* MN_ENI is long (l = 4u) on purpose: a slow en_b fall (about 2 ns, was
+* 0.5 ns) keeps the en_b edge from coupling vst below vss at enable, which
+* put MN_ST's gate-drain at 3.93 V at ff/-40 C. See spec/topology.md.
 XMP_ENI en_b pll_en vdd vdd pfet_03v3 w=2e-6 l=2.8e-7
-XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=2.8e-7
+XMN_ENI en_b pll_en vss vss nfet_03v3 w=1e-6 l=4e-6
 
 * (2) bias: Ib = Vgs(MN_B1) / (RBIAS_TOP + RBIAS_INT || R_ext)
 * The loop node is vref (= Vgs of MN_B1); the pad bias_ref is a tap on the

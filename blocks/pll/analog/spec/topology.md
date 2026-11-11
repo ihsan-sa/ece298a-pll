@@ -32,6 +32,15 @@ NMOS pair tails), `vbl` / `vbh` (buffer NMOS / PMOS mirror-load gates),
 
 ### 1. Enable inverter
 - `MP_ENI`, `MN_ENI`: `pll_en` -> `en_b`. Both polarities are used below.
+- `MN_ENI` is drawn long (W/L = 1/4 um) so en_b falls in about 2 ns at tt
+  (1.7 ns ff, 4.5 ns ss) instead of 0.5 ns. With the fast edge, en_b's fall
+  coupled `vst` to about -0.24 V through MP_STL, MN_STE's charge and the
+  en_b-vst wire cap, while `pll_en` kicked `vbp` 66 mV above vdd: MN_ST's
+  gate-drain reached 3.929 V at ff/-40 C/3.63 V, on the 3.93 V one-off
+  stress bound. Long, it peaks at 3.740 V (ff), 3.421 V (tt), 3.089 V (ss);
+  start-up and bias are unchanged. Cost: en_b dips to about -0.1 V for about
+  1 ns as vst rises, so MP_STL sees about 3.73 V once per enable. Nothing
+  waits on en_b's fall; its rise (MP_ENI) is unchanged.
 
 ### 2. Bias: Vgs/R (Vt-referenced) self-biased reference, Ib = 5 uA nominal
 Gray-Meyer Vt-referenced core: the reference current flows through

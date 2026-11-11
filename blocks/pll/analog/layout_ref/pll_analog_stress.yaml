@@ -8,6 +8,16 @@ decks:
     bench: pll_analog_stress_enable.cir
     timeout_s: 5400
     corners: [ff_pss, ff_125c_vp10, tt_27c]
+    fine_step_s: 1.0e-11
+    # The slow en_b fall (MN_ENI at l = 4u, spec/topology.md) left MN_ST 190 mV
+    # under the 3.93 V one-off bound at ff/-40 C in schematic; the cost is
+    # MP_STL's gate-source while en_b dips below vss as vst rises. Each is held
+    # to half its schematic margin, so layout can't take the fix back unnoticed.
+    watch:
+      - {label: MN_ST, pair: Vgd, max_v: 3.835, corners: [ff_pss, ff_125c_vp10],
+         why: "schematic 3.740 V, extracted 3.717 V at ff_pss; half the 190 mV margin to 3.93 V"}
+      - {label: MP_STL, pair: Vgs, max_v: 3.83, corners: [ff_pss, ff_125c_vp10],
+         why: "en_b dip at the enable edge: extracted 3.731 V at ff_125c_vp10; half the margin to 3.93 V"}
   - name: supply
     bench: pll_analog_stress_supply.cir
     timeout_s: 5400

@@ -127,7 +127,7 @@ LMIN = 0.28
 # pieces it is drawn as.
 DEV = {
     "MP_ENI": ("p", "en_b", "pll_en", "vdd", 2.0, LMIN, 1),
-    "MN_ENI": ("n", "en_b", "pll_en", "vss", 1.0, LMIN, 1),
+    "MN_ENI": ("n", "en_b", "pll_en", "vss", 1.0, 4.0, 1),  # slow en_b fall, topology.md
     "MP_B2": ("p", "vbp", "vbp", "vdd", W_BP, L_BP, 1),
     "MP_B1": ("p", "va", "vbp", "vdd", W_BP, L_BP, 1),
     "MN_B1": ("n", "va", "vref", "vss", W_B1, L_B1, 1),
