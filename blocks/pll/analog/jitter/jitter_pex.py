@@ -302,7 +302,9 @@ def group(m: dict) -> str:
         return "ring_starve"
     if nets & V2I_NETS:
         return "v2i_and_mirror"
-    if nets & {"nb", "vco_out", "vco_div2", "dqb", "dqn", "dx", "dy", "da", "db", "dc"} or \
+    # the static /2 (m1 m2 mf s1 sf ck clkb) switches rail to rail like the old one
+    if nets & {"nb", "vco_out", "vco_div2", "dqb", "dqn", "dx", "dy", "da", "db", "dc",
+               "m1", "m2", "mf", "s1", "sf", "ck", "clkb"} or \
             any(base(n).startswith(("a_18352", "a_21", "a_22")) for n in nets):
         return "buffer_divider"
     return "bias_cp_other"
