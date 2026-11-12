@@ -160,13 +160,6 @@ below_spread:
     sigma: 0
     ruling: "perms for Ihsan on his redirect (#iiks1 1791072039.428359), 2026-10-07 — not his own ruling"
     evidence: "xMN_SW1: w doubled: largest move on a non-near-zero tt measure is -0.54% (ol_fc_pn16_nopad_khz), under the 2% spread floor; no mc sigma yet, so every measure is held to 2%. Re-measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin)."
-  - id: xMP_BUFT_size_doubled_w
-    netlist_line: "XMP_BUFT vbt vbp vdd vdd pfet_03v3 w=w_bp l=l_bp m=m_buft"
-    measure: startup_time_us
-    delta: -0.019899
-    sigma: 0
-    ruling: "w16f8 (warden) as an independent reviewer, on a06c8's request (board 11040659a41b, ruling 110406597501), 2026-11-04 - not a06c8's own ruling"
-    evidence: "xMP_BUFT: w doubled: largest move on a non-near-zero tt measure is -1.99% (startup_time_us), then cp_overlap_net_charge_fc -0.90% and ol_fc_pn16_nopad_khz -0.54%, under the 2% floor; connection_removed and type_flipped on the same device are killed. Measured 2026-11-04 on the V2I/clamp resize (h2/vco-margin). At the floor: if a later change moves it past 2%, drop this ruling rather than raise the delta."
   - id: xMP_ENB_connection_removed
     netlist_line: "XMP_ENB vbp pll_en vdd vdd pfet_03v3 w=1e-6 l=2.8e-7"
     measure: ol_fc_pn16_nopad_khz
