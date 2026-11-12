@@ -580,7 +580,11 @@ def main(argv=None) -> int:
                                   spec["supply"]["vdd"], sim_run.load_sizing(WS))
         vdd, temp_k = float(subs["VDD"]), float(subs["TEMP_C"]) + 273.15
         hdr = header(subs, a.netlist)
-        work = WORK / cn
+        # the op and device caches belong to one netlist and its sizing: key the
+        # directory on both, so a new extraction never reads an old one's R or bias
+        nkey = hashlib.sha256(a.netlist.read_bytes() + hdr.encode()).hexdigest()[:16]
+        work = WORK / cn / nkey
+        work.mkdir(parents=True, exist_ok=True)
         opf = work / "op.json"  # the vctrl search is the same every run: cached
         op = json.loads(opf.read_text()) if opf.is_file() else find_vctrl(hdr, vdd, work, guess.get(cn, 1.8))
         opf.write_text(json.dumps(op))
