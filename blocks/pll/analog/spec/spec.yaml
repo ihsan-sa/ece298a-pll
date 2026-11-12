@@ -142,7 +142,7 @@ devices:
 # Device mismatch at typical (the gate's corner): 30 samples per bench, at most
 # one miss. The corner failure rates this gate does not see are in mc/README.md
 # (cp_updn_mismatch_pct at ff_pss, ff_m40c_vp10).
-mc: {enabled: true, runs: 30, yield_min: 0.95}
+mc: {enabled: true, runs: 200, yield_min: 0.95}
 
 # The brief asks for "PDK corners typ/fast/slow, supply +-10 %, -40 to
 # 125 C": a full grid, replacing the default five. 27 corners; the

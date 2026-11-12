@@ -176,6 +176,11 @@ Mirror (template header, square law, starting point only):
   Trim legs use units of one W (4 = m=4 or 4 W), ratio <= 8 : 1 to the
   master. Long L (>= 1 um) on MP_UPS/MN_DNS and their references for
   UP/DN matching over vctrl 0.3..vdd-0.3 V (cp_updn_mismatch_pct <= 10).
+  The pump mirror (MN_CPREF/MN_CPREF2/MN_DNS, MP_CPREF/MP_UPS) is outside
+  the template's W and L range: W and L were doubled on 2026-11-12 (40/4 um
+  NMOS, 100/4 um PMOS) after mc missed cp_updn_mismatch_pct at ff_pss in
+  5 of 30 samples (nominal 8.7 %). The longer L cuts the systematic share
+  (nominal ff_pss 8.7 -> 5.7 %), the 4x area the random share.
 
 Bias:
 - Ib = Vgs(MN_B1) / R_BIAS, R_BIAS = RBIAS_TOP + (RBIAS_INT || R_ext).

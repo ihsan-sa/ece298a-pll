@@ -34,7 +34,7 @@ private routing channel above it:
   res      ppolyf_u serpentines: R1, R_V2I, RBIAS_TOP, RBIAS_INT
   cp_n     pump NMOS mirror CPREF/CPREF2/DNS (ABCCBA), DN and trim
            switches, inverter NMOS, MN_CL
-  cp_p     pump PMOS mirror CPREF/UPS (ABBA, 25 um units) and the
+  cp_p     pump PMOS mirror CPREF/UPS (ABBA, 50 um units) and the
            14-unit vbp bank, common centroid about its middle:
            BUFT T4 BUFT T4 T2 T1A B2 B1 T1B T2 T4 BUFT T4 BUFT
 
@@ -104,8 +104,8 @@ W_BP, L_BP = 4.0, 2.0
 W_B1, L_B1 = 2.0, 2.0
 W_B2, L_B2 = 4.0, 1.0
 RB_L, RBT_L = 366.0, 180.0
-W_CPN, L_CPN = 20.0, 2.0
-W_CPP, L_CPP = 50.0, 2.0
+W_CPN, L_CPN = 40.0, 4.0
+W_CPP, L_CPP = 100.0, 4.0
 W_SWN, W_SWP, L_SW = 2.0, 4.0, 0.5
 R1_L = 150.0
 C1_W, C1_L, C2_W, C2_L = 420.0, 12.0, 43.0, 12.0
