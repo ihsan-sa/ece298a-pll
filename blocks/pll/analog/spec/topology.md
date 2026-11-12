@@ -181,6 +181,9 @@ Mirror (template header, square law, starting point only):
   NMOS, 100/4 um PMOS) after mc missed cp_updn_mismatch_pct at ff_pss in
   5 of 30 samples (nominal 8.7 %). The longer L cuts the systematic share
   (nominal ff_pss 8.7 -> 5.7 %), the 4x area the random share.
+  Icp code 00 sits about 0.8 uA (2.9 sigma at tt) above its 18 uA floor;
+  the bigger mirror moved it 1.2 % lower. If a later change lowers Icp
+  again, recentre it then instead of adding more mc runs.
 
 Bias:
 - Ib = Vgs(MN_B1) / R_BIAS, R_BIAS = RBIAS_TOP + (RBIAS_INT || R_ext).
