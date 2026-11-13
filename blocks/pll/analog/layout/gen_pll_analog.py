@@ -326,6 +326,25 @@ CH_IN = 1.0       # row's top shape to the channel's first track
 ROW_SP = 1.6      # channel's last track to the next row's lowest shape
 RES_P = {1.0: 3.0, 2.0: 4.0}   # resistor segment pitch by width
 RES_GAP = 3.0     # extra space between two resistor chains
+# supplies: the whole block's vdd/vss current runs up one metal4 trunk each
+# and out along each channel's first (bottom) metal3 track, so they are
+# drawn wider than a signal track (em_ir, transient, sized off the worst
+# corner's mean/rms current with margin at the EM limits' temperature)
+SUP_NETS = ("vdd", "vss")
+# Supply widths, from the worst PVT corner (ff, -40 C, vdd +10 %: 1.06 mA
+# rms on vdd and vss) with 1.5x margin on the 125 C limits (0.67 mA/um
+# wire, 0.18 mA per via cut). The whole supply current runs only between
+# the pin and the trunk's lowest channel rail: that stretch is widened to
+# SUP_FOOT_W = 1.06*1.5/0.67 = 2.4 um, into free room beside it, so no
+# signal column moves. Above it the trunk carries at most 0.45 mA (2.0 um
+# keeps 3x). The busiest rail carries 0.63 mA: 1.6 um and 6 via3 cuts per
+# crossing. The pin foot carries all of it: 9 cuts, a 2.0 um tall pad.
+SUP_M4_W = 2.0    # supply metal4 trunk width
+SUP_FOOT_W = 2.4  # its pin-to-first-rail stretch (the whole supply current)
+SUP_M3_W = 1.6    # supply metal3 channel track width, grown DOWN from the
+                  # track's usual top edge (rows carry no metal3 below it)
+SUP_FOOT_H = 2.0  # supply pin-foot pad height (via2/via3 arrays)
+CUT, CUT_SP, CUT_EN = 0.26, 0.26, 0.12   # via2/via3 cut, space, enclosure
 
 
 # ======================================================================
@@ -344,6 +363,64 @@ def via(top, x, y, cut, lower, upper, land=TRK_W):
     rect(top, x - h, y - h, x + h, y + h, LY[cut])
     rect(top, x - e, y - e, x + e, y + e, lower)
     rect(top, x - e, y - e, x + e, y + e, upper)
+
+
+def via_array(top, x0, y0, x1, y1, cut, lower, upper):
+    """As many `cut` cuts as fit in x0..x1 x y0..y1 (a pitch of CUT+CUT_SP,
+    CUT_EN inside the box), with lower/upper metal over the whole box.
+    Returns the cut count."""
+    rect(top, x0, y0, x1, y1, lower)
+    rect(top, x0, y0, x1, y1, upper)
+    pit = CUT + CUT_SP
+    nx = max(int((x1 - x0 - 2 * CUT_EN - CUT) / pit + 1e-6) + 1, 1)
+    ny = max(int((y1 - y0 - 2 * CUT_EN - CUT) / pit + 1e-6) + 1, 1)
+    sx = ((x0 + x1) - (nx - 1) * pit) / 2
+    sy = ((y0 + y1) - (ny - 1) * pit) / 2
+    h = CUT / 2
+    for i in range(nx):
+        for j in range(ny):
+            x, y = r5(sx + i * pit), r5(sy + j * pit)
+            rect(top, x - h, y - h, x + h, y + h, LY[cut])
+    return nx * ny
+
+
+def widen_supply_feet(top, feet):
+    """Widen each supply trunk's foot stretch (pin to its first rail) to
+    SUP_FOOT_W, into whichever side has room (0.4 from any other net's
+    metal4, and from other metal2/metal3 at the pin pad), then draw the pin
+    pad's via2/via3 arrays over the widened foot."""
+    import klayout.db as kdb
+
+    dbu = top.kcl.dbu
+    regs = {m: kdb.Region(top.kdb_cell.begin_shapes_rec(top.kcl.layer(*m)))
+            .merged() for m in (M2, M3, M4)}
+
+    def box(x0, y0, x1, y1):
+        return kdb.Box(*(int(round(v / dbu)) for v in (x0, y0, x1, y1)))
+
+    def others(m, own):
+        return regs[m] - regs[m].interacting(kdb.Region(own))
+
+    for net, x, hw, y0, y1, f1 in feet:
+        own = box(x - 0.01, y0, x + 0.01, y0 + 0.02)
+        grow = r5(SUP_FOOT_W / 2 - hw)
+        for left, right in ((grow, grow), (2 * grow, 0), (0, 2 * grow)):
+            ext = box(x - hw - left, y0, x + hw + right, y1)
+            pad = box(x - hw - left, y0, x + hw + right, f1)
+            ok = not (others(M4, own) & kdb.Region(ext.enlarged(
+                int(round(0.4 / dbu))))).count()
+            for m in (M2, M3):
+                ok = ok and not (others(m, own) & kdb.Region(pad.enlarged(
+                    int(round(0.4 / dbu))))).count()
+            if ok:
+                break
+        else:
+            raise layoutlib.LayoutError(
+                f"no room to widen the {net} trunk's foot to {SUP_FOOT_W} um")
+        xa, xb = r5(x - hw - left), r5(x + hw + right)
+        rect(top, xa, y0, xb, y1, M4)
+        via_array(top, xa, y0, xb, f1, "via3", M3, M4)
+        via_array(top, xa, y0, xb, f1, "via2", M2, M3)
 
 
 def fill_m3_notches(top):
@@ -816,19 +893,23 @@ def plan(chan_terms, x_rows, keepouts, ports):
     occ = []                       # (column k, lo, hi)
     kmax = int((x_rows + 60.0) / TRK_P)
 
-    def column(want, lo, hi, what):
+    def column(want, lo, hi, what, hw=TRK_W / 2):
+        # hw: the column's half width; two columns clear each other by the
+        # 0.4 a pair of TRK_W columns at TRK_P leaves
         k0 = min(max(int(round((want - 0.4) / TRK_P)), 0), kmax)
         for dk in range(0, 2 * kmax + 2):
             k = k0 + (dk + 1) // 2 * (1 if dk % 2 else -1)
             if not 0 <= k <= kmax:
                 continue
             x = 0.4 + k * TRK_P
-            if any(xa <= x <= xb and lo <= chi and clo <= hi
+            grow = hw - TRK_W / 2
+            if any(xa - grow <= x <= xb + grow and lo <= chi and clo <= hi
                    for clo, chi, xa, xb in keepouts):
                 continue
-            if all(not (k == ok and lo <= ohi + 1 and olo <= hi + 1)
-                   for ok, olo, ohi in occ):
-                occ.append((k, lo, hi))
+            if all(not (abs(x - ox) < hw + ohw + 0.4 - 1e-6
+                        and lo <= ohi + 1 and olo <= hi + 1)
+                   for ox, ohw, olo, ohi in occ):
+                occ.append((x, hw, lo, hi))
                 return r5(x)
         raise layoutlib.LayoutError(f"no metal4 column for {what}")
 
@@ -839,14 +920,17 @@ def plan(chan_terms, x_rows, keepouts, ports):
                 f"port {key}: {net} has no track in channel {ci}")
         port_x[key] = column(want, lo[0] if lo else ci, ci, key)
     trunks = {}
-    for net in sorted(where, key=lambda n: (-len(where[n]), n)):
+    # the supply trunks first: they are the widest, and their feet are pins
+    for net in sorted(where, key=lambda n: (n not in SUP_NETS,
+                                            -len(where[n]), n)):
         chans = sorted(where[net])
         if len(chans) < 2 and net not in BOTTOM_PINS:
             continue
         lo = -1 if net in BOTTOM_PINS else chans[0]
         hi = chans[-1]
         xs = sorted(x for c in chans for x in where[net][c])
-        trunks[net] = (column(xs[len(xs) // 2], lo, hi, net), lo, hi)
+        hw = SUP_M4_W / 2 if net in SUP_NETS else TRK_W / 2
+        trunks[net] = (column(xs[len(xs) // 2], lo, hi, net, hw), lo, hi)
     x_right = r5(max([x_rows] + [x for x, _l, _h in trunks.values()]
                      + list(port_x.values())) + 1.5)
     tracks, ntracks = [], []
@@ -861,6 +945,11 @@ def plan(chan_terms, x_rows, keepouts, ports):
             if net in RIGHT_PINS and ci == min(where[net]):
                 pts.append(x_right)
             iv[net] = [min(pts) - TRK_W / 2, max(pts) + TRK_W / 2]
+            if net in SUP_NETS and net in trunks:
+                # the track runs the trunk's full width (its via3 array)
+                tx = trunks[net][0]
+                iv[net] = [min(iv[net][0], tx - SUP_M4_W / 2),
+                           max(iv[net][1], tx + SUP_M4_W / 2)]
         sides = [t for t in chan_terms[ci] if len(t) == 4]
         if sides:
             # a shared channel (stubs from below AND above): one track per
@@ -1042,6 +1131,7 @@ def generate():
     used = {}
     y0 = 0.0
     row_y0, chan_y, chan_top, bottoms, chan_p = [], [], [], [], []
+    sup_band = {}                  # (net, channel) -> (y0, y1) of a wide track
     for ri in range(nch):
         row_y0.append(y0)
         name, kind, items = ROWS[ri]
@@ -1077,6 +1167,15 @@ def generate():
             via(top, x, yt, "via2", M2, M3)
         for net, (t, a, b) in tracks[ri].items():
             yt = base + t * pch
+            if net in SUP_NETS and kind != "ring":
+                if t != 0:
+                    raise layoutlib.LayoutError(
+                        f"{net} is track {t} in channel {name}: a wide "
+                        "supply track must be the channel's first")
+                band = (r5(yt + TRK_W / 2 - SUP_M3_W), r5(yt + TRK_W / 2))
+                sup_band[(net, ri)] = band
+                rect(top, a, band[0], b, band[1], M3)
+                continue
             rect(top, a, yt - lw / 2, b, yt + lw / 2, M3)
         ch_top = base + max(ntracks[ri] - 1, 0) * pch + TRK_W / 2
         chan_top.append(ch_top)
@@ -1091,19 +1190,33 @@ def generate():
 
     # ---- trunks ----
     labels = []
+    feet = []
     for net, (x, lo, hi) in trunks.items():
         ys = [track_y(net, ci) for ci in range(max(lo, 0), hi + 1)
               if net in tracks[ci]]
-        for y in ys:
-            via(top, x, y, "via3", M3, M4)
+        hw = SUP_M4_W / 2 if net in SUP_NETS else TRK_W / 2
+        cis = [ci for ci in range(max(lo, 0), hi + 1) if net in tracks[ci]]
+        for ci, y in zip(cis, ys):
+            if (net, ci) in sup_band:
+                b0, b1 = sup_band[(net, ci)]
+                via_array(top, x - hw, b0, x + hw, b1, "via3", M3, M4)
+            else:
+                via(top, x, y, "via3", M3, M4)
         ya = y_bot if lo < 0 else min(ys)
-        rect(top, x - TRK_W / 2, ya - TRK_W / 2, x + TRK_W / 2,
+        rect(top, x - hw, ya - TRK_W / 2, x + hw,
              max(ys) + TRK_W / 2, M4)
         if lo < 0:
             # pin: the trunk's foot, stacked down to a metal2 pad (the
             # abstract reads metal1/metal2 pin labels)
-            via(top, x, y_bot, "via3", M3, M4)
-            via(top, x, y_bot, "via2", M2, M3)
+            if net in SUP_NETS:
+                # widened and given its pad arrays once every column is in
+                first = min(ci for ci in cis if (net, ci) in sup_band)
+                feet.append((net, x, hw, y_bot - TRK_W / 2,
+                             sup_band[(net, first)][1],
+                             y_bot - TRK_W / 2 + SUP_FOOT_H))
+            else:
+                via(top, x, y_bot, "via3", M3, M4)
+                via(top, x, y_bot, "via2", M2, M3)
             labels.append((net, x, y_bot, LY["metal2_label"]))
     for net, rx, ry, lay in rails2:
         key = f"ring.{net}"
@@ -1148,6 +1261,7 @@ def generate():
                 continue
             named.add(net)
             labels.append((net, r5((a + b) / 2), track_y(net, ci), M3))
+    widen_supply_feet(top, feet)
     fill_m3_notches(top)
     return layoutlib.finalize(top, CELL, labels)
 
