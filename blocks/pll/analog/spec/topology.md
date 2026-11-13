@@ -315,6 +315,12 @@ to its own inverted output.
   on `m1`, `s1`, `mf`, `sf`, so the feedthrough charge that is left moves
   those nodes less. Matched phases plus these keep the repeating peak under
   75 mV over 3.63 V at every corner (DRM 14.1.4.2; without them, +289 mV).
+  They are there for that stress margin only, not for timing. With all four
+  removed, the /2 still divides correctly at ff_m40c_vp10 (vctrl = vdd, VCO
+  358 MHz: presc_div2_ratio 0.999996 against 0.999997 with them) and at ss at
+  125 C and 2.97 V (214 MHz: 1.0 both). That is why their bench_strength mutants
+  survive and are ruled below spread (2026-11-13); the device-stress check is
+  what sees them.
 - `MP_DO1`/`MN_DO1` (`dqn` -> `dqb`) and `MP_DO2`/`MN_DO2` (`dqb` ->
   `vco_div2`): the pin's buffer.
 L = 0.28 um except the capacitors. The macro's pins are the interface's, so
