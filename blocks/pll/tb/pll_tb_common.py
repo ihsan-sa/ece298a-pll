@@ -10,7 +10,10 @@ import subprocess
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent          # blocks/pll/tb
-WS = HERE.parent                                # blocks/pll
+# blocks/pll: the first parent with analog/ - the cosim gate runs the pad
+# condition from a copy of tb/ under log/cosim_pad/, two levels deeper
+WS = next((d for d in HERE.parents if (d / "analog" / "netlist").is_dir()),
+          HERE.parent)
 ANALOG = WS / "analog"
 NETLIST = ANALOG / "netlist" / "pll_analog.cir"
 SIZING = ANALOG / "sizing" / "sizing.yaml"
